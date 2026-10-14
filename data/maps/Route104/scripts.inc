@@ -258,7 +258,7 @@ Route104_EventScript_ExpertF::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104, Route104_EventScript_ReceivedBerry
 	msgbox Route104_Text_PlantBerriesInSoilTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_CHESTO_BERRY
+	giveitem ITEM_STARF_BERRY
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104
 	msgbox Route104_Text_TrainersOftenMakeMonHoldBerries, MSGBOX_DEFAULT
@@ -327,7 +327,7 @@ Route104_EventScript_Boy2::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM_BULLET_SEED, Route104_EventScript_ReceivedBulletSeed
 	msgbox Route104_Text_LikeFillingMouthWithSeedsTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_BULLET_SEED
+	giveitem ITEM_TM_TRAILBLAZE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_BULLET_SEED
 	release
@@ -1025,18 +1025,16 @@ Route104_Text_ImNotATrainer:
 	.string "of their sight.$"
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
-	.string "I like filling my mouth with seeds,\n"
-	.string "then spitting them out fast!\p"
-	.string "You can have this, so you try it out!\p"
-	.string "Use it on a POKéMON, and it will learn\n"
-	.string "a move for firing seeds rapidly.$"
+	.string "I like to go hiking in the woods\n"
+	.string "with my family.\p"
+	.string "Here, take this TECHNICAL MACHINE.\p"
+	.string "TMs like this one are pretty sturdy,\n"
+	.string "I've never seen one break!$"
 
 Route104_Text_TMsAreOneTimeUse:
 	.string "A word of advice!\p"
-	.string "A TM, TECHNICAL MACHINE, is good only\n"
-	.string "for one-time use.\p"
-	.string "Once you use it, it's gone.\n"
-	.string "Think twice before using it!$"
+	.string "A TM, or TECHNICAL MACHINE, can be\n"
+	.string "used over and over again!$"
 
 Route104_Text_DontNeedThisTakeIt:
 	.string "This FLOWER SHOP started selling\n"
@@ -1068,14 +1066,14 @@ Route104_Text_PrettyPetalFlowShop:
 
 Route104_Text_TrainerTipsDoubleBattles:
 	.string "TRAINER TIPS\p"
-	.string "In the HOENN region there are pairs\n"
-	.string "of TRAINERS who challenge others\l"
-	.string "for 2-on-2 POKéMON battles called\l"
+	.string "In the HOENN region all TRAINERS\n"
+	.string "prefer to challenge others to\l"
+	.string "2-on-2 POKéMON battles called\l"
 	.string "DOUBLE BATTLES.\p"
 	.string "In a DOUBLE BATTLE, the TRAINER must\n"
 	.string "send out two POKéMON, the one at the\l"
-	.string "left of the list and the top one.\l"
-	.string "Watch how POKéMON are lined up.$"
+	.string "front of the party on the left and\l"
+	.string "the one behind it on the right.$"
 
 Route104_Text_MayWeShouldRegister:
 	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"

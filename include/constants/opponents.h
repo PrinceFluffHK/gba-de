@@ -29,7 +29,7 @@
 #define TRAINER_GRUNT_SPACE_CENTER_1         22
 #define TRAINER_GRUNT_MT_PYRE_1              23
 #define TRAINER_GRUNT_MT_PYRE_2              24
-#define TRAINER_GRUNT_MT_PYRE_3              25
+#define TRAINER_MATT_MT_PYRE                 25
 #define TRAINER_GRUNT_WEATHER_INST_4         26
 #define TRAINER_GRUNT_AQUA_HIDEOUT_5         27
 #define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
@@ -339,7 +339,7 @@
 #define TRAINER_EDDIE                       332
 #define TRAINER_ALLEN                       333
 #define TRAINER_TIMMY                       334
-#define TRAINER_WALLACE                     335
+#define TRAINER_STEVEN_CHAMPION             335
 #define TRAINER_ANDREW                      336
 #define TRAINER_IVAN                        337
 #define TRAINER_CLAUDE                      338
@@ -403,7 +403,7 @@
 #define TRAINER_NICOLAS_5                   396
 #define TRAINER_AARON                       397
 #define TRAINER_PERRY                       398
-#define TRAINER_HUGH                        399
+#define TRAINER_BRESLYN                     399
 #define TRAINER_PHIL                        400
 #define TRAINER_JARED                       401
 #define TRAINER_HUMBERTO                    402
@@ -518,7 +518,7 @@
 #define TRAINER_CONOR                       511
 #define TRAINER_EDWIN_1                     512
 #define TRAINER_HECTOR                      513
-#define TRAINER_TABITHA_MOSSDEEP            514
+#define TRAINER_COURTNEY_MOSSDEEP            514
 #define TRAINER_EDWIN_2                     515
 #define TRAINER_EDWIN_3                     516
 #define TRAINER_EDWIN_4                     517

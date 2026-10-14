@@ -35,6 +35,7 @@
 #include "constants/songs.h"
 #include "test/battle.h"
 #include "test/test.h"
+#include "test/test_runner_battle.h"
 
 static EWRAM_DATA u8 sLinkSendTaskId = 0;
 static EWRAM_DATA u8 sLinkReceiveTaskId = 0;

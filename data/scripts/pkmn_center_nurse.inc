@@ -2,17 +2,18 @@ Common_EventScript_PkmnCenterNurse::
 	lock
 	faceplayer
 	setvar VAR_0x8004, 0
-.if !IS_FRLG
-	specialvar VAR_RESULT, CountPlayerTrainerStars
-	goto_if_eq VAR_RESULT, 4, EventScript_PkmnCenterNurse_GoldCard
-.endif
-	msgbox gText_WouldYouLikeToRestYourPkmn, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealPkmn
-	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
+	goto EventScript_PkmnCenterNurse_HealPkmn
+@	specialvar VAR_RESULT, CountPlayerTrainerStars
+@	goto_if_eq VAR_RESULT, 4, EventScript_PkmnCenterNurse_GoldCard
+@	msgbox gText_WouldYouLikeToRestYourPkmn, MSGBOX_YESNO
+@	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealPkmn
+@	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
 	end
 
 EventScript_PkmnCenterNurse_Goodbye::
 	message gText_WeHopeToSeeYouAgain
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	return
 
 @ VAR_0x8004 is 1 when player has Gold Card; jumps are identical
@@ -68,6 +69,9 @@ EventScript_PkmnCenterNurse_ReturnPkmn::
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
 	message gText_WeHopeToSeeYouAgain
+	waitmessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	return
 
 EventScript_PkmnCenterNurse_ReturnPkmn2::
@@ -76,6 +80,9 @@ EventScript_PkmnCenterNurse_ReturnPkmn2::
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
 	message gText_WeHopeToSeeYouAgain2
+	waitmessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	return
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
@@ -87,6 +94,9 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
 	message gText_WeHopeToSeeYouAgain
+	waitmessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	return
 
 EventScript_PkmnCenterNurse_CheckPokerus::

@@ -301,12 +301,14 @@ u32 ChooseWildMonIndex_Rocks(void)
         wildMonIndex = 0;
     else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_1)
         wildMonIndex = 1;
-    else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_2)
+    else    
         wildMonIndex = 2;
-    else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_3)
-        wildMonIndex = 3;
-    else
-        wildMonIndex = 4;
+    // else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_2)
+    //     wildMonIndex = 2;
+    // else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_3)
+    //     wildMonIndex = 3;
+    // else
+    //     wildMonIndex = 4;
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
@@ -331,39 +333,48 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
     switch (rod)
     {
     case OLD_ROD:
+        // DebugPrintf("rand: %d", rand);
         if (rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_0)
             wildMonIndex = 0;
-        else
+        else if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_0 && rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_1)
             wildMonIndex = 1;
-
-        if (swap)
-            wildMonIndex = 1 - wildMonIndex;
-        break;
-    case GOOD_ROD:
-        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_2)
+        else if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_1 && rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_2)
             wildMonIndex = 2;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_2 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_3)
+        else
             wildMonIndex = 3;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_3 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4)
-            wildMonIndex = 4;
 
         if (swap)
-            wildMonIndex = 6 - wildMonIndex;
+            wildMonIndex = 3 - wildMonIndex;
+
+        // DebugPrintf("wildmonindex: %d", wildMonIndex);
         break;
-    case SUPER_ROD:
-        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_5)
+
+    case GOOD_ROD:
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4)
+            wildMonIndex = 4;
+        else if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_5)
             wildMonIndex = 5;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_5 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6)
+        else if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_5 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_6)
             wildMonIndex = 6;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7)
+        else
             wildMonIndex = 7;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8)
-            wildMonIndex = 8;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_9)
-            wildMonIndex = 9;
 
         if (swap)
-            wildMonIndex = 14 - wildMonIndex;
+            wildMonIndex = 7 - wildMonIndex;
+        break;
+
+    case SUPER_ROD:
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8)
+            wildMonIndex = 8;
+        else if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_9)
+            wildMonIndex = 9;
+        else if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_9 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_10)
+            wildMonIndex = 10;
+        else if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_10 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_11)
+            wildMonIndex = 11;
+
+        if (swap)
+            wildMonIndex = 11 - wildMonIndex;
         break;
     }
     return wildMonIndex;
@@ -1062,7 +1073,6 @@ bool8 UpdateRepelCounter(void)
                 return TRUE;
             }
         }
-
     }
     return FALSE;
 }
@@ -1211,7 +1221,6 @@ u32 ChooseHiddenMonIndex(void)
 {
     #ifdef ENCOUNTER_CHANCE_HIDDEN_MONS_TOTAL
         u8 rand = Random() % ENCOUNTER_CHANCE_HIDDEN_MONS_TOTAL;
-
         if (rand < ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_0)
             return 0;
         else if (rand >= ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_1)

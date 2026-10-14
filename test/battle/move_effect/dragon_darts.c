@@ -48,7 +48,6 @@ DOUBLE_BATTLE_TEST("Dragon Darts strikes the other opponent twice if one target 
     struct BattlePokemon *secondaryTarget = NULL;
     PARAMETRIZE { chosenTarget = opponentLeft; secondaryTarget = opponentRight; }
     PARAMETRIZE { chosenTarget = opponentRight; secondaryTarget = opponentLeft; }
-
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -101,7 +100,6 @@ DOUBLE_BATTLE_TEST("Dragon Darts strikes an opponent twice if electrified and th
     PARAMETRIZE { chosenTarget = opponentRight; finalTarget = opponentLeft;  abilityLeft = ABILITY_WATER_ABSORB; abilityRight = ABILITY_VOLT_ABSORB; }
     PARAMETRIZE { chosenTarget = opponentLeft;  finalTarget = opponentRight; abilityLeft = ABILITY_VOLT_ABSORB;  abilityRight = ABILITY_WATER_ABSORB; }
     PARAMETRIZE { chosenTarget = opponentRight; finalTarget = opponentRight; abilityLeft = ABILITY_VOLT_ABSORB;  abilityRight = ABILITY_WATER_ABSORB; }
-
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ELECTRIFY) == EFFECT_ELECTRIFY);
         PLAYER(SPECIES_WOBBUFFET);
@@ -127,7 +125,6 @@ DOUBLE_BATTLE_TEST("Dragon Darts strikes an opponent twice if electrified and th
     PARAMETRIZE { chosenTarget = opponentRight; finalTarget = opponentLeft;  abilityLeft = ABILITY_VITAL_SPIRIT; abilityRight = ABILITY_MOTOR_DRIVE; }
     PARAMETRIZE { chosenTarget = opponentLeft;  finalTarget = opponentRight; abilityLeft = ABILITY_MOTOR_DRIVE;  abilityRight = ABILITY_VITAL_SPIRIT; }
     PARAMETRIZE { chosenTarget = opponentRight; finalTarget = opponentRight; abilityLeft = ABILITY_MOTOR_DRIVE;  abilityRight = ABILITY_VITAL_SPIRIT; }
-
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ELECTRIFY) == EFFECT_ELECTRIFY);
         PLAYER(SPECIES_WOBBUFFET);
@@ -150,7 +147,6 @@ DOUBLE_BATTLE_TEST("Dragon Darts strikes an opponent twice if the other one is i
     struct BattlePokemon *finalTarget = NULL;
     PARAMETRIZE { chosenTarget = opponentLeft;  finalTarget = opponentRight; }
     PARAMETRIZE { chosenTarget = opponentRight; finalTarget = opponentLeft; }
-
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_FLY) == EFFECT_SEMI_INVULNERABLE);
         PLAYER(SPECIES_WOBBUFFET);
@@ -193,7 +189,6 @@ DOUBLE_BATTLE_TEST("Dragon Darts strikes an opponent twice if the other one is f
     u32 hpLeft, hpRight;
     PARAMETRIZE { chosenTarget = opponentLeft;  finalTarget = opponentRight; hpLeft = 1; hpRight = 101; }
     PARAMETRIZE { chosenTarget = opponentRight; finalTarget = opponentLeft;  hpLeft = 101; hpRight = 1; }
-
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);

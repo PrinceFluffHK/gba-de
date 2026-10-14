@@ -179,9 +179,9 @@ Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation:
 	.string "While BERRY plants are growing,\n"
 	.string "water them with the WAILMER PAIL.\p"
 	.string "Oh, another thing.\p"
-	.string "If you don't pick BERRIES for a while,\n"
-	.string "they'll drop off onto the ground.\l"
-	.string "But they'll sprout again.\p"
+	.string "Somehow, berries reappear after being\n"
+	.string "eaten in battle, same as other items.\p"
+@	.string "But they'll sprout again.\p"
 	.string "Isn't that awesome?\n"
 	.string "It's like they have the will to live.$"
 
@@ -192,12 +192,12 @@ Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers:
 	.string "It's for you!$"
 
 Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries:
-	.string "You can plant a BERRY and grow it big,\n"
-	.string "or you can make a POKéMON hold it.\p"
-	.string "But now they have a machine that mixes\n"
-	.string "up different BERRIES and makes candies\l"
-	.string "for POKéMON.\p"
-	.string "I want some candy, too.$"
+	.string "Honestly? Don't bother planting that,\n"
+	.string "definitely give it to a POKéMON.\p"
+	.string "It will even reappear at the\n"
+	.string "end of battle, just like\l"
+	.string "other consumable held items!\p"
+	.string "So there's no need to be frugal.$"
 
 SootopolisCity_Text_NameIsKiriHaveOneOfThese:
 	.string "Hi, what's your name?\p"

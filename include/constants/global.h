@@ -110,11 +110,11 @@ enum Language
 #define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
 
 // Bag constants
-#define BAG_ITEMS_COUNT 30
+#define BAG_ITEMS_COUNT 50
 #define BAG_KEYITEMS_COUNT 30
-#define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT 64
-#define BAG_BERRIES_COUNT 46
+#define BAG_POKEBALLS_COUNT 30
+#define BAG_TMHM_COUNT 110
+#define BAG_BERRIES_COUNT 50
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.
@@ -200,6 +200,10 @@ enum Gender
 
 #define OPTIONS_BATTLE_STYLE_SHIFT 0
 #define OPTIONS_BATTLE_STYLE_SET 1
+
+#define OPTIONS_PREVIEW_LIMITED 0
+#define OPTIONS_PREVIEW_FULL 1
+#define OPTIONS_PREVIEW_NONE 2
 
 enum __attribute__((packed)) Direction
 {

@@ -283,12 +283,6 @@ static const struct RelearnType sRelearnTypes[MOVE_RELEARNER_COUNT] =
         .getMoves = GetRelearnerLevelUpMoves,
         .moveText = MoveRelearner_Text_LevelUpMoveLWR
     },
-    [MOVE_RELEARNER_EGG_MOVES] = {
-        .isActive = IsEggMoveRelearnerActive,
-        .hasMoveToRelearn = HasRelearnerEggMoves,
-        .getMoves = GetRelearnerEggMoves,
-        .moveText = MoveRelearner_Text_EggMoveLWR
-    },
     [MOVE_RELEARNER_TM_MOVES] = {
         .isActive = IsTMMoveRelearnerActive,
         .hasMoveToRelearn = HasRelearnerTMMoves,
@@ -300,6 +294,12 @@ static const struct RelearnType sRelearnTypes[MOVE_RELEARNER_COUNT] =
         .hasMoveToRelearn = HasRelearnerTutorMoves,
         .getMoves = GetRelearnerTutorMoves,
         .moveText = MoveRelearner_Text_TutorMoveLWR
+    },
+    [MOVE_RELEARNER_EGG_MOVES] = {
+        .isActive = IsEggMoveRelearnerActive,
+        .hasMoveToRelearn = HasRelearnerEggMoves,
+        .getMoves = GetRelearnerEggMoves,
+        .moveText = MoveRelearner_Text_EggMoveLWR
     },
 };
 

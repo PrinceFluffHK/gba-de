@@ -1252,7 +1252,6 @@ static bool32 AI_IsMoveEffectInMinus(enum BattlerId battlerAtk, enum BattlerId b
         break;
     }
     }
-
     return FALSE;
 }
 

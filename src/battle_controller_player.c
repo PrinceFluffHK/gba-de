@@ -48,6 +48,9 @@
 #include "type_icons.h"
 #include "pokedex.h"
 #include "test/battle.h"
+// #include "test/test_runner_battle.h"
+
+extern void SpriteCB_BlinkVisible(struct Sprite *sprite);
 
 static void PlayerHandleLoadMonSprite(enum BattlerId battler);
 static void PlayerHandleDrawTrainerPic(enum BattlerId battler);
@@ -90,6 +93,12 @@ static void Task_SetControllerToWaitForString(u8);
 static void Task_GiveExpWithExpBar(u8);
 static void Task_UpdateLvlInHealthbox(u8);
 static void PrintLinkStandbyMsg(void);
+static void CreateInfoWindow(u32 battler);
+static void HideAllTargets(void);
+static void HideShownTargets(enum BattlerId battler);
+static void ShowMovePreviewTargets(enum BattlerId battler);
+static void TryShowAsTarget(enum BattlerId battler);
+static void CreateSpeedTiersWindow(u32 battler);
 
 static void ReloadMoveNames(enum BattlerId battler);
 static u32 CheckTypeEffectiveness(enum BattlerId battlerAtk, enum BattlerId battlerDef);
@@ -305,7 +314,12 @@ static void HandleInputChooseAction(enum BattlerId battler)
     if (JOY_NEW(A_BUTTON))
     {
         PlaySE(SE_SELECT);
+        // TryToHideMovePreviewWindow(); // FTP
         TryHideLastUsedBall();
+
+        if (gBattleStruct->movePreviewDisplayed > 0
+         && (gActionSelectionCursor[battler] == 0 || gActionSelectionCursor[battler] == 3))
+            HideAllTargets();
 
         switch (gActionSelectionCursor[battler])
         {
@@ -393,6 +407,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     }
     else if (JOY_NEW(START_BUTTON))
     {
+        PlaySE(SE_SELECT);
         SwapHpBarsWithHpText();
     }
     else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
@@ -408,6 +423,278 @@ static void HandleInputChooseAction(enum BattlerId battler)
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
         BtlController_Complete(battler);
     }
+    else if (JOY_NEW(SELECT_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        switch(gBattleStruct->movePreviewDisplayed)
+        {
+            case 0:
+                // if(gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_LIMITED
+                //   || gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_FULL)
+                // {
+                    CreateSpeedTiersWindow(battler);
+                    gBattleStruct->movePreviewDisplayed=1;
+                // }
+                break;
+            case 1:
+                if (gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_FULL)
+                {
+                    if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
+                    {
+                        CreateMovePreviewText(B_POSITION_OPPONENT_RIGHT);
+                        gBattleStruct->movePreviewDisplayed=2;
+                    }
+                    else
+                    {
+                        CreateMovePreviewText(B_POSITION_OPPONENT_LEFT);
+                        gBattleStruct->movePreviewDisplayed=3;
+                    }
+                }
+                else
+                {
+                    CreateInfoWindow(battler);
+                    gBattleStruct->movePreviewDisplayed=0;
+                }
+                break;
+            case 2:
+                if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
+                {
+                    CreateMovePreviewText(B_POSITION_OPPONENT_LEFT);
+                    gBattleStruct->movePreviewDisplayed=3;
+                }
+                else
+                {
+                    HideAllTargets();
+                    CreateInfoWindow(battler);
+                    gBattleStruct->movePreviewDisplayed=0;
+                }
+                break;
+            case 3:
+                    HideAllTargets();
+                    CreateInfoWindow(battler);
+                    gBattleStruct->movePreviewDisplayed=0;
+            break;
+        }
+    }
+}
+
+static void AppendSpeed(u32 battler)
+{
+    ConvertUIntToDecimalStringN(
+        gStringVar2,
+        GetBattlerTotalSpeedStat(
+            battler,
+            GetBattlerAbility(battler),
+            GetBattlerHoldEffect(battler)
+        ),
+        STR_CONV_MODE_LEFT_ALIGN,
+        3
+    );
+    StringAppend(gStringVar1, gStringVar2);
+}
+
+static void AppendMoveTarget(u32 battler, bool32 isRightSide)
+{
+    u32 move = gBattleMons[battler].moves[gBattleStruct->chosenMovePositions[battler]];
+    u32 moveTarget = GetBattlerMoveTargetType(battler, move);
+    bool32 needsExtraSpace = !isRightSide;
+    
+    if (move == MOVE_REFLECT 
+        || move == MOVE_LIGHT_SCREEN
+        || move == MOVE_AURORA_VEIL
+        || move == MOVE_TAILWIND
+        || move == MOVE_SAFEGUARD
+        || move == MOVE_LUCKY_CHANT
+        || move == MOVE_MIST
+        || move == MOVE_HEAL_BELL
+        || move == MOVE_AROMATHERAPY
+        || move == MOVE_WIDE_GUARD
+        || move == MOVE_QUICK_GUARD
+        || move == MOVE_CRAFTY_SHIELD
+        || move == MOVE_MAGNETIC_FLUX
+        || move == MOVE_MAT_BLOCK
+        || move == MOVE_GEAR_UP
+        || move == MOVE_LIFE_DEW
+    ) {
+        moveTarget = TARGET_USER_AND_ALLY;
+    }
+
+    switch (moveTarget)
+    {
+    case TARGET_USER:
+    case TARGET_DEPENDS:
+    case TARGET_OPPONENT:
+        StringAppend(gStringVar1,
+            isRightSide ? (needsExtraSpace ? COMPOUND_STRING(" {UP_ARROW}-") : COMPOUND_STRING("{UP_ARROW}-"))
+                        : (needsExtraSpace ? COMPOUND_STRING(" -{UP_ARROW}") : COMPOUND_STRING("-{UP_ARROW}")));
+        break;
+
+    case TARGET_SELECTED:
+    case TARGET_USER_OR_ALLY:
+    {
+        u32 target = gAiBattleData->chosenTarget[battler];
+
+        if (target == B_POSITION_OPPONENT_LEFT)
+            StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" -{UP_ARROW}") : COMPOUND_STRING("-{UP_ARROW}"));
+        else if (target == B_POSITION_OPPONENT_RIGHT)
+            StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" {UP_ARROW}-") : COMPOUND_STRING("{UP_ARROW}-"));
+        else if (target == B_POSITION_PLAYER_LEFT)
+            StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" {DOWN_ARROW}-") : COMPOUND_STRING("{DOWN_ARROW}-"));
+        else if (target == B_POSITION_PLAYER_RIGHT)
+            StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" -{DOWN_ARROW}") : COMPOUND_STRING("-{DOWN_ARROW}"));
+        break;
+    }
+
+    case TARGET_ALLY:
+        StringAppend(gStringVar1,
+            isRightSide ? (needsExtraSpace ? COMPOUND_STRING(" -{UP_ARROW}") : COMPOUND_STRING("-{UP_ARROW}"))
+                        : (needsExtraSpace ? COMPOUND_STRING(" {UP_ARROW}-") : COMPOUND_STRING("{UP_ARROW}-")));
+        break;
+
+    case TARGET_RANDOM:
+        StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" ??") : COMPOUND_STRING("??"));
+        break;
+
+    case TARGET_USER_AND_ALLY:
+        StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" {UP_ARROW}{UP_ARROW}") : COMPOUND_STRING("{UP_ARROW}{UP_ARROW}"));
+        break;
+
+    case TARGET_BOTH:
+    case TARGET_SMART:
+        StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" {DOWN_ARROW}{DOWN_ARROW}") : COMPOUND_STRING("{DOWN_ARROW}{DOWN_ARROW}"));
+        break;
+
+    case TARGET_OPPONENTS_FIELD:
+        StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" xx") : COMPOUND_STRING("xx"));
+        break;
+
+    case TARGET_FOES_AND_ALLY:
+        StringAppend(gStringVar1,
+            isRightSide ? (needsExtraSpace ? COMPOUND_STRING(" {DOWN_ARROW}{V_D_ARROW}") : COMPOUND_STRING("{DOWN_ARROW}{V_D_ARROW}"))
+                        : (needsExtraSpace ? COMPOUND_STRING(" {V_D_ARROW}{DOWN_ARROW}") : COMPOUND_STRING("{V_D_ARROW}{DOWN_ARROW}")));
+        break;
+
+    case TARGET_FIELD:
+    case TARGET_ALL_BATTLERS:
+        StringAppend(gStringVar1, needsExtraSpace ? COMPOUND_STRING(" {V_D_ARROW}{V_D_ARROW}") : COMPOUND_STRING("{V_D_ARROW}{V_D_ARROW}"));
+        break;
+    }
+}
+
+static void AppendBattlerInfo(u32 position, bool32 isRightSide, bool32 showSpeedFirst)
+{
+    u32 battler = GetBattlerAtPosition(position);
+    if (!IsBattlerAlive(battler))
+        return;
+
+    if (gBattleStruct->monToSwitchIntoId[battler] != PARTY_SIZE)
+    {
+        StringAppend(gStringVar1, COMPOUND_STRING("Switch"));
+        return;
+    }
+
+    if (showSpeedFirst)
+    {
+        AppendSpeed(battler);
+        if (gSaveBlock2Ptr->optionsPreviewStyle != OPTIONS_PREVIEW_NONE){
+            AppendMoveTarget(battler, isRightSide);
+        }
+    }
+    else
+    {
+        if (gSaveBlock2Ptr->optionsPreviewStyle != OPTIONS_PREVIEW_NONE){
+            AppendMoveTarget(battler, isRightSide);
+            StringAppend(gStringVar1, COMPOUND_STRING(" "));
+        }
+        AppendSpeed(battler);
+    }
+}
+
+static void CreateSpeedTiersWindow(u32 battler)
+{
+    if (gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_NONE) {
+        StringCopy(gStringVar1, COMPOUND_STRING("Speed    "));
+    }
+    else 
+        StringCopy(gStringVar1, COMPOUND_STRING("OPP   "));
+
+    bool32 rightAlive = IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
+    bool32 leftAlive  = IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
+
+    if (rightAlive)
+        AppendBattlerInfo(B_POSITION_OPPONENT_RIGHT, TRUE, FALSE);
+
+    if (leftAlive)
+    {
+        if (rightAlive)
+            StringAppend(gStringVar1, COMPOUND_STRING(" / "));
+
+        AppendBattlerInfo(B_POSITION_OPPONENT_LEFT, FALSE, TRUE);
+    }
+
+    if (gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_NONE) {
+        StringAppend(gStringVar1, COMPOUND_STRING("\nTiers   "));
+    } 
+    else 
+        StringAppend(gStringVar1, COMPOUND_STRING("\nYOU   "));
+    
+    bool32 pLeftAlive  = IsBattlerAlive(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT));
+    bool32 pRightAlive = IsBattlerAlive(GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT));
+    
+    if (pLeftAlive)
+    {
+        AppendSpeed(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT));
+
+        if (battler == GetBattlerAtPosition(B_POSITION_PLAYER_LEFT))
+            StringAppend(gStringVar1, COMPOUND_STRING("?"));
+    }
+
+    if (pRightAlive)
+    {
+        if (pLeftAlive)
+            StringAppend(gStringVar1, COMPOUND_STRING(" / "));
+
+        AppendSpeed(GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT));
+
+        if (battler == GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT))
+            StringAppend(gStringVar1, COMPOUND_STRING("?"));
+    }
+
+    BattlePutTextOnWindow(gStringVar1, B_WIN_ACTION_PROMPT);
+}
+
+void CreateMovePreviewText(u32 battlerPosition)
+{
+        u32 switchMon;
+        u32 battler = GetBattlerAtPosition(battlerPosition);
+
+        HideAllTargets();
+
+        if (gBattleStruct->monToSwitchIntoId[GetBattlerAtPosition(battlerPosition)] != PARTY_SIZE) // If the opponent is switching:
+        {
+            switchMon = GetMonData(&gEnemyParty[gAiLogicData->mostSuitableMonId[battler]], MON_DATA_SPECIES);
+            StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(GetBattlerAtPosition(battlerPosition)), MON_DATA_SPECIES, NULL)));
+            StringAppend(gStringVar1, COMPOUND_STRING(" will switch\nto "));
+            StringAppend(gStringVar1, GetSpeciesName(switchMon));
+            StringAppend(gStringVar1, COMPOUND_STRING("!"));
+        }
+        else
+        {
+            StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(GetBattlerAtPosition(battlerPosition)), MON_DATA_SPECIES, NULL)));
+            StringAppend(gStringVar1, COMPOUND_STRING(" will use:\n"));
+            u32 move = gBattleMons[battlerPosition].moves[gBattleStruct->chosenMovePositions[battlerPosition]];
+            StringAppend(gStringVar1, GetMoveName(move));
+
+            if (battlerPosition == B_POSITION_OPPONENT_RIGHT)
+                StringAppend(gStringVar1, COMPOUND_STRING(" "));
+
+            if (battlerPosition == B_POSITION_OPPONENT_RIGHT)
+                AppendMoveTarget(battler, TRUE);
+            else 
+                AppendMoveTarget(battler, FALSE);
+        }
+        BattlePutTextOnWindow(gStringVar1, B_WIN_ACTION_PROMPT);
+        ShowMovePreviewTargets(battler);
 }
 
 void HandleInputChooseTarget(enum BattlerId battler)
@@ -795,6 +1082,26 @@ void HandleInputChooseMove(enum BattlerId battler)
             BtlController_Complete(battler);
             TryToHideMoveInfoWindow();
         }
+
+        // Always exit opponent view cleanly
+        if (gBattleStruct->viewingOpponentMoves)
+        {
+            enum BattlerId opponentLeft = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+            enum BattlerId opponentRight = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+            EndBounceEffect(opponentLeft, BOUNCE_HEALTHBOX);
+            EndBounceEffect(opponentLeft, BOUNCE_MON);
+            EndBounceEffect(opponentRight, BOUNCE_HEALTHBOX);
+            EndBounceEffect(opponentRight, BOUNCE_MON);
+            DoBounceEffect(battler, BOUNCE_HEALTHBOX, battler, 1);
+            DoBounceEffect(battler, BOUNCE_MON, battler, 1);
+
+            gBattleStruct->viewingOpponentMoves = FALSE;
+            ReloadMoveNames(battler);
+            // gSprites[gBattlerSpriteIds[opponentLeft]].callback = SpriteCallbackDummy;
+        }
+
+        CreateInfoWindow(battler);  // ← your requirement
+        return;
     }
     else if (JOY_NEW(DPAD_LEFT) && !gBattleStruct->zmove.viewing)
     {
@@ -862,7 +1169,7 @@ void HandleInputChooseMove(enum BattlerId battler)
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
         }
     }
-    else if (B_MOVE_REARRANGEMENT_IN_BATTLE < GEN_4 && JOY_NEW(SELECT_BUTTON) && !gBattleStruct->zmove.viewing && !gBattleStruct->descriptionSubmenu)
+    else if (B_MOVE_REARRANGEMENT_IN_BATTLE < GEN_4 && JOY_NEW(SELECT_BUTTON) && !gBattleStruct->zmove.viewing && !gBattleStruct->descriptionSubmenu && !gBattleStruct->viewingOpponentMoves)
     {
         if (gNumberOfMovesToChoose > 1 && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
         {
@@ -2055,8 +2362,110 @@ static void PlayerHandleChooseAction(enum BattlerId battler)
     }
     else
     {
-        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
+        // BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
+
+        HideAllTargets();
+
+        if (FlagGet(FLAG_IS_TURN_START) == TRUE 
+            || gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_NONE)
+        {
+            FlagClear(FLAG_IS_TURN_START);
+            gBattleStruct->movePreviewDisplayed = 0;
+            CreateInfoWindow(battler);
+        }
+        else if (gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_LIMITED 
+            || gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_FULL)
+        {
+            gBattleStruct->movePreviewDisplayed = 1;
+            CreateSpeedTiersWindow(battler);
+        }
     }
+}
+
+static void CreateInfoWindow(u32 battler)
+{
+    u8 aliveCount = 0;
+    u8 totalCount = 0;
+    u8 trainerAPartySize = GetTrainerPartySizeFromId(TRAINER_BATTLE_PARAM.opponentA);
+    u8 trainerBPartySize = 0;
+    u8 i;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && trainerAPartySize > PARTY_SIZE / 2)
+        trainerAPartySize = PARTY_SIZE / 2;
+
+    if (TRAINER_BATTLE_PARAM.opponentB != TRAINER_NONE
+        && TRAINER_BATTLE_PARAM.opponentB != 0xFFFF)
+    {
+        trainerBPartySize = GetTrainerPartySizeFromId(TRAINER_BATTLE_PARAM.opponentB);
+        if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && trainerBPartySize > PARTY_SIZE / 2)
+            trainerBPartySize = PARTY_SIZE / 2;
+    }
+
+    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+    {
+        totalCount = trainerAPartySize + trainerBPartySize;
+
+        for (i = 0; i < trainerAPartySize; i++)
+        {
+            if (GetMonData(&gEnemyParty[i], MON_DATA_HP) != 0)
+                aliveCount++;
+        }
+
+        if (trainerBPartySize != 0)
+        {
+            for (i = PARTY_SIZE / 2; i < PARTY_SIZE / 2 + trainerBPartySize; i++)
+            {
+                if (GetMonData(&gEnemyParty[i], MON_DATA_HP) != 0)
+                    aliveCount++;
+            }
+        }
+
+        StringCopy(gStringVar1, COMPOUND_STRING("Turn "));
+        ConvertUIntToDecimalStringN(gStringVar2, gBattleResults.battleTurnCounter + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringAppend(gStringVar1, gStringVar2);
+        StringAppend(gStringVar1, COMPOUND_STRING(" - "));
+        ConvertUIntToDecimalStringN(gStringVar2, aliveCount, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringAppend(gStringVar1, gStringVar2);
+        StringAppend(gStringVar1, COMPOUND_STRING("/"));
+        ConvertUIntToDecimalStringN(gStringVar2, totalCount, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringAppend(gStringVar1, gStringVar2);
+        if (gBattleWeather == B_WEATHER_NONE)
+            StringAppend(gStringVar1, COMPOUND_STRING(" {PKMN}"));
+        else
+        {
+            StringAppend(gStringVar1, COMPOUND_STRING(" - "));
+            StringAppend(gStringVar1, GetBattleWeatherName());
+            // StringAppend(gStringVar1, COMPOUND_STRING(")"));
+        }
+    }
+    else
+    {
+        StringCopy(gStringVar1, COMPOUND_STRING("Turn "));
+        ConvertUIntToDecimalStringN(gStringVar2, gBattleResults.battleTurnCounter + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringAppend(gStringVar1, gStringVar2);
+        if (gBattleWeather != B_WEATHER_NONE)
+        {
+            StringAppend(gStringVar1, COMPOUND_STRING(" - "));
+            StringAppend(gStringVar1, GetBattleWeatherName());
+            // StringAppend(gStringVar1, COMPOUND_STRING(")"));
+        }
+    }
+
+    if (!FlagGet(FLAG_HIDE_BATTLE_TUTORIAL)
+        && (gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_LIMITED
+        || gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_FULL))
+    {
+        FlagSet(FLAG_HIDE_BATTLE_TUTORIAL);
+        StringAppend(gStringVar1, COMPOUND_STRING("\nSELECT: Spd + Target"));
+    }
+    else {
+        StringAppend(gStringVar1, COMPOUND_STRING("\nGo, "));
+        GetMonData(GetBattlerMon(battler), MON_DATA_NICKNAME, gStringVar2);
+        StringAppend(gStringVar1, gStringVar2);
+        StringAppend(gStringVar1, COMPOUND_STRING("!"));
+    }
+
+    BattlePutTextOnWindow(gStringVar1, B_WIN_ACTION_PROMPT);
 }
 
 static void PlayerHandleYesNoBox(enum BattlerId battler)
@@ -2099,6 +2508,7 @@ static void PlayerChooseMoveInBattlePalace(enum BattlerId battler)
 
 void PlayerHandleChooseMove(enum BattlerId battler)
 {
+    gBattleStruct->viewingOpponentMoves = FALSE;
     if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
     {
         gBattleStruct->arenaMindPoints[battler] = 8;

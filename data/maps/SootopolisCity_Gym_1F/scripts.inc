@@ -94,6 +94,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis, MSGBOX_DEFAULT
+	call_if_set FLAG_BOSS_RUSH_MODE, SootopolisCity_Gym_1F_EventScript_JuanGiveMoney
 	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
 	setflag FLAG_BADGE08_GET
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS
@@ -101,6 +102,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
 	call SootopolisCity_Gym_1F_EventScript_GiveWaterPulse
@@ -115,15 +117,19 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	release
 	end
 
+SootopolisCity_Gym_1F_EventScript_JuanGiveMoney::
+	addmoney 8000
+	return
+
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
-	giveitem ITEM_TM_WATER_PULSE
+	giveitem ITEM_TM_SCALD
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
 	return
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
-	giveitem ITEM_TM_WATER_PULSE
+	giveitem ITEM_TM_SCALD
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
@@ -248,9 +254,9 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "The TECHNICAL MACHINE I handed you\n"
-	.string "contains WATER PULSE.\p"
-	.string "In use, it will occasionally confuse\n"
-	.string "the target with ultrasonic waves.\p"
+	.string "contains SCALD.\p"
+	.string "In battle, it will often burn the\n"
+	.string "target with boiling jets.\p"
 	.string "… … … … … …$"
 
 SootopolisCity_Gym_1F_Text_RegisteredJuan:

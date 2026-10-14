@@ -93,6 +93,36 @@ PetalburgCity_EventScript_WallysMom::
 	msgbox PetalburgCity_Text_WhereIsWally, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_SkipTutorialTrigger::
+	call_if_unset FLAG_DISABLE_TUTORIAL_SKIP_PROMPT, PetalburgCity_EventScript_SkipTutorialYesNo
+	end
+
+PetalburgCity_EventScript_SkipTutorialYesNo::
+	lockall
+	msgbox PetalburgCity_Text_WantToSkipTutorial, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, PetalburgCity_EventScript_SkipTutorial
+	setflag FLAG_DISABLE_TUTORIAL_SKIP_PROMPT
+	releaseall
+	return
+
+PetalburgCity_EventScript_SkipTutorial::
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
+	setvar VAR_PETALBURG_GYM_STATE, 1
+	setvar VAR_PETALBURG_CITY_STATE, 2
+	clearflag FLAG_HIDE_PETALBURG_CITY_WALLY
+	clearflag FLAG_HIDE_PETALBURG_GYM_WALLY
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_PETALBURG_CITY_STATE, 3
+	fadedefaultbgm
+	clearflag FLAG_DONT_TRANSITION_MUSIC
+@	special LoadPlayerParty
+	setvar VAR_PETALBURG_GYM_STATE, 1
+	warp MAP_PETALBURG_CITY_GYM, 4, 108
+	waitstate
+	releaseall
+	end
+
 PetalburgCity_Movement_WalkToWallyHousePlayer:
 	delay_8
 	walk_down
@@ -551,6 +581,8 @@ PetalburgCity_EventScript_Scott::
 	waitmovement 0
 	delay 30
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
+	giveitem ITEM_ABILITY_CAPSULE
+	waitfanfare
 	closemessage
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
@@ -749,12 +781,23 @@ PetalburgCity_Text_AreYouATrainer:
 
 PetalburgCity_Text_WellMaybeNot:
 	.string "… … … … … …\p"
-	.string "Well, maybe not.\n"
-	.string "Your clothes aren't all that dirty.\p"
-	.string "You're either a rookie TRAINER,\n"
-	.string "or maybe you're just an ordinary kid.$"
+	.string "Oh yeah, now I see it in your eyes.\p"
+	.string "You've got a pretty good intuition\n"
+	.string "for POKéMON battles.\p"
+	.string "Am I right?$"
+	// .string "You're still a rookie TRAINER,\n"
+	// .string "but you're just an ordinary kid.$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
-	.string "I'm sorry to have taken your time.$"
+	.string "Sorry to keep rambling on, kid.\p"
+	.string "Here, take this Ability Capsule\n"
+	.string "humoring me.\p"
+	.string "You can buy these capsules at any\n"
+	.string "POKéMART, but Ability Patches are\l"
+	.string "only for sale in EVER GRANDE CITY.$"
+
+PetalburgCity_Text_WantToSkipTutorial:
+	.string "Do you want to skip the\n"
+	.string "catching tutorial?$"

@@ -143,6 +143,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent::
 	lockall
+	clearflag FLAG_HIDE_BATTLE_TUTORIAL
 	applymovement LOCALID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex
 	waitmovement 0
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex
@@ -525,7 +526,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_POKE_BALL, 10
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
@@ -533,7 +534,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_POKE_BALL, 10
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 1
@@ -744,14 +745,17 @@ LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
 
 LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 	.string "PROF. BIRCH: The POKéDEX is a high-tech\n"
-	.string "tool that automatically makes a record\l"
-	.string "of any POKéMON you meet or catch.\p"
+	.string "tool that automatically makes an in-\l"
+	.string "depth record of any POKéMON you catch.\p"
 	.string "My kid, {RIVAL}, goes everywhere\n"
 	.string "with it.\p"
-	.string "Whenever my kid catches a rare POKéMON\n"
-	.string "and records its data in the POKéDEX,\l"
-	.string "why, {RIVAL} looks for me while I'm out\l"
-	.string "doing fieldwork, and shows me.$"
+	.string "It shows EVOLUTION and LOCATION data,\n"
+	.string "as well as what MOVES a POKéMON\l"
+	.string "can learn and its standard ABILITIES.$"
+@	.string "Whenever my kid catches a rare POKéMON\n"
+@	.string "and records its data in the POKéDEX,\l"
+@	.string "why, {RIVAL} looks for me while I'm out\l"
+@	.string "doing fieldwork, and shows me.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 	.string "PROF. BIRCH: Countless POKéMON\n"

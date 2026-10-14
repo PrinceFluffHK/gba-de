@@ -1645,7 +1645,6 @@ static void PrintInfoScreenTextSmall(const u8* str, u8 fontId, u8 left, u8 top)
 
     AddTextPrinterParameterized4(0, fontId, left, top, 0, 0, color, 0, str);
 }
-
 //Stats screen
 static void PrintStatsScreenTextSmall(u8 windowId, const u8* str, u8 left, u8 top)
 {

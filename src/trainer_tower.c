@@ -577,7 +577,6 @@ static void BufferTowerOpponentSpeech(void)
     u16 trainerId = gSpecialVar_0x8006;
     u8 facilityClass;
     u8 challengeType = CURR_FLOOR.challengeType;
-
     if (challengeType != CHALLENGE_TYPE_DOUBLE)
         facilityClass = CURR_FLOOR.trainers[trainerId].facilityClass;
     else

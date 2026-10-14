@@ -103,7 +103,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
-    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsPreviewStyle = OPTIONS_PREVIEW_NONE;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
 }
@@ -230,7 +230,7 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetTrainerTowerResults();
     ResetContestLinkResults();
-    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    SetCurrentDifficultyLevel(DIFFICULTY_EASY);
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();

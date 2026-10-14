@@ -15,8 +15,10 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+	call_if_set FLAG_BOSS_RUSH_MODE, RustboroCity_Gym_EventScript_RoxanneGiveMoney
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_BADGE01_GET
+	setflag FLAG_HIDE_BUTTON_PROMPT
 	setvar VAR_RUSTBORO_CITY_STATE, 1
 	addvar VAR_PETALBURG_GYM_STATE, 1
 	setvar VAR_0x8008, 1
@@ -24,6 +26,10 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	goto RustboroCity_Gym_EventScript_GiveRockTomb
 	end
+
+RustboroCity_Gym_EventScript_RoxanneGiveMoney::
+	addmoney 1000
+	return
 
 RustboroCity_Gym_EventScript_GiveRockTomb::
 	giveitem ITEM_TM_ROCK_TOMB
@@ -214,8 +220,8 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "rocks, it also lowers SPEED.\p"
 	.string "If you use a TM, it instantly teaches\n"
 	.string "the move to a POKéMON.\p"
-	.string "Remember, a TM can be used only once,\n"
-	.string "so think before you use it.$"
+	.string "Remember, a TM can be used over and,\n"
+	.string "over, so try all kinds of strategies.$"
 
 RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "Since you are so strong, you should\n"

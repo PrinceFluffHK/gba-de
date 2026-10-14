@@ -75,7 +75,6 @@ static void Task_StartBattleAfterTransition(u8 taskId)
 static void DoFacilityTrainerBattleInternal(u8 facility)
 {
     gBattleScripting.specialTrainerBattleType = facility;
-
     switch (facility)
     {
     case FACILITY_BATTLE_TOWER:

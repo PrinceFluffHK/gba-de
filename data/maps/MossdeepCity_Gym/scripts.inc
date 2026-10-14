@@ -67,6 +67,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis, MSGBOX_DEFAULT
+	call_if_set FLAG_BOSS_RUSH_MODE, MossdeepCity_Gym_EventScript_TateAndLizaGiveMoney
 	setflag FLAG_DEFEATED_MOSSDEEP_GYM
 	setflag FLAG_BADGE07_GET
 	setflag FLAG_HIDE_AQUA_HIDEOUT_GRUNTS
@@ -94,8 +95,12 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	release
 	end
 
+MossdeepCity_Gym_EventScript_TateAndLizaGiveMoney::
+	addmoney 7000
+	return
+
 MossdeepCity_Gym_EventScript_GiveCalmMind2::
-	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_PSYCHIC_NOISE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
@@ -103,7 +108,7 @@ MossdeepCity_Gym_EventScript_GiveCalmMind2::
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind::
-	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_PSYCHIC_NOISE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
@@ -582,10 +587,10 @@ MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
 	.string "TATE: You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
-	.string "TATE: That TM04 contains…\n"
-	.string "LIZA: CALM MIND!\p"
-	.string "TATE: It raises SP. ATK and…\n"
-	.string "LIZA: It raises SP. DEF!\p"
+	.string "TATE: That TM83 contains…\n"
+	.string "LIZA: PSYCHIC NOISE!\p"
+	.string "TATE: It stops the target...\n"
+	.string "LIZA: From healing!\p"
 	.string "TATE: It's a move that's perfect…\n"
 	.string "LIZA: For PSYCHIC POKéMON!\p"
 	.string "… … … … … …$"

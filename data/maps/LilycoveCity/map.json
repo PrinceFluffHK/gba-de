@@ -502,7 +502,7 @@
       "x": 36,
       "y": 31,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_IRON",
       "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_HEART_SCALE"
     },
     {
@@ -510,7 +510,7 @@
       "x": 61,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_PP_UP",
+      "item": "ITEM_PROTEIN",
       "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP"
     },
     {
@@ -518,7 +518,7 @@
       "x": 64,
       "y": 31,
       "elevation": 0,
-      "item": "ITEM_POKE_BALL",
+      "item": "ITEM_CALCIUM",
       "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL"
     }
   ]

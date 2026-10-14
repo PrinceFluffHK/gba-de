@@ -75,6 +75,8 @@ SlateportCity_EventScript_ScottScene::
 	setflag FLAG_ENABLE_SCOTT_MATCH_CALL
 	msgbox SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou, MSGBOX_DEFAULT
 	closemessage
+	giveitem ITEM_ABILITY_PATCH
+	closemessage
 	applymovement LOCALID_SLATEPORT_SCOTT, SlateportCity_Movement_ScottExit
 	waitmovement 0
 	removeobject LOCALID_SLATEPORT_SCOTT
@@ -125,12 +127,15 @@ SlateportCity_EventScript_EnergyGuru::
 
 	.align 2
 SlateportCity_Pokemart_EnergyGuru:
-	.2byte ITEM_PROTEIN
-	.2byte ITEM_IRON
-	.2byte ITEM_CARBOS
-	.2byte ITEM_ZINC
-	.2byte ITEM_CALCIUM
-	.2byte ITEM_HP_UP
+	.2byte ITEM_SEA_INCENSE
+	.2byte ITEM_LAX_INCENSE
+	.2byte ITEM_ODD_INCENSE
+	.2byte ITEM_ROCK_INCENSE
+	.2byte ITEM_FULL_INCENSE
+	.2byte ITEM_WAVE_INCENSE
+	.2byte ITEM_ROSE_INCENSE
+	.2byte ITEM_LUCK_INCENSE
+	.2byte ITEM_PURE_INCENSE
 	pokemartlistend
 
 SlateportCity_EventScript_EffortRibbonWoman::
@@ -537,8 +542,35 @@ SlateportCity_EventScript_PowerTMClerk::
 
 	.align 2
 SlateportCity_Pokemart_PowerTMs:
-	.2byte ITEM_TM_HIDDEN_POWER
-	.2byte ITEM_TM_SECRET_POWER
+@	.2byte ITEM_TM_HIDDEN_POWER
+@	.2byte ITEM_TM_SECRET_POWER
+	.2byte ITEM_ALAKAZITE
+	.2byte ITEM_STARMINITE
+	.2byte ITEM_PINSIRITE
+	.2byte ITEM_GYARADOSITE
+	.2byte ITEM_HERACRONITE
+	.2byte ITEM_SKARMORITE
+	.2byte ITEM_SCEPTILITE
+	.2byte ITEM_BLAZIKENITE
+	.2byte ITEM_SWAMPERTITE
+	.2byte ITEM_GARDEVOIRITE
+	.2byte ITEM_SABLENITE
+	.2byte ITEM_MAWILITE
+	.2byte ITEM_AGGRONITE
+	.2byte ITEM_MEDICHAMITE
+	.2byte ITEM_MANECTITE
+	.2byte ITEM_SHARPEDONITE
+	.2byte ITEM_CAMERUPTITE
+	.2byte ITEM_ALTARIANITE
+	.2byte ITEM_BANETTITE
+	.2byte ITEM_ABSOLITE
+	.2byte ITEM_ABSOLITE_Z
+	.2byte ITEM_GLALITITE
+	.2byte ITEM_SALAMENCITE
+	.2byte ITEM_METAGROSSITE
+	.2byte ITEM_LATIASITE
+	.2byte ITEM_LATIOSITE
+	.2byte ITEM_FROSLASSITE
 	pokemartlistend
 
 @ Scene with Capt Sterns interview and Team Aqua announcing plans to steal Submarine
@@ -918,8 +950,8 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	end
 
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
-	.string "I'm the ENERGY GURU! I'll go for it and\n"
-	.string "sell you what you need!$"
+	.string "I'm the INCENSE GURU! I'll go for it\n"
+	.string "and sell you what you need!$"
 
 SlateportCity_Text_OhYourPokemon:
 	.string "Oh?\n"
@@ -1315,7 +1347,8 @@ SlateportCity_Text_YouDroveTeamAquaAway:
 	.string "If not, my name's SCOTT.\p"
 	.string "I just saw TEAM AQUA run away from\n"
 	.string "here like they were stung.\p"
-	.string "Let me guess--you drove them away?$"
+	.string "Let me guess--you drove them away\n"
+	.string "with that keen instinct?$"
 
 SlateportCity_Text_MaybeThisTrainer:
 	.string "SCOTT: Hmm…\n"
@@ -1338,6 +1371,9 @@ SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
 	.string "on the talents of other people, too.\p"
 	.string "So, I'll be off to roam other towns\n"
 	.string "a bit more.\p"
+	.string "Here, take this ABILITY PATCH.\p"
+	.string "I picked a couple up when I was in\n"
+	.string "EVER GRANDE CITY.\p"
 	.string "Be seeing you, {PLAYER}{KUN}!$"
 
 SlateportCity_Text_TakingBattleTentChallenge:

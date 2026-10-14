@@ -7799,7 +7799,6 @@ static void FinalizeCapture(void)
         gBattleSpritesDataPtr->animationData->isCriticalCapture = TRUE;
         gBattleSpritesDataPtr->animationData->criticalCaptureSuccess = TRUE;
     }
-
     BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_3_SHAKES_SUCCESS);
     MarkBattlerForControllerExec(gBattlerAttacker);
     TryBattleFormChange(gBattlerTarget, FORM_CHANGE_END_BATTLE, GetBattlerAbility(gBattlerTarget));
@@ -11883,7 +11882,6 @@ void BS_ConsumeBerry(void)
     }
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
-
 
 void BS_JumpIfWeatherAffected(void)
 {

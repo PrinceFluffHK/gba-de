@@ -815,7 +815,6 @@ bool32 IsAffectedByFollowMe(enum BattlerId battlerAtk, enum BattleSide defSide, 
     enum Ability ability = GetBattlerAbility(battlerAtk);
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
-
     if (gSideTimers[defSide].followmeTimer == 0
         || (!IsBattlerAlive(gSideTimers[defSide].followmeTarget) && !IsSmartTargetMoveConsecutiveHit(battlerAtk, move))
         || effect == EFFECT_SNIPE_SHOT

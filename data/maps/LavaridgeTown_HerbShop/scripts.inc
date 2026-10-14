@@ -17,6 +17,9 @@ LavaridgeTown_HerbShop_Pokemart:
 	.2byte ITEM_ENERGY_ROOT
 	.2byte ITEM_HEAL_POWDER
 	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_WHITE_HERB
+	.2byte ITEM_MENTAL_HERB
+	.2byte ITEM_MIRROR_HERB
 	pokemartlistend
 
 LavaridgeTown_HerbShop_EventScript_ExpertM::
@@ -50,12 +53,12 @@ LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine:
 	.string "I like you! Take this!$"
 
 LavaridgeTown_HerbShop_Text_ExplainCharcoal:
-	.string "That CHARCOAL I gave you, it's used\n"
-	.string "for making herbal medicine.\p"
-	.string "It also does wonders when held by\n"
-	.string "a POKéMON.\p"
-	.string "It intensifies the power of FIRE-type\n"
-	.string "moves.$"
+	.string "That FLAME ORB I gave you, it's used\n"
+	.string "in heat-based massages.\p"
+	.string "But it also does something else\n"
+	.string "when held by a POKéMON.\p"
+	.string "It actually inflicts the holder with\n"
+	.string "a BURN, so be careful with it.$"
 
 LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike:
 	.string "Herbal medicine works impressively well.\n"

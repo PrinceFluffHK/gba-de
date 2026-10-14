@@ -67,7 +67,8 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	setvar VAR_BRINEY_LOCATION, 1
 	clearflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
 	setvar VAR_DEVON_CORP_3F_STATE, 1
-	setvar VAR_RUSTBORO_CITY_STATE, 6
+	setvar VAR_RUSTBORO_CITY_STATE, 7
+@	setvar VAR_RUSTBORO_CITY_STATE, 6
 	releaseall
 	end
 
@@ -160,10 +161,9 @@ RustboroCity_DevonCorp_3F_EventScript_MrStone::
 
 RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
 	msgbox RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter, MSGBOX_DEFAULT
-	giveitem ITEM_EXP_SHARE
+	giveitem ITEM_SHINY_CHARM
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_EXP_SHARE
-	msgbox RustboroCity_DevonCorp_3F_Text_ExplainExpShare, MSGBOX_DEFAULT
+	msgbox RustboroCity_DevonCorp_3F_Text_ExplainShinyCharm, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -245,17 +245,15 @@ RustboroCity_DevonCorp_3F_Text_CountingOnYou:
 RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
 	.string "MR. STONE: You delivered my LETTER?\n"
 	.string "Thank you kindly!\p"
-	.string "This is my way of thanking you.\n"
-	.string "It should help you, a TRAINER.$"
+	.string "And this is my way of thanking you\n"
+	.string "beyond just words.$"
 
-RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
-	.string "MR. STONE: A POKéMON holding that\n"
-	.string "EXP. SHARE will be given some of the\l"
-	.string "EXP Points from battle.\p"
-	.string "It will get EXP Points even if it didn't\n"
-	.string "actually battle.\p"
-	.string "I would say EXP. SHARE is quite useful\n"
-	.string "for raising weak POKéMON.$"
+RustboroCity_DevonCorp_3F_Text_ExplainShinyCharm:
+	.string "MR. STONE: The SHINY CHARM will make\n"
+	.string "you roughly four-times as likely to\l"
+	.string "find a rare, off-color POKéMON.\p"
+	.string "They aren't more powerful or anything,\n"
+	.string "but finding one is good fun!$"
 
 RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends:
 	.string "MR. STONE: Since my youth, I've immersed\n"

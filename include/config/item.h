@@ -2,7 +2,7 @@
 #define GUARD_CONFIG_ITEM_H
 
 // Item config
-#define I_SHINY_CHARM_ADDITIONAL_ROLLS  2           // The amount of additional Shiny rolls if the player has the Shiny Charm. Set it to 0 to disable the Shiny Charm's effects.
+#define I_SHINY_CHARM_ADDITIONAL_ROLLS  4           // The amount of additional Shiny rolls if the player has the Shiny Charm. Set it to 0 to disable the Shiny Charm's effects.
 #define I_KEY_FOSSILS                   GEN_LATEST  // In Gen4+, fossils are no longer Key Items.
 #define I_KEY_ESCAPE_ROPE               GEN_LATEST  // In Gen8+, the Escape Rope is a Key Item. Keep in mind that this will make it free to buy in Marts.
 #define I_HEALTH_RECOVERY               GEN_LATEST  // In Gen7+, certain healing items recover a different amount of HP than they did previously.
@@ -13,7 +13,7 @@
 #define I_GEM_BOOST_POWER               GEN_LATEST  // In Gen6+, the power multiplier of Gems is 1.3x instead of 1.5x.
 #define I_USE_EVO_HELD_ITEMS_FROM_BAG   FALSE       // If set to TRUE, items such as the Electirizer can be used from the bag to evolve a Pokémon like in PLA.
 #define I_TYPE_BOOST_POWER              GEN_LATEST  // In Gen4+, type-enhancing held items increase the power of moves by 1.2x instead of 1.1x (1.05x in the case of Sea Incense).
-#define I_SELL_VALUE_FRACTION           GEN_LATEST  // In Gen9+, items sell for 1/4 of their value instead of 1/2.
+#define I_SELL_VALUE_FRACTION           GEN_3  // In Gen9+, items sell for 1/4 of their value instead of 1/2.
 #define I_PRICE                         GEN_LATEST  // Some items have varied in value across generations. See src/data/items.h for values.
 #define I_BERRY_PRICE                   GEN_7       // In Gen8+, the value of Berries increased since they can no longer be planted.
 #define I_POWER_ITEM_BOOST              GEN_LATEST  // In Gen7+, Pokémon holding Power items gain 8 extra EVs instead of 4.
@@ -23,7 +23,7 @@
 #define I_LAX_INCENSE_BOOST             GEN_LATEST  // In Gen4+, Lax Incense lowers accuracy by 10% instead of 5%.
 
 // TM config
-#define I_REUSABLE_TMS          FALSE       // In Gens5-8, TMs are reusable. Setting this to TRUE will make all vanilla TMs reusable, though they can also be cherry-picked by setting their importance to 1.
+#define I_REUSABLE_TMS          TRUE       // In Gens5-8, TMs are reusable. Setting this to TRUE will make all vanilla TMs reusable, though they can also be cherry-picked by setting their importance to 1.
 
 // Exp. Share config
 // To use this feature, replace the 0 with the flag ID you're assigning it to.

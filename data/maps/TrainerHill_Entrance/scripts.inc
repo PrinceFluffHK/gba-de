@@ -244,25 +244,10 @@ TrainerHill_Entrance_EventScript_Clerk::
 	message gText_HowMayIServeYou
 	waitmessage
 	goto_if_set FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ExpandedPokemart
-	pokemart TrainerHill_Entrance_Pokemart_Basic
+	pokemartstandard
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
-
-	.align 2
-TrainerHill_Entrance_Pokemart_Basic:
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_SP_ATK
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_X_ACCURACY
-	pokemartlistend
 
 TrainerHill_Entrance_EventScript_ExpandedPokemart::
 	pokemart TrainerHill_Entrance_Pokemart_Expanded

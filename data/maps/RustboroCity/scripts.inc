@@ -310,6 +310,48 @@ RustboroCity_EventScript_StolenGoodsScene::
 	releaseall
 	end
 
+RustboroCity_EventScript_Shroomish::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	msgbox RustboroCity_Text_WantToEnableChallengeMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_ShroomishEnableChallengeMode
+	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_ShroomishKeepStandardMode
+	end	
+
+RustboroCity_EventScript_ShroomishEnableChallengeMode::
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox RustboroCity_Text_EnabledChallengeMode, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	increasedifficulty
+	setflag FLAG_HIDE_RUSTBORO_CITY_SHROOMISH
+	setflag FLAG_HIDE_BUTTON_PROMPT
+	clearflag FLAG_HIDE_LITTLEROOT_SHROOMISH
+	goto RustboroCity_EventScript_ShroomishBye
+	end
+
+RustboroCity_EventScript_ShroomishKeepStandardMode::
+	msgbox RustboroCity_Text_ChallengeModeIsntForEveryone, MSGBOX_DEFAULT
+	goto RustboroCity_EventScript_ShroomishBye
+	end
+
+RustboroCity_EventScript_ShroomishBye::
+	msgbox RustboroCity_Text_KnowWhereToFindMe, MSGBOX_DEFAULT
+	delay 5
+	applymovement LOCALID_RUSTBORO_SHROOMISH, RustboroCity_Movement_ShroomishSpin
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	applymovement LOCALID_RUSTBORO_SHROOMISH, RustboroCity_Movement_ShroomishJumpAway
+	waitmovement 0
+	removeobject LOCALID_RUSTBORO_SHROOMISH
+	setflag FLAG_HIDE_RUSTBORO_CITY_SHROOMISH
+	clearflag FLAG_HIDE_LITTLEROOT_SHROOMISH
+	release
+	end
+
 @ Unused
 RustboroCity_EventScript_ShadyCharacterTookOff::
 	msgbox RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel, MSGBOX_DEFAULT
@@ -591,7 +633,7 @@ RustboroCity_EventScript_ReturnGoods::
 	call_if_eq VAR_TEMP_1, 3, RustboroCity_EventScript_EmployeeApproachPlayerDown2
 	call_if_eq VAR_TEMP_1, 4, RustboroCity_EventScript_EmployeeFacePlayerRight
 	msgbox RustboroCity_Text_YouGotItThankYou, MSGBOX_DEFAULT
-	giveitem ITEM_GREAT_BALL
+	giveitem ITEM_TM_FALSE_SWIPE
 	call_if_eq VAR_RESULT, FALSE, RustboroCity_EventScript_BagFull
 	msgbox RustboroCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
@@ -1012,6 +1054,28 @@ RustboroCity_EventScript_Boy1::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
+RustboroCity_Movement_ShroomishSpin:
+	face_up
+	delay_4
+	face_left
+	delay_4
+	face_down
+	delay_4
+	face_right
+	delay_4
+	step_end
+
+RustboroCity_Movement_ShroomishJumpAway:
+	face_up
+	disable_anim
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	step_end
+
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The DEVON CORPORATION…\n"
 	.string "We all just shorten it to DEVON.\p"
@@ -1115,7 +1179,7 @@ RustboroCity_Text_YouGotItThankYou:
 	.string "You got them back!\p"
 	.string "You really are a great TRAINER!\p"
 	.string "I know! As my thanks, I'll give you\n"
-	.string "another GREAT BALL!$"
+	.string "another TECHNICAL MACHINE!$"
 
 RustboroCity_Text_YoureLoadedWithItems:
 	.string "You're loaded with items.\n"
@@ -1288,3 +1352,38 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two TRAINERS by yourself?$"
+
+RustboroCity_Text_WantToEnableChallengeMode:
+	.string "Oh hey there {PLAYER}!\p"
+	.string "Oh, you don't know me?\n"
+	.string "I'm NAPPY, the SHROOM OF CHALLENGE!\p"
+	.string "NAPPY: I see you've earned some\n"
+	.string "experience with Emerald: DE.\p"
+	.string "I'm here to ask if you\n"
+	.string "want to turn on EXPERT MODE?\p"
+	.string "STANDARD MODE can be pretty tough,\n"
+	.string "to be sure…\p"
+	.string "But EXPERT MODE was made for trainers\n"
+	.string "who wish to truly push themselves.\p"
+	.string "Starting with dear Roxanne here,\n"
+	.string "Boss trainers will often bring extra\l"
+	.string "team members and new movesets.\p"
+	.string "So what do you think?\p"
+	.string "Does EXPERT MODE\n"
+	.string "sound right for you?$"
+
+RustboroCity_Text_EnabledChallengeMode:
+	.string "EXPERT MODE was enabled.\n"
+	.string "Best of luck!$"
+
+RustboroCity_Text_ChallengeModeIsntForEveryone:
+	.string "NAPPY: Got it.\n"
+	.string "We'll stick with STANDARD MODE.$"
+
+RustboroCity_Text_KnowWhereToFindMe:
+	.string "NAPPY: If you change your mind\n"
+	.string "and want to swap MODE in the future,\p"
+	.string "I'll be hanging out back in\n"
+	.string "LITTLEROOT TOWN.\p"
+	.string "So long, {PLAYER}!\p"
+	.string "SHROOOOOOOOOOOOOOOOOOOOOOM!!!$"

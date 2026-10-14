@@ -252,6 +252,8 @@ MossdeepCity_EventScript_Scott::
 	lock
 	faceplayer
 	msgbox MossdeepCity_Text_ScottSomethingWrongWithTown, MSGBOX_DEFAULT
+	giveitem ITEM_ABILITY_PATCH
+	waitbuttonpress
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_EventScript_ScottExitNorth
 	call_if_eq VAR_FACING, DIR_EAST, MossdeepCity_EventScript_ScottExitEast
@@ -414,7 +416,8 @@ MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "People are going on about a warning\n"
 	.string "letter and the SPACE CENTER…\p"
 	.string "I don't think it concerns me in any\n"
-	.string "way, though.$"
+	.string "way, though.\p"
+	.string "Here, take one last ABILITY PATCH!$"
 
 MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "Ahh… It feels great letting the waves\n"

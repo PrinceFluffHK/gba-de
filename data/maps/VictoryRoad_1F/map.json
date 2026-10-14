@@ -16,7 +16,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 33,
       "y": 22,
       "elevation": 3,
@@ -29,11 +29,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
       "x": 6,
       "y": 15,
       "elevation": 4,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -42,7 +42,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 27,
       "y": 34,
       "elevation": 3,
@@ -69,7 +69,7 @@
       "flag": "FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_TM",
       "x": 40,
       "y": 26,
       "elevation": 3,
@@ -77,12 +77,12 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_ELIXIR",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_ROCK_SLIDE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_TM",
       "x": 37,
       "y": 39,
       "elevation": 4,
@@ -90,7 +90,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_POLTERGEIST",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_VICTORY_ROAD_1F_PP_UP"
     },
@@ -108,28 +108,28 @@
       "flag": "FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 29,
-      "y": 17,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "VictoryRoad_1F_EventScript_Katelynn",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 32,
-      "y": 17,
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 33,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "VictoryRoad_1F_EventScript_Quincy",
       "flag": "0"
     }
@@ -197,7 +197,7 @@
       "x": 30,
       "y": 39,
       "elevation": 4,
-      "item": "ITEM_ULTRA_BALL",
+      "item": "ITEM_PROTEIN",
       "flag": "FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL"
     }
   ]

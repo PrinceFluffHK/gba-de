@@ -10866,7 +10866,6 @@ bool32 IsAnyTargetAffected(void)
         if (!IsBattlerUnaffectedByMove(battler))
             return TRUE;
     }
-
     return FALSE;
 }
 

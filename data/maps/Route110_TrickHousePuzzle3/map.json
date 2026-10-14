@@ -63,7 +63,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_WOOD_MAIL",
+      "trainer_sight_or_berry_tree_id": "ITEM_IMPISH_MINT",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_WOOD_MAIL"
     },
@@ -76,7 +76,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_SHADOW_MAIL",
+      "trainer_sight_or_berry_tree_id": "ITEM_HP_UP",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_SHADOW_MAIL"
     },

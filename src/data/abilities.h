@@ -182,6 +182,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
+    [ABILITY_PSYCH_OUT] =
+    {
+        .name = _("Psych Out"),
+        .description = COMPOUND_STRING("Lowers foes' SpA on entry."),
+        .aiRating = 7,
+    },
+
     [ABILITY_SHADOW_TAG] =
     {
         .name = _("Shadow Tag"),
@@ -2245,6 +2252,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 5,
     },
 
+    [ABILITY_WOOLLY_CHARGED] =
+    {
+        .name = _("Woolly-Charged"),
+        .description = COMPOUND_STRING("Becomes charged when hit."),
+        .aiRating = 5,
+    },
+
     [ABILITY_PROTOSYNTHESIS] =
     {
         .name = _("Protosynthesis"),
@@ -2555,5 +2569,25 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Aura Guard"),
         .description = COMPOUND_STRING("Unimplemented."),
+    },
+    [ABILITY_HARDY_THORNS] =
+    {
+        .name = _("Hardy Thorns"),
+        .description = COMPOUND_STRING("Sand immune with barbs."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_PYROCLASTIC_FLOW] =
+    {
+        .name = _("Pyroclastic Flow"),
+        .description = COMPOUND_STRING("Burns the foe when damaged."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_JUGGERNAUT] =
+    {
+        .name = _("Juggernaut"),
+        .description = COMPOUND_STRING("Ups Attack and locks move."),
+        .aiRating = 4,
     },
 };

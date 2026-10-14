@@ -29,7 +29,7 @@
       "flag": "FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_TM",
       "x": 19,
       "y": 40,
       "elevation": 3,
@@ -118,7 +118,7 @@
       "x": 9,
       "y": 8,
       "elevation": 0,
-      "item": "ITEM_ULTRA_BALL",
+      "item": "ITEM_CHERISH_BALL",
       "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_ULTRA_BALL"
     },
     {
@@ -126,7 +126,7 @@
       "x": 16,
       "y": 22,
       "elevation": 0,
-      "item": "ITEM_MAX_ETHER",
+      "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER"
     }
   ]

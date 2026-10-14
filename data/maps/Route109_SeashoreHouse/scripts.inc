@@ -11,6 +11,7 @@ Route109_SeashoreHouse_EventScript_Owner::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_6_SODA_POP, Route109_SeashoreHouse_EventScript_AlreadyReceivedSodaPop
 	goto_if_set FLAG_DEFEATED_SEASHORE_HOUSE, Route109_SeashoreHouse_EventScript_DefeatedTrainers
+	goto_if_set FLAG_BOSS_RUSH_MODE, Route109_SeashoreHouse_EventScript_DefeatedTrainers
 	goto_if_set FLAG_TEMP_2, Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction
 	msgbox Route109_SeashoreHouse_Text_SeashoreHouseIntro, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_2
@@ -25,6 +26,7 @@ Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction::
 Route109_SeashoreHouse_EventScript_DefeatedTrainers::
 	msgbox Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles, MSGBOX_DEFAULT
 	giveitem ITEM_SODA_POP, 6
+	giveitem ITEM_TM_CHILLING_WATER
 	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_BagFull
 	setflag FLAG_RECEIVED_6_SODA_POP
 	release
