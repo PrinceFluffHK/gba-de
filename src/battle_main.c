@@ -2480,8 +2480,9 @@ static void SpriteCB_AnimFaintOpponent(struct Sprite *sprite)
 // Used when selecting a move, which can hit multiple targets, in double battles.
 void SpriteCB_ShowAsMoveTarget(struct Sprite *sprite)
 {
+    if (sprite->callback != SpriteCB_BlinkVisible)
+        sprite->data[4] = sprite->invisible;
     sprite->data[3] = 8;
-    sprite->data[4] = sprite->invisible;
     sprite->callback = SpriteCB_BlinkVisible;
 }
 
@@ -2503,8 +2504,7 @@ void SpriteCB_HideAsMoveTarget(struct Sprite *sprite)
 
 bool32 ShouldHideBattler(enum BattlerId battler)
 {
-    if (!IsBattlerAlive(battler)
-     || !gBattleSpritesDataPtr->healthBoxesData[battler].healthboxIsBouncing)
+    if (!IsBattlerAlive(battler))
         return FALSE;
 
     SpriteCallback callback = gSprites[gBattlerSpriteIds[battler]].callback;
@@ -2744,7 +2744,7 @@ static void ClearSetBScriptingStruct(void)
     memset(&gBattleScripting, 0, sizeof(gBattleScripting));
 
     gBattleScripting.windowsType = temp;
-    gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     #if TESTING
     gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     #endif

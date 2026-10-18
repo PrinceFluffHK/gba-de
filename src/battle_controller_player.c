@@ -10,8 +10,10 @@
 #include "battle_tv.h"
 #include "battle_z_move.h"
 #include "battle_gimmick.h"
+#include "battle_util.h"
 #include "bg.h"
 #include "data.h"
+#include "event_data.h"
 #include "item.h"
 #include "item_menu.h"
 #include "link.h"
@@ -49,6 +51,7 @@
 #include "pokedex.h"
 #include "test/battle.h"
 // #include "test/test_runner_battle.h"
+#include "constants/flags.h"
 
 extern void SpriteCB_BlinkVisible(struct Sprite *sprite);
 
@@ -95,10 +98,11 @@ static void Task_UpdateLvlInHealthbox(u8);
 static void PrintLinkStandbyMsg(void);
 static void CreateInfoWindow(u32 battler);
 static void HideAllTargets(void);
-static void HideShownTargets(enum BattlerId battler);
 static void ShowMovePreviewTargets(enum BattlerId battler);
 static void TryShowAsTarget(enum BattlerId battler);
 static void CreateSpeedTiersWindow(u32 battler);
+static void CreateMovePreviewText(u32 battlerPosition);
+static const u8 *GetBattleWeatherName(void);
 
 static void ReloadMoveNames(enum BattlerId battler);
 static u32 CheckTypeEffectiveness(enum BattlerId battlerAtk, enum BattlerId battlerDef);
@@ -663,7 +667,7 @@ static void CreateSpeedTiersWindow(u32 battler)
     BattlePutTextOnWindow(gStringVar1, B_WIN_ACTION_PROMPT);
 }
 
-void CreateMovePreviewText(u32 battlerPosition)
+static void CreateMovePreviewText(u32 battlerPosition)
 {
         u32 switchMon;
         u32 battler = GetBattlerAtPosition(battlerPosition);
@@ -672,7 +676,7 @@ void CreateMovePreviewText(u32 battlerPosition)
 
         if (gBattleStruct->monToSwitchIntoId[GetBattlerAtPosition(battlerPosition)] != PARTY_SIZE) // If the opponent is switching:
         {
-            switchMon = GetMonData(&gEnemyParty[gAiLogicData->mostSuitableMonId[battler]], MON_DATA_SPECIES);
+            switchMon = GetMonData(&GetBattlerParty(battler)[gAiLogicData->mostSuitableMonId[battler]], MON_DATA_SPECIES);
             StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(GetBattlerAtPosition(battlerPosition)), MON_DATA_SPECIES, NULL)));
             StringAppend(gStringVar1, COMPOUND_STRING(" will switch\nto "));
             StringAppend(gStringVar1, GetSpeciesName(switchMon));
@@ -868,7 +872,7 @@ static void HideAllTargets(void)
     {
         if (ShouldHideBattler(i))
         {
-            gSprites[gBattlerSpriteIds[i]].callback = SpriteCB_HideAsMoveTarget;
+            SpriteCB_HideAsMoveTarget(&gSprites[gBattlerSpriteIds[i]]);
             EndBounceEffect(i, BOUNCE_HEALTHBOX);
         }
     }
@@ -940,6 +944,73 @@ static void TryShowAsTarget(enum BattlerId battler)
     }
 }
 
+static void ShowMovePreviewTargets(enum BattlerId battler)
+{
+    enum Move move = gBattleMons[battler].moves[gBattleStruct->chosenMovePositions[battler]];
+    enum MoveTarget target = GetBattlerMoveSelectionTargetType(battler, move);
+    enum BattlerId partner = GetPartnerBattler(battler);
+
+    switch (target)
+    {
+    case TARGET_USER:
+        TryShowAsTarget(battler);
+        break;
+    case TARGET_ALLY:
+        TryShowAsTarget(partner);
+        break;
+    case TARGET_USER_AND_ALLY:
+        TryShowAsTarget(battler);
+        TryShowAsTarget(partner);
+        break;
+    case TARGET_BOTH:
+    case TARGET_FOES_AND_ALLY:
+    case TARGET_ALL_BATTLERS:
+    case TARGET_FIELD:
+        for (enum BattlerId i = 0; i < gBattlersCount; i++)
+        {
+            if (target == TARGET_ALL_BATTLERS || target == TARGET_FIELD
+             || !IsBattlerAlly(i, battler)
+             || (target == TARGET_FOES_AND_ALLY && i == partner))
+                TryShowAsTarget(i);
+        }
+        break;
+    case TARGET_OPPONENTS_FIELD:
+        break;
+    default:
+        TryShowAsTarget(gBattleStruct->moveTarget[battler]);
+        break;
+    }
+}
+
+static const u8 *GetBattleWeatherName(void)
+{
+    switch (GetBattleWeather(gBattleWeather))
+    {
+    case BATTLE_WEATHER_RAIN:
+    case BATTLE_WEATHER_RAIN_PRIMAL:
+    case BATTLE_WEATHER_RAIN_DOWNPOUR:
+        return COMPOUND_STRING("Rain");
+    case BATTLE_WEATHER_SUN:
+    case BATTLE_WEATHER_SUN_PRIMAL:
+        return COMPOUND_STRING("Sun");
+    case BATTLE_WEATHER_SANDSTORM:
+        return COMPOUND_STRING("Sandstorm");
+    case BATTLE_WEATHER_HAIL:
+        return COMPOUND_STRING("Hail");
+    case BATTLE_WEATHER_SNOW:
+        return COMPOUND_STRING("Snow");
+    case BATTLE_WEATHER_FOG:
+        return COMPOUND_STRING("Fog");
+    case BATTLE_WEATHER_STRONG_WINDS:
+        return COMPOUND_STRING("Strong Winds");
+    case BATTLE_WEATHER_NONE:
+    case BATTLE_WEATHER_COUNT:
+        return COMPOUND_STRING("None");
+    }
+
+    return COMPOUND_STRING("None");
+}
+
 static bool32 CanSelectBattler(enum MoveTarget target)
 {
     switch (target)
@@ -961,6 +1032,85 @@ static bool32 CanSelectBattler(enum MoveTarget target)
     return FALSE;
 }
 
+static void LoadMovesIntoBuffer(struct ChooseMoveStruct *dst, enum BattlerId src)
+{
+    for (int i = 0; i < MAX_MON_MOVES; i++)
+    {
+        dst->moves[i]     = gBattleMons[src].moves[i];
+        dst->currentPP[i] = gBattleMons[src].pp[i];
+        dst->maxPP[i]     = gBattleMons[src].pp[i];
+    }
+}
+
+void SwapMoveView(enum BattlerId currentBattler, enum BattlerId targetBattler, enum BattlerId playerBattler)
+{
+    MoveSelectionDisplayMoveNames(playerBattler);
+    MoveSelectionDisplayPPNumber(playerBattler);
+    MoveSelectionDisplayMoveType(playerBattler);
+    MoveSelectionCreateCursorAt(gMoveSelectionCursor[playerBattler], 0);
+    EndBounceEffect(currentBattler, BOUNCE_HEALTHBOX);
+    EndBounceEffect(currentBattler, BOUNCE_MON);
+    DoBounceEffect(targetBattler, BOUNCE_HEALTHBOX, 7, 1);
+    DoBounceEffect(targetBattler, BOUNCE_MON, 7, 1);
+}
+
+void HandleViewOpposingMoves(enum BattlerId playerBattler, bool32 pressedRButton, struct ChooseMoveStruct *moveInfo)
+{
+    enum BattlerId oppLeft  = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+    enum BattlerId oppRight = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+
+    enum BattlerId target = pressedRButton ? oppRight : oppLeft;
+    bool32 viewing = gBattleStruct->viewingOpponentMoves;
+    bool32 viewingRight = gBattleStruct->viewingRightOpponent;
+
+    PlaySE(SE_SELECT);
+
+    // --- ENTER VIEW ---
+    if (!viewing)
+    {
+        gBattleStruct->viewingOpponentMoves = TRUE;
+        gBattleStruct->viewingRightOpponent = pressedRButton;
+
+        // Save player data (non-destructive preview)
+        for (int i = 0; i < MAX_MON_MOVES; i++)
+        {
+            gBattleStruct->savedPlayerMoves[i] = moveInfo->moves[i];
+            gBattleStruct->savedPlayerPP[i]    = moveInfo->currentPP[i];
+            gBattleStruct->savedPlayerMaxPP[i] = moveInfo->maxPP[i];
+        }
+
+        LoadMovesIntoBuffer(moveInfo, target);
+        SwapMoveView(playerBattler, target, playerBattler);
+        return;
+    }
+
+    // --- EXIT VIEW (pressed same side again) ---
+    if ((viewingRight && pressedRButton) || (!viewingRight && !pressedRButton))
+    {
+        gBattleStruct->viewingOpponentMoves = FALSE;
+
+        // Restore player data
+        for (int i = 0; i < MAX_MON_MOVES; i++)
+        {
+            moveInfo->moves[i]     = gBattleStruct->savedPlayerMoves[i];
+            moveInfo->currentPP[i] = gBattleStruct->savedPlayerPP[i];
+            moveInfo->maxPP[i]     = gBattleStruct->savedPlayerMaxPP[i];
+        }
+
+        SwapMoveView(target, playerBattler, playerBattler);
+        return;
+    }
+
+    // --- SWITCH OPPONENT ---
+    gBattleStruct->viewingRightOpponent = pressedRButton;
+
+    LoadMovesIntoBuffer(moveInfo, target);
+
+    // Determine previous opponent for clean bounce removal
+    enum BattlerId prev = viewingRight ? oppRight : oppLeft;
+    SwapMoveView(prev, target, playerBattler);
+}
+
 void HandleInputChooseMove(enum BattlerId battler)
 {
     u32 canSelectTarget = 0;
@@ -970,6 +1120,27 @@ void HandleInputChooseMove(enum BattlerId battler)
         gPlayerDpadHoldFrames++;
     else
         gPlayerDpadHoldFrames = 0;
+
+    if (JOY_NEW(L_BUTTON)
+        && IsDoubleBattle()
+        && !(gAbsentBattlerFlags & (1u << GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
+    {
+        HandleViewOpposingMoves(battler, FALSE, moveInfo);
+        return;
+    }
+    else if (JOY_NEW(R_BUTTON)
+             && IsDoubleBattle()
+             && !(gAbsentBattlerFlags & (1u << GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))))
+    {
+        HandleViewOpposingMoves(battler, TRUE, moveInfo);
+        return;
+    }
+
+    if (gBattleStruct->viewingOpponentMoves && JOY_NEW(A_BUTTON))
+    {
+        HandleViewOpposingMoves(battler, gBattleStruct->viewingRightOpponent, moveInfo);
+        return;
+    }
 
     if (JOY_NEW(A_BUTTON) && !gBattleStruct->descriptionSubmenu)
     {
@@ -1095,6 +1266,12 @@ void HandleInputChooseMove(enum BattlerId battler)
             DoBounceEffect(battler, BOUNCE_HEALTHBOX, battler, 1);
             DoBounceEffect(battler, BOUNCE_MON, battler, 1);
 
+            for (int i = 0; i < MAX_MON_MOVES; i++)
+            {
+                moveInfo->moves[i] = gBattleStruct->savedPlayerMoves[i];
+                moveInfo->currentPP[i] = gBattleStruct->savedPlayerPP[i];
+                moveInfo->maxPP[i] = gBattleStruct->savedPlayerMaxPP[i];
+            }
             gBattleStruct->viewingOpponentMoves = FALSE;
             ReloadMoveNames(battler);
             // gSprites[gBattlerSpriteIds[opponentLeft]].callback = SpriteCallbackDummy;
@@ -1958,17 +2135,26 @@ static void PlayerHandleYesNoInput(enum BattlerId battler)
     }
 }
 
+static enum BattlerId GetMoveViewBattler(enum BattlerId battler)
+{
+    if (!gBattleStruct->viewingOpponentMoves)
+        return battler;
+
+    return GetBattlerAtPosition(gBattleStruct->viewingRightOpponent ? B_POSITION_OPPONENT_LEFT : B_POSITION_OPPONENT_RIGHT);
+}
+
 static void MoveSelectionDisplayMoveNames(enum BattlerId battler)
 {
     s32 i;
+    enum BattlerId viewBattler = GetMoveViewBattler(battler);
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     gNumberOfMovesToChoose = 0;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         MoveSelectionDestroyCursorAt(i);
-        if (IsGimmickSelected(battler, GIMMICK_DYNAMAX) || GetActiveGimmick(battler) == GIMMICK_DYNAMAX)
-            StringCopy(gDisplayedStringBattle, GetMoveName(GetMaxMove(battler, moveInfo->moves[i])));
+        if (IsGimmickSelected(viewBattler, GIMMICK_DYNAMAX) || GetActiveGimmick(viewBattler) == GIMMICK_DYNAMAX)
+            StringCopy(gDisplayedStringBattle, GetMoveName(GetMaxMove(viewBattler, moveInfo->moves[i])));
         else
             StringCopy(gDisplayedStringBattle, GetMoveName(moveInfo->moves[i]));
         // Prints on windows B_WIN_MOVE_NAME_1, B_WIN_MOVE_NAME_2, B_WIN_MOVE_NAME_3, B_WIN_MOVE_NAME_4
@@ -2004,7 +2190,8 @@ static void MoveSelectionDisplayPPNumber(enum BattlerId battler)
 static void MoveSelectionDisplayMoveType(enum BattlerId battler)
 {
     u8 *txtPtr, *end;
-    enum Species speciesId = gBattleMons[battler].species;
+    enum BattlerId viewBattler = GetMoveViewBattler(battler);
+    enum Species speciesId = gBattleMons[viewBattler].species;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     enum Move move = moveInfo->moves[gMoveSelectionCursor[battler]];
@@ -2013,8 +2200,8 @@ static void MoveSelectionDisplayMoveType(enum BattlerId battler)
 
     if (effect == EFFECT_TERA_BLAST)
     {
-        if (IsGimmickSelected(battler, GIMMICK_TERA) || GetActiveGimmick(battler) == GIMMICK_TERA)
-            type = GetBattlerTeraType(battler);
+        if (IsGimmickSelected(viewBattler, GIMMICK_TERA) || GetActiveGimmick(viewBattler) == GIMMICK_TERA)
+            type = GetBattlerTeraType(viewBattler);
     }
     else if (effect == EFFECT_IVY_CUDGEL)
     {
@@ -2024,20 +2211,20 @@ static void MoveSelectionDisplayMoveType(enum BattlerId battler)
             type = GetSpeciesType(speciesId, 1);
     }
     else if (GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS
-             && (GetActiveGimmick(battler) == GIMMICK_DYNAMAX || IsGimmickSelected(battler, GIMMICK_DYNAMAX)))
+             && (GetActiveGimmick(viewBattler) == GIMMICK_DYNAMAX || IsGimmickSelected(viewBattler, GIMMICK_DYNAMAX)))
     {
         type = TYPE_NORMAL; // Max Guard is always a Normal-type move
     }
     else if (effect == EFFECT_TERA_STARSTORM)
     {
         if (speciesId == SPECIES_TERAPAGOS_STELLAR
-        || (IsGimmickSelected(battler, GIMMICK_TERA) && speciesId == SPECIES_TERAPAGOS_TERASTAL))
+        || (IsGimmickSelected(viewBattler, GIMMICK_TERA) && speciesId == SPECIES_TERAPAGOS_TERASTAL))
             type = TYPE_STELLAR;
     }
     else if (P_SHOW_DYNAMIC_TYPES) // Non-vanilla changes to battle UI showing dynamic types
     {
-        struct Pokemon *mon = GetBattlerMon(battler);
-        type = CheckDynamicMoveType(mon, move, battler, MON_IN_BATTLE);
+        struct Pokemon *mon = GetBattlerMon(viewBattler);
+        type = CheckDynamicMoveType(mon, move, viewBattler, MON_IN_BATTLE);
     }
     end = StringCopy(txtPtr, gTypesInfo[type].name);
 
@@ -2407,15 +2594,15 @@ static void CreateInfoWindow(u32 battler)
 
         for (i = 0; i < trainerAPartySize; i++)
         {
-            if (GetMonData(&gEnemyParty[i], MON_DATA_HP) != 0)
+            if (GetMonData(&gParties[B_TRAINER_OPPONENT_A][i], MON_DATA_HP) != 0)
                 aliveCount++;
         }
 
         if (trainerBPartySize != 0)
         {
-            for (i = PARTY_SIZE / 2; i < PARTY_SIZE / 2 + trainerBPartySize; i++)
+            for (i = 0; i < trainerBPartySize; i++)
             {
-                if (GetMonData(&gEnemyParty[i], MON_DATA_HP) != 0)
+                if (GetMonData(&gParties[B_TRAINER_OPPONENT_B][i], MON_DATA_HP) != 0)
                     aliveCount++;
             }
         }

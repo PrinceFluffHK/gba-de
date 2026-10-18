@@ -959,7 +959,8 @@ static void UseTMHM(u8 taskId)
 
 static void RemoveUsedItem(void)
 {
-    RemoveBagItem(gSpecialVar_ItemId, 1);
+    if (GetItemConsumability(gSpecialVar_ItemId))
+        RemoveBagItem(gSpecialVar_ItemId, 1);
     CopyItemName(gSpecialVar_ItemId, gStringVar2);
     StringExpandPlaceholders(gStringVar4, gText_PlayerUsedVar2);
     if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
@@ -1594,7 +1595,7 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
 static void ItemUseOnFieldCB_Cut(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(FieldMove_EventScript_Cut);
+    ScriptContext_SetupScript(EventScript_UseCut);
     DestroyTask(taskId);
 }
 

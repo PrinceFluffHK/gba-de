@@ -28,9 +28,12 @@ struct FieldMoveInfo
     bool32 (*isUnlockedFunc)(void);
     u16 moveID;
     u8 partyMsgID;
+    bool8 hideIfLocked;
 };
 
 extern const struct FieldMoveInfo gFieldMoveInfo[];
+bool32 FieldMove_IsVisible(enum FieldMove fieldMove);
+const u8 *FieldMove_GetLockedMessage(enum FieldMove fieldMove);
 
 static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)
 {

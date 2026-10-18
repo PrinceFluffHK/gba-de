@@ -689,6 +689,12 @@ struct BattleStruct
     u8 ballSwapped:1; // Used for the last used ball feature
     u8 effectsBeforeUsingMoveDone:1; // Mega Evo and Focus Punch/Shell Trap effects.
     u8 throwingPokeBall:1;
+    u8 movePreviewDisplayed;
+    u8 viewingOpponentMoves;
+    u8 viewingRightOpponent;
+    enum Move savedPlayerMoves[MAX_MON_MOVES];
+    u8 savedPlayerPP[MAX_MON_MOVES];
+    u8 savedPlayerMaxPP[MAX_MON_MOVES];
     u8 ballSpriteIds[2];    // item gfx, window gfx
     u8 moveInfoSpriteId; // move info, window gfx
     // When using a move which hits multiple opponents which is then bounced by a target, we need to make sure, the move hits both opponents, the one with bounce, and the one without.

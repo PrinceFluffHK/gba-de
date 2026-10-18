@@ -248,6 +248,8 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
         gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
         gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsPreviewStyle;
+        if (gTasks[taskId].tBattleStyle > OPTIONS_PREVIEW_NONE)
+            gTasks[taskId].tBattleStyle = OPTIONS_PREVIEW_FULL;
         gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
@@ -483,9 +485,14 @@ static void BattleScene_DrawChoices(u8 selection)
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    if (JOY_NEW(DPAD_LEFT))
     {
-        selection ^= 1;
+        selection = selection == OPTIONS_PREVIEW_LIMITED ? OPTIONS_PREVIEW_NONE : selection - 1;
+        sArrowPressed = TRUE;
+    }
+    else if (JOY_NEW(DPAD_RIGHT))
+    {
+        selection = selection == OPTIONS_PREVIEW_NONE ? OPTIONS_PREVIEW_LIMITED : selection + 1;
         sArrowPressed = TRUE;
     }
 

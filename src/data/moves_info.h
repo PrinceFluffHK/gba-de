@@ -361,7 +361,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     #else
         .criticalHitStage = 0,
     #endif
-        2pp = 10,
+        .pp = 10,
         .target = TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -773,7 +773,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .accuracy = 1,
             .chance = 20,
         }),
         .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
@@ -3604,7 +3605,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_2,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .speed = 2,
             .chance = 100, //B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS : CONTEST_EFFECT_STARTLE_PREV_MON,
@@ -15155,7 +15157,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
         .assistBanned = TRUE,
-        .argument.twoTurnAttack = { .stringId = STRINGID_VANISHEDINSTANTLY, .status = STATE_PHANTOM_FORCE },
+        .argument.twoTurnAttack = { .stringId = STRINGID_VANISHEDINSTANTLY, .state = STATE_PHANTOM_FORCE },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FEINT,
             .argument.brokeProtect = B_MSG_BROKE_THROUGH_PROTECT,

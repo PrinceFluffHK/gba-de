@@ -1306,6 +1306,10 @@
 	.4byte \products
 	.endm
 
+	.macro pokemartstandard
+	pokemart
+	.endm
+
 	@ Used as the endpoint for a Pokemart item list
 	.macro pokemartlistend
 	.2byte ITEM_NONE

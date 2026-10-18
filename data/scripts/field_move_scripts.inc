@@ -25,7 +25,7 @@ EventScript_CutTreeWithItem::
     bufferitemname STR_VAR_2, ITEM_CUT_TOOL
     msgbox Text_WantToCutWithItem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
-    msgbox Text_PlayerUsedFieldTool, MSGBOX_DEFAULT
+    msgbox gText_PlayerUsedVar2, MSGBOX_DEFAULT
     closemessage
     setfieldeffectargument 1, TRUE @ Indicate that an item was used
     goto EventScript_CutTreeCommon

@@ -1,13 +1,20 @@
 ENTRY(Start)
 
+PHDRS
+{
+    rom PT_LOAD FLAGS(5);
+    ewram PT_LOAD FLAGS(6);
+    iwram PT_LOAD FLAGS(6);
+}
+
 gNumMusicPlayers = 4;
 gMaxLines = 0;
 gInitialMainCB2 = CB2_InitCopyrightScreenAfterBootup;
 
 MEMORY
 {
-    EWRAM (rwx) : ORIGIN = 0x2000000, LENGTH = 256K
-    IWRAM (rwx) : ORIGIN = 0x3000000, LENGTH = 32K
+    EWRAM (rw) : ORIGIN = 0x2000000, LENGTH = 256K
+    IWRAM (rw) : ORIGIN = 0x3000000, LENGTH = 32K
     ROM    (rx) : ORIGIN = 0x8000000, LENGTH = 32M
 }
 
@@ -21,13 +28,13 @@ SECTIONS {
         *(.ewram*)
         . = ALIGN(4);
         __ewram_end = .;
-    } > EWRAM
+    } > EWRAM :ewram
 
     .ewram.sbss (NOLOAD) :
     ALIGN(4)
     {
         *.o(.sbss);
-    } > EWRAM
+    } > EWRAM :ewram
 
     .iwram ORIGIN(IWRAM) : AT (__iwram_lma)
     ALIGN(4)
@@ -36,7 +43,7 @@ SECTIONS {
         *(.iwram*);
         . = ALIGN(4);
         __iwram_end = .;
-    } > IWRAM
+    } > IWRAM :iwram
 
     .iwram.bss (NOLOAD) :
     ALIGN(4)
@@ -46,7 +53,7 @@ SECTIONS {
         src/*.o(COMMON);
         *libc.a:*.o(COMMON);
         *libnosys.a:*.o(COMMON);
-    } > IWRAM
+    } > IWRAM :iwram
 
     /* BEGIN ROM DATA */
 
@@ -65,19 +72,19 @@ SECTIONS {
         KEEP(*.o(.text.consts));
         *.o(.text*);
         *.o(.eh_frame);
-    } > ROM =0
+    } > ROM :rom =0
 
     script_data :
     ALIGN(4)
     {
         data/*.o(script_data);
-    } > ROM =0
+    } > ROM :rom =0
 
     .rodata.compound_string :
     SUBALIGN(0)
     {
         *.o(.rodata.compound_string.*);
-    } > ROM =0
+    } > ROM :rom =0
 
     .rodata :
     ALIGN(4)
@@ -87,21 +94,21 @@ SECTIONS {
         *libc.a:*.o(.rodata*);
         *libc.a:*.o(.data*);
         sound/songs/*.o(.rodata);
-    } > ROM =0
+    } > ROM :rom =0
 
     .data.iwram :
     ALIGN(4)
     {
         __iwram_lma = .;
         . = . + (__iwram_end - __iwram_start);
-    } > ROM = 0
+    } > ROM :rom = 0
 
     .data.ewram :
     ALIGN(4)
     {
         __ewram_lma = .;
         . = . + (__ewram_end - __ewram_start);
-    } > ROM = 0
+    } > ROM :rom = 0
 
     __rom_end = .;
 

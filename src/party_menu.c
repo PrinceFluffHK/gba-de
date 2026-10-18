@@ -5853,7 +5853,8 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         if (targetSpecies != SPECIES_NONE)
         {
             GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, DO_EVO);
-            RemoveBagItem(gSpecialVar_ItemId, 1);
+            if (gSpecialVar_ItemId != ITEM_RARE_CANDY && GetItemConsumability(gSpecialVar_ItemId))
+                RemoveBagItem(gSpecialVar_ItemId, 1);
             FreePartyPointers();
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
             BeginEvolutionScene(mon, targetSpecies, canStopEvo, gPartyMenu.slotId);
@@ -5875,7 +5876,8 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL);
         gPartyMenuUseExitCallback = TRUE;
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        RemoveBagItem(gSpecialVar_ItemId, 1);
+        if (gSpecialVar_ItemId != ITEM_RARE_CANDY && GetItemConsumability(gSpecialVar_ItemId))
+            RemoveBagItem(gSpecialVar_ItemId, 1);
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)
         {
@@ -6138,7 +6140,8 @@ void Task_DynamaxCandy(u8 taskId)
     case 3:
         tDynamaxLevel++;
         SetMonData(&gParties[B_TRAINER_PLAYER][tMonId], MON_DATA_DYNAMAX_LEVEL, &tDynamaxLevel);
-        RemoveBagItem(gSpecialVar_ItemId, 1);
+        if (GetItemConsumability(gSpecialVar_ItemId))
+            RemoveBagItem(gSpecialVar_ItemId, 1);
         gTasks[taskId].func = Task_ClosePartyMenu;
         break;
     }
