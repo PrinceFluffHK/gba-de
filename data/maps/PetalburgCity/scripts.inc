@@ -795,9 +795,8 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "Here, take this Ability Capsule\n"
 	.string "humoring me.\p"
 	.string "You can buy these capsules at any\n"
-	.string "POKéMART, but Ability Patches are\l"
-	.string "only for sale in EVER GRANDE CITY.$"
+	.string "POKéMART, but you'll need 8 badges\l"
+	.string "to buy an Ability Patch.$"
 
 PetalburgCity_Text_WantToSkipTutorial:
-	.string "Do you want to skip the\n"
-	.string "catching tutorial?$"
+	.string "Skip Wally's catching tutorial?$"
