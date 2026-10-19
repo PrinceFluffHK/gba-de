@@ -1307,7 +1307,8 @@
 	.endm
 
 	.macro pokemartstandard
-	pokemart
+	callnative NativeFunc_PokemartStandard, requests_effects=1
+	.4byte Pokemart_DefaultItemListsByBadgeCount
 	.endm
 
 	@ Used as the endpoint for a Pokemart item list

@@ -2517,6 +2517,23 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
     return TRUE;
 }
 
+void NativeFunc_PokemartStandard(struct ScriptContext *ctx)
+{
+    const u16 *const *itemLists = (const u16 *const *)ScriptReadWord(ctx);
+    u32 badgeCount = 0;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    for (u32 i = 0; i < NUM_BADGES; i++)
+    {
+        if (FlagGet(gBadgeFlags[i]))
+            badgeCount++;
+    }
+
+    CreatePokemartMenu(itemLists[badgeCount]);
+    ScriptContext_Stop();
+}
+
 bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
