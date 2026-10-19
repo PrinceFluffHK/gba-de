@@ -21,7 +21,7 @@ static bool32 IsAlwaysTrue(void)
 
 static bool32 CanUseCut(void) { return FlagGet(IS_FRLG ? FLAG_BADGE02_GET : FLAG_BADGE01_GET); }
 static bool32 CanUseFieldFlash(void) { return FlagGet(IS_FRLG ? FLAG_BADGE01_GET : FLAG_BADGE02_GET); }
-static bool32 CanUseRockSmash(void) { return FlagGet(IS_FRLG ? FLAG_BADGE06_GET : FLAG_BADGE03_GET); }
+static bool32 CanUseRockSmash(void) { return FlagGet(IS_FRLG ? FLAG_BADGE01_GET : FLAG_BADGE03_GET); }
 static bool32 CanUseStrength(void) { return FlagGet(FLAG_BADGE04_GET); }
 static bool32 CanUseSurf(void) { return FlagGet(FLAG_BADGE05_GET); }
 static bool32 CanUseFieldFly(void) { return FlagGet(IS_FRLG ? FLAG_BADGE03_GET : FLAG_BADGE06_GET); }

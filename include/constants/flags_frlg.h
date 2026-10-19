@@ -91,7 +91,7 @@
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_BIKER             0x074
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_LOSTELLE          0x075
 #define FLAG_HIDE_LOSTELLE_IN_HER_HOME                     0x076
-#define FLAG_0x077                                         0x077
+#define FLAG_BOSS_RUSH_MODE                                0x077 //FRDE
 #define FLAG_0x078                                         0x078
 #define FLAG_HIDE_THREE_ISLAND_BIKERS                      0x079
 #define FLAG_HIDE_LOSTELLE_IN_BERRY_FOREST                 0x07A
@@ -148,20 +148,20 @@
 #define FLAG_HIDE_MISC_KANTO_ROCKETS                       0x0AD
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
-// Unused?
-#define FLAG_0x0AF               0x0AF
-#define FLAG_0x0B0               0x0B0
-#define FLAG_0x0B1               0x0B1
-#define FLAG_0x0B2               0x0B2
-#define FLAG_0x0B3               0x0B3
-#define FLAG_0x0B4               0x0B4
-#define FLAG_0x0B5               0x0B5
-#define FLAG_0x0B6               0x0B6
-#define FLAG_0x0B7               0x0B7
-#define FLAG_0x0B8               0x0B8
-#define FLAG_0x0B9               0x0B9
-#define FLAG_0x0BA               0x0BA
-#define FLAG_0x0BB               0x0BB
+// FRDE
+#define FLAG_HIDE_BUTTON_PROMPT             0x0AF
+#define FLAG_DN_SEARCHING                   0x0B0
+#define FLAG_DN_DEXNAV_GET                  0x0B1
+#define FLAG_DN_DETECTOR_MODE               0x0B2
+#define FLAG_HIDE_BATTLE_TUTORIAL           0x0B3
+#define FLAG_HIDE_RUSTBORO_CITY_SHROOMISH   0x0B4
+#define FLAG_HIDE_LITTLEROOT_SHROOMISH      0x0B5
+#define FLAG_DOWSING_MCHN                   0x0B6
+#define FLAG_IS_TURN_START                  0x0B7
+#define FLAG_UNLOCK_STONE_SHOP              0x0B8
+#define FLAG_HIDE_PEWTER_CITY_SHROOMISH     0x0B9
+#define FLAG_HIDE_PALLET_TOWN_SHROOMISH     0x0BA
+#define FLAG_CAUGHT_CARBINK                  0x0BB
 #define FLAG_0x0BC               0x0BC
 #define FLAG_0x0BD               0x0BD
 #define FLAG_0x0BE               0x0BE

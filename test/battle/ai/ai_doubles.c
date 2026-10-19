@@ -450,10 +450,10 @@ AI_DOUBLE_BATTLE_TEST("AI only rewards spread moves when an ally's absorbing abi
 
     GIVEN {
         ASSUME(GetMoveTarget(move) == TARGET_FOES_AND_ALLY);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); Moves(MOVE_DRAGON_RAGE); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); Moves(MOVE_DRAGON_RAGE); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(50); Moves(MOVE_SPITFIRE); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(50); Moves(MOVE_SPITFIRE); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(90); Moves(move, MOVE_SCRATCH); }
         OPPONENT(SPECIES_WOBBUFFET) { Ability(ability); HP(partnerHP); MaxHP(100); Speed(100); Moves(partnerMove); }
     } WHEN {

@@ -4,7 +4,7 @@
 ASSUMPTIONS
 {
     ASSUME(GetMoveEffect(MOVE_SONIC_BOOM) == EFFECT_FIXED_HP_DAMAGE);
-    ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+    ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
 }
 
 SINGLE_BATTLE_TEST("Sonic Boom deals fixed damage", s16 damage)
@@ -66,14 +66,14 @@ SINGLE_BATTLE_TEST("Dragon Rage is unaffected by type immunities (Gen 1)")
 
     GIVEN {
         WITH_CONFIG(B_FIXED_DMG_IGNORES_TYPE, GEN_1);
-        ASSUME(GetMoveFixedHPDamage(MOVE_DRAGON_RAGE) == 40);
+        ASSUME(GetMoveFixedHPDamage(MOVE_SPITFIRE) == 40);
         ASSUME(GetSpeciesType(SPECIES_CLEFAIRY, 0) == TYPE_FAIRY);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_CLEFAIRY);
     } WHEN {
-        TURN { MOVE(player, MOVE_DRAGON_RAGE); }
+        TURN { MOVE(player, MOVE_SPITFIRE); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, player);
         HP_BAR(opponent, captureDamage: &damage);
     } THEN {
         EXPECT_EQ(damage, 40);

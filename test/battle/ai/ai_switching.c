@@ -723,29 +723,29 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Eject Pack will send out Ace M
 AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Move data does not spill over between switch-in candidates")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         ASSUME(IsBattleMoveStatus(MOVE_CELEBRATE));
         ASSUME(gItemsInfo[ITEM_ASSAULT_VEST].holdEffect == HOLD_EFFECT_ASSAULT_VEST);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_MON_CHOICES);
-        PLAYER(SPECIES_WOBBUFFET) { HP(80); MaxHP(80); Speed(50); Moves(MOVE_DRAGON_RAGE); }
+        PLAYER(SPECIES_WOBBUFFET) { HP(80); MaxHP(80); Speed(50); Moves(MOVE_SPITFIRE); }
         OPPONENT(SPECIES_MAGIKARP) { HP(1); Speed(10); Moves(MOVE_SPLASH); }
-        OPPONENT(SPECIES_ABRA) { HP(30); MaxHP(30); Speed(40); Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT(SPECIES_ABRA) { HP(30); MaxHP(30); Speed(40); Moves(MOVE_SPITFIRE); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(200); MaxHP(200); Speed(60); Moves(MOVE_CELEBRATE); Item(ITEM_ASSAULT_VEST); }
         OPPONENT(SPECIES_MAGIKARP) { Speed(30); Moves(MOVE_SPLASH); }
     } WHEN {
-        TURN { MOVE(player, MOVE_DRAGON_RAGE); EXPECT_SEND_OUT(opponent, 3); }
+        TURN { MOVE(player, MOVE_SPITFIRE); EXPECT_SEND_OUT(opponent, 3); }
     }
 }
 
 AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Switchin move data is reset before recalculation")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_MON_CHOICES);
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPITFIRE); }
     } WHEN {
-        TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_DRAGON_RAGE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_SPITFIRE); }
     } THEN {
         enum BattlerId battlerAtk = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
         enum BattlerId battlerDef = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
@@ -2336,12 +2336,12 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI considers both meeting and 
     PARAMETRIZE { hp = 79; }
     PARAMETRIZE { hp = 81; }
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
-        ASSUME(GetMoveFixedHPDamage(MOVE_DRAGON_RAGE) == 40);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveFixedHPDamage(MOVE_SPITFIRE) == 40);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_ZIGZAGOON) { Speed(5); HP(hp); Moves(MOVE_PROTECT, MOVE_TACKLE); }
         OPPONENT(SPECIES_ZIGZAGOON) { Speed(6); Moves(MOVE_EXPLOSION); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Speed(6); Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT(SPECIES_ZIGZAGOON) { Speed(6); Moves(MOVE_SPITFIRE); }
         OPPONENT(SPECIES_BELDUM) { Speed(4); Moves(MOVE_TACKLE); }
     } WHEN {
         TURN { MOVE(player, MOVE_PROTECT); EXPECT_MOVE(opponent, MOVE_EXPLOSION); hp > 80 ? EXPECT_SEND_OUT(opponent, 2) : EXPECT_SEND_OUT(opponent, 1); }
@@ -2544,9 +2544,9 @@ AI_MULTI_BATTLE_TEST("AI will not switch out if the opposite battler is absent a
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET) { HP(41); Speed(1); }
-        PARTNER(SPECIES_DRAKLOAK) { HP(41); MaxHP(100); Speed(4); Item(ITEM_LIFE_ORB); Moves(MOVE_DRAGON_RAGE, MOVE_SHADOW_BALL); }
+        PARTNER(SPECIES_DRAKLOAK) { HP(41); MaxHP(100); Speed(4); Item(ITEM_LIFE_ORB); Moves(MOVE_SPITFIRE, MOVE_SHADOW_BALL); }
         PARTNER(SPECIES_DRAGAPULT) { Speed(4); Moves(MOVE_SHADOW_BALL); }
-        OPPONENT_A(SPECIES_CYCLIZAR) { HP(41); MaxHP(100); Speed(3); Item(ITEM_LIFE_ORB); Moves(MOVE_BODY_SLAM, MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_CYCLIZAR) { HP(41); MaxHP(100); Speed(3); Item(ITEM_LIFE_ORB); Moves(MOVE_BODY_SLAM, MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAMPA) { Speed(3); Moves(MOVE_BODY_SLAM); }
         OPPONENT_B(SPECIES_WYNAUT) { Speed(2); HP(41); }
     } WHEN {
@@ -2555,8 +2555,8 @@ AI_MULTI_BATTLE_TEST("AI will not switch out if the opposite battler is absent a
             EXPECT_MOVE(playerRight, MOVE_SHADOW_BALL, target: opponentRight);
         }
         TURN {
-            EXPECT_MOVE(opponentLeft, MOVE_DRAGON_RAGE, target: playerRight);
-            EXPECT_MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+            EXPECT_MOVE(opponentLeft, MOVE_SPITFIRE, target: playerRight);
+            EXPECT_MOVE(playerRight, MOVE_SPITFIRE, target: opponentLeft);
         }
     }
 }

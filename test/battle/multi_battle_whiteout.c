@@ -5,7 +5,7 @@ MULTI_BATTLE_TEST("Player does whiteout in a multibattle even if the Partner sti
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_4);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
@@ -18,7 +18,7 @@ MULTI_BATTLE_TEST("Player does whiteout in a multibattle even if the Partner sti
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
@@ -32,35 +32,35 @@ MULTI_BATTLE_TEST("Player does whiteout in a multibattle even if the Partner sti
         OPPONENT_B(SPECIES_DRAGONAIR);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 3);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 4);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 5);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), TRUE);
     }
@@ -70,7 +70,7 @@ TWO_VS_ONE_BATTLE_TEST("Player does whiteout in a multibattle even if the Partne
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_4);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
@@ -83,7 +83,7 @@ TWO_VS_ONE_BATTLE_TEST("Player does whiteout in a multibattle even if the Partne
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
@@ -91,35 +91,35 @@ TWO_VS_ONE_BATTLE_TEST("Player does whiteout in a multibattle even if the Partne
         OPPONENT_A(SPECIES_DRAGONITE);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 3);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 4);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 5);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), TRUE);
     }
@@ -129,14 +129,14 @@ MULTI_BATTLE_TEST("Player does not whiteout in a multibattle if the Partner stil
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_4);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PARTNER(SPECIES_WOBBUFFET) { HP(1); }
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_B(SPECIES_DRAGONAIR);
@@ -144,23 +144,23 @@ MULTI_BATTLE_TEST("Player does not whiteout in a multibattle if the Partner stil
         OPPONENT_B(SPECIES_DRAGONAIR);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
-            MOVE(opponentRight, MOVE_DRAGON_RAGE, target:playerRight);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
+            MOVE(opponentRight, MOVE_SPITFIRE, target:playerRight);
             SEND_OUT(playerRight, 1);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentRight);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentRight);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), FALSE);
     }
@@ -170,14 +170,14 @@ TWO_VS_ONE_BATTLE_TEST("Player does not whiteout in a multibattle if the Partner
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_4);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PARTNER(SPECIES_WOBBUFFET) { HP(1); }
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
@@ -185,23 +185,23 @@ TWO_VS_ONE_BATTLE_TEST("Player does not whiteout in a multibattle if the Partner
         OPPONENT_A(SPECIES_DRAGONITE);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
-            MOVE(opponentRight, MOVE_DRAGON_RAGE, target:playerRight);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
+            MOVE(opponentRight, MOVE_SPITFIRE, target:playerRight);
             SEND_OUT(playerRight, 1);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentRight);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentRight);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), FALSE);
     }
@@ -211,7 +211,7 @@ MULTI_BATTLE_TEST("Player does whiteout in a multibattle if the Partner still ha
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_3);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
@@ -224,7 +224,7 @@ MULTI_BATTLE_TEST("Player does whiteout in a multibattle if the Partner still ha
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
@@ -238,35 +238,35 @@ MULTI_BATTLE_TEST("Player does whiteout in a multibattle if the Partner still ha
         OPPONENT_B(SPECIES_DRAGONAIR);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 3);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 4);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 5);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), TRUE);
     }
@@ -276,7 +276,7 @@ TWO_VS_ONE_BATTLE_TEST("Player does whiteout in a multibattle if the Partner sti
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_3);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
@@ -289,7 +289,7 @@ TWO_VS_ONE_BATTLE_TEST("Player does whiteout in a multibattle if the Partner sti
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAGONAIR);
         OPPONENT_A(SPECIES_DRAGONITE);
         OPPONENT_A(SPECIES_DRAGONITE);
@@ -297,35 +297,35 @@ TWO_VS_ONE_BATTLE_TEST("Player does whiteout in a multibattle if the Partner sti
         OPPONENT_A(SPECIES_DRAGONITE);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 3);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 4);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 5);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), TRUE);
     }
@@ -335,31 +335,31 @@ MULTI_BATTLE_TEST("Player does whiteout in a multibattle if the Partner still ha
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_3);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_B(SPECIES_DRAGONAIR);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), TRUE);
     }
@@ -369,31 +369,31 @@ TWO_VS_ONE_BATTLE_TEST("Player does whiteout in a multibattle if the Partner sti
 {
     GIVEN {
         WITH_CONFIG(B_MULTI_BATTLE_WHITEOUT, GEN_3);
-        ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+        ASSUME(GetMoveEffect(MOVE_SPITFIRE) == EFFECT_FIXED_HP_DAMAGE);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
         PARTNER(SPECIES_WOBBUFFET);
-        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT_A(SPECIES_DRAGONITE) { Moves(MOVE_SPITFIRE); }
         OPPONENT_A(SPECIES_DRAGONAIR);
     } WHEN {
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 1);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
             SEND_OUT(playerLeft, 2);
         }
         TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft);
+            MOVE(opponentLeft, MOVE_SPITFIRE, target:playerLeft);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPITFIRE, opponentLeft);
     } THEN {
         EXPECT_EQ(NoAliveMonsForPlayer(), TRUE);
     }
