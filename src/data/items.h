@@ -2216,7 +2216,6 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_Repel,
-        .notConsumed = TRUE,
         .importance = 1,
     },
 
@@ -2237,7 +2236,6 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_SuperRepel,
-        .notConsumed = TRUE,
         .importance = 1,
     },
 
@@ -2258,7 +2256,6 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_MaxRepel,
-        .notConsumed = TRUE,
         .importance = 1,
     },
 

@@ -1,8 +1,6 @@
 #ifndef GUARD_CONSTANTS_MAPS_H
 #define GUARD_CONSTANTS_MAPS_H
 
-#include "map_groups.h"
-
 enum
 {
     // Warps using this map will instead use the warp data stored in gSaveBlock1Ptr->dynamicWarp.

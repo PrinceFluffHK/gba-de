@@ -3,15 +3,15 @@ Name: PH
 Class: Pkmn Trainer 1
 Pic: Hiker Frlg
 Gender: Male
-Music: Male
-Double Battle: Yes
+Music: Serious
+Double Battle: No
 
 === TRAINER_YOUNGSTER_BEN ===
 Name: BEN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -31,7 +31,7 @@ Name: CALVIN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -53,7 +53,7 @@ Name: JOSH
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -81,7 +81,7 @@ Name: TIMMY
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -104,7 +104,7 @@ Name: JOEY
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -127,7 +127,7 @@ Name: DAN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -150,7 +150,7 @@ Name: CHAD
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -173,7 +173,7 @@ Name: TYLER
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -197,7 +197,7 @@ Name: EDDIE
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -219,7 +219,7 @@ Name: DILLON
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -244,7 +244,7 @@ Name: YASU
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -273,7 +273,7 @@ Name: DAVE
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -296,7 +296,7 @@ Name: BEN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -311,7 +311,7 @@ Name: RICK
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -332,7 +332,7 @@ Name: DOUG
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -359,7 +359,7 @@ Name: SAMMY
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -379,7 +379,7 @@ Name: COLTON
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -406,7 +406,7 @@ Name: GREG
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -439,7 +439,7 @@ Name: JAMES
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -461,7 +461,7 @@ Name: KENT
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -483,7 +483,7 @@ Name: ROBBY
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -505,7 +505,7 @@ Name: CALE
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -543,7 +543,7 @@ Name: KEIGO
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -573,7 +573,7 @@ Name: ELIJAH
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -597,7 +597,7 @@ Name: BRENT
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -618,7 +618,7 @@ Name: CONNER
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1089,7 +1089,7 @@ Name: EDMOND
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1112,7 +1112,7 @@ Name: TREVOR
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1135,7 +1135,7 @@ Name: LEONARD
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1158,7 +1158,7 @@ Name: DUNCAN
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1188,7 +1188,7 @@ Name: HUEY
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1211,7 +1211,7 @@ Name: DYLAN
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1242,7 +1242,7 @@ Name: PHILLIP
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1264,7 +1264,7 @@ Name: DWAYNE
 Class: Sailor Frlg
 Pic: Sailor Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1287,7 +1287,7 @@ Name: LIAM
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1310,7 +1310,7 @@ Name: SHANE
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1333,7 +1333,7 @@ Name: ETHAN
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1355,7 +1355,7 @@ Name: RICKY
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1377,7 +1377,7 @@ Name: JEFF
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1399,7 +1399,7 @@ Name: CHRIS
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -1423,7 +1423,7 @@ Name: DREW
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2576,7 +2576,7 @@ Name: JARED
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2606,7 +2606,7 @@ Name: MALIK
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2629,7 +2629,7 @@ Name: ERNEST
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2673,7 +2673,7 @@ Name: ALEX
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2703,7 +2703,7 @@ Name: LAO
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2726,7 +2726,7 @@ Name: HIDEO
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2750,7 +2750,7 @@ Name: RUBEN
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2780,7 +2780,7 @@ Name: BILLY
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2805,7 +2805,7 @@ Name: NIKOLAS
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2830,7 +2830,7 @@ Name: JAXON
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2854,7 +2854,7 @@ Name: WILLIAM
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2898,7 +2898,7 @@ Name: LUKAS
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2935,7 +2935,7 @@ Name: ISAAC
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -2965,7 +2965,7 @@ Name: GERALD
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -3139,7 +3139,7 @@ Name: BAILY
 Class: Engineer Frlg
 Pic: Engineer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -3161,7 +3161,7 @@ Name: BRAXTON
 Class: Engineer Frlg
 Pic: Engineer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -3183,7 +3183,7 @@ Name: BERNIE
 Class: Engineer Frlg
 Pic: Engineer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -3983,7 +3983,7 @@ Name: KOJI
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4015,7 +4015,7 @@ Name: LUKE
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4039,7 +4039,7 @@ Name: CAMRON
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4063,7 +4063,7 @@ Name: RAUL
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4086,7 +4086,7 @@ Name: ISAIAH
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4110,7 +4110,7 @@ Name: ZEEK
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4134,7 +4134,7 @@ Name: JAMAL
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4172,7 +4172,7 @@ Name: COREY
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4196,7 +4196,7 @@ Name: CHASE
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4214,7 +4214,7 @@ Name: HUGO
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4238,7 +4238,7 @@ Name: JASPER
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4260,7 +4260,7 @@ Name: DIRK
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4284,7 +4284,7 @@ Name: DARIAN
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4307,7 +4307,7 @@ Name: STAN
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4337,7 +4337,7 @@ Name: RICH
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4900,7 +4900,7 @@ Name: RANDALL
 Class: Rocker Frlg
 Pic: Rocker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -4918,7 +4918,7 @@ Name: LUCA
 Class: Rocker Frlg
 Pic: Rocker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -6097,7 +6097,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: No
 AI: First Battle
 
@@ -6113,7 +6113,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: No
 AI: First Battle
 
@@ -6129,7 +6129,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: No
 AI: First Battle
 
@@ -6145,7 +6145,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -6168,7 +6168,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -6191,7 +6191,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -6214,7 +6214,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -6252,7 +6252,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -6291,7 +6291,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9101,7 +9101,7 @@ Name: BROCK
 Class: Leader Frlg
 Pic: Leader Brock Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Mugshot: Yellow
@@ -9181,7 +9181,7 @@ Name: LT. SURGE
 Class: Leader Frlg
 Pic: Leader Lt Surge Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9263,7 +9263,7 @@ Name: KOGA
 Class: Leader Frlg
 Pic: Leader Koga Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9309,7 +9309,7 @@ Name: BLAINE
 Class: Leader Frlg
 Pic: Leader Blaine Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9502,7 +9502,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9543,7 +9543,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9585,7 +9585,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9627,7 +9627,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9674,7 +9674,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9722,7 +9722,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9769,7 +9769,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9816,7 +9816,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9864,7 +9864,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9912,7 +9912,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -9967,7 +9967,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -10022,7 +10022,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
@@ -10077,7 +10077,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 Difficulty: Easy
 AI: Smart Trainer
@@ -10132,7 +10132,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 Difficulty: Easy
 AI: Smart Trainer
@@ -10187,7 +10187,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 Difficulty: Easy
 AI: Smart Trainer
@@ -10808,7 +10808,7 @@ Name: VIRGIL
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -10838,7 +10838,7 @@ Name: FLINT
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11007,7 +11007,7 @@ Name: JUSTIN
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11367,7 +11367,7 @@ Name: BEN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11382,7 +11382,7 @@ Name: BEN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11397,7 +11397,7 @@ Name: CHAD
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11442,7 +11442,7 @@ Name: TIMMY
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11460,7 +11460,7 @@ Name: TIMMY
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11478,7 +11478,7 @@ Name: TIMMY
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11496,7 +11496,7 @@ Name: CHAD
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11541,7 +11541,7 @@ Name: CHAD
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11571,7 +11571,7 @@ Name: PROF. OAK
 Class: Pkmn Prof Frlg
 Pic: Professor Oak Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11789,7 +11789,7 @@ Name: GOON
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11812,7 +11812,7 @@ Name: GOON
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11828,7 +11828,7 @@ Name: GOON
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11840,7 +11840,7 @@ Name: ANTHONY
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11861,7 +11861,7 @@ Name: CHARLIE
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11912,7 +11912,7 @@ Name: JOHNSON
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11943,7 +11943,7 @@ Name: RICARDO
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -11973,7 +11973,7 @@ Name: JAREN
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -12355,7 +12355,7 @@ Name: BRYCE
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -12525,7 +12525,7 @@ Name: DESTIN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13384,7 +13384,7 @@ Name: GARRET
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13396,7 +13396,7 @@ Name: JONAH
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13417,7 +13417,7 @@ Name: VANCE
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13432,7 +13432,7 @@ Name: NASH
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13450,7 +13450,7 @@ Name: CORDELL
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13498,7 +13498,7 @@ Name: RILEY
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13594,7 +13594,7 @@ Name: RICKY
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13606,7 +13606,7 @@ Name: RICKY
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13618,7 +13618,7 @@ Name: RICKY
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13630,7 +13630,7 @@ Name: JEFF
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13645,7 +13645,7 @@ Name: JEFF
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13660,7 +13660,7 @@ Name: JEFF
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13729,7 +13729,7 @@ Name: YASU
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13747,7 +13747,7 @@ Name: YASU
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13765,7 +13765,7 @@ Name: BERNIE
 Class: Engineer Frlg
 Pic: Engineer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13783,7 +13783,7 @@ Name: DARIAN
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13798,7 +13798,7 @@ Name: CHRIS
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13813,7 +13813,7 @@ Name: CHRIS
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -13828,7 +13828,7 @@ Name: CHRIS
 Class: Camper Frlg
 Pic: Camper Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14020,7 +14020,7 @@ Name: RICH
 Class: Gamer Frlg
 Pic: Gamer Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14035,7 +14035,7 @@ Name: JAREN
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14071,7 +14071,7 @@ Name: LUCA
 Class: Rocker Frlg
 Pic: Rocker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14215,7 +14215,7 @@ Name: LUKAS
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14443,7 +14443,7 @@ Name: RUBEN
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14461,7 +14461,7 @@ Name: CAMRON
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14476,7 +14476,7 @@ Name: JAXON
 Class: Biker Frlg
 Pic: Biker Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14491,7 +14491,7 @@ Name: ISAIAH
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14506,7 +14506,7 @@ Name: COREY
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -14909,7 +14909,7 @@ Name: DESTIN
 Class: Youngster Frlg
 Pic: Youngster Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -15422,7 +15422,7 @@ Name: COLTON
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -15440,7 +15440,7 @@ Name: COLTON
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -15458,7 +15458,7 @@ Name: COLTON
 Class: Bug Catcher Frlg
 Pic: Bug Catcher Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -15705,7 +15705,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 Difficulty: Easy
 AI: Smart Trainer
@@ -15758,7 +15758,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 Difficulty: Easy
 AI: Smart Trainer
@@ -15811,7 +15811,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 Difficulty: Easy
 AI: Smart Trainer
@@ -15864,7 +15864,7 @@ Name: PAXTON
 Class: Cue Ball Frlg
 Pic: Cue Ball Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 
@@ -15881,7 +15881,7 @@ Name: BROCK
 Class: Leader Frlg
 Pic: Leader Brock Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Mugshot: Yellow
@@ -15928,7 +15928,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -15965,7 +15965,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16003,7 +16003,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16087,7 +16087,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16135,7 +16135,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16184,7 +16184,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16233,7 +16233,7 @@ Name: LT. SURGE
 Class: Leader Frlg
 Pic: Leader Lt Surge Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16291,7 +16291,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16339,7 +16339,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16388,7 +16388,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16496,7 +16496,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16554,7 +16554,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16612,7 +16612,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16715,7 +16715,7 @@ Name: KOGA
 Class: Leader Frlg
 Pic: Leader Koga Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -16832,7 +16832,7 @@ Name: BLAINE
 Class: Leader Frlg
 Pic: Leader Blaine Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -17059,7 +17059,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -17118,7 +17118,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -17177,7 +17177,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -17464,7 +17464,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -17523,7 +17523,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -17582,7 +17582,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
@@ -17643,7 +17643,7 @@ Name: BROCK
 Class: Leader Frlg
 Pic: Leader Brock Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Mugshot: Yellow
@@ -17708,7 +17708,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -17764,7 +17764,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -17820,7 +17820,7 @@ Name: TERRY
 Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -17939,7 +17939,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -17996,7 +17996,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18053,7 +18053,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18110,7 +18110,7 @@ Name: LT. SURGE
 Class: Leader Frlg
 Pic: Leader Lt Surge Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18174,7 +18174,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18239,7 +18239,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18304,7 +18304,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18497,7 +18497,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18563,7 +18563,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18629,7 +18629,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18754,7 +18754,7 @@ Name: KOGA
 Class: Leader Frlg
 Pic: Leader Koga Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -18884,7 +18884,7 @@ Name: BLAINE
 Class: Leader Frlg
 Pic: Leader Blaine Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -19078,7 +19078,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -19144,7 +19144,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -19210,7 +19210,7 @@ Name: TERRY
 Class: Rival Late Frlg
 Pic: Rival Late Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -19519,7 +19519,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -19585,7 +19585,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
@@ -19651,7 +19651,7 @@ Name: TERRY
 Class: Champion Frlg
 Pic: Champion Rival Frlg
 Gender: Male
-Music: Male
+Music: Serious
 Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
