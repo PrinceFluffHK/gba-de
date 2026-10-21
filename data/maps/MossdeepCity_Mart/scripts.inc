@@ -23,11 +23,11 @@ MossdeepCity_Mart_EventScript_Clerk_2::
 
 	.align 2
 MossdeepCity_Mart_Pokemart_Secondary:
-	.2byte ITEM_TM_SCORCHING_SANDS
-	.2byte ITEM_TM_POWER_GEM
-	.2byte ITEM_TM_SUPERCELL_SLAM
-	.2byte ITEM_TM_SCALE_SHOT
-	.2byte ITEM_TM_DRAIN_PUNCH
+	.2byte ITEM_TM01
+	.2byte ITEM_TM01
+	.2byte ITEM_TM01
+	.2byte ITEM_TM01
+	.2byte ITEM_TM01
 	pokemartlistend
 
 MossdeepCity_Mart_EventScript_Woman::

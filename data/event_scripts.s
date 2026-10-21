@@ -42,6 +42,7 @@
 #include "constants/heal_locations.h"
 #include "constants/layouts.h"
 #include "constants/lilycove_lady.h"
+#include "constants/map_groups.h"
 #include "constants/map_scripts.h"
 #include "constants/maps.h"
 #include "constants/mass_outbreak.h"

@@ -186,7 +186,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine::
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_RotomBox::
 	lockall
-	goto_if_set FLAG_CAUGHT_ROTOM, LilycoveCity_DepartmentStoreRooftop_EventScript_ItsEmpty
+@	goto_if_set FLAG_CAUGHT_ROTOM, LilycoveCity_DepartmentStoreRooftop_EventScript_ItsEmpty
 	waitse
 	playmoncry SPECIES_ROTOM, CRY_MODE_ENCOUNTER
 	delay 40
@@ -197,7 +197,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_RotomBox::
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, LilycoveCity_DepartmentStoreRooftop_EventScript_RotomReturnedToBox
-	setflag FLAG_CAUGHT_ROTOM
+@	setflag FLAG_CAUGHT_ROTOM
 	releaseall
 	end
 	

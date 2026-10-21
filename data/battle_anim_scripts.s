@@ -5329,7 +5329,7 @@ TailWhackDown:
 	return
 
 gBattleAnimMove_WorkUp::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createsprite gEndureEnergySpriteTemplate, ANIM_ATTACKER, 2, 0, -28, 26, 2
 	createsprite gEndureEnergySpriteTemplate, ANIM_ATTACKER, 2, 0, 28, 26, 2
 	delay 5
@@ -10398,7 +10398,7 @@ gBattleAnimMove_Instruct::
 	end
 
 gBattleAnimGeneral_BeakBlastSetUp::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	delay 3
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB_RED
 	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 0
@@ -12394,7 +12394,7 @@ gBattleAnimMove_ClangorousSoul::
 	waitforvisualfinish
 	end
 ClangorousSoulStarBuffEffect:
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createsprite gClangorousSoulBlueBuffTemplate, ANIM_ATTACKER, 2, 0, -24, 26, 2
 	delay 4
 	createsprite gEndureEnergySpriteTemplate, ANIM_ATTACKER, 2, 0, 14, 28, 1
@@ -13671,7 +13671,7 @@ gBattleAnimMove_SkitterSmack::
 	end
 
 gBattleAnimMove_BurningJealousy::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_ATTACKER, 0, 2, 42, 1
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=8, color=RGB_RED
 	call BurningJealousyFireBuffEffect
@@ -14671,7 +14671,7 @@ MysticalPowerFoeTwoRingsOnly:
 
 
 gBattleAnimMove_RagingFury::
-	loopsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER, 8, 3
+	loopsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER, 8, 3
 	blend_color_cycle selector=(F_PAL_BG | F_PAL_ATTACKER | F_PAL_TARGET), delay=2, num_blends=5, initial_blend_y=3, target_blend_y=8, color=RGB_RED
 	createvisualtask AnimTask_WindUpLunge, 5, ANIM_ATTACKER, -20, 8, 32, 8, 56, 6
 	call OutrageFlames
@@ -15712,7 +15712,7 @@ gBattleAnimMove_PsychicNoise::
 	end
 
 gBattleAnimMove_TemperFlare::
-	loopsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER, 8, 3
+	loopsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER, 8, 3
 	createvisualtask AnimTask_ShrinkAndGrow, 2
 	createvisualtask AnimTask_BlendMonInAndOut, 3, ANIM_ATTACKER, RGB_RED, 10, 0, 2
 	createsprite gAngerMarkSpriteTemplate, ANIM_ATTACKER, 2, 0, -20, -28
@@ -20465,7 +20465,7 @@ gBattleAnimMove_PayDay::
 	end
 
 gBattleAnimMove_Outrage::
-	loopsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER, 8, 3
+	loopsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER, 8, 3
 	blend_color_cycle selector=(F_PAL_BG | F_PAL_ATTACKER | F_PAL_TARGET), delay=2, num_blends=5, initial_blend_y=3, target_blend_y=8, color=RGB(14, 13, 0)
 	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 12, 6, 5, 4
 	delay 0
@@ -21713,7 +21713,7 @@ gBattleAnimMove_DestinyBond::
 	end
 
 gBattleAnimMove_Endure::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	call EndureEffect
 	delay 8
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB_RED
@@ -23621,7 +23621,7 @@ MudSlapMud:
 	return
 
 gBattleAnimMove_DragonRage::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_ATTACKER, 0, 2, 40, 1
 	waitforvisualfinish
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_TARGET, 2, ANIM_ATTACKER, 15, 0, 0, 4
@@ -25642,7 +25642,7 @@ gBattleAnimMove_Lick::
 	end
 
 gBattleAnimMove_FocusEnergy::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	call EndureEffect
 	delay 8
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB_WHITE
@@ -28751,7 +28751,7 @@ SnatchPartnerMonMove:
 	goto SnatchMoveContinue
 
 gBattleAnimGeneral_FocusPunchSetUp::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	call EndureEffect
 	delay 8
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB_RED
@@ -31354,7 +31354,7 @@ SubzeroSlammerIceSwirl:
 
 
 gBattleAnimMove_DevastatingDrake::
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	call DevastatingDrakeBuffEffect
 	delay 8
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB(0, 6, 16)
@@ -32324,7 +32324,7 @@ StokedSparksurferDay:
 StokedSparksurferFinish:
 	waitbgfadeout
 	visible ANIM_ATTACKER
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ElectricChargingParticles, 2, ANIM_ATTACKER, 28, 2, 12
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 60, 1
 	call EndureEffect
@@ -32651,7 +32651,7 @@ gBattleAnimMove_GenesisSupernova::
 	createvisualtask AnimTask_AllBattlersInvisibleExceptAttackerAndTarget, 10
 	waitforvisualfinish
 	call SetPsychicBackground
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_IsTargetPlayerSide, 2
 	jumpargeq 7 ANIM_TARGET GenesisSupernovaOnPlayer
 GenesisSupernovaOnOpponent:
@@ -33252,7 +33252,7 @@ gBattleAnimMove_OceanicOperetta::
 	createvisualtask AnimTask_HardwarePaletteFade, 2, 248, 3, 0, 10, 0
 	waitforvisualfinish
 	createsprite gOceanOperaSpotlightSpriteTemplate, ANIM_TARGET, 2, 0, -8, 80 	@spotlight
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	call OceanicOperettaBuffEffect
 	delay 8
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB_WHITE
@@ -33442,7 +33442,7 @@ SplinteredStormshardsFinishFade:
 	waitforvisualfinish
 	createvisualtask AnimTask_AllBattlersInvisibleExceptAttackerAndTarget, 10
 	waitforvisualfinish
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_IsTargetPlayerSide, 2
 	jumpargeq 7 ANIM_TARGET SplinteredStormshardsByOpponent
 SplinteredStormshardsByPlayer:
@@ -34025,7 +34025,7 @@ ClangorousSoulblazeEnergySwirl:
 	createsprite gEndureEnergySpriteTemplate, ANIM_ATTACKER, 2, 0, 28, 26, 3
 	return
 ClangorousSoulblazeBuffEffect:
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	createsprite gClangorousSoulBlueBuffTemplate, ANIM_ATTACKER, 2, 0, -24, 26, 2
 	delay 4
 	createsprite gEndureEnergySpriteTemplate, ANIM_ATTACKER, 2, 0, 14, 28, 1
@@ -34555,7 +34555,7 @@ MenacingMoonrazeMaelstromBeam:
 gBattleAnimMove_LightThatBurnsTheSky::
 	fadetobg BG_ZMOVE_MOUNTAIN
 	waitbgfadeout
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	call EndureEffect
 	delay 8
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB(31, 31, 22)
@@ -34726,7 +34726,7 @@ gBattleAnimMove_SoulStealing7StarStrike::
 	fadetobg BG_SOULSTEALING_7STAR_STRIKE
 	waitbgfadeout
 	visible ANIM_ATTACKER
-	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SPITFIRE, SOUND_PAN_ATTACKER
 	call SoulStealingSevenStarStrikeBuffEffect
 	delay 8
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB_BLACK

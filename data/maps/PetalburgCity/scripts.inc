@@ -94,7 +94,7 @@ PetalburgCity_EventScript_WallysMom::
 	end
 
 PetalburgCity_EventScript_SkipTutorialTrigger::
-	call_if_unset FLAG_DISABLE_TUTORIAL_SKIP_PROMPT, PetalburgCity_EventScript_SkipTutorialYesNo
+@	call_if_unset FLAG_DISABLE_TUTORIAL_SKIP_PROMPT, PetalburgCity_EventScript_SkipTutorialYesNo
 	end
 
 PetalburgCity_EventScript_SkipTutorialYesNo::
@@ -102,7 +102,7 @@ PetalburgCity_EventScript_SkipTutorialYesNo::
 	msgbox PetalburgCity_Text_WantToSkipTutorial, MSGBOX_DEFAULT
 	yesnobox 20, 8
 	goto_if_eq VAR_RESULT, YES, PetalburgCity_EventScript_SkipTutorial
-	setflag FLAG_DISABLE_TUTORIAL_SKIP_PROMPT
+@	setflag FLAG_DISABLE_TUTORIAL_SKIP_PROMPT
 	releaseall
 	return
 

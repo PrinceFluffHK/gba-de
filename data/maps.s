@@ -1,5 +1,6 @@
 #include "constants/global.h"
 #include "constants/layouts.h"
+#include "constants/map_groups.h"
 #include "constants/map_types.h"
 #include "constants/maps.h"
 #include "constants/weather.h"

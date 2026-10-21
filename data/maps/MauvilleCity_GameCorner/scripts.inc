@@ -293,7 +293,7 @@ MauvilleCity_GameCorner_EventScript_BuyTMDoubleTeam::
 	checkitemspace ITEM_TM01
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForTM
 	removecoins TM_DOUBLE_TEAM_COINS
-	additem ITEM_TM_WEATHER_BALL
+	additem ITEM_TM01
 	updatecoinsbox
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
