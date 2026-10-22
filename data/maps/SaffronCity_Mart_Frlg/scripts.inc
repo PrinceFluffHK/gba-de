@@ -14,22 +14,25 @@ SaffronCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart SaffronCity_Mart_Items
+	pokemartstandard
 	msgbox gText_PleaseComeAgain
 	release
 	end
 
-	.align 2
-SaffronCity_Mart_Items::
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_REVIVE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_NONE
+SaffronCity_Mart_EventScript_Clerk_2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SaffronCity_Mart_Pokemart_Secondary
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+
+	.align 2
+SaffronCity_Mart_Pokemart_Secondary:
+	.2byte ITEM_DYNAMAX_BAND
+	pokemartlistend
 
 SaffronCity_Mart_Text_MaxRepelMoreEffectiveThanSuper::
 	.string "MAX REPEL keeps weaker POKéMON\n"

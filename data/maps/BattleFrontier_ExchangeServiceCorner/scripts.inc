@@ -146,7 +146,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_TotodileDoll::
 	setitemandprice DECOR_TOTODILE_DOLL, 80
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_PurchaseDecor1
 
-BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk2::
+BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk_2::
 	lock
 	faceplayer
 	setvar VAR_TEMP_2, EXCHANGE_CORNER_DECOR2_CLERK

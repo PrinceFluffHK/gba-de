@@ -14,23 +14,25 @@ VermilionCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart VermilionCity_Mart_Items
+	pokemartstandard
 	msgbox gText_PleaseComeAgain
 	release
 	end
 
-	.align 2
-VermilionCity_Mart_Items::
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_ICE_HEAL
-	.2byte ITEM_REPEL
-	.2byte ITEM_NONE
+VermilionCity_Mart_EventScript_Clerk_2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart VermilionCity_Mart_Pokemart_Secondary
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+
+	.align 2
+VermilionCity_Mart_Pokemart_Secondary:
+	.2byte ITEM_DYNAMAX_BAND
+	pokemartlistend
 
 VermilionCity_Mart_Text_TeamRocketAreWickedPeople::
 	.string "There are wicked people who will\n"

@@ -43,23 +43,25 @@ IndigoPlateau_PokemonCenter_1F_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart IndigoPlateau_PokemonCenter_1F_Items
+	pokemartstandard
 	msgbox gText_PleaseComeAgain
 	release
 	end
 
-	.align 2
-IndigoPlateau_PokemonCenter_1F_Items::
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_FULL_RESTORE
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_REVIVE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_NONE
+IndigoPlateau_PokemonCenter_1F_EventScript_Clerk_2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart IndigoPlateau_PokemonCenter_1F_Pokemart_Secondary
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+
+	.align 2
+IndigoPlateau_PokemonCenter_1F_Pokemart_Secondary:
+	.2byte ITEM_DYNAMAX_BAND
+	pokemartlistend
 
 IndigoPlateau_PokemonCenter_1F_EventScript_Nurse::
 	lock

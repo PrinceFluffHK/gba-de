@@ -35,25 +35,48 @@ PewterCity_EventScript_WalkToGymEast::
 	waitmovement 0
 	return
 
-@ Unused
-PewterCity_EventScript_WalkToGymWest::
-	applymovement LOCALID_PLAYER, PewterCity_Movement_PlayerWaitForGuideWest
-	applymovement LOCALID_PEWTER_GYM_GUIDE, PewterCity_Movement_GuideMoveToLeadWest
-	waitmovement 0
-	applymovement LOCALID_PLAYER, PewterCity_Movement_PlayerWalkToGymWest
-	applymovement LOCALID_PEWTER_GYM_GUIDE, PewterCity_Movement_GuideWalkToGymWest
-	waitmovement 0
-	return
+@ Shroomish of Challenge
 
-@ Unused
-PewterCity_EventScript_WalkToGymNorth::
-	applymovement LOCALID_PLAYER, PewterCity_Movement_PlayerWaitForGuideNorth
-	applymovement LOCALID_PEWTER_GYM_GUIDE, PewterCity_Movement_GuideMoveToLeadNorth
+PewterCity_EventScript_Shroomish::
+	lock
+	faceplayer
+	playmoncry SPECIES_SHROOMISH, CRY_MODE_NORMAL
+	msgbox PewterCity_Text_WantToEnableChallengeMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, PewterCity_EventScript_ShroomishEnableChallengeMode
+	goto_if_eq VAR_RESULT, NO, PewterCity_EventScript_ShroomishKeepStandardMode
+	end	
+
+PewterCity_EventScript_ShroomishEnableChallengeMode::
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PewterCity_Text_EnabledChallengeMode, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	increasedifficulty
+	setflag FLAG_HIDE_PEWTER_CITY_SHROOMISH
+	clearflag FLAG_HIDE_PALLET_TOWN_SHROOMISH
+	goto PewterCity_EventScript_ShroomishBye
+	end
+
+PewterCity_EventScript_ShroomishKeepStandardMode::
+	msgbox PewterCity_Text_ChallengeModeIsntForEveryone, MSGBOX_DEFAULT
+	goto PewterCity_EventScript_ShroomishBye
+	end
+
+PewterCity_EventScript_ShroomishBye::
+	msgbox PewterCity_Text_KnowWhereToFindMe, MSGBOX_DEFAULT
+	delay 5
+	applymovement LOCALID_PEWTER_SHROOMISH, PewterCity_Movement_ShroomishSpin
+	playmoncry SPECIES_SHROOMISH, CRY_MODE_NORMAL
 	waitmovement 0
-	applymovement LOCALID_PLAYER, PewterCity_Movement_PlayerWalkToGymNorth
-	applymovement LOCALID_PEWTER_GYM_GUIDE, PewterCity_Movement_GuideWalkToGymNorth
+	playse SE_M_EXPLOSION
+	applymovement LOCALID_PEWTER_SHROOMISH, PewterCity_Movement_ShroomishJumpAway
 	waitmovement 0
-	return
+	removeobject LOCALID_PEWTER_SHROOMISH
+	setflag FLAG_HIDE_PEWTER_CITY_SHROOMISH
+	clearflag FLAG_HIDE_PALLET_TOWN_SHROOMISH
+	release
+	end
 
 .macro walk_to_gym
 	walk_left
@@ -837,9 +860,26 @@ PewterCity_Movement_AideExit3::
 	walk_left
 	step_end
 
-@ Unused
-PewterCity_Movement_WalkInPlaceLeft::
-	walk_in_place_left
+PewterCity_Movement_ShroomishSpin:
+	face_up
+	delay_4
+	face_left
+	delay_4
+	face_down
+	delay_4
+	face_right
+	delay_4
+	step_end
+
+PewterCity_Movement_ShroomishJumpAway:
+	face_up
+	disable_anim
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
 	step_end
 
 Text_DreamEaterTeach::
@@ -974,3 +1014,36 @@ PewterCity_Text_RunningShoesLetterFromMom::
 	.string "you! Don't ever give up!\p"
 	.string "From Mom$"
 
+PewterCity_Text_WantToEnableChallengeMode:
+	.string "Oh hey there {PLAYER}!\p"
+	.string "Oh, you don't know me?\n"
+	.string "I'm NAPPY, the SHROOM OF CHALLENGE!\p"
+	.string "NAPPY: I see you've earned some\n"
+	.string "experience with Emerald: DE.\p"
+	.string "I'm here to ask if you\n"
+	.string "want to turn on EXPERT MODE?\p"
+	.string "STANDARD MODE can be pretty tough,\n"
+	.string "to be sure…\p"
+	.string "But EXPERT MODE was made for trainers\n"
+	.string "who wish to truly push themselves.\p"
+	.string "Starting with dear Roxanne here,\n"
+	.string "Boss trainers will often bring extra\l"
+	.string "team members and new movesets.\p"
+	.string "So what do you think?\p"
+	.string "Does EXPERT MODE\n"
+	.string "sound right for you?$"
+
+PewterCity_Text_EnabledChallengeMode:
+	.string "EXPERT MODE was enabled.\n"
+	.string "Best of luck!$"
+
+PewterCity_Text_ChallengeModeIsntForEveryone:
+	.string "NAPPY: Got it.\n"
+	.string "We'll stick with STANDARD MODE.$"
+
+PewterCity_Text_KnowWhereToFindMe:
+	.string "NAPPY: If you change your mind\n"
+	.string "and want to swap MODE in the future,\l"
+	.string "I'll be hanging out in PALLET TOWN\p"
+	.string "So long, {PLAYER}!\p"
+	.string "SHROOOOOOOOOOOOOOOOOOOOOOM!!!$"

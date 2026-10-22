@@ -96,6 +96,61 @@ PalletTown_EventScript_NotBeenToOneIslandYet::
 	goto PalletTown_EventScript_EndOakRatingScene
 	end
 
+PalletTown_EventScript_Shroomish::
+	lock
+	faceplayer
+	playmoncry SPECIES_SHROOMISH, CRY_MODE_NORMAL
+	goto_if_ne B_VAR_DIFFICULTY, DIFFICULTY_NORMAL, PalletTown_EventScript_ShroomishSetChallengeMode
+	msgbox PalletTown_Text_WantToSetStandardMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, PalletTown_EventScript_ShroomishSetStandardMode
+	msgbox PalletTown_Text_WantToSetChampionMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, PalletTown_EventScript_ShroomishSetChampionMode
+	goto_if_eq VAR_RESULT, NO, PalletTown_EventScript_ShroomishKeepMode
+	end
+
+PalletTown_EventScript_ShroomishSetStandardMode::
+	msgbox PalletTown_Text_WantToSetStandardMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, NO, PalletTown_EventScript_ShroomishKeepMode
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PalletTown_Text_EnabledStandardMode, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox PalletTown_Text_SwitchedDifficulty, MSGBOX_DEFAULT
+	setdifficulty DIFFICULTY_EASY
+	release
+	end
+
+PalletTown_EventScript_ShroomishSetChallengeMode::
+	msgbox PalletTown_Text_WantToSetChallengeMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, NO, PalletTown_EventScript_ShroomishKeepMode
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PalletTown_Text_EnabledChallengeMode, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox PalletTown_Text_SwitchedDifficulty, MSGBOX_DEFAULT
+	setdifficulty DIFFICULTY_NORMAL
+	release
+	end
+
+PalletTown_EventScript_ShroomishSetChampionMode::
+	msgbox PalletTown_Text_WantToSetChampionMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, NO, PalletTown_EventScript_ShroomishKeepMode
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PalletTown_Text_EnabledChampionMode, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox PalletTown_Text_SwitchedDifficulty, MSGBOX_DEFAULT
+	setdifficulty DIFFICULTY_HARD
+	release
+	end
+
+PalletTown_EventScript_ShroomishKeepMode::
+	msgbox PalletTown_Text_KeptCurrentMode, MSGBOX_DEFAULT
+	release
+	end
+
 PalletTown_Movement_OakWalkToPlayersDoor::
 	walk_left
 	walk_left
@@ -545,4 +600,48 @@ PalletTown_Text_PressStartToOpenMenuCopy::
 	.string "TRAINER TIPS!\p"
 	.string "Press START to open the MENU!$"
 
+@Shroomish of Challenge
 
+PalletTown_Text_WantToSetStandardMode:
+	.string "NAPPY: Hey, {PLAYER}! It's me,\n"
+	.string "the SHROOMISH of CHALLENGE!\p"
+	.string "You looking to switch\n"
+	.string "to STANDARD MODE?$"
+
+PalletTown_Text_WantToSetChallengeMode:
+	.string "NAPPY: Hey, {PLAYER}! It's me,\n"
+	.string "the SHROOMISH of CHALLENGE!\p"
+	.string "You looking to switch\n"
+	.string "to EXPERT MODE?$"
+
+PalletTown_Text_WantToSetChampionMode:
+	.string "NAPPY: I see…\p"
+	.string "Could that mean that you\n"
+	.string "want to try CHAMPION MODE?\p"
+	.string "In CHAMPION MODE, some regular\n"
+	.string "trainers will have stronger teams,\l"
+	.string "and bosses feed their teams VITAMINS.\p"
+	.string "How about it, {PLAYER}?\p"
+	.string "Want to take on\n"
+	.string "CHAMPION MODE?$"
+
+PalletTown_Text_EnabledStandardMode:
+	.string "STANDARD MODE was enabled.$"
+
+PalletTown_Text_EnabledChallengeMode:
+	.string "EXPERT MODE was enabled.$"
+
+PalletTown_Text_EnabledChampionMode:
+	.string "CHAMPION MODE was enabled.\n"
+	.string "Good luck!$"
+
+PalletTown_Text_SwitchedDifficulty:
+	.string "NAPPY: I hope you find the\n"
+	.string "CHALLENGE that you seek.\p"
+	.string "I'll be here if you ever\n"
+	.string "want to change it up!$"
+
+PalletTown_Text_KeptCurrentMode:
+	.string "NAPPY: Got it!\p"
+	.string "In that case, I hope you've\n"
+	.string "found the CHALLENGE that you seek.$"

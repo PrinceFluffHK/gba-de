@@ -63,3 +63,24 @@ SSAnne_Exterior_Movement_WalkDown::
 	walk_down
 	walk_down
 	step_end
+
+SSAnne_Exterior_EventScript_RandomMon::
+	goto_if_unset FLAG_ENCOUNTERED_RANDOM_MON, SSAnne_Exterior_EventScript_EncounterRandomMon
+	end
+
+
+SSAnne_Exterior_EventScript_EncounterRandomMon::
+	lock
+	setflag FLAG_ENCOUNTERED_RANDOM_MON
+	getrandomspecies VAR_0x8000, 0
+	setwildbattle VAR_0x8000, 25
+	waitse
+	playmoncry VAR_0x8000, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	dowildbattle
+	release
+	end
+
+Text_BackUnderTruck::
+	.string "It ran back under the truck…$"

@@ -45,6 +45,7 @@
 #include "constants/map_groups.h"
 #include "constants/map_scripts.h"
 #include "constants/maps.h"
+#include "constants/random_mon_generation.h"
 #include "constants/mass_outbreak.h"
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_labels.h"

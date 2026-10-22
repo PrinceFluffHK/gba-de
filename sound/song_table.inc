@@ -177,7 +177,7 @@ gSongTable::
 	song se_m_mist, MUSIC_PLAYER_SE1, 1
 	song se_m_poison_powder, MUSIC_PLAYER_SE1, 1
 	song se_m_bind, MUSIC_PLAYER_SE2, 2
-	song SE_M_SPITFIRE, MUSIC_PLAYER_SE1, 1
+	song se_m_dragon_rage, MUSIC_PLAYER_SE1, 1
 	song se_m_sing, MUSIC_PLAYER_SE1, 1
 	song se_m_perish_song, MUSIC_PLAYER_SE1, 1
 	song se_m_pay_day, MUSIC_PLAYER_SE1, 1

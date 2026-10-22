@@ -92,7 +92,7 @@
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_LOSTELLE          0x075
 #define FLAG_HIDE_LOSTELLE_IN_HER_HOME                     0x076
 #define FLAG_BOSS_RUSH_MODE                                0x077 //FRDE
-#define FLAG_0x078                                         0x078
+#define FLAG_ENCOUNTERED_RANDOM_MON                        0x078 //FRDE
 #define FLAG_HIDE_THREE_ISLAND_BIKERS                      0x079
 #define FLAG_HIDE_LOSTELLE_IN_BERRY_FOREST                 0x07A
 #define FLAG_HIDE_TWO_ISLAND_WOMAN                         0x07B
@@ -161,7 +161,7 @@
 #define FLAG_UNLOCK_STONE_SHOP              0x0B8
 #define FLAG_HIDE_PEWTER_CITY_SHROOMISH     0x0B9
 #define FLAG_HIDE_PALLET_TOWN_SHROOMISH     0x0BA
-#define FLAG_CAUGHT_CARBINK                  0x0BB
+#define FLAG_CAUGHT_CARBINK                 0x0BB //Unused
 #define FLAG_0x0BC               0x0BC
 #define FLAG_0x0BD               0x0BD
 #define FLAG_0x0BE               0x0BE
