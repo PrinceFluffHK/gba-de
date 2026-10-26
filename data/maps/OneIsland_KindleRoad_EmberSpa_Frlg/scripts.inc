@@ -25,6 +25,36 @@ OneIsland_KindleRoad_EmberSpa_EventScript_BlackBelt::
 	release
 	end
 
+OneIsland_KindleRoad_EmberSpa_EventScript_EggMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_EMBER_SPA_EGG, OneIsland_KindleRoad_EmberSpa_EventScript_ReceivedEgg
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OneIsland_KindleRoad_EmberSpa_EventScript_DeclineEgg
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_EMBER_SPA_EGG
+	playfanfare MUS_OBTAIN_ITEM
+	message OneIsland_KindleRoad_EmberSpa_Text_ReceivedTheEgg
+	waitfanfare
+	giveegg SPECIES_TOGEPI
+	release
+	end
+
+OneIsland_KindleRoad_EmberSpa_EventScript_ReceivedEgg::
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT
+	release
+	end
+
+OneIsland_KindleRoad_EmberSpa_EventScript_NoRoomForEgg::
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
+	release
+	end
+
+OneIsland_KindleRoad_EmberSpa_EventScript_DeclineEgg::
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_AsYouWishThen, MSGBOX_DEFAULT
+	release
+	end
+
 OneIsland_KindleRoad_EmberSpa_EventScript_RockSmashMan::
 	lock
 	faceplayer
@@ -105,3 +135,36 @@ OneIsland_KindleRoad_EmberSpa_Text_ExplainHM06::
 	.string "That shatters boulders as if they\n"
 	.string "were made of crackers.$"
 
+OneIsland_KindleRoad_EmberSpa_Text_HaveEggWillYouTakeIt:
+	.string "I have here an EGG from JOHTO.\p"
+	.string "I'd hoped to hatch it by covering it in\n"
+	.string "hot water from the hot springs.\l"
+	.string "But that doesn't seem to be enough…\p"
+	.string "I've heard it would be best if it were\n"
+	.string "kept together with POKéMON and\l"
+	.string "carried about.\p"
+	.string "You are a TRAINER, yes?\n"
+	.string "And your POKéMON radiate vitality.\p"
+	.string "So, what say you?\n"
+	.string "Will you take this EGG to hatch?$"
+
+OneIsland_KindleRoad_EmberSpa_Text_HopeYoullWalkPlentyWithEgg:
+	.string "Good! I hope you'll walk plenty with\n"
+	.string "this here EGG!$"
+
+OneIsland_KindleRoad_EmberSpa_Text_ReceivedTheEgg:
+	.string "{PLAYER} received the EGG.$"
+
+OneIsland_KindleRoad_EmberSpa_Text_NoRoomForThisEgg:
+	.string "Oh? You've too many POKéMON.\n"
+	.string "There's no room for this EGG…$"
+
+OneIsland_KindleRoad_EmberSpa_Text_AsYouWishThen:
+	.string "As you wish, then…\p"
+	.string "If you have a change of heart about\n"
+	.string "hatching this EGG, I will be here.$"
+
+OneIsland_KindleRoad_EmberSpa_Text_EverySoOftenEggFoundAtDayCare:
+	.string "Every so often, an EGG will be found at\n"
+	.string "the POKéMON DAY CARE.\p"
+	.string "Or at least that's how the rumor goes.$"

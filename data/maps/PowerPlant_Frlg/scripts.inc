@@ -35,9 +35,11 @@ PowerPlant_EventScript_ShowElectrode2::
 PowerPlant_EventScript_Zapdos::
 	lock
 	faceplayer
-	setwildbattle SPECIES_ZAPDOS, 50
+	setwildbattle SPECIES_ZAPDOS, 50, ITEM_NONE, SPECIES_ZAPDOS_GALAR, 50, ITEM_NONE
 	waitse
 	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
+	delay 5
+	playmoncry SPECIES_ZAPDOS_GALAR, CRY_MODE_ENCOUNTER
 	message Text_Gyaoo
 	waitmessage
 	waitmoncry

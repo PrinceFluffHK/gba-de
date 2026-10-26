@@ -221,15 +221,11 @@ ViridianCity_EventScript_TutorialTriggerRight::
 
 ViridianCity_EventScript_DoTutorialBattle::
 	msgbox ViridianCity_Text_ShowYouHowToCatchMons
-	closemessage
-	special StartOldManTutorialBattle
-	waitstate
-	lock
-	faceplayer
+	giveitem ITEM_REPEL
 	msgbox ViridianCity_Text_ThatWasEducationalTakeThis
-	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
-	giveitem ITEM_TEACHY_TV
+	giveitem ITEM_EXP_SHARE
 	msgbox ViridianCity_Text_WatchThatToLearnBasics
+	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
 	return
 
 ViridianCity_Text_CanCarryMonsAnywhere::
@@ -285,23 +281,21 @@ ViridianCity_Text_ShowYouHowToCatchMons::
 	.string "Then let me give you a word of\n"
 	.string "advice.\p"
 	.string "Whenever you catch a POKéMON,\n"
-	.string "the POKéDEX automatically updates\l"
-	.string "its data.\p"
-	.string "…You don't know how to catch\n"
-	.string "a POKéMON?\p"
-	.string "I suppose I had better show you\n"
-	.string "then!$"
+	.string "the POKéDEX will show its STATS,\l"
+	.string "EVOLUTIONS, and MOVES.\p"
+	.string "Here, take this.$"
 
 ViridianCity_Text_ThatWasEducationalTakeThis::
-	.string "There! Now tell me, that was\n"
-	.string "educational, was it not?\p"
+	.string "That will help you catch rare\n"
+	.string "species by keeping lower-level\l"
+	.string "POKéMON away.\p"
 	.string "And here, take this, too.$"
 
 ViridianCity_Text_WatchThatToLearnBasics::
-	.string "If there's something you don't\n"
-	.string "understand, watch that.\p"
-	.string "It will teach you about the basics\n"
-	.string "of being a POKéMON TRAINER.$"
+	.string "If you give that HELD ITEM to\n"
+	.string "to one of your POKéMON,\p"
+	.string "it will gain experience in battle\n"
+	.string "even if it never switches in.$"
 
 ViridianCity_Text_WeakenMonsFirstToCatch::
 	.string "Well, now, I've had my coffee, and\n"

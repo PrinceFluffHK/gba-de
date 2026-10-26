@@ -183,7 +183,7 @@ CeladonCity_GameCorner_EventScript_Scientist::
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_EventScript_GamblerNoCoinCase
 	checkcoins VAR_TEMP_1
 	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1) - 20, CeladonCity_GameCorner_EventScript_ScientistNoRoomForCoins
-	addcoins 20
+	addcoins 10
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CeladonCity_GameCorner_Text_Received20CoinsFromNiceGuy
 	playse SE_SHOP
@@ -208,9 +208,9 @@ CeladonCity_GameCorner_EventScript_Gentleman::
 	goto_if_set FLAG_GOT_20_COINS_FROM_GAMBLER_2, CeladonCity_GameCorner_EventScript_GentlemanAlreadyGotCoins
 	msgbox CeladonCity_GameCorner_Text_HereAreSomeCoinsShoo
 	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_EventScript_GamblerNoCoinCase
-	checkcoins VAR_TEMP_1
-	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1) - 20, CeladonCity_GameCorner_EventScript_GentlemanNoRoomForCoins
-	addcoins 20
+@	checkcoins VAR_TEMP_1
+@	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1) - 20, CeladonCity_GameCorner_EventScript_GentlemanNoRoomForCoins
+	addcoins 9000
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CeladonCity_GameCorner_Text_Received20CoinsFromMan
 	playse SE_SHOP
@@ -561,7 +561,7 @@ CeladonCity_GameCorner_Text_HereAreSomeCoinsShoo::
 	.string "Here are some COINS, so shoo!$"
 
 CeladonCity_GameCorner_Text_Received20CoinsFromMan::
-	.string "{PLAYER} received 20 COINS\n"
+	.string "{PLAYER} received 9000 COINS\n"
 	.string "from the man.$"
 
 CeladonCity_GameCorner_Text_YouveGotPlentyCoins::

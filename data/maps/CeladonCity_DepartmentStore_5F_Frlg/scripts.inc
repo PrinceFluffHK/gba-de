@@ -32,9 +32,7 @@ CeladonCity_DepartmentStore_5F_XItems::
 	.2byte ITEM_X_ACCURACY
 	.2byte ITEM_GUARD_SPEC
 	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 CeladonCity_DepartmentStore_5F_EventScript_ClerkVitamins::
 	lock
@@ -54,9 +52,7 @@ CeladonCity_DepartmentStore_5F_Vitamins::
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 CeladonCity_DepartmentStore_5F_Text_ExplainStatEnhancers::
 	.string "POKéMON stat enhancers can be\n"

@@ -55,7 +55,7 @@ CeruleanCity_EventScript_Rival::
 	msgbox CeruleanCity_Text_OhRightLittlePresentAsFavor
 	setvar VAR_MAP_SCENE_CERULEAN_CITY_RIVAL, 1
 	setflag FLAG_GOT_FAME_CHECKER
-	giveitem ITEM_FAME_CHECKER
+	giveitem ITEM_FOCUS_SASH
 	msgbox CeruleanCity_Text_ExplainFameCheckerSmellYa
 	closemessage
 	applymovement LOCALID_CERULEAN_RIVAL, CeruleanCity_Movement_RivalExit
@@ -394,10 +394,10 @@ CeruleanCity_Text_OhRightLittlePresentAsFavor::
 	.string "present as a favor.$"
 
 CeruleanCity_Text_ExplainFameCheckerSmellYa::
-	.string "A chatty gossip like you…\n"
+	.string "A tryhard loser like you…\n"
 	.string "That thing's perfect.\p"
 	.string "I don't need it because I don't\n"
-	.string "give a hoot about others.\p"
+	.string "give a hoot about damage calcs.\p"
 	.string "All right, this time I really am\n"
 	.string "gone. Smell ya!$"
 

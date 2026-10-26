@@ -60,10 +60,10 @@ Route12_NorthEntrance_2F_Text_ReceivedTM27FromLittleGirl::
 	.string "from the little girl.$"
 
 Route12_NorthEntrance_2F_Text_ExplainTM27::
-	.string "TM27 is a move called RETURN…\p"
-	.string "If you treat your POKéMON good,\n"
-	.string "it will return your love by working\l"
-	.string "its hardest in battle.$"
+	.string "TM27 has the move ALLURING VOICE…\p"
+	.string "If your target already gained a\n"
+	.string "stat stage earlier in the turn,\l"
+	.string "it will get confused.$"
 
 Route12_NorthEntrance_2F_Text_DontHaveRoomForThis::
 	.string "You don't have room for this.$"

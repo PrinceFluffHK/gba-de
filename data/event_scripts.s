@@ -1656,6 +1656,7 @@ Text_MonFlewAway::
 
 @ Call for legendary bird trio
 Text_Gyaoo::
+	.string "Gyaoo!\n"
 	.string "Gyaoo!$"
 
 EventScript_BrailleCursorWaitButton::

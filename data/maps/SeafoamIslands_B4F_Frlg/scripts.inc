@@ -154,9 +154,11 @@ SeafoamIslands_B4F_Movement_WalkUp::
 SeafoamIslands_B4F_EventScript_Articuno::
 	lock
 	faceplayer
-	setwildbattle SPECIES_ARTICUNO, 50
+	setwildbattle SPECIES_ARTICUNO, 50, ITEM_NONE, SPECIES_ARTICUNO_GALAR, 50, ITEM_NONE
 	waitse
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_ENCOUNTER
+	delay 5
+	playmoncry SPECIES_ARTICUNO_GALAR, CRY_MODE_ENCOUNTER
 	message Text_Gyaoo
 	waitmessage
 	waitmoncry

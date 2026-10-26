@@ -66,9 +66,7 @@ ViridianCity_Mart_Items::
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 ViridianCity_Mart_EventScript_SayHiToOak::
 	msgbox ViridianCity_Mart_Text_SayHiToOakForMe

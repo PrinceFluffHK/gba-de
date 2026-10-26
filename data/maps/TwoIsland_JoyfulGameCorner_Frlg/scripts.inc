@@ -162,9 +162,9 @@ TwoIsland_JoyfulGameCorner_EventScript_GiveDaddyMeteorite::
 	end
 
 TwoIsland_JoyfulGameCorner_EventScript_ReceiveMoonStone::
-	checkitemspace ITEM_MOON_STONE
+	checkitemspace ITEM_TM_DRACO_METEOR
 	goto_if_eq VAR_RESULT, FALSE, TwoIsland_JoyfulGameCorner_EventScript_NoRoomForMoonStone
-	additem ITEM_MOON_STONE
+	additem ITEM_TM_DRACO_METEOR
 	setflag FLAG_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER
 	msgreceiveditem TwoIsland_JoyfulGameCorner_Text_ReceivedMoonStoneFromLostellesDaddy, ITEM_MOON_STONE
 	release

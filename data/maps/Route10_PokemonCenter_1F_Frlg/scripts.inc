@@ -42,9 +42,9 @@ Route10_PokemonCenter_1F_EventScript_Aide::
 	call Route10_PokemonCenter_1F_EventScript_GetAideRequestInfo
 	goto_if_lt VAR_0x8006, REQUIRED_OWNED_MONS, Aide_EventScript_HaventCaughtEnough
 	msgbox Route10_PokemonCenter_1F_Text_GreatHereYouGo
-	checkitemspace ITEM_EVERSTONE
+	checkitemspace ITEM_TM_SANDSTORM
 	goto_if_eq VAR_RESULT, FALSE, Aide_EventScript_NoRoomForItem
-	giveitem_msg Route10_PokemonCenter_1F_Text_ReceivedEverstoneFromAide, ITEM_EVERSTONE
+	giveitem_msg Route10_PokemonCenter_1F_Text_ReceivedEverstoneFromAide, ITEM_TM_SANDSTORM
 	setflag FLAG_GOT_EVERSTONE_FROM_OAKS_AIDE
 	msgbox Route10_PokemonCenter_1F_Text_ExplainEverstone
 	release
@@ -57,7 +57,7 @@ Route10_PokemonCenter_1F_EventScript_AlreadyGotEverstone::
 
 Route10_PokemonCenter_1F_EventScript_GetAideRequestInfo::
 	buffernumberstring STR_VAR_1, REQUIRED_OWNED_MONS
-	bufferitemname STR_VAR_2, ITEM_EVERSTONE
+	bufferitemname STR_VAR_2, ITEM_TM_SANDSTORM
 	return
 
 Route10_PokemonCenter_1F_Text_EveryTypeStrongerThanOthers::
@@ -82,8 +82,8 @@ Route10_PokemonCenter_1F_Text_GiveEverstoneIfCaught20Mons::
 	.string "If your POKéDEX has complete data\n"
 	.string "on twenty species, I'm supposed to\l"
 	.string "give you a reward from PROF. OAK.\p"
-	.string "He entrusted me with this\n"
-	.string "EVERSTONE.\p"
+	.string "He entrusted me with this TM\n"
+	.string "containing the move SANDSTORM.\p"
 	.string "So, {PLAYER}, let me ask you.\p"
 	.string "Have you gathered data on at least\n"
 	.string "twenty kinds of POKéMON?$"
@@ -95,15 +95,15 @@ Route10_PokemonCenter_1F_Text_GreatHereYouGo::
 	.string "Here you go!$"
 
 Route10_PokemonCenter_1F_Text_ReceivedEverstoneFromAide::
-	.string "{PLAYER} received the EVERSTONE\n"
+	.string "{PLAYER} received TM37\n"
 	.string "from the AIDE.$"
 
 Route10_PokemonCenter_1F_Text_ExplainEverstone::
-	.string "Making POKéMON evolve certainly\n"
-	.string "can add to the POKéDEX.\p"
+	.string "Unrelated, but making POKéMON evolve\n"
+	.string "certainly can add to the POKéDEX.\p"
 	.string "However, at times, you may not\n"
 	.string "want a certain POKéMON to evolve.\p"
-	.string "In that case, give the EVERSTONE\n"
+	.string "In that case, give an EVERSTONE\n"
 	.string "to that POKéMON.\p"
 	.string "It will prevent evolution according\n"
 	.string "to the PROFESSOR.$"

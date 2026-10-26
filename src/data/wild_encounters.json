@@ -10797,6 +10797,26 @@
                 "species": "SPECIES_TENTACOOL"
               }
             ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_GEODUDE_ALOLA"
+              }
+            ]
           }
         },
         {

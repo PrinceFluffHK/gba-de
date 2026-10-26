@@ -21,9 +21,7 @@ SixIsland_Mart_Items::
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_DREAM_MAIL
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 SixIsland_Mart_EventScript_Picnicker::
 	msgbox SixIsland_Mart_Text_ShouldBuyMailAndWriteLetter, MSGBOX_NPC

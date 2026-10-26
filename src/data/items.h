@@ -13116,84 +13116,84 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM55] =
+    [ITEM_TM_DARK_PULSE] =
     {
         .name = ITEM_NAME("TM55"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "A 2-turn move that\n"
-            "raises Sp. Attack\n"
-            "before attacking."),
+            "Attacks with a\n"
+            "horrible aura.\n"
+            "Might flinch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM56] =
+    [ITEM_TM_DUAL_WINGBEAT] =
     {
         .name = ITEM_NAME("TM56"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Throws scorching\n"
-            "sand at the target.\n"
-            "May leave a burn."),
+            "User slams a target\n"
+            "with wings and hits\n"
+            "twice in a row."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM57] =
+    [ITEM_TM_ROCK_SLIDE] =
     {
         .name = ITEM_NAME("TM57"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Attacks with rays\n" 
-            "of light that sparkle\n"
-            "like diamonds."),
+            "Large boulders.\n"
+            "are hurled. May\n"
+            "cause flinching."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM58] =
+    [ITEM_TM_ICY_WIND] =
     {
         .name = ITEM_NAME("TM58"),
-        .price = 7500,
+        .price = 3000,
         .description = COMPOUND_STRING(
-            "A charged slam.\n"
-            "If it misses, the\n"
-            "user is hurt."),
+            "Blows a freezing\n"
+            "wind at the foe.\n"
+            "May lower Speed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM59] =
+    [ITEM_TM_DAZZLING_GLEAM] =
     {
         .name = ITEM_NAME("TM59"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "A damaging sound\n"
-            "wave that may\n"
-            "lower Sp. Def."),
+            "Damages both foes\n"
+            "by emitting a\n"
+            "flash of light."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM60] =
+    [ITEM_TM_DRACO_METEOR] =
     {
         .name = ITEM_NAME("TM60"),
-        .price = 3000,
+        .price = 10000,
         .description = COMPOUND_STRING(
-            "Shoots 2-to-5\n"
-            "times. Ups Spe\n"
-            "lowers Defense."),
+            "Casts comets onto\n"
+            "the foe. Harshly\n"
+            "lowers the Sp. Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

@@ -721,15 +721,12 @@ PewterCity_EventScript_AideGiveRunningShoes::
 	call_if_eq VAR_TEMP_1, 3, PewterCity_EventScript_AideApproachPlayer3
 	msgbox PewterCity_Text_AskedToDeliverThis
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_RG_OBTAIN_KEY_ITEM
-	message PewterCity_Text_ReceivedRunningShoesFromAide
-	waitmessage
-	waitfanfare
-	msgbox PewterCity_Text_SwitchedShoesWithRunningShoes
-	special DisableMsgBoxWalkaway
-	signmsg
-	msgbox PewterCity_Text_ExplainRunningShoes
-	normalmsg
+	giveitem ITEM_HM06
+@	msgbox PewterCity_Text_SwitchedShoesWithRunningShoes
+@	special DisableMsgBoxWalkaway
+@	signmsg
+@	msgbox PewterCity_Text_ExplainRunningShoes
+@	normalmsg
 	call EventScript_RestorePrevTextColor
 	msgbox PewterCity_Text_MustBeGoingBackToLab
 	closemessage
@@ -742,7 +739,7 @@ PewterCity_EventScript_AideGiveRunningShoes::
 	msgbox PewterCity_Text_RunningShoesLetterFromMom
 	closemessage
 	removeobject LOCALID_PEWTER_AIDE
-	setflag FLAG_SYS_B_DASH
+@	setflag FLAG_SYS_B_DASH
 	setvar VAR_MAP_SCENE_PEWTER_CITY, 2
 	return
 
@@ -1008,11 +1005,8 @@ PewterCity_Text_MustBeGoingBackToLab::
 PewterCity_Text_RunningShoesLetterFromMom::
 	.string "There's a letter attached…\p"
 	.string "Dear {PLAYER},\p"
-	.string "Here is a pair of RUNNING SHOES\n"
-	.string "for my beloved challenger.\p"
-	.string "Remember, I'll always cheer for\n"
-	.string "you! Don't ever give up!\p"
-	.string "From Mom$"
+	.string "Thanks for playing Emerald DE!\n"
+	.string "- Prince Fluff$"
 
 PewterCity_Text_WantToEnableChallengeMode:
 	.string "Oh hey there {PLAYER}!\p"

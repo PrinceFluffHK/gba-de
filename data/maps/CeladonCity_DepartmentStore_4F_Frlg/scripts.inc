@@ -31,9 +31,7 @@ CeladonCity_DepartmentStore_4F_Items::
 	.2byte ITEM_THUNDER_STONE
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_LEAF_STONE
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 CeladonCity_DepartmentStore_4F_Text_GettingPokeDollAsPresent::
 	.string "I'm getting a present for my\n"

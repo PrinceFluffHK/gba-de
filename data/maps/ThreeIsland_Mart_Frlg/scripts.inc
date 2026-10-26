@@ -6,6 +6,16 @@ ThreeIsland_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+	pokemartstandard
+	msgbox gText_PleaseComeAgain
+	release
+	end
+
+ThreeIsland_Mart_EventScript_Clerk_2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
 	pokemart ThreeIsland_Mart_Items
 	msgbox gText_PleaseComeAgain
 	release
@@ -13,15 +23,12 @@ ThreeIsland_Mart_EventScript_Clerk::
 
 	.align 2
 ThreeIsland_Mart_Items::
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_REVIVE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_NONE
-	release
-	end
+	.2byte ITEM_TM_DARK_PULSE
+	.2byte ITEM_TM_DUAL_WINGBEAT
+	.2byte ITEM_TM_ROCK_SLIDE
+	.2byte ITEM_TM_ICY_WIND
+	.2byte ITEM_TM_DAZZLING_GLEAM
+	pokemartlistend
 
 ThreeIsland_Mart_EventScript_Picnicker::
 	msgbox ThreeIsland_Mart_Text_TrueThatCeldadonDeptStoreBigger, MSGBOX_NPC

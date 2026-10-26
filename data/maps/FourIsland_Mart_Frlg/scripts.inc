@@ -21,9 +21,7 @@ FourIsland_Mart_Items::
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 FourIsland_Mart_EventScript_Camper::
 	msgbox FourIsland_Mart_Text_IcefallCaveIsFrigid, MSGBOX_NPC

@@ -25,7 +25,7 @@ ThreeIsland_BerryForest_EventScript_Lostelle::
 	applymovement LOCALID_BERRY_FOREST_LOSTELLE, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox ThreeIsland_BerryForest_Text_ThankYouHaveThis
-	giveitem ITEM_IAPAPA_BERRY
+	giveitem ITEM_ENIGMA_BERRY
 	call_if_eq VAR_RESULT, FALSE, ThreeIsland_BerryForest_EventScript_NoRoomForBerry
 	special GetPlayerBigGuyGirlString
 	msgbox ThreeIsland_BerryForest_Text_LetsGoHome

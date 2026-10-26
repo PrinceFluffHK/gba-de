@@ -303,10 +303,8 @@ VermilionCity_Gym_Text_LtSurgePostBattle::
 	.string "type POKéMON!$"
 
 VermilionCity_Gym_Text_ExplainThunderBadgeTakeThis::
-	.string "The THUNDERBADGE cranks up your\n"
-	.string "POKéMON's SPEED!\p"
-	.string "It also lets your POKéMON FLY\n"
-	.string "lightning-quick anytime, kid!\p"
+	.string "The THUNDER BADGE lets your POKéMON\n"
+	.string "FLY lightning-quick anytime, kid!\p"
 	.string "You're special, kid!\n"
 	.string "Take this!$"
 
@@ -315,7 +313,7 @@ VermilionCity_Gym_Text_ReceivedTM34FromLtSurge::
 	.string "from LT. SURGE.$"
 
 VermilionCity_Gym_Text_ExplainTM34::
-	.string "TM34 contains SHOCK WAVE!\p"
+	.string "TM34 contains THUNDER WAVE!\p"
 	.string "Teach it to an ELECTRIC POKéMON!$"
 
 VermilionCity_Gym_Text_MakeRoomInYourBag::
@@ -324,7 +322,7 @@ VermilionCity_Gym_Text_MakeRoomInYourBag::
 VermilionCity_Gym_Text_LtSurgeDefeat::
 	.string "Now that's a shocker!\p"
 	.string "You're the real deal, kid!\p"
-	.string "Fine, then, take the THUNDERBADGE!$"
+	.string "Fine, then, take the THUNDER BADGE!$"
 
 VermilionCity_Gym_Text_TuckerIntro::
 	.string "When I was in the Army, LT. SURGE\n"

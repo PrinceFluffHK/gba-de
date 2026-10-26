@@ -21,9 +21,9 @@ CeladonCity_Gym_EventScript_DefeatedErika::
 
 CeladonCity_Gym_EventScript_GiveTM19::
 	msgbox CeladonCity_Gym_Text_ExplainRainbowBadgeTakeThis
-	checkitemspace ITEM_TM19
+	checkitemspace ITEM_TM_GRASS_KNOT
 	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Gym_EventScript_NoRoomForTM19
-	giveitem_msg CeladonCity_Gym_Text_ReceivedTM19FromErika, ITEM_TM19
+	giveitem_msg CeladonCity_Gym_Text_ReceivedTM19FromErika, ITEM_TM_GRASS_KNOT
 	setflag FLAG_GOT_TM19_FROM_ERIKA
 	msgbox CeladonCity_Gym_Text_ExplainTM19
 	release
@@ -104,7 +104,7 @@ CeladonCity_Gym_Text_ErikaDefeat::
 	.string "I concede defeat.\l"
 	.string "You are remarkably strong.\p"
 	.string "I must confer on you the\n"
-	.string "RAINBOWBADGE.$"
+	.string "RAINBOW BADGE.$"
 
 CeladonCity_Gym_Text_ErikaPostBattle::
 	.string "You are cataloging POKéMON?\n"
@@ -113,7 +113,7 @@ CeladonCity_Gym_Text_ErikaPostBattle::
 	.string "they were unattractive.$"
 
 CeladonCity_Gym_Text_ExplainRainbowBadgeTakeThis::
-	.string "The RAINBOWBADGE will make\n"
+	.string "The RAINBOW BADGE will make\n"
 	.string "POKéMON up to Lv. 50 obey.\p"
 	.string "It also allows POKéMON to use\n"
 	.string "STRENGTH in and out of battle.\p"
@@ -124,9 +124,9 @@ CeladonCity_Gym_Text_ReceivedTM19FromErika::
 	.string "from ERIKA.$"
 
 CeladonCity_Gym_Text_ExplainTM19::
-	.string "TM19 contains GIGA DRAIN.\p"
-	.string "Half the damage it inflicts is\n"
-	.string "drained to heal your POKéMON.\p"
+	.string "TM19 contains GRASS KNOT.\p"
+	.string "Lots of different POKéMON can learn it,\n"
+	.string "even a bunch that aren't GRASS-type.\p"
 	.string "Wouldn't you agree that it's a\n"
 	.string "wonderful move?$"
 
