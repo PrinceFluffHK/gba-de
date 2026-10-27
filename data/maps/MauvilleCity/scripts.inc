@@ -416,6 +416,8 @@ MauvilleCity_Movement_ScottExitEast:
 MauvilleCity_EventScript_Wattson::
 	lock
 	faceplayer
+	goto_if_set FLAG_IS_DOUBLE_CHAMPION, MauvilleCity_Gym_EventScript_WattsonRematch_Cap 
+	goto_if_set FLAG_IS_CHAMPION, MauvilleCity_Gym_EventScript_WattsonRematch 
 	goto_if_set FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON, MauvilleCity_EventScript_ReceivedThunderbolt
 	goto_if_eq VAR_NEW_MAUVILLE_STATE, 2, MauvilleCity_EventScript_CompletedNewMauville
 	goto_if_set FLAG_GOT_BASEMENT_KEY_FROM_WATTSON, MauvilleCity_EventScript_BegunNewMauville
@@ -424,6 +426,18 @@ MauvilleCity_EventScript_Wattson::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_GOT_BASEMENT_KEY_FROM_WATTSON
 	msgbox MauvilleCity_Text_WattsonWontBeChallenge, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_Gym_EventScript_WattsonRematch::
+	trainerbattle_single TRAINER_WATTSON_2, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
+	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
+	release
+	end
+
+MauvilleCity_Gym_EventScript_WattsonRematch_Cap::
+	trainerbattle_single TRAINER_WATTSON_3, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
+	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
 	release
 	end
 

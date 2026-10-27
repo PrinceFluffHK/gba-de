@@ -110,6 +110,8 @@ PetalburgCity_Gym_EventScript_Norman::
 	vsseeker_rematchid TRAINER_NORMAN_1
 	lock
 	faceplayer
+	goto_if_set FLAG_IS_DOUBLE_CHAMPION, Petalburg_City_EventScript_NormanRematch_Cap 
+	goto_if_set FLAG_IS_CHAMPION, Petalburg_City_EventScript_NormanRematch 
 	switch VAR_PETALBURG_GYM_STATE
 	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
 	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
@@ -125,6 +127,18 @@ PetalburgCity_Gym_EventScript_Norman::
 	case DIR_NORTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialNorth
 	case DIR_WEST, PetalburgCity_Gym_EventScript_BeginWallyTutorialWest
 	case DIR_EAST, PetalburgCity_Gym_EventScript_BeginWallyTutorialEast
+	end
+
+Petalburg_City_EventScript_NormanRematch::
+	trainerbattle_single TRAINER_NORMAN_2, Petalburg_City_Text_NormanPreRematch, Petalburg_City_Text_NormanRematchDefeat, Petalburg_City_EventScript_NormanDefeated, NO_MUSIC
+	msgbox Petalburg_City_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	release
+	end
+
+Petalburg_City_EventScript_NormanRematch_Cap::
+	trainerbattle_single TRAINER_NORMAN_3, Petalburg_City_Text_NormanPreRematch, Petalburg_City_Text_NormanRematchDefeat, Petalburg_City_EventScript_NormanDefeated, NO_MUSIC
+	msgbox Petalburg_City_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	release
 	end
 
 PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth::

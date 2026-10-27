@@ -80,6 +80,8 @@ SootopolisCity_Gym_1F_Movement_FallThroughIce:
 	step_end
 
 SootopolisCity_Gym_1F_EventScript_Juan::
+	goto_if_set FLAG_IS_DOUBLE_CHAMPION, SootopolisCity_Gym_1F_EventScript_JuanRematch_Cap 
+	goto_if_set FLAG_IS_CHAMPION, SootopolisCity_Gym_1F_EventScript_JuanRematch 
 	trainerbattle_single TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanRematch
@@ -87,6 +89,16 @@ SootopolisCity_Gym_1F_EventScript_Juan::
 	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostBattle, MSGBOX_DEFAULT
 	release
+	end
+
+SootopolisCity_Gym_1F_EventScript_JuanRematch::
+	trainerbattle_single TRAINER_JUAN_2, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
+	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	end
+
+SootopolisCity_Gym_1F_EventScript_JuanRematch_Cap::
+	trainerbattle_single TRAINER_JUAN_3, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
+	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 SootopolisCity_Gym_1F_EventScript_JuanDefeated::
