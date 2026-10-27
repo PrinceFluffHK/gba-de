@@ -14336,8 +14336,8 @@ Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: Yes
-Difficulty: Easy
 AI: Smart Trainer
+Difficulty: Easy
 
 Ralts (F)
 Ability: Synchronize
@@ -16958,36 +16958,51 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Female
 Double Battle: Yes
+AI: Smart Trainer
 Difficulty: Easy
-AI: Smart Trainer
 
-Golem
-Level: 32
-- Protect
-- Rollout
-- Magnitude
-- Explosion
+Glimmora
+Ability: Toxic Debris
+Level: 64  
+- Sludge Wave
+- Power Gem
+- Spiky Shield
 
-Kabuto @ Sitrus Berry
-Level: 35
+Garganacl @ Leftovers
+Ability: Purifying Salt
+Level: 64  
+- Salt Cure
+- Stealth Rock
+- Recover
+
+Cradily @ Power Herb
+Ability: Storm Drain
+Level: 64  
+- Meteor Beam
+- Giga Drain
+- Acid
+
+Armaldo
+Ability: Tough Claws
+Level: 64  
+- Accelerock
+- X-Scissor
 - Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
 
-Onix
-Level: 35
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+Diancie - Mega @ Diancite
+Ability: Sand Stream
+Level: 64  
+- Diamond Storm
+- Moonblast
+- Flash Cannon
 
-Nosepass @ Sitrus Berry
-Level: 37
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
+Probopass
+Ability: Levitate
+Level: 64  
+- Power Gem
+- Rock Tomb
+- Flash Cannon
+- Thunderbolt
 
 === TRAINER_ROXANNE_2 ===
 Name: ROXANNE
@@ -16996,36 +17011,56 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Female
 Double Battle: Yes
+AI: Smart Trainer
 Difficulty: Normal
-AI: Smart Trainer
 
-Golem
-Level: 32
+Glimmora @ Focus Sash
+Ability: Toxic Debris
+Level: 64  
+- Sludge Wave
+- Power Gem
+- Mortal Spin
+- Spiky Shield
+
+Garganacl @ Leftovers
+Ability: Purifying Salt
+Level: 64  
+- Salt Cure
+- Stealth Rock
+- Recover
 - Protect
-- Rollout
-- Magnitude
-- Explosion
 
-Kabuto @ Sitrus Berry
-Level: 35
+Cradily @ Power Herb
+Ability: Storm Drain
+Level: 64  
+- Meteor Beam
+- Giga Drain
+- Acid
+- Leech Seed
+
+Armaldo @ Sitrus Berry
+Ability: Tough Claws
+Level: 64  
+- Accelerock
+- X-Scissor
+- Liquidation
 - Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
 
-Onix
-Level: 35
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+Diancie - Mega @ Diancite
+Ability: Sand Stream
+Level: 64  
+- Diamond Storm
+- Moonblast
+- Earth Power
+- Flash Cannon
 
-Nosepass @ Sitrus Berry
-Level: 37
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
+Probopass @ Chople Berry
+Ability: Levitate
+Level: 64  
+- Power Gem
+- Rock Tomb
+- Flash Cannon
+- Thunderbolt
 
 === TRAINER_ROXANNE_2 ===
 Name: ROXANNE
@@ -17034,36 +17069,62 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Female
 Double Battle: Yes
-Difficulty: Hard
 AI: Smart Trainer
+Difficulty: Hard
 
-Golem
-Level: 32
+Glimmora @ Focus Sash
+Ability: Toxic Debris
+Level: 64
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Sludge Wave
+- Power Gem
+- Mortal Spin
+- Spiky Shield
+
+Garganacl @ Leftovers
+Ability: Purifying Salt
+Level: 64
+EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe  
+- Salt Cure
+- Stealth Rock
+- Recover
 - Protect
-- Rollout
-- Magnitude
-- Explosion
 
-Kabuto @ Sitrus Berry
-Level: 35
+Cradily @ Power Herb
+Ability: Storm Drain
+Level: 64
+EVs: 252 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 0 Spe  
+- Meteor Beam
+- Giga Drain
+- Acid
+- Leech Seed
+
+Armaldo @ Sitrus Berry
+Ability: Tough Claws
+Level: 64
+EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Accelerock
+- X-Scissor
+- Liquidation
 - Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
 
-Onix
-Level: 35
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+Diancie - Mega @ Diancite
+Ability: Sand Stream
+Level: 64
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Diamond Storm
+- Moonblast
+- Earth Power
+- Flash Cannon
 
-Nosepass @ Sitrus Berry
-Level: 37
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
+Probopass @ Chople Berry
+Ability: Levitate
+Level: 64
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Power Gem
+- Rock Tomb
+- Flash Cannon
+- Thunderbolt
 
 === TRAINER_ROXANNE_3 ===
 Name: ROXANNE
@@ -17073,41 +17134,172 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Omanyte
-Level: 37
-- Protect
-- Ice Beam
-- Rock Slide
-- Surf
+Glimmora
+Ability: Toxic Debris
+Level: 100  
+- Sludge Wave
+- Power Gem
+- Spiky Shield
 
-Golem
-Level: 37
-- Protect
-- Rollout
-- Magnitude
-- Explosion
+Garganacl @ Leftovers
+Ability: Purifying Salt
+Level: 100  
+- Salt Cure
+- Stealth Rock
+- Recover
 
-Kabutops @ Sitrus Berry
-Level: 40
+Cradily @ Power Herb
+Ability: Storm Drain
+Level: 100  
+- Meteor Beam
+- Giga Drain
+- Acid
+
+Armaldo
+Ability: Tough Claws
+Level: 100  
+- Accelerock
+- X-Scissor
 - Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
 
-Onix
-Level: 40
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+Diancie - Mega @ Diancite
+Ability: Sand Stream
+Level: 100  
+- Diamond Storm
+- Moonblast
+- Flash Cannon
 
-Nosepass @ Sitrus Berry
-Level: 42
-- Double Team
-- Explosion
+Probopass
+Ability: Levitate
+Level: 100  
+- Power Gem
+- Rock Tomb
+- Flash Cannon
+- Thunderbolt
+
+=== TRAINER_ROXANNE_3 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Glimmora @ Focus Sash
+Ability: Toxic Debris
+Level: 100  
+- Sludge Wave
+- Power Gem
+- Mortal Spin
+- Spiky Shield
+
+Garganacl @ Leftovers
+Ability: Purifying Salt
+Level: 100  
+- Salt Cure
+- Stealth Rock
+- Recover
 - Protect
-- Rock Slide
+
+Cradily @ Power Herb
+Ability: Storm Drain
+Level: 100  
+- Meteor Beam
+- Giga Drain
+- Acid
+- Leech Seed
+
+Armaldo @ Sitrus Berry
+Ability: Tough Claws
+Level: 100  
+- Accelerock
+- X-Scissor
+- Liquidation
+- Swords Dance
+
+Diancie - Mega @ Diancite
+Ability: Sand Stream
+Level: 100  
+- Diamond Storm
+- Moonblast
+- Earth Power
+- Flash Cannon
+
+Probopass @ Chople Berry
+Ability: Levitate
+Level: 100  
+- Power Gem
+- Rock Tomb
+- Flash Cannon
+- Thunderbolt
+
+=== TRAINER_ROXANNE_3 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Glimmora @ Focus Sash
+Ability: Toxic Debris
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Sludge Wave
+- Power Gem
+- Mortal Spin
+- Spiky Shield
+
+Garganacl @ Leftovers
+Ability: Purifying Salt
+Level: 100
+EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe  
+- Salt Cure
+- Stealth Rock
+- Recover
+- Protect
+
+Cradily @ Power Herb
+Ability: Storm Drain
+Level: 100
+EVs: 252 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 0 Spe  
+- Meteor Beam
+- Giga Drain
+- Acid
+- Leech Seed
+
+Armaldo @ Sitrus Berry
+Ability: Tough Claws
+Level: 100
+EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Accelerock
+- X-Scissor
+- Liquidation
+- Swords Dance
+
+Diancie - Mega @ Diancite
+Ability: Sand Stream
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Diamond Storm
+- Moonblast
+- Earth Power
+- Flash Cannon
+
+Probopass @ Chople Berry
+Ability: Levitate
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Power Gem
+- Rock Tomb
+- Flash Cannon
+- Thunderbolt
 
 === TRAINER_ROXANNE_4 ===
 Name: ROXANNE
@@ -17212,34 +17404,171 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Machamp @ Sitrus Berry
-Level: 33
-- Karate Chop
-- Rock Slide
-- Focus Punch
+Medicham
+Ability: Pure Power
+Level: 65  
+- Fake Out
+- Zen Headbutt
+- Close Combat
+
+Lopunny - Mega @ Loppunite
+Ability: Limber
+Level: 65  
+- Fake Out
+- Close Combat
+- Return
+
+Staraptor
+Ability: Reckless
+Level: 65  
+- Double-Edge
+- Brave Bird
+- Close Combat
+
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 65  
+- Extreme Speed
+- Flash Cannon
+- Aura Sphere
+
+Iron Hands
+Ability: Thick Fat
+Level: 65  
+- Fake Out
+- Drain Punch
+- Wild Charge
+
+Urshifu - Single @ Sitrus Berry
+Ability: Iron Fist
+Level: 65  
+- Close Combat
+- Wicked Blow
 - Bulk Up
 
-Meditite
-Level: 33
-- Psychic
-- Light Screen
-- Reflect
-- Focus Punch
+=== TRAINER_BRAWLY_2 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
 
-Hitmontop
-Level: 35
-- Pursuit
-- Counter
-- Protect
-- Triple Kick
-
-Hariyama @ Sitrus Berry
-Level: 37
+Medicham @ Lum Berry
+Ability: Pure Power
+Level: 65  
 - Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+- Zen Headbutt
+- Close Combat
+- Swords Dance
+
+Lopunny - Mega @ Loppunite
+Ability: Limber
+Level: 65  
+- Fake Out
+- Close Combat
+- Return
+- Triple Axel
+
+Staraptor @ Life Orb
+Ability: Reckless
+Level: 65  
+- Double-Edge
+- Brave Bird
+- Close Combat
+- Roost
+
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 65  
+- Extreme Speed
+- Flash Cannon
+- Aura Sphere
+- Calm Mind
+
+Iron Hands @ Assault Vest
+Ability: Thick Fat
+Level: 65  
+- Fake Out
+- Drain Punch
+- Wild Charge
+- Heavy Slam
+
+Urshifu - Single @ Sitrus Berry
+Ability: Iron Fist
+Level: 65  
+- Close Combat
+- Wicked Blow
+- Poison Jab
+- Bulk Up
+
+=== TRAINER_BRAWLY_2 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Medicham @ Lum Berry
+Ability: Pure Power
+Level: 65
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Fake Out
+- Zen Headbutt
+- Close Combat
+- Swords Dance
+
+Lopunny - Mega @ Loppunite
+Ability: Limber
+Level: 65
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Fake Out
+- Close Combat
+- Return
+- Triple Axel
+
+Staraptor @ Life Orb
+Ability: Reckless
+Level: 65
+EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Double-Edge
+- Brave Bird
+- Close Combat
+- Roost
+
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 65
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Extreme Speed
+- Flash Cannon
+- Aura Sphere
+- Calm Mind
+
+Iron Hands @ Assault Vest
+Ability: Thick Fat
+Level: 65
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Fake Out
+- Drain Punch
+- Wild Charge
+- Heavy Slam
+
+Urshifu - Single @ Sitrus Berry
+Ability: Iron Fist
+Level: 65
+EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Close Combat
+- Wicked Blow
+- Poison Jab
+- Bulk Up
 
 === TRAINER_BRAWLY_3 ===
 Name: BRAWLY
@@ -17249,34 +17578,171 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
-
-Machamp @ Sitrus Berry
-Level: 38
-- Karate Chop
-- Rock Slide
-- Focus Punch
-- Bulk Up
+Difficulty: Easy
 
 Medicham
-Level: 38
-- Psychic
-- Light Screen
-- Reflect
-- Focus Punch
-
-Hitmontop
-Level: 40
-- Pursuit
-- Counter
-- Protect
-- Triple Kick
-
-Hariyama @ Sitrus Berry
-Level: 42
+Ability: Pure Power
+Level: 100  
 - Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+- Zen Headbutt
+- Close Combat
+
+Lopunny - Mega @ Loppunite
+Ability: Limber
+Level: 100  
+- Fake Out
+- Close Combat
+- Return
+
+Staraptor
+Ability: Reckless
+Level: 100  
+- Double-Edge
+- Brave Bird
+- Close Combat
+
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 100  
+- Extreme Speed
+- Flash Cannon
+- Aura Sphere
+
+Iron Hands
+Ability: Thick Fat
+Level: 100  
+- Fake Out
+- Drain Punch
+- Wild Charge
+
+Urshifu - Single @ Sitrus Berry
+Ability: Iron Fist
+Level: 100  
+- Close Combat
+- Wicked Blow
+- Bulk Up
+
+=== TRAINER_BRAWLY_3 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Medicham @ Lum Berry
+Ability: Pure Power
+Level: 100  
+- Fake Out
+- Zen Headbutt
+- Close Combat
+- Swords Dance
+
+Lopunny - Mega @ Loppunite
+Ability: Limber
+Level: 100  
+- Fake Out
+- Close Combat
+- Return
+- Triple Axel
+
+Staraptor @ Life Orb
+Ability: Reckless
+Level: 100  
+- Double-Edge
+- Brave Bird
+- Close Combat
+- Roost
+
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 100  
+- Extreme Speed
+- Flash Cannon
+- Aura Sphere
+- Calm Mind
+
+Iron Hands @ Assault Vest
+Ability: Thick Fat
+Level: 100  
+- Fake Out
+- Drain Punch
+- Wild Charge
+- Heavy Slam
+
+Urshifu - Single @ Sitrus Berry
+Ability: Iron Fist
+Level: 100  
+- Close Combat
+- Wicked Blow
+- Poison Jab
+- Bulk Up
+
+=== TRAINER_BRAWLY_3 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Medicham @ Lum Berry
+Ability: Pure Power
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Fake Out
+- Zen Headbutt
+- Close Combat
+- Swords Dance
+
+Lopunny - Mega @ Loppunite
+Ability: Limber
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Fake Out
+- Close Combat
+- Return
+- Triple Axel
+
+Staraptor @ Life Orb
+Ability: Reckless
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Double-Edge
+- Brave Bird
+- Close Combat
+- Roost
+
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Extreme Speed
+- Flash Cannon
+- Aura Sphere
+- Calm Mind
+
+Iron Hands @ Assault Vest
+Ability: Thick Fat
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Fake Out
+- Drain Punch
+- Wild Charge
+- Heavy Slam
+
+Urshifu - Single @ Sitrus Berry
+Ability: Iron Fist
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Close Combat
+- Wicked Blow
+- Poison Jab
+- Bulk Up
 
 === TRAINER_BRAWLY_4 ===
 Name: BRAWLY
@@ -17381,34 +17847,171 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Mareep
-Level: 36
-- Thunder
+Klinklang
+Ability: Electric Surge
+Level: 66  
+- Gear Grind
+- Discharge
+- Shift Gear
+
+Bellibolt @ Sitrus Berry
+Ability: Electromorphosis
+Level: 66  
+- Parabolic Charge
+- Muddy Water
+- Soak
+
+Ampharos
+Ability: Wooly-Charged
+Level: 66  
+- Thunderbolt
+- Dragon Pulse
+- Grass Knot
+
+Manectric - Mega @ Manectite
+Ability: Lightning Rod
+Level: 66  
+- Volt Switch
+- Discharge
+- Overheat
+
+Toxtricity
+Ability: Punk Rock
+Level: 66  
+- Overdrive
+- Sludge Bomb
+- Boombust
+
+Magnezone @ Weakness Policy
+Ability: Sturdy
+Level: 66  
+- Flash Cannon
+- Thunderbolt
+- Magnet Rise
+
+=== TRAINER_WATTSON_2 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Klinklang @ Air Balloon
+Ability: Electric Surge
+Level: 66  
+- Gear Grind
+- Flash Cannon
+- Discharge
+- Shift Gear
+
+Bellibolt @ Sitrus Berry
+Ability: Electromorphosis
+Level: 66  
+- Parabolic Charge
+- Muddy Water
+- Substitute
+- Soak
+
+Ampharos @ Salac Berry
+Ability: Wooly-Charged
+Level: 66  
+- Thunderbolt
+- Electroweb
+- Dragon Pulse
+- Grass Knot
+
+Manectric - Mega @ Manectite
+Ability: Lightning Rod
+Level: 66  
+- Volt Switch
+- Discharge
+- Ice Fang
+- Overheat
+
+Toxtricity @ Throat Spray
+Ability: Punk Rock
+Level: 66  
+- Overdrive
+- Sludge Bomb
+- Boombust
 - Protect
-- Thunder Wave
-- Light Screen
 
-Electrode
-Level: 36
-- Rollout
-- Thunder
-- Explosion
-- Rain Dance
+Magnezone @ Weakness Policy
+Ability: Sturdy
+Level: 66  
+- Flash Cannon
+- Charge Beam
+- Tri Attack
+- Magnet Rise
 
-Magneton @ Sitrus Berry
-Level: 38
-- Supersonic
+=== TRAINER_WATTSON_2 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Klinklang @ Air Balloon
+Ability: Electric Surge
+Level: 66
+EVs: 128 HP / 252 Atk / 0 Def / 128 SpA / 0 SpD / 0 Spe  
+- Gear Grind
+- Flash Cannon
+- Discharge
+- Shift Gear
+
+Ampharos @ Salac Berry
+Ability: Wooly-Charged
+Level: 66
+EVs: 128 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 128 Spe  
+- Thunderbolt
+- Electroweb
+- Dragon Pulse
+- Grass Knot
+
+Manectric - Mega @ Manectite
+Ability: Lightning Rod
+Level: 66
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Volt Switch
+- Discharge
+- Ice Fang
+- Overheat
+
+Toxtricity @ Throat Spray
+Ability: Punk Rock
+Level: 66
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Overdrive
+- Sludge Bomb
+- Boombust
 - Protect
-- Thunder
-- Rain Dance
 
-Manectric @ Sitrus Berry
-Level: 40
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
+Magnezone @ Weakness Policy
+Ability: Sturdy
+Level: 66
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Flash Cannon
+- Charge Beam
+- Tri Attack
+- Magnet Rise
+
+Bellibolt @ Sitrus Berry
+Ability: Electromorphosis
+Level: 66
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Parabolic Charge
+- Muddy Water
+- Substitute
+- Soak
 
 === TRAINER_WATTSON_3 ===
 Name: WATTSON
@@ -17418,41 +18021,171 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Pikachu
-Level: 39
-- Thunder
-- Slam
-- Rain Dance
-- Shock Wave
+Klinklang
+Ability: Electric Surge
+Level: 100  
+- Gear Grind
+- Discharge
+- Shift Gear
 
-Flaaffy
-Level: 41
-- Thunder
+Bellibolt @ Sitrus Berry
+Ability: Electromorphosis
+Level: 100  
+- Parabolic Charge
+- Muddy Water
+- Soak
+
+Ampharos
+Ability: Wooly-Charged
+Level: 100  
+- Thunderbolt
+- Dragon Pulse
+- Grass Knot
+
+Manectric - Mega @ Manectite
+Ability: Lightning Rod
+Level: 100  
+- Volt Switch
+- Discharge
+- Overheat
+
+Toxtricity
+Ability: Punk Rock
+Level: 100  
+- Overdrive
+- Sludge Bomb
+- Boombust
+
+Magnezone @ Weakness Policy
+Ability: Sturdy
+Level: 100  
+- Flash Cannon
+- Thunderbolt
+- Magnet Rise
+
+=== TRAINER_WATTSON_3 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Klinklang @ Air Balloon
+Ability: Electric Surge
+Level: 100  
+- Gear Grind
+- Flash Cannon
+- Discharge
+- Shift Gear
+
+Bellibolt @ Sitrus Berry
+Ability: Electromorphosis
+Level: 100  
+- Parabolic Charge
+- Muddy Water
+- Substitute
+- Soak
+
+Ampharos @ Salac Berry
+Ability: Wooly-Charged
+Level: 100  
+- Thunderbolt
+- Electroweb
+- Dragon Pulse
+- Grass Knot
+
+Manectric - Mega @ Manectite
+Ability: Lightning Rod
+Level: 100  
+- Volt Switch
+- Discharge
+- Ice Fang
+- Overheat
+
+Toxtricity @ Throat Spray
+Ability: Punk Rock
+Level: 100  
+- Overdrive
+- Sludge Bomb
+- Boombust
 - Protect
-- Thunder Wave
-- Light Screen
 
-Electrode
-Level: 41
-- Rollout
-- Thunder
-- Explosion
-- Rain Dance
+Magnezone @ Weakness Policy
+Ability: Sturdy
+Level: 100  
+- Flash Cannon
+- Charge Beam
+- Tri Attack
+- Magnet Rise
 
-Magneton @ Sitrus Berry
-Level: 43
-- Supersonic
+=== TRAINER_WATTSON_3 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Klinklang @ Air Balloon
+Ability: Electric Surge
+Level: 100
+EVs: 128 HP / 252 Atk / 0 Def / 128 SpA / 0 SpD / 0 Spe  
+- Gear Grind
+- Flash Cannon
+- Discharge
+- Shift Gear
+
+Ampharos @ Salac Berry
+Ability: Wooly-Charged
+Level: 100
+EVs: 128 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 128 Spe  
+- Thunderbolt
+- Electroweb
+- Dragon Pulse
+- Grass Knot
+
+Manectric - Mega @ Manectite
+Ability: Lightning Rod
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Volt Switch
+- Discharge
+- Ice Fang
+- Overheat
+
+Toxtricity @ Throat Spray
+Ability: Punk Rock
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Overdrive
+- Sludge Bomb
+- Boombust
 - Protect
-- Thunder
-- Rain Dance
 
-Manectric @ Sitrus Berry
-Level: 45
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
+Magnezone @ Weakness Policy
+Ability: Sturdy
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Flash Cannon
+- Charge Beam
+- Tri Attack
+- Magnet Rise
+
+Bellibolt @ Sitrus Berry
+Ability: Electromorphosis
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Parabolic Charge
+- Muddy Water
+- Substitute
+- Soak
 
 === TRAINER_WATTSON_4 ===
 Name: WATTSON
@@ -17556,35 +18289,172 @@ Pic: Leader Flannery
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Smart Trainer 
-
-Magcargo @ White Herb
-Level: 38
-- Overheat
-- Attract
-- Light Screen
-- Rock Slide
-
-Ponyta
-Level: 36
-- Flamethrower
-- Attract
-- Solar Beam
-- Bounce
-
-Camerupt @ White Herb
-Level: 38
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+AI: Smart Trainer
+Difficulty: Easy 
 
 Torkoal @ White Herb
-Level: 40
+Ability: Drought
+Level: 67  
 - Overheat
+- Body Press
+- Solar Beam
+
+Armarouge
+Ability: Flash Fire
+Level: 67  
+- Armor Cannon
+- Expanding Force
+- Trick Room
+
+Camerupt - Mega @ Cameruptite
+Ability: Solid Rock
+Level: 67  
+- Earth Power
+- Lava Plume
+- Rock Slide
+
+Weezing
+Ability: Levitate
+Level: 67  
+- Sludge Bomb
+- Heat Wave
+- Will-O-Wisp
+
+Ninetales
+Ability: Drought
+Level: 67  
+- Heat Wave
+- Extrasensory
+- Solar Beam
+
+Walking Wake @ Sitrus Berry
+Ability: Protosynthesis
+Level: 67  
+- Hydro Steam
+- Dragon Pulse
+- Flamethrower
+
+=== TRAINER_FLANNERY_2 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal 
+
+Torkoal @ White Herb
+Ability: Drought
+Level: 67  
+- Overheat
+- Body Press
+- Solar Beam
 - Sunny Day
-- Explosion
-- Attract
+
+Armarouge @ Focus Sash
+Ability: Flash Fire
+Level: 67  
+- Armor Cannon
+- Expanding Force
+- Psyshock
+- Trick Room
+
+Camerupt - Mega @ Cameruptite
+Ability: Solid Rock
+Level: 67  
+- Heat Wave
+- Earth Power
+- Lava Plume
+- Rock Slide
+
+Weezing @ Heat Rock
+Ability: Levitate
+Level: 67  
+- Sludge Bomb
+- Heat Wave
+- Will-O-Wisp
+- Sunny Day
+
+Ninetales @ Life Orb
+Ability: Drought
+Level: 67  
+- Heat Wave
+- Extrasensory
+- Solar Beam
+- Disable
+
+Walking Wake @ Sitrus Berry
+Ability: Protosynthesis
+Level: 67  
+- Hydro Steam
+- Dragon Pulse
+- Flamethrower
+- Sunny Day
+
+=== TRAINER_FLANNERY_2 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard 
+
+Torkoal @ White Herb
+Ability: Drought
+Level: 67
+EVs: 124 HP / 0 Atk / 192 Def / 192 SpA / 0 SpD / 0 Spe  
+- Overheat
+- Body Press
+- Solar Beam
+- Sunny Day
+
+Armarouge @ Focus Sash
+Ability: Flash Fire
+Level: 67
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Armor Cannon
+- Expanding Force
+- Psyshock
+- Trick Room
+
+Camerupt - Mega @ Cameruptite
+Ability: Solid Rock
+Level: 67
+EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
+- Heat Wave
+- Earth Power
+- Lava Plume
+- Rock Slide
+
+Weezing @ Heat Rock
+Ability: Levitate
+Level: 67
+EVs: 124 HP / 0 Atk / 128 Def / 128 SpA / 128 SpD / 0 Spe  
+- Sludge Bomb
+- Heat Wave
+- Will-O-Wisp
+- Sunny Day
+
+Ninetales @ Life Orb
+Ability: Drought
+Level: 67
+EVs: 0 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 252 Spe  
+- Heat Wave
+- Extrasensory
+- Solar Beam
+- Disable
+
+Walking Wake @ Sitrus Berry
+Ability: Protosynthesis
+Level: 67
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Hydro Steam
+- Dragon Pulse
+- Flamethrower
+- Sunny Day
 
 === TRAINER_FLANNERY_3 ===
 Name: FLANNERY
@@ -17594,41 +18464,171 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
-
-Growlithe
-Level: 41
-- Helping Hand
-- Flamethrower
-- Roar
-- Sunny Day
-
-Magcargo @ White Herb
-Level: 43
-- Overheat
-- Attract
-- Light Screen
-- Rock Slide
-
-Ponyta
-Level: 41
-- Flamethrower
-- Attract
-- Solar Beam
-- Bounce
-
-Camerupt @ White Herb
-Level: 43
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+Difficulty: Easy 
 
 Torkoal @ White Herb
-Level: 45
+Ability: Drought
+Level: 100  
 - Overheat
+- Body Press
+- Solar Beam
+
+Armarouge
+Ability: Flash Fire
+Level: 100  
+- Armor Cannon
+- Expanding Force
+- Trick Room
+
+Camerupt - Mega @ Cameruptite
+Ability: Solid Rock
+Level: 100  
+- Earth Power
+- Lava Plume
+- Rock Slide
+
+Weezing
+Ability: Levitate
+Level: 100  
+- Sludge Bomb
+- Heat Wave
+- Will-O-Wisp
+
+Ninetales
+Ability: Drought
+Level: 100  
+- Heat Wave
+- Extrasensory
+- Solar Beam
+
+Walking Wake @ Sitrus Berry
+Ability: Protosynthesis
+Level: 100  
+- Hydro Steam
+- Dragon Pulse
+- Flamethrower
+
+=== TRAINER_FLANNERY_3 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal 
+
+Torkoal @ White Herb
+Ability: Drought
+Level: 100  
+- Overheat
+- Body Press
+- Solar Beam
 - Sunny Day
-- Explosion
-- Attract
+
+Armarouge @ Focus Sash
+Ability: Flash Fire
+Level: 100  
+- Armor Cannon
+- Expanding Force
+- Psyshock
+- Trick Room
+
+Camerupt - Mega @ Cameruptite
+Ability: Solid Rock
+Level: 100  
+- Heat Wave
+- Earth Power
+- Lava Plume
+- Rock Slide
+
+Weezing @ Heat Rock
+Ability: Levitate
+Level: 100  
+- Sludge Bomb
+- Heat Wave
+- Will-O-Wisp
+- Sunny Day
+
+Ninetales @ Life Orb
+Ability: Drought
+Level: 100  
+- Heat Wave
+- Extrasensory
+- Solar Beam
+- Disable
+
+Walking Wake @ Sitrus Berry
+Ability: Protosynthesis
+Level: 100  
+- Hydro Steam
+- Dragon Pulse
+- Flamethrower
+- Sunny Day
+
+=== TRAINER_FLANNERY_3 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard 
+
+Torkoal @ White Herb
+Ability: Drought
+Level: 100
+EVs: 124 HP / 0 Atk / 192 Def / 192 SpA / 0 SpD / 0 Spe  
+- Overheat
+- Body Press
+- Solar Beam
+- Sunny Day
+
+Armarouge @ Focus Sash
+Ability: Flash Fire
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Armor Cannon
+- Expanding Force
+- Psyshock
+- Trick Room
+
+Camerupt - Mega @ Cameruptite
+Ability: Solid Rock
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
+- Heat Wave
+- Earth Power
+- Lava Plume
+- Rock Slide
+
+Weezing @ Heat Rock
+Ability: Levitate
+Level: 100
+EVs: 124 HP / 0 Atk / 128 Def / 128 SpA / 128 SpD / 0 Spe  
+- Sludge Bomb
+- Heat Wave
+- Will-O-Wisp
+- Sunny Day
+
+Ninetales @ Life Orb
+Ability: Drought
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 252 Spe  
+- Heat Wave
+- Extrasensory
+- Solar Beam
+- Disable
+
+Walking Wake @ Sitrus Berry
+Ability: Protosynthesis
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Hydro Steam
+- Dragon Pulse
+- Flamethrower
+- Sunny Day
 
 === TRAINER_FLANNERY_4 ===
 Name: FLANNERY
@@ -17740,34 +18740,171 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Chansey
-Level: 42
-- Light Screen
-- Sing
+Farigiraf
+Ability: Armor Tail
+Level: 68  
+- Hyper Voice
+- Twin Beam
 - Skill Swap
-- Focus Punch
 
-Slaking @ Sitrus Berry
-Level: 42
-- Blizzard
-- Shadow Ball
-- Double Edge
-- Fire Blast
+Slaking
+Ability: Truant
+Level: 68  
+- Mega Kick
+- Play Rough
+- Dynamic Punch
 
-Spinda
-Level: 43
-- Teeter Dance
-- Skill Swap
+Drampa - Mega @ Drampanite
+Ability: Berserk
+Level: 68  
+- Hyper Voice
+- Dragon Pulse
+- Earth Power
+
+Snorlax @ Leftovers
+Ability: Thick Fat
+Level: 68  
+- Body Slam
+- Curse
+- Rest
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 68  
 - Facade
-- Hypnosis
+- Headlong Rush
+- Drain Punch
 
 Slaking @ Sitrus Berry
-Level: 45
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
-- Shadow Ball
+Ability: Truant
+Level: 68  
+- Facade
+- Knock Off
+- Close Combat
+
+=== TRAINER_NORMAN_2 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Farigiraf @ Mental Herb
+Ability: Armor Tail
+Level: 68  
+- Hyper Voice
+- Twin Beam
+- Skill Swap
+- Trick Room
+
+Slaking @ Lum Berry
+Ability: Truant
+Level: 68  
+- Mega Kick
+- Play Rough
+- Dynamic Punch
+- Rock Slide
+
+Drampa - Mega @ Drampanite
+Ability: Berserk
+Level: 68  
+- Hyper Voice
+- Dragon Pulse
+- Extrasensory
+- Earth Power
+
+Snorlax @ Leftovers
+Ability: Thick Fat
+Level: 68  
+- Body Slam
+- Curse
+- Sleep Talk
+- Rest
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 68  
+- Facade
+- Headlong Rush
+- Drain Punch
+- Play Rough
+
+Slaking @ Sitrus Berry
+Ability: Truant
+Level: 68  
+- Facade
+- Knock Off
+- Close Combat
+- Play Rough
+
+=== TRAINER_NORMAN_2 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Farigiraf @ Mental Herb
+Ability: Armor Tail
+Level: 68
+EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
+- Hyper Voice
+- Twin Beam
+- Skill Swap
+- Trick Room
+
+Slaking @ Lum Berry
+Ability: Truant
+Level: 68
+EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Mega Kick
+- Play Rough
+- Dynamic Punch
+- Rock Slide
+
+Drampa - Mega @ Drampanite
+Ability: Berserk
+Level: 68
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Hyper Voice
+- Dragon Pulse
+- Extrasensory
+- Earth Power
+
+Snorlax @ Leftovers
+Ability: Thick Fat
+Level: 68
+EVs: 0 HP / 128 Atk / 128 Def / 0 SpA / 252 SpD / 0 Spe  
+- Body Slam
+- Curse
+- Sleep Talk
+- Rest
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 68
+EVs: 128 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 128 Spe  
+- Facade
+- Headlong Rush
+- Drain Punch
+- Play Rough
+
+Slaking @ Sitrus Berry
+Ability: Truant
+Level: 68
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Facade
+- Knock Off
+- Close Combat
+- Play Rough
 
 === TRAINER_NORMAN_3 ===
 Name: NORMAN
@@ -17777,41 +18914,171 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Slaking @ Sitrus Berry
-Level: 47
-- Blizzard
-- Shadow Ball
-- Double Edge
-- Fire Blast
-
-Chansey
-Level: 47
-- Light Screen
-- Sing
+Farigiraf
+Ability: Armor Tail
+Level: 100  
+- Hyper Voice
+- Twin Beam
 - Skill Swap
-- Focus Punch
 
-Kangaskhan
-Level: 45
-- Fake Out
-- Dizzy Punch
-- Endure
-- Reversal
+Slaking
+Ability: Truant
+Level: 100  
+- Mega Kick
+- Play Rough
+- Dynamic Punch
 
-Spinda
-Level: 48
-- Teeter Dance
-- Skill Swap
+Drampa - Mega @ Drampanite
+Ability: Berserk
+Level: 100  
+- Hyper Voice
+- Dragon Pulse
+- Earth Power
+
+Snorlax @ Leftovers
+Ability: Thick Fat
+Level: 100  
+- Body Slam
+- Curse
+- Rest
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 100  
 - Facade
-- Hypnosis
+- Headlong Rush
+- Drain Punch
 
 Slaking @ Sitrus Berry
-Level: 50
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
-- Shadow Ball
+Ability: Truant
+Level: 100  
+- Facade
+- Knock Off
+- Close Combat
+
+=== TRAINER_NORMAN_3 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Farigiraf @ Mental Herb
+Ability: Armor Tail
+Level: 100  
+- Hyper Voice
+- Twin Beam
+- Skill Swap
+- Trick Room
+
+Slaking @ Lum Berry
+Ability: Truant
+Level: 100  
+- Mega Kick
+- Play Rough
+- Dynamic Punch
+- Rock Slide
+
+Drampa - Mega @ Drampanite
+Ability: Berserk
+Level: 100  
+- Hyper Voice
+- Dragon Pulse
+- Extrasensory
+- Earth Power
+
+Snorlax @ Leftovers
+Ability: Thick Fat
+Level: 100  
+- Body Slam
+- Curse
+- Sleep Talk
+- Rest
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 100  
+- Facade
+- Headlong Rush
+- Drain Punch
+- Play Rough
+
+Slaking @ Sitrus Berry
+Ability: Truant
+Level: 100  
+- Facade
+- Knock Off
+- Close Combat
+- Play Rough
+
+=== TRAINER_NORMAN_3 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Farigiraf @ Mental Herb
+Ability: Armor Tail
+Level: 100
+EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
+- Hyper Voice
+- Twin Beam
+- Skill Swap
+- Trick Room
+
+Slaking @ Lum Berry
+Ability: Truant
+Level: 100
+EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Mega Kick
+- Play Rough
+- Dynamic Punch
+- Rock Slide
+
+Drampa - Mega @ Drampanite
+Ability: Berserk
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Hyper Voice
+- Dragon Pulse
+- Extrasensory
+- Earth Power
+
+Snorlax @ Leftovers
+Ability: Thick Fat
+Level: 100
+EVs: 0 HP / 128 Atk / 128 Def / 0 SpA / 252 SpD / 0 Spe  
+- Body Slam
+- Curse
+- Sleep Talk
+- Rest
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 100
+EVs: 128 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 128 Spe  
+- Facade
+- Headlong Rush
+- Drain Punch
+- Play Rough
+
+Slaking @ Sitrus Berry
+Ability: Truant
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Facade
+- Knock Off
+- Close Combat
+- Play Rough
 
 === TRAINER_NORMAN_4 ===
 Name: NORMAN
@@ -17916,41 +19183,173 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Dratini @ Sitrus Berry
-Level: 40
-- Thunder Wave
-- Thunderbolt
-- Protect
-- Ice Beam
+Pelipper @ Focus Sash
+Ability: Drizzle
+Level: 69  
+- Hurricane
+- Weather Ball
+- U-Turn
+- Tailwind
 
-Tropius
-Level: 38
-- Sunny Day
-- Aerial Ace
-- Solar Beam
+Kilowattrel
+Ability: Wind Power
+Level: 69  
+- Hurricane
+- Electro Ball
+- Volt Switch
+
+Swellow @ Flame Orb
+Ability: Guts
+Level: 69  
+- Facade
+- Brave Bird
+- U-Turn
+
+Corviknight
+Ability: Mirror Armor
+Level: 69  
+- Iron Head
+- U-Turn
+- Tailwind
+
+Talonflame
+Ability: Gale Wings
+Level: 69  
+- Brave Bird
+- Flare Blitz
+- U-Turn
+
+Altaria - Mega @ Altarianite
+Ability: Cloud Nine
+Level: 69  
+- Double-Edge
+- Air Slash
 - Earthquake
-
-Pelipper
-Level: 41
-- Surf
-- Supersonic
-- Protect
-- Aerial Ace
-
-Skarmory
-Level: 43
-- Whirlwind
-- Spikes
-- Steel Wing
-- Aerial Ace
-
-Altaria @ Chesto Berry
-Level: 45
-- Aerial Ace
-- Rest
 - Dragon Dance
+
+=== TRAINER_WINONA_2 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Pelipper @ Focus Sash
+Ability: Drizzle
+Level: 69  
+- Hurricane
+- Weather Ball
+- U-Turn
+- Tailwind
+
+Kilowattrel @ Covert Cloak
+Ability: Wind Power
+Level: 69  
+- Hurricane
+- Electro Ball
+- Volt Switch
+- Rain Dance
+
+Swellow @ Flame Orb
+Ability: Guts
+Level: 69  
+- Facade
+- Brave Bird
+- U-Turn
+- Protect
+
+Corviknight @ Leftovers
+Ability: Mirror Armor
+Level: 69  
+- Iron Head
+- U-Turn
+- Tailwind
+- Roost
+
+Talonflame @ Life Orb
+Ability: Gale Wings
+Level: 69  
+- Brave Bird
+- Flare Blitz
+- U-Turn
+- Tailwind
+
+Altaria - Mega @ Altarianite
+Ability: Cloud Nine
+Level: 69  
+- Double-Edge
+- Air Slash
 - Earthquake
+- Dragon Dance
+
+=== TRAINER_WINONA_2 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Pelipper @ Focus Sash
+Ability: Drizzle
+Level: 69
+EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 252 SpD / 128 Spe  
+- Hurricane
+- Weather Ball
+- U-Turn
+- Tailwind
+
+Kilowattrel @ Covert Cloak
+Ability: Wind Power
+Level: 69
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Hurricane
+- Electro Ball
+- Volt Switch
+- Rain Dance
+
+Swellow @ Flame Orb
+Ability: Guts
+Level: 69
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Facade
+- Brave Bird
+- U-Turn
+- Protect
+
+Corviknight @ Leftovers
+Ability: Mirror Armor
+Level: 69
+EVs: 252 HP / 128 Atk / 0 Def / 0 SpA / 128 SpD / 0 Spe  
+- Iron Head
+- U-Turn
+- Tailwind
+- Roost
+
+Talonflame @ Life Orb
+Ability: Gale Wings
+Level: 69
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Brave Bird
+- Flare Blitz
+- U-Turn
+- Tailwind
+
+Altaria - Mega @ Altarianite
+Ability: Cloud Nine
+Level: 69
+EVs: 0 HP / 192 Atk / 0 Def / 252 SpA / 0 SpD / 64 Spe  
+- Double-Edge
+- Air Slash
+- Earthquake
+- Dragon Dance
 
 === TRAINER_WINONA_3 ===
 Name: WINONA
@@ -17960,48 +19359,173 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Hoothoot
-Level: 43
-- Hypnosis
-- Psychic
-- Reflect
-- Dream Eater
+Pelipper @ Focus Sash
+Ability: Drizzle
+Level: 100  
+- Hurricane
+- Weather Ball
+- U-Turn
+- Tailwind
 
-Tropius
-Level: 43
-- Sunny Day
-- Aerial Ace
-- Solar Beam
+Kilowattrel
+Ability: Wind Power
+Level: 100  
+- Hurricane
+- Electro Ball
+- Volt Switch
+
+Swellow @ Flame Orb
+Ability: Guts
+Level: 100  
+- Facade
+- Brave Bird
+- U-Turn
+
+Corviknight
+Ability: Mirror Armor
+Level: 100  
+- Iron Head
+- U-Turn
+- Tailwind
+
+Talonflame
+Ability: Gale Wings
+Level: 100  
+- Brave Bird
+- Flare Blitz
+- U-Turn
+
+Altaria - Mega @ Altarianite
+Ability: Cloud Nine
+Level: 100  
+- Double-Edge
+- Air Slash
 - Earthquake
-
-Dragonair @ Sitrus Berry
-Level: 45
-- Thunder Wave
-- Thunderbolt
-- Protect
-- Ice Beam
-
-Pelipper
-Level: 46
-- Surf
-- Supersonic
-- Protect
-- Aerial Ace
-
-Skarmory
-Level: 48
-- Whirlwind
-- Spikes
-- Steel Wing
-- Aerial Ace
-
-Altaria @ Chesto Berry
-Level: 50
-- Aerial Ace
-- Rest
 - Dragon Dance
+
+=== TRAINER_WINONA_3 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Pelipper @ Focus Sash
+Ability: Drizzle
+Level: 100  
+- Hurricane
+- Weather Ball
+- U-Turn
+- Tailwind
+
+Kilowattrel @ Covert Cloak
+Ability: Wind Power
+Level: 100  
+- Hurricane
+- Electro Ball
+- Volt Switch
+- Rain Dance
+
+Swellow @ Flame Orb
+Ability: Guts
+Level: 100  
+- Facade
+- Brave Bird
+- U-Turn
+- Protect
+
+Corviknight @ Leftovers
+Ability: Mirror Armor
+Level: 100  
+- Iron Head
+- U-Turn
+- Tailwind
+- Roost
+
+Talonflame @ Life Orb
+Ability: Gale Wings
+Level: 100  
+- Brave Bird
+- Flare Blitz
+- U-Turn
+- Tailwind
+
+Altaria - Mega @ Altarianite
+Ability: Cloud Nine
+Level: 100  
+- Double-Edge
+- Air Slash
 - Earthquake
+- Dragon Dance
+
+=== TRAINER_WINONA_3 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Pelipper @ Focus Sash
+Ability: Drizzle
+Level: 100
+EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 252 SpD / 128 Spe  
+- Hurricane
+- Weather Ball
+- U-Turn
+- Tailwind
+
+Kilowattrel @ Covert Cloak
+Ability: Wind Power
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Hurricane
+- Electro Ball
+- Volt Switch
+- Rain Dance
+
+Swellow @ Flame Orb
+Ability: Guts
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Facade
+- Brave Bird
+- U-Turn
+- Protect
+
+Corviknight @ Leftovers
+Ability: Mirror Armor
+Level: 100
+EVs: 252 HP / 128 Atk / 0 Def / 0 SpA / 128 SpD / 0 Spe  
+- Iron Head
+- U-Turn
+- Tailwind
+- Roost
+
+Talonflame @ Life Orb
+Ability: Gale Wings
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Brave Bird
+- Flare Blitz
+- U-Turn
+- Tailwind
+
+Altaria - Mega @ Altarianite
+Ability: Cloud Nine
+Level: 100
+EVs: 0 HP / 192 Atk / 0 Def / 252 SpA / 0 SpD / 64 Spe  
+- Double-Edge
+- Air Slash
+- Earthquake
+- Dragon Dance
 
 === TRAINER_WINONA_4 ===
 Name: WINONA
@@ -18310,43 +19834,52 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Poliwag
-Level: 46
-- Hypnosis
-- Rain Dance
-- Protect
-- Hydro Pump
+Crawdaunt @ Focus Sash
+Ability: Adaptability
+Level: 72  
+- Aqua Jet
+- Crabhammer
+- Knock Off
+- Swords Dance
 
 Whiscash
-Level: 46
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
+Ability: Oblivious
+Level: 72  
+- Muddy Water
+- Earth Power
+- Dragon Dance
 
-Walrein
-Level: 48
-- Water Pulse
+Walrein @ Sitrus Berry
+Ability: Thick Fat
+Level: 72  
+- Brine
+- Glaciate
 - Body Slam
-- Protect
+
+Ludicolo
+Ability: Rain Dish
+Level: 72  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 72  
+- Scald
+- Alluring Voice
+- Recover
+
+Kingdra
+Ability: Swift Swim
+Level: 72  
+- Snipe Shot
+- Dragon Pulse
 - Ice Beam
 
-Crawdaunt @ Chesto Berry
-Level: 48
-- Rest
-- Crabhammer
-- Taunt
-- Double Team
-
-Kingdra @ Chesto Berry
-Level: 51
-- Water Pulse
-- Double Team
-- Ice Beam
-- Rest
-
-=== TRAINER_JUAN_3 ===
+=== TRAINER_JUAN_2 ===
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
@@ -18354,41 +19887,31 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Normal
 
-Poliwhirl
-Level: 50
-- Hypnosis
-- Rain Dance
-- Protect
-- Hydro Pump
-
-Whiscash
-Level: 51
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Walrein
-Level: 53
-- Water Pulse
-- Body Slam
-- Protect
+Kingdra
+Ability: Swift Swim
+Level: 72  
+- Snipe Shot
+- Dragon Pulse
 - Ice Beam
 
-Crawdaunt @ Chesto Berry
-Level: 53
-- Rest
-- Guillotine
-- Taunt
-- Double Team
+=== TRAINER_JUAN_2 ===
+Name: JUAN
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
 
-Kingdra @ Chesto Berry
-Level: 56
-- Water Pulse
-- Double Team
+Kingdra
+Ability: Swift Swim
+Level: 72  
+- Snipe Shot
+- Dragon Pulse
 - Ice Beam
-- Rest
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
@@ -22407,8 +23930,8 @@ Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: Yes
-Difficulty: Normal
 AI: Smart Trainer
+Difficulty: Normal
 
 Ralts @ Wise Glasses
 Ability: Synchronize
@@ -25052,8 +26575,8 @@ Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: Yes
-Difficulty: Hard
 AI: Smart Trainer
+Difficulty: Hard
 
 Ralts @ Wise Glasses
 Ability: Synchronize
@@ -26929,8 +28452,8 @@ Pic: Running Triathlete M
 Gender: Male
 Music: Male
 Double Battle: Yes
-Difficulty: Hard
 AI: Smart Trainer
+Difficulty: Hard
 
 Pelipper
 Ability: Drizzle
