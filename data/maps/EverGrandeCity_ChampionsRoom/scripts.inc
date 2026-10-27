@@ -25,22 +25,35 @@ EverGrandeCity_ChampionsRoom_EventScript_EnterRoom::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp4
 	waitmovement 0
 	delay 40
-	applymovement LOCALID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace
+	applymovement LOCALID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerApproachSteven
 	waitmovement 0
 	setvar VAR_TEMP_1, 1
-	goto EverGrandeCity_ChampionsRoom_EventScript_Wallace
+	goto EverGrandeCity_ChampionsRoom_EventScript_Steven
 	releaseall
 	end
 
-EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace:
+EverGrandeCity_ChampionsRoom_Movement_PlayerApproachSteven:
 	walk_up
 	walk_up
 	step_end
 
-EverGrandeCity_ChampionsRoom_EventScript_Wallace::
+EverGrandeCity_ChampionsRoom_EventScript_Steven::
 	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
 	msgbox EverGrandeCity_ChampionsRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_DOUBLE_CHAMPION, EverGrandeCity_ChampionsRoom_EventScript_RematchSteven_Cap
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_ChampionsRoom_EventScript_RematchSteven
 	trainerbattle_no_intro TRAINER_STEVEN_CHAMPION, EverGrandeCity_ChampionsRoom_Text_Defeat
+	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_ChampionsRoom_EventScript_RematchSteven::
+	trainerbattle_no_intro TRAINER_STEVEN_CHAMPION_2, EverGrandeCity_ChampionsRoom_Text_Defeat
+	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_ChampionsRoom_EventScript_RematchSteven_Cap::
+	trainerbattle_no_intro TRAINER_STEVEN_CHAMPION_3, EverGrandeCity_ChampionsRoom_Text_Defeat
+	setflag FLAG_DOUBLE_CHAMPION
 	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
 	end
 
@@ -106,15 +119,15 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF::
 	msgbox EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex, MSGBOX_DEFAULT
 	call ProfBirch_EventScript_RatePokedex
 	msgbox EverGrandeCity_ChampionsRoom_Text_BirchCongratulations, MSGBOX_DEFAULT
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_CHAMPIONS_ROOM_STEVEN, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_CHAMPIONS_ROOM_STEVEN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	msgbox EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe, MSGBOX_DEFAULT
+	msgbox EverGrandeCity_ChampionsRoom_Text_StevenComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart
+	applymovement LOCALID_CHAMPIONS_ROOM_STEVEN, EverGrandeCity_ChampionsRoom_Movement_StevenExitStart
 	applymovement LOCALID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExitStart
 	applymovement LOCALID_CHAMPIONS_ROOM_BIRCH, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_CHAMPIONS_ROOM_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalFollows
@@ -122,12 +135,12 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF::
 	delay 20
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	msgbox EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside, MSGBOX_DEFAULT
+	msgbox EverGrandeCity_ChampionsRoom_Text_StevenWaitOutside, MSGBOX_DEFAULT
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, EverGrandeCity_ChampionsRoom_EventScript_MayCongratulations
 	call_if_eq VAR_RESULT, FEMALE, EverGrandeCity_ChampionsRoom_EventScript_BrendanCongratulations
 	closemessage
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, EverGrandeCity_ChampionsRoom_Movement_WallaceExit
+	applymovement LOCALID_CHAMPIONS_ROOM_STEVEN, EverGrandeCity_ChampionsRoom_Movement_StevenExit
 	applymovement LOCALID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExit
 	waitmovement 0
 	setflag FLAG_HIDE_PETALBURG_GYM_GREETER
@@ -196,13 +209,13 @@ EverGrandeCity_ChampionsRoom_Movement_RivalFollows:
 	walk_up
 	step_end
 
-EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart:
+EverGrandeCity_ChampionsRoom_Movement_StevenExitStart:
 	walk_up
 	walk_up
 	walk_in_place_faster_down
 	step_end
 
-EverGrandeCity_ChampionsRoom_Movement_WallaceExit:
+EverGrandeCity_ChampionsRoom_Movement_StevenExit:
 	walk_up
 	delay_8
 	set_invisible
@@ -220,27 +233,6 @@ EverGrandeCity_ChampionsRoom_Movement_BirchArrives:
 	step_end
 
 EverGrandeCity_ChampionsRoom_Text_IntroSpeech:
-@	.string "WALLACE: Welcome, {PLAYER}{KUN}.\p"
-@	.string "That incident in SOOTOPOLIS CITY…\n"
-@	.string "That was good work, putting an end\l"
-@	.string "to that crisis all by yourself.\p"
-@	.string "Oops!\p"
-@	.string "It wouldn't be fair to say that you\n"
-@	.string "alone ended the crisis.\p"
-@	.string "You overcame that difficult situation\n"
-@	.string "by working as one with your POKéMON.\p"
-@	.string "We TRAINERS raise POKéMON by giving\n"
-@	.string "them items and by teaching them new\l"
-@	.string "techniques for battle.\p"
-@	.string "But we ourselves also learn many\n"
-@	.string "things from POKéMON.\p"
-@	.string "And this is where your achievements\n"
-@	.string "are put to the test against what\l"
-@	.string "others like you have achieved.\p"
-@	.string "Now!\p"
-@	.string "Who can most elegantly dance with\n"
-@	.string "their POKéMON in HOENN?\p"
-@	.string "Show me right here and now!$"
 	.string "STEVEN: Welcome, {PLAYER}{KUN}.\p"
 	.string "I was looking forward to seeing you\n"
 	.string "here one day.\p"
@@ -319,13 +311,13 @@ EverGrandeCity_ChampionsRoom_Text_BirchCongratulations:
 	.string "congratulations!\p"
 	.string "Now, go proudly into the final room!$"
 
-EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe:
+EverGrandeCity_ChampionsRoom_Text_StevenComeWithMe:
 	.string "WALLACE: {PLAYER}{KUN}…\p"
 	.string "No, let me rephrase that properly.\p"
 	.string "The new CHAMPION!\p"
 	.string "Come with me.$"
 
-EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside:
+EverGrandeCity_ChampionsRoom_Text_StevenWaitOutside:
 	.string "WALLACE: I'm sorry, but…\p"
 	.string "From here on, only those TRAINERS who\n"
 	.string "have become CHAMPIONS may enter.\p"

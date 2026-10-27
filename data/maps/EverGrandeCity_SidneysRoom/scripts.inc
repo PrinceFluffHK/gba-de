@@ -11,6 +11,7 @@ EverGrandeCity_SidneysRoom_OnTransition:
 	end
 
 EverGrandeCity_SidneysRoom_OnLoad:
+	call_if_set FLAG_DEFEATED_ELITE_4_SIDNEY_2, EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_ELITE_4_STATE, 1, EverGrandeCity_SidneysRoom_EventScript_CloseDoor
 	end
@@ -48,7 +49,19 @@ EverGrandeCity_SidneysRoom_EventScript_Sidney::
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_DOUBLE_CHAMPION, EverGrandeCity_SidneysRoom_EventScript_RematchSidney_Cap
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_SidneysRoom_EventScript_RematchSidney
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
+	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_SidneysRoom_EventScript_RematchSidney::
+	trainerbattle_no_intro TRAINER_SIDNEY_2, EverGrandeCity_SidneysRoom_Text_Defeat
+	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_SidneysRoom_EventScript_RematchSidney_Cap::
+	trainerbattle_no_intro TRAINER_SIDNEY_3, EverGrandeCity_SidneysRoom_Text_Defeat
 	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 	end
 
