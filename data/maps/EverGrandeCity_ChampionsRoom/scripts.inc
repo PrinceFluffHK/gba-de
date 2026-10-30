@@ -53,7 +53,7 @@ EverGrandeCity_ChampionsRoom_EventScript_RematchSteven::
 
 EverGrandeCity_ChampionsRoom_EventScript_RematchSteven_Cap::
 	trainerbattle_no_intro TRAINER_STEVEN_CHAMPION_3, EverGrandeCity_ChampionsRoom_Text_Defeat
-	setflag FLAG_DOUBLE_CHAMPION
+	setflag FLAG_IS_DOUBLE_CHAMPION
 	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
 	end
 

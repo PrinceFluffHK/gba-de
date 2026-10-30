@@ -106,6 +106,36 @@ EverGrandeCity_PokemonLeague_1F_EventScript_GoForth::
 	releaseall
 	end
 
+EverGrandeCity_PokemonLeague_1F_EventScript_Scott::
+	lock
+	faceplayer
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou, MSGBOX_DEFAULT
+	closemessage
+	call_if_eq VAR_FACING, DIR_NORTH, EverGrandeCity_PokemonLeague_1F_EventScript_ScottExitNorth
+	call_if_eq VAR_FACING, DIR_EAST, EverGrandeCity_PokemonLeague_1F_EventScript_ScottExit
+	call_if_eq VAR_FACING, DIR_WEST, EverGrandeCity_PokemonLeague_1F_EventScript_ScottExit
+	call_if_eq VAR_FACING, DIR_SOUTH, EverGrandeCity_PokemonLeague_1F_EventScript_ScottExit
+	addvar VAR_SCOTT_STATE, 1
+	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
+	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
+	setflag FLAG_RELEARN_EGG_MOVES
+	setflag FLAG_RELEARN_TUTOR_MOVES
+	playse SE_EXIT
+	waitse
+	removeobject LOCALID_EVER_GRANDE_LEAGUE_SCOTT
+	release
+	end
+
+EverGrandeCity_PokemonLeague_1F_EventScript_ScottExitNorth::
+	applymovement LOCALID_EVER_GRANDE_LEAGUE_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExitNorth
+	waitmovement 0
+	return
+
+EverGrandeCity_PokemonLeague_1F_EventScript_ScottExit::
+	applymovement LOCALID_EVER_GRANDE_LEAGUE_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExit
+	waitmovement 0
+	return
+
 EverGrandeCity_PokemonLeague_1F_Movement_MoveToFrontFromRight:
 	walk_down
 	walk_left
