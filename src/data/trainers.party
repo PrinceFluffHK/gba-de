@@ -16989,8 +16989,8 @@ Level: 64
 - X-Scissor
 - Swords Dance
 
-Diancie - Mega @ Diancite
-Ability: Sand Stream
+Diancie @ Diancite
+Ability: Clear Body
 Level: 64  
 - Diamond Storm
 - Moonblast
@@ -17046,8 +17046,8 @@ Level: 64
 - Liquidation
 - Swords Dance
 
-Diancie - Mega @ Diancite
-Ability: Sand Stream
+Diancie @ Diancite
+Ability: Clear Body
 Level: 64  
 - Diamond Storm
 - Moonblast
@@ -17108,8 +17108,8 @@ EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Liquidation
 - Swords Dance
 
-Diancie - Mega @ Diancite
-Ability: Sand Stream
+Diancie @ Diancite
+Ability: Clear Body
 Level: 64
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
 - Diamond Storm
@@ -17164,8 +17164,8 @@ Level: 100
 - X-Scissor
 - Swords Dance
 
-Diancie - Mega @ Diancite
-Ability: Sand Stream
+Diancie @ Diancite
+Ability: Clear Body
 Level: 100  
 - Diamond Storm
 - Moonblast
@@ -17221,8 +17221,8 @@ Level: 100
 - Liquidation
 - Swords Dance
 
-Diancie - Mega @ Diancite
-Ability: Sand Stream
+Diancie @ Diancite
+Ability: Clear Body
 Level: 100  
 - Diamond Storm
 - Moonblast
@@ -17283,8 +17283,8 @@ EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Liquidation
 - Swords Dance
 
-Diancie - Mega @ Diancite
-Ability: Sand Stream
+Diancie @ Diancite
+Ability: Clear Body
 Level: 100
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
 - Diamond Storm
@@ -17413,7 +17413,7 @@ Level: 65
 - Zen Headbutt
 - Close Combat
 
-Lopunny - Mega @ Loppunite
+Lopunny @ Lopunnite
 Ability: Limber
 Level: 65  
 - Fake Out
@@ -17441,7 +17441,7 @@ Level: 65
 - Drain Punch
 - Wild Charge
 
-Urshifu - Single @ Sitrus Berry
+SPECIES_URSHIFU_SINGLE_STRIKE @ Sitrus Berry
 Ability: Iron Fist
 Level: 65  
 - Close Combat
@@ -17466,7 +17466,7 @@ Level: 65
 - Close Combat
 - Swords Dance
 
-Lopunny - Mega @ Loppunite
+Lopunny @ Lopunnite
 Ability: Limber
 Level: 65  
 - Fake Out
@@ -17498,7 +17498,7 @@ Level: 65
 - Wild Charge
 - Heavy Slam
 
-Urshifu - Single @ Sitrus Berry
+SPECIES_URSHIFU_SINGLE_STRIKE @ Sitrus Berry
 Ability: Iron Fist
 Level: 65  
 - Close Combat
@@ -17525,7 +17525,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - Close Combat
 - Swords Dance
 
-Lopunny - Mega @ Loppunite
+Lopunny @ Lopunnite
 Ability: Limber
 Level: 65
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
@@ -17561,7 +17561,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - Wild Charge
 - Heavy Slam
 
-Urshifu - Single @ Sitrus Berry
+SPECIES_URSHIFU_SINGLE_STRIKE @ Sitrus Berry
 Ability: Iron Fist
 Level: 65
 EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
@@ -17587,7 +17587,7 @@ Level: 100
 - Zen Headbutt
 - Close Combat
 
-Lopunny - Mega @ Loppunite
+Lopunny @ Lopunnite
 Ability: Limber
 Level: 100  
 - Fake Out
@@ -17615,7 +17615,7 @@ Level: 100
 - Drain Punch
 - Wild Charge
 
-Urshifu - Single @ Sitrus Berry
+SPECIES_URSHIFU_SINGLE_STRIKE @ Sitrus Berry
 Ability: Iron Fist
 Level: 100  
 - Close Combat
@@ -17640,7 +17640,7 @@ Level: 100
 - Close Combat
 - Swords Dance
 
-Lopunny - Mega @ Loppunite
+Lopunny @ Lopunnite
 Ability: Limber
 Level: 100  
 - Fake Out
@@ -17672,7 +17672,7 @@ Level: 100
 - Wild Charge
 - Heavy Slam
 
-Urshifu - Single @ Sitrus Berry
+SPECIES_URSHIFU_SINGLE_STRIKE @ Sitrus Berry
 Ability: Iron Fist
 Level: 100  
 - Close Combat
@@ -17699,7 +17699,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - Close Combat
 - Swords Dance
 
-Lopunny - Mega @ Loppunite
+Lopunny @ Lopunnite
 Ability: Limber
 Level: 100
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
@@ -17735,7 +17735,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - Wild Charge
 - Heavy Slam
 
-Urshifu - Single @ Sitrus Berry
+SPECIES_URSHIFU_SINGLE_STRIKE @ Sitrus Berry
 Ability: Iron Fist
 Level: 100
 EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
@@ -17864,13 +17864,13 @@ Level: 66
 - Soak
 
 Ampharos
-Ability: Wooly-Charged
+Ability: Woolly-Charged
 Level: 66  
 - Thunderbolt
 - Dragon Pulse
 - Grass Knot
 
-Manectric - Mega @ Manectite
+Manectric @ Manectite
 Ability: Lightning Rod
 Level: 66  
 - Volt Switch
@@ -17882,7 +17882,7 @@ Ability: Punk Rock
 Level: 66  
 - Overdrive
 - Sludge Bomb
-- Boombust
+- Boomburst
 
 Magnezone @ Weakness Policy
 Ability: Sturdy
@@ -17918,14 +17918,14 @@ Level: 66
 - Soak
 
 Ampharos @ Salac Berry
-Ability: Wooly-Charged
+Ability: Woolly-Charged
 Level: 66  
 - Thunderbolt
 - Electroweb
 - Dragon Pulse
 - Grass Knot
 
-Manectric - Mega @ Manectite
+Manectric @ Manectite
 Ability: Lightning Rod
 Level: 66  
 - Volt Switch
@@ -17938,7 +17938,7 @@ Ability: Punk Rock
 Level: 66  
 - Overdrive
 - Sludge Bomb
-- Boombust
+- Boomburst
 - Protect
 
 Magnezone @ Weakness Policy
@@ -17969,7 +17969,7 @@ EVs: 128 HP / 252 Atk / 0 Def / 128 SpA / 0 SpD / 0 Spe
 - Shift Gear
 
 Ampharos @ Salac Berry
-Ability: Wooly-Charged
+Ability: Woolly-Charged
 Level: 66
 EVs: 128 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 128 Spe  
 - Thunderbolt
@@ -17977,7 +17977,7 @@ EVs: 128 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 128 Spe
 - Dragon Pulse
 - Grass Knot
 
-Manectric - Mega @ Manectite
+Manectric @ Manectite
 Ability: Lightning Rod
 Level: 66
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
@@ -17992,7 +17992,7 @@ Level: 66
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
 - Overdrive
 - Sludge Bomb
-- Boombust
+- Boomburst
 - Protect
 
 Magnezone @ Weakness Policy
@@ -18038,13 +18038,13 @@ Level: 100
 - Soak
 
 Ampharos
-Ability: Wooly-Charged
+Ability: Woolly-Charged
 Level: 100  
 - Thunderbolt
 - Dragon Pulse
 - Grass Knot
 
-Manectric - Mega @ Manectite
+Manectric @ Manectite
 Ability: Lightning Rod
 Level: 100  
 - Volt Switch
@@ -18056,7 +18056,7 @@ Ability: Punk Rock
 Level: 100  
 - Overdrive
 - Sludge Bomb
-- Boombust
+- Boomburst
 
 Magnezone @ Weakness Policy
 Ability: Sturdy
@@ -18092,14 +18092,14 @@ Level: 100
 - Soak
 
 Ampharos @ Salac Berry
-Ability: Wooly-Charged
+Ability: Woolly-Charged
 Level: 100  
 - Thunderbolt
 - Electroweb
 - Dragon Pulse
 - Grass Knot
 
-Manectric - Mega @ Manectite
+Manectric @ Manectite
 Ability: Lightning Rod
 Level: 100  
 - Volt Switch
@@ -18112,7 +18112,7 @@ Ability: Punk Rock
 Level: 100  
 - Overdrive
 - Sludge Bomb
-- Boombust
+- Boomburst
 - Protect
 
 Magnezone @ Weakness Policy
@@ -18143,7 +18143,7 @@ EVs: 128 HP / 252 Atk / 0 Def / 128 SpA / 0 SpD / 0 Spe
 - Shift Gear
 
 Ampharos @ Salac Berry
-Ability: Wooly-Charged
+Ability: Woolly-Charged
 Level: 100
 EVs: 128 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 128 Spe  
 - Thunderbolt
@@ -18151,7 +18151,7 @@ EVs: 128 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 128 Spe
 - Dragon Pulse
 - Grass Knot
 
-Manectric - Mega @ Manectite
+Manectric @ Manectite
 Ability: Lightning Rod
 Level: 100
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
@@ -18166,7 +18166,7 @@ Level: 100
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
 - Overdrive
 - Sludge Bomb
-- Boombust
+- Boomburst
 - Protect
 
 Magnezone @ Weakness Policy
@@ -18306,7 +18306,7 @@ Level: 67
 - Expanding Force
 - Trick Room
 
-Camerupt - Mega @ Cameruptite
+Camerupt @ Cameruptite
 Ability: Solid Rock
 Level: 67  
 - Earth Power
@@ -18360,7 +18360,7 @@ Level: 67
 - Psyshock
 - Trick Room
 
-Camerupt - Mega @ Cameruptite
+Camerupt @ Cameruptite
 Ability: Solid Rock
 Level: 67  
 - Heat Wave
@@ -18420,7 +18420,7 @@ EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe
 - Psyshock
 - Trick Room
 
-Camerupt - Mega @ Cameruptite
+Camerupt @ Cameruptite
 Ability: Solid Rock
 Level: 67
 EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
@@ -18480,7 +18480,7 @@ Level: 100
 - Expanding Force
 - Trick Room
 
-Camerupt - Mega @ Cameruptite
+Camerupt @ Cameruptite
 Ability: Solid Rock
 Level: 100  
 - Earth Power
@@ -18534,7 +18534,7 @@ Level: 100
 - Psyshock
 - Trick Room
 
-Camerupt - Mega @ Cameruptite
+Camerupt @ Cameruptite
 Ability: Solid Rock
 Level: 100  
 - Heat Wave
@@ -18594,7 +18594,7 @@ EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe
 - Psyshock
 - Trick Room
 
-Camerupt - Mega @ Cameruptite
+Camerupt @ Cameruptite
 Ability: Solid Rock
 Level: 100
 EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
@@ -18756,7 +18756,7 @@ Level: 68
 - Play Rough
 - Dynamic Punch
 
-Drampa - Mega @ Drampanite
+Drampa @ Drampanite
 Ability: Berserk
 Level: 68  
 - Hyper Voice
@@ -18810,7 +18810,7 @@ Level: 68
 - Dynamic Punch
 - Rock Slide
 
-Drampa - Mega @ Drampanite
+Drampa @ Drampanite
 Ability: Berserk
 Level: 68  
 - Hyper Voice
@@ -18870,7 +18870,7 @@ EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Dynamic Punch
 - Rock Slide
 
-Drampa - Mega @ Drampanite
+Drampa @ Drampanite
 Ability: Berserk
 Level: 68
 EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
@@ -18930,7 +18930,7 @@ Level: 100
 - Play Rough
 - Dynamic Punch
 
-Drampa - Mega @ Drampanite
+Drampa @ Drampanite
 Ability: Berserk
 Level: 100  
 - Hyper Voice
@@ -18984,7 +18984,7 @@ Level: 100
 - Dynamic Punch
 - Rock Slide
 
-Drampa - Mega @ Drampanite
+Drampa @ Drampanite
 Ability: Berserk
 Level: 100  
 - Hyper Voice
@@ -19044,7 +19044,7 @@ EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Dynamic Punch
 - Rock Slide
 
-Drampa - Mega @ Drampanite
+Drampa @ Drampanite
 Ability: Berserk
 Level: 100
 EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
@@ -19221,7 +19221,7 @@ Level: 69
 - Flare Blitz
 - U-Turn
 
-Altaria - Mega @ Altarianite
+Altaria @ Altarianite
 Ability: Cloud Nine
 Level: 69  
 - Double-Edge
@@ -19279,7 +19279,7 @@ Level: 69
 - U-Turn
 - Tailwind
 
-Altaria - Mega @ Altarianite
+Altaria @ Altarianite
 Ability: Cloud Nine
 Level: 69  
 - Double-Edge
@@ -19342,7 +19342,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - U-Turn
 - Tailwind
 
-Altaria - Mega @ Altarianite
+Altaria @ Altarianite
 Ability: Cloud Nine
 Level: 69
 EVs: 0 HP / 192 Atk / 0 Def / 252 SpA / 0 SpD / 64 Spe  
@@ -19397,7 +19397,7 @@ Level: 100
 - Flare Blitz
 - U-Turn
 
-Altaria - Mega @ Altarianite
+Altaria @ Altarianite
 Ability: Cloud Nine
 Level: 100  
 - Double-Edge
@@ -19455,7 +19455,7 @@ Level: 100
 - U-Turn
 - Tailwind
 
-Altaria - Mega @ Altarianite
+Altaria @ Altarianite
 Ability: Cloud Nine
 Level: 100  
 - Double-Edge
@@ -19518,7 +19518,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - U-Turn
 - Tailwind
 
-Altaria - Mega @ Altarianite
+Altaria @ Altarianite
 Ability: Cloud Nine
 Level: 100
 EVs: 0 HP / 192 Atk / 0 Def / 252 SpA / 0 SpD / 64 Spe  
@@ -19629,202 +19629,483 @@ Level: 60
 - Dragon Dance
 - Earthquake
 
-=== TRAINER_TATE_AND_LIZA_2 ===
-Name: TATE&LIZA
+=== TRAINER_TATE_2 ===
+Name: TATE
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Leader Tate
 Gender: Male
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Slowpoke
-Level: 48
-- Yawn
+Absol @ Iron Plate
+Ability: Sharpness
+Level: 70  
+- Extreme Speed
+- Psycho Cut
+- Doom Desire
+
+Bronzong @ Leftovers
+Ability: Levitate
+Level: 70  
+- Stored Power
+- Body Press
+- Iron Defense
+
+Volcarona
+Ability: Flame Body
+Level: 70  
+- Fiery Dance
 - Psychic
-- Calm Mind
-- Protect
+- Quiver Dance
 
-Claydol
-Level: 49
-- Earthquake
-- Ancient Power
-- Psychic
-- Light Screen
-
-Xatu @ Chesto Berry
-Level: 49
-- Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
-
-Lunatone @ Chesto Berry
-Level: 50
-- Earthquake
-- Psychic
-- Rest
-- Calm Mind
-
-Solrock @ Sitrus Berry
-Level: 50
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
-
-=== TRAINER_TATE_AND_LIZA_3 ===
-Name: TATE&LIZA
+=== TRAINER_LIZA_2 ===
+Name: LIZA
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Leader Liza
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Easy
+
+Cresselia @ Sitrus Berry
+Ability: Levitate
+Level: 70  
+- Moonblast
+- Icy Wind
+- Calm Mind
+
+Xatu
+Ability: Psych Out
+Level: 70  
+- Future Sight
+- Air Slash
+- Reflect
+
+Chimecho - Mega @ Chimechite
+Ability: Levitate
+Level: 70  
+- Flash Cannon
+- Psychic
+- Heal Pulse
+- Revival Blessing
+
+=== TRAINER_TATE_2 ===
+Name: TATE
+Class: Leader
+Pic: Leader Tate
 Gender: Male
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Normal
 
-Drowzee
-Level: 53
-- Hypnosis
-- Dream Eater
-- Headbutt
-- Protect
+Medicham
+Ability: Pure Power
+Level: 70  
+- Fake Out
+- Zen Headbutt
+- Close Combat
+- Feint
 
-Slowpoke
-Level: 53
-- Yawn
-- Psychic
+Absol @ Iron Plate
+Ability: Sharpness
+Level: 70  
+- Extreme Speed
+- Knock Off
+- Psycho Cut
+- Doom Desire
+
+Bronzong
+Ability: Levitate
+Level: 70  
+- Stored Power
+- Body Press
 - Calm Mind
-- Protect
+- Iron Defense
 
-Claydol
-Level: 54
-- Earthquake
-- Explosion
+Volcarona @ Life Orb
+Ability: Flame Body
+Level: 70  
+- Fiery Dance
+- Giga Drain
 - Psychic
+- Quiver Dance
+
+=== TRAINER_LIZA_2 ===
+Name: LIZA
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Cresselia @ Sitrus Berry
+Ability: Levitate
+Level: 70  
+- Moonblast
+- Icy Wind
+- Calm Mind
+- Moonlight
+
+Xatu @ Focus Sash
+Ability: Psych Out
+Level: 70  
+- Future Sight
+- Air Slash
+- Reflect
 - Light Screen
 
-Xatu @ Chesto Berry
-Level: 54
+Gothitelle
+Ability: Shadow Tag
+Level: 70  
+- Fake Out
 - Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Thunder Wave
+- Protect
 
-Lunatone @ Chesto Berry
-Level: 55
-- Earthquake
+Chimecho - Mega @ Chimechite
+Ability: Levitate
+Level: 70  
+- Flash Cannon
 - Psychic
-- Rest
-- Calm Mind
+- Heal Pulse
+- Revival Blessing
 
-Solrock @ Sitrus Berry
-Level: 55
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
-
-=== TRAINER_TATE_AND_LIZA_4 ===
-Name: TATE&LIZA
+=== TRAINER_TATE_2 ===
+Name: TATE
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Leader Tate
 Gender: Male
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Hard
 
-Hypno
-Level: 58
-- Hypnosis
-- Dream Eater
-- Headbutt
-- Protect
+Medicham - Mega @ Medichamite
+Ability: Pure Power
+Level: 70
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 128 SpD / 128 Spe  
+- Fake Out
+- Zen Headbutt
+- Close Combat
+- Feint
 
-Claydol
-Level: 59
-- Earthquake
-- Explosion
+Bronzong @ Clear Amulet
+Ability: Levitate
+Level: 70
+EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe  
+- Stored Power
+- Body Press
+- Calm Mind
+- Iron Defense
+
+Absol @ Iron Plate
+Ability: Sharpness
+Level: 70
+EVs: 0 HP / 192 Atk / 0 Def / 64 SpA / 0 SpD / 252 Spe  
+- Extreme Speed
+- Knock Off
+- Psycho Cut
+- Doom Desire
+
+Volcarona @ Life Orb
+Ability: Flame Body
+Level: 70
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Fiery Dance
+- Giga Drain
 - Psychic
+- Quiver Dance
+
+=== TRAINER_LIZA_2 ===
+Name: LIZA
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Cresselia @ Sitrus Berry
+Ability: Levitate
+Level: 70
+EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
+- Moonblast
+- Icy Wind
+- Calm Mind
+- Moonlight
+
+Xatu @ Focus Sash
+Ability: Psych Out
+Level: 70
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Future Sight
+- Air Slash
+- Reflect
 - Light Screen
 
-Slowpoke
-Level: 58
-- Yawn
+Gothitelle @ Leftovers
+Ability: Shadow Tag
+Level: 70
+EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe  
+- Fake Out
 - Psychic
-- Calm Mind
+- Thunder Wave
 - Protect
 
-Xatu @ Chesto Berry
-Level: 59
+Chimecho - Mega @ Chimechite
+Ability: Levitate
+Level: 70
+EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
+- Flash Cannon
 - Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Heal Pulse
+- Revival Blessing
 
-Lunatone @ Chesto Berry
-Level: 60
-- Earthquake
-- Psychic
-- Rest
-- Calm Mind
-
-Solrock @ Sitrus Berry
-Level: 60
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
-
-=== TRAINER_TATE_AND_LIZA_5 ===
-Name: TATE&LIZA
+=== TRAINER_TATE_3 ===
+Name: TATE
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Leader Tate
 Gender: Male
 Music: Female
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Hypno
-Level: 63
-- Hypnosis
-- Dream Eater
-- Headbutt
-- Protect
+Absol @ Iron Plate
+Ability: Sharpness
+Level: 100
+- Extreme Speed
+- Psycho Cut
+- Doom Desire
 
-Claydol
-Level: 64
-- Earthquake
-- Explosion
+Bronzong @ Leftovers
+Ability: Levitate
+Level: 100
+- Stored Power
+- Body Press
+- Iron Defense
+
+Volcarona
+Ability: Flame Body
+Level: 100
+- Fiery Dance
 - Psychic
+- Quiver Dance
+
+=== TRAINER_LIZA_3 ===
+Name: LIZA
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Easy
+
+Cresselia @ Sitrus Berry
+Ability: Levitate
+Level: 100
+- Moonblast
+- Icy Wind
+- Calm Mind
+
+Xatu
+Ability: Psych Out
+Level: 100
+- Future Sight
+- Air Slash
+- Reflect
+
+Chimecho - Mega @ Chimechite
+Ability: Levitate
+Level: 100
+- Flash Cannon
+- Psychic
+- Heal Pulse
+- Revival Blessing
+
+=== TRAINER_TATE_3 ===
+Name: TATE
+Class: Leader
+Pic: Leader Tate
+Gender: Male
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Medicham
+Ability: Pure Power
+Level: 100
+- Fake Out
+- Zen Headbutt
+- Close Combat
+- Feint
+
+Absol @ Iron Plate
+Ability: Sharpness
+Level: 100
+- Extreme Speed
+- Knock Off
+- Psycho Cut
+- Doom Desire
+
+Bronzong
+Ability: Levitate
+Level: 100
+- Stored Power
+- Body Press
+- Calm Mind
+- Iron Defense
+
+Volcarona @ Life Orb
+Ability: Flame Body
+Level: 100
+- Fiery Dance
+- Giga Drain
+- Psychic
+- Quiver Dance
+
+=== TRAINER_LIZA_3 ===
+Name: LIZA
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Cresselia @ Sitrus Berry
+Ability: Levitate
+Level: 100
+- Moonblast
+- Icy Wind
+- Calm Mind
+- Moonlight
+
+Xatu @ Focus Sash
+Ability: Psych Out
+Level: 100
+- Future Sight
+- Air Slash
+- Reflect
 - Light Screen
 
-Slowking
-Level: 63
-- Yawn
+Gothitelle
+Ability: Shadow Tag
+Level: 100
+- Fake Out
 - Psychic
-- Calm Mind
+- Thunder Wave
 - Protect
 
-Xatu @ Chesto Berry
-Level: 64
+Chimecho - Mega @ Chimechite
+Ability: Levitate
+Level: 100
+- Flash Cannon
 - Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Heal Pulse
+- Revival Blessing
 
-Lunatone @ Chesto Berry
-Level: 65
-- Earthquake
-- Psychic
-- Rest
-- Calm Mind
+=== TRAINER_TATE_3 ===
+Name: TATE
+Class: Leader
+Pic: Leader Tate
+Gender: Male
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
 
-Solrock @ Sitrus Berry
-Level: 65
-- Sunny Day
-- Solar Beam
+Medicham - Mega @ Medichamite
+Ability: Pure Power
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 128 SpD / 128 Spe  
+- Fake Out
+- Zen Headbutt
+- Close Combat
+- Feint
+
+Bronzong @ Clear Amulet
+Ability: Levitate
+Level: 100
+EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe  
+- Stored Power
+- Body Press
+- Calm Mind
+- Iron Defense
+
+Absol @ Iron Plate
+Ability: Sharpness
+Level: 100
+EVs: 0 HP / 192 Atk / 0 Def / 64 SpA / 0 SpD / 252 Spe  
+- Extreme Speed
+- Knock Off
+- Psycho Cut
+- Doom Desire
+
+Volcarona @ Life Orb
+Ability: Flame Body
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
+- Fiery Dance
+- Giga Drain
 - Psychic
-- Flamethrower
+- Quiver Dance
+
+=== TRAINER_LIZA_3 ===
+Name: LIZA
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Cresselia @ Sitrus Berry
+Ability: Levitate
+Level: 100
+EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
+- Moonblast
+- Icy Wind
+- Calm Mind
+- Moonlight
+
+Xatu @ Focus Sash
+Ability: Psych Out
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Future Sight
+- Air Slash
+- Reflect
+- Light Screen
+
+Gothitelle @ Leftovers
+Ability: Shadow Tag
+Level: 100
+EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe  
+- Fake Out
+- Psychic
+- Thunder Wave
+- Protect
+
+Chimecho - Mega @ Chimechite
+Ability: Levitate
+Level: 100
+EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
+- Flash Cannon
+- Psychic
+- Heal Pulse
+- Revival Blessing
 
 === TRAINER_JUAN_2 ===
 Name: JUAN
@@ -19964,57 +20245,6 @@ Level: 61
 - Ice Beam
 - Rest
 
-=== TRAINER_JUAN_5 ===
-Name: JUAN
-Class: Leader
-Pic: Leader Juan
-Gender: Male
-Music: Male
-Double Battle: Yes
-AI: Smart Trainer
-
-Lapras
-Level: 61
-- Hydro Pump
-- Perish Song
-- Ice Beam
-- Confuse Ray
-
-Whiscash
-Level: 63
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Politoed
-Level: 61
-- Hypnosis
-- Rain Dance
-- Hydro Pump
-- Perish Song
-
-Walrein
-Level: 63
-- Water Pulse
-- Body Slam
-- Protect
-- Sheer Cold
-
-Crawdaunt @ Chesto Berry
-Level: 63
-- Rest
-- Guillotine
-- Taunt
-- Double Team
-
-Kingdra @ Chesto Berry
-Level: 66
-- Water Pulse
-- Double Team
-- Ice Beam
-- Rest
-
 === TRAINER_ANGELO ===
 Name: ANGELO
 Class: Bug Maniac
@@ -20113,7 +20343,7 @@ Level: 80
 - Head Smash
 - Body Press
 
-Metagross - Mega @ Metagrossite
+Metagross @ Metagrossite
 Ability: Full-Metal Body
 Level: 80  
 - Meteor Mash
@@ -20168,7 +20398,7 @@ Level: 80
 - Body Press
 - Rock Slide
 
-Metagross - Mega @ Metagrossite
+Metagross @ Metagrossite
 Ability: Full-Metal Body
 Level: 80  
 - Meteor Mash
@@ -20229,7 +20459,7 @@ EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Body Press
 - Rock Slide
 
-Metagross - Mega @ Metagrossite
+Metagross @ Metagrossite
 Ability: Full-Metal Body
 Level: 80
 EVs: 128 HP / 252 Atk / 128 Def / 0 SpA / 0 SpD / 0 Spe  
@@ -20283,7 +20513,7 @@ Level: 100
 - Head Smash
 - Body Press
 
-Metagross - Mega @ Metagrossite
+Metagross @ Metagrossite
 Ability: Full-Metal Body
 Level: 100  
 - Meteor Mash
@@ -20338,7 +20568,7 @@ Level: 100
 - Body Press
 - Rock Slide
 
-Metagross - Mega @ Metagrossite
+Metagross @ Metagrossite
 Ability: Full-Metal Body
 Level: 100  
 - Meteor Mash
@@ -20399,7 +20629,7 @@ EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Body Press
 - Rock Slide
 
-Metagross - Mega @ Metagrossite
+Metagross @ Metagrossite
 Ability: Full-Metal Body
 Level: 100
 EVs: 128 HP / 252 Atk / 128 Def / 0 SpA / 0 SpD / 0 Spe  
@@ -22779,62 +23009,67 @@ Level: 41
 - Close Combat
 - Shell Smash
 
-=== TRAINER_TATE_AND_LIZA_1 ===
-Name: TATE&LIZA
+=== TRAINER_TATE_1 ===
+Name: TATE
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Leader Tate
 Gender: Male
 Music: Female
 Double Battle: Yes
-Mugshot: Pink
 AI: Smart Trainer
 Difficulty: Easy
 
+Absol
+Ability: Sharpness
+Level: 43  
+- Extreme Speed
+- Psycho Cut
+- Doom Desire
+
+Claydol
+Ability: Levitate
+Level: 43  
+- Extrasensory
+- Earthquake
+- Rapid Spin
+
 Solrock @ Life Orb
 Ability: Levitate
-Level: 45
+Level: 45  
 - Rock Slide
 - Zen Headbutt
-- Flare Blitz
-- Rock Polish
+- Hypnosis
+
+=== TRAINER_LIZA_1 ===
+Name: LIZA
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Easy
+
+Lunatone @ Power Herb
+Ability: Levitate
+Level: 45  
+- Psychic
+- Meteor Beam
+- Moonlight
 
 Xatu
 Ability: Psych Out
-Level: 43
+Level: 43  
 - Future Sight
 - Air Slash
 - Reflect
 
-Claydol
+Chimecho
 Ability: Levitate
-Level: 43
-- Extrasensory
-- Earthquake
-- Shadow Ball
-- Rapid Spin
-
-Absol @ Iron Plate
-Ability: Justified
-Level: 43
-- Night Slash
-- Psycho Cut
-- Doom Desire
-
-Medicham
-Ability: Pure Power
-Level: 43
-- Fake Out
-- Zen Headbutt
-- Aura Sphere
-- Meditate
-
-Lunatone @ Sitrus Berry
-Ability: Levitate
-Level: 45
+Level: 43  
 - Psychic
-- Moonblast
-- Light Screen
-- Moonlight
+- Heal Pulse
+- Revival Blessing
 
 === TRAINER_COURTNEY_MOSSDEEP ===
 Name: COURTNEY
@@ -25192,64 +25427,73 @@ Level: 41
 - Close Combat
 - Shell Smash
 
-=== TRAINER_TATE_AND_LIZA_1 ===
-Name: TATE&LIZA
+=== TRAINER_TATE_1 ===
+Name: TATE
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Leader Tate
 Gender: Male
 Music: Female
 Double Battle: Yes
-Mugshot: Pink
 AI: Smart Trainer
 Difficulty: Normal
 
-Solrock @ Life Orb
-Ability: Levitate
-Level: 45
-- Rock Slide
-- Zen Headbutt
-- Flare Blitz
-- Hypnosis
-
-Xatu
-Ability: Psych Out
-Level: 43
-- Future Sight
-- Air Slash
-- Reflect
-- Light Screen
+Absol @ Iron Plate
+Ability: Sharpness
+Level: 43  
+- Extreme Speed
+- Knock Off
+- Psycho Cut
+- Doom Desire
 
 Claydol
 Ability: Levitate
-Level: 43
+Level: 43  
 - Extrasensory
 - Earthquake
 - Shadow Ball
 - Rapid Spin
 
-Absol @ Iron Plate
-Ability: Sharpness
-Level: 43
-- Extreme Speed
-- Night Slash
-- Psycho Cut
-- Doom Desire
-
-Medicham
-Ability: Telepathy
-Level: 43
-- Fake Out
+Solrock @ Life Orb
+Ability: Levitate
+Level: 45  
+- Rock Slide
 - Zen Headbutt
-- Aura Sphere
-- Meditate
+- Flare Blitz
+- Hypnosis
+
+=== TRAINER_LIZA_1 ===
+Name: TATE
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
 
 Lunatone @ Power Herb
 Ability: Levitate
-Level: 45
+Level: 45  
 - Psychic
 - Meteor Beam
 - Moonblast
 - Moonlight
+
+Xatu
+Ability: Psych Out
+Level: 43  
+- Future Sight
+- Air Slash
+- Reflect
+- Light Screen
+
+Chimecho
+Ability: Levitate
+Level: 43  
+- Flash Cannon
+- Psychic
+- Heal Pulse
+- Revival Blessing
 
 === TRAINER_COURTNEY_MOSSDEEP ===
 Name: COURTNEY
@@ -25833,62 +26077,6 @@ Level: 63
 - Meteor Mash
 - Psychic Fangs
 - Hammer Arm
-
-=== TRAINER_STEVEN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-Double Battle: Yes
-AI: Smart Trainer
-Difficulty: Normal
-
-Skarmory @ Rocky Helmet
-Ability: Sturdy
-Level: 99  
-- Iron Head
-- Drill Peck
-- Spikes
-- Roost
-
-Regieleki @ Light Clay
-Ability: Transistor
-Level: 98  
-- Thunder Cage
-- Light Screen
-- Reflect
-
-Jirachi @ Leftovers
-Ability: Serene Grace
-Level: 97  
-- Iron Head
-- Future Sight
-- Life Dew
-- Substitute
-
-Deoxys - Attack @ White Herb
-Ability: Pressure
-Level: 99  
-- Psycho Boost
-- Knock Off
-- Superpower
-- Shadow Ball
-
-Regidrago @ Sitrus Berry
-Ability: Dragon's Maw
-Level: 98  
-- Dragon Energy
-- Breaking Swipe
-- Earth Power
-
-Metagross @ Life Orb
-Ability: Full-Metal Body
-Level: 100  
-- Meteor Mash
-- Psychic Fangs
-- Hammer Arm
-- Earthquake
 
 /* START MASTER MODE BOSSES */
 
@@ -28051,34 +28239,33 @@ EVs: 0 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 64 Spe
 - Ice Fang
 - Shell Smash
 
-=== TRAINER_TATE_AND_LIZA_1 ===
-Name: TATE&LIZA
+=== TRAINER_TATE_1 ===
+Name: TATE
 Class: Leader
-Pic: Leader Tate And Liza
+Pic: Leader Tate
 Gender: Male
 Music: Female
 Double Battle: Yes
-Mugshot: Pink
 AI: Smart Trainer
 Difficulty: Hard
 
-Solrock @ Life Orb
-Ability: Levitate
+Medicham - Mega @ Medichamite
+Ability: Pure Power
 Level: 45
-EVs: 128 HP / 128 Atk / 128 Def / 0 SpA / 0 SpD / 64 Spe  
-- Rock Slide
+EVs: 0 HP / 192 Atk / 0 Def / 0 SpA / 64 SpD / 192 Spe  
+- Fake Out
 - Zen Headbutt
-- Flare Blitz
-- Hypnosis
+- Close Combat
+- Feint
 
-Xatu @ Mirror Herb
-Ability: Psych Out
+Absol @ Iron Plate
+Ability: Sharpness
 Level: 45
-EVs: 0 HP / 0 Atk / 0 Def / 128 SpA / 252 SpD / 64 Spe  
-- Future Sight
-- Air Slash
-- Reflect
-- Light Screen
+EVs: 0 HP / 192 Atk / 0 Def / 64 SpA / 0 SpD / 192 Spe  
+- Extreme Speed
+- Knock Off
+- Psycho Cut
+- Doom Desire
 
 Claydol @ Clear Amulet
 Ability: Levitate
@@ -28089,23 +28276,24 @@ EVs: 128 HP / 64 Atk / 64 Def / 64 SpA / 64 SpD / 64 Spe
 - Shadow Ball
 - Rapid Spin
 
-Absol @ Iron Plate
-Ability: Sharpness
+Solrock @ Life Orb
+Ability: Levitate
 Level: 45
-EVs: 0 HP / 192 Atk / 0 Def / 64 SpA / 0 SpD / 128 Spe  
-- Extreme Speed
-- Night Slash
-- Psycho Cut
-- Doom Desire
-
-Medicham @ Medichamite
-Ability: Telepathy
-Level: 45
-EVs: 0 HP / 64 Atk / 0 Def / 252 SpA / 0 SpD / 128 Spe  
-- Fake Out
+EVs: 128 HP / 128 Atk / 128 Def / 0 SpA / 0 SpD / 64 Spe  
+- Rock Slide
 - Zen Headbutt
-- Aura Sphere
-- Meditate
+- Flare Blitz
+- Hypnosis
+
+=== TRAINER_LIZA_1 ===
+Name: LIZA
+Class: Leader
+Pic: Leader Liza
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
 
 Lunatone @ Power Herb
 Ability: Levitate
@@ -28115,6 +28303,33 @@ EVs: 128 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 64 Spe
 - Meteor Beam
 - Moonblast
 - Moonlight
+
+Xatu @ Light Clay
+Ability: Psych Out
+Level: 45
+EVs: 0 HP / 0 Atk / 0 Def / 128 SpA / 252 SpD / 64 Spe  
+- Future Sight
+- Air Slash
+- Reflect
+- Light Screen
+
+Wobbuffet @ Leftovers
+Ability: Shadow Tag
+Level: 45
+EVs: 252 HP / 0 Atk / 192 Def / 0 SpA / 0 SpD / 0 Spe  
+- Encore
+- Tickle
+- Counter
+- Amnesia
+
+Chimecho - Mega @ Chimechite
+Ability: Levitate
+Level: 45
+EVs: 252 HP / 0 Atk / 128 Def / 64 SpA / 0 SpD / 0 Spe  
+- Flash Cannon
+- Psychic
+- Heal Pulse
+- Revival Blessing
 
 === TRAINER_COURTNEY_MOSSDEEP ===
 Name: COURTNEY
@@ -28955,69 +29170,6 @@ EVs: 128 HP / 252 Atk / 128 Def / 0 SpA / 0 SpD / 0 Spe
 - Hammer Arm
 - Ice Punch
 
-=== TRAINER_STEVEN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-Double Battle: Yes
-AI: Smart Trainer
-Difficulty: Hard
-
-Skarmory @ Rocky Helmet
-Ability: Sturdy
-Level: 100
-EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe  
-- Iron Head
-- Drill Peck
-- Spikes
-- Roost
-
-Regieleki @ Light Clay
-Ability: Transistor
-Level: 100
-EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
-- Thunder Cage
-- Electroweb
-- Light Screen
-- Reflect
-
-Jirachi @ Leftovers
-Ability: Serene Grace
-Level: 100
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
-- Iron Head
-- Future Sight
-- Life Dew
-- Substitute
-
-Deoxys - Attack @ White Herb
-Ability: Pressure
-Level: 100
-EVs: 0 HP / 128 Atk / 0 Def / 128 SpA / 0 SpD / 252 Spe  
-- Psycho Boost
-- Knock Off
-- Superpower
-- Shadow Ball
-
-Regidrago @ Sitrus Berry
-Ability: Dragon's Maw
-Level: 100
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 128 SpD / 128 Spe  
-- Dragon Energy
-- Breaking Swipe
-- Earth Power
-
-Metagross - Mega @ Metagrossite
-Ability: Full-Metal Body
-Level: 100
-EVs: 128 HP / 252 Atk / 128 Def / 0 SpA / 0 SpD / 0 Spe  
-- Meteor Mash
-- Psychic Fangs
-- Hammer Arm
-- Earthquake
-
 === TRAINER_SIDNEY_2 ===
 Name: SIDNEY
 Class: Elite Four
@@ -29227,7 +29379,7 @@ Level: 76
 - Flare Blitz
 - Bone Rush
 
-Banette - Mega @ Banettite
+Banette @ Banettite
 Ability: Cursed Body
 Level: 76  
 - Shadow Sneak
@@ -29282,7 +29434,7 @@ Level: 76
 - Flare Blitz
 - Bone Rush
 
-Banette - Mega @ Banettite
+Banette @ Banettite
 Ability: Cursed Body
 Level: 76  
 - Shadow Sneak
@@ -29343,7 +29495,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
 - Flare Blitz
 - Bone Rush
 
-Banette - Mega @ Banettite
+Banette @ Banettite
 Ability: Cursed Body
 Level: 76
 EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
@@ -29416,7 +29568,7 @@ Level: 77
 - Dive
 - Glaciate
 
-Froslass - Mega @ Froslassite
+Froslass @ Froslassite
 Ability: Snow Cloak
 Level: 77  
 - Blizzard
@@ -29474,7 +29626,7 @@ Level: 77
 - Glaciate
 - Super Fang
 
-Froslass - Mega @ Froslassite
+Froslass @ Froslassite
 Ability: Snow Cloak
 Level: 77  
 - Blizzard
@@ -29538,7 +29690,7 @@ EVs: 252 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 0 Spe
 - Glaciate
 - Super Fang
 
-Froslass - Mega @ Froslassite
+Froslass @ Froslassite
 Ability: Snow Cloak
 Level: 77
 EVs: 128 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 128 Spe  
@@ -29593,7 +29745,7 @@ Level: 78
 - Aura Sphere
 - Body Press
 
-Salamence - Mega @ Salamencite
+Salamence @ Salamencite
 Ability: Intimidate
 Level: 78  
 - Dragon Claw
@@ -29651,7 +29803,7 @@ Level: 78
 - Body Press
 - Clangorous Soul
 
-Salamence - Mega @ Salamencite
+Salamence @ Salamencite
 Ability: Intimidate
 Level: 78  
 - Dragon Claw
@@ -29715,7 +29867,7 @@ EVs: 0 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 252 Spe
 - Body Press
 - Clangorous Soul
 
-Salamence - Mega @ Salamencite
+Salamence @ Salamencite
 Ability: Intimidate
 Level: 78
 EVs: 0 HP / 252 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
@@ -29933,7 +30085,7 @@ Level: 100
 - Flare Blitz
 - Bone Rush
 
-Banette - Mega @ Banettite
+Banette @ Banettite
 Ability: Cursed Body
 Level: 100  
 - Shadow Sneak
@@ -29988,7 +30140,7 @@ Level: 100
 - Flare Blitz
 - Bone Rush
 
-Banette - Mega @ Banettite
+Banette @ Banettite
 Ability: Cursed Body
 Level: 100  
 - Shadow Sneak
@@ -30049,7 +30201,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
 - Flare Blitz
 - Bone Rush
 
-Banette - Mega @ Banettite
+Banette @ Banettite
 Ability: Cursed Body
 Level: 100
 EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
@@ -30122,7 +30274,7 @@ Level: 100
 - Dive
 - Glaciate
 
-Froslass - Mega @ Froslassite
+Froslass @ Froslassite
 Ability: Snow Cloak
 Level: 100  
 - Blizzard
@@ -30180,7 +30332,7 @@ Level: 100
 - Glaciate
 - Super Fang
 
-Froslass - Mega @ Froslassite
+Froslass @ Froslassite
 Ability: Snow Cloak
 Level: 100  
 - Blizzard
@@ -30244,7 +30396,7 @@ EVs: 252 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 0 Spe
 - Glaciate
 - Super Fang
 
-Froslass - Mega @ Froslassite
+Froslass @ Froslassite
 Ability: Snow Cloak
 Level: 100
 EVs: 128 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 128 Spe  
@@ -30299,7 +30451,7 @@ Level: 100
 - Aura Sphere
 - Body Press
 
-Salamence - Mega @ Salamencite
+Salamence @ Salamencite
 Ability: Intimidate
 Level: 100  
 - Dragon Claw
@@ -30357,7 +30509,7 @@ Level: 100
 - Body Press
 - Clangorous Soul
 
-Salamence - Mega @ Salamencite
+Salamence @ Salamencite
 Ability: Intimidate
 Level: 100  
 - Dragon Claw
@@ -30421,7 +30573,7 @@ EVs: 0 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 252 Spe
 - Body Press
 - Clangorous Soul
 
-Salamence - Mega @ Salamencite
+Salamence @ Salamencite
 Ability: Intimidate
 Level: 100
 EVs: 0 HP / 252 Atk / 0 Def / 252 SpA / 0 SpD / 0 Spe  
