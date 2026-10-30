@@ -54,7 +54,7 @@ MossdeepCity_Gym_EventScript_SetSwitch4Metatiles::
 	end
 
 MossdeepCity_Gym_EventScript_TateAndLiza::
-	trainerbattle_double TRAINER_TATE_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
+	trainerbattle_two_trainers TRAINER_TATE_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateDefeat, TRAINER_LIZA_1, MossdeepCity_Gym_Text_LizaDefeat, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, FALSE
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch
 	goto_if_unset FLAG_RECEIVED_TM_CALM_MIND, MossdeepCity_Gym_EventScript_GiveCalmMind2
@@ -569,11 +569,11 @@ MossdeepCity_Gym_Text_TateAndLizaIntro:
 	.string "TATE: This combination of ours…\n"
 	.string "LIZA: Can you beat it?$"
 
-MossdeepCity_Gym_Text_TateAndLizaDefeat:
-	.string "TATE: What?! Our combination…\n"
-	.string "LIZA: Was shattered!\p"
-	.string "TATE: It can't be helped. You've won…\n"
-	.string "LIZA: So, in recognition, take this.$"
+MossdeepCity_Gym_Text_TateDefeat:
+	.string "TATE: What?! Our combination…$"
+
+MossdeepCity_Gym_Text_LizaDefeat:
+	.string "LIZA: Was shattered!$"
 
 MossdeepCity_Gym_Text_ReceivedMindBadge:
 	.string "{PLAYER} received the MIND BADGE\n"
