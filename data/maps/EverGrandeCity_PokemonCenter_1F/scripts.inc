@@ -37,8 +37,12 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
 	call_if_eq VAR_FACING, DIR_NORTH, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExitNorth
 	call_if_eq VAR_FACING, DIR_EAST, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit
 	call_if_eq VAR_FACING, DIR_WEST, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit
+	call_if_eq VAR_FACING, DIR_SOUTH, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
+	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
+	setflag FLAG_RELEARN_EGG_MOVES
+	setflag FLAG_RELEARN_TUTOR_MOVES
 	playse SE_EXIT
 	waitse
 	removeobject LOCALID_EVER_GRANDE_SCOTT
@@ -90,7 +94,11 @@ EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 	.string "SCOTT: {PLAYER}{KUN}, you've clawed your\n"
 	.string "way up to face the POKéMON LEAGUE!\p"
 	.string "I'm happy for you!\n"
-	.string "You made my cheering worthwhile!\p"
+	.string "You made my ABILITY PATCHES worthwhile!\p"
+	.string "Since you can buy those yourself now,\n"
+	.string "this time I'll do you a favor instead.\p"
+	.string "Going forward, you can teach your POKéMON\n"
+	.string "their TUTOR and EGG moves, too.\p"
 	.string "{PLAYER}{KUN}, if you were to become\n"
 	.string "the POKéMON LEAGUE CHAMPION…\p"
 	.string "I'll get in touch with you then.\p"
