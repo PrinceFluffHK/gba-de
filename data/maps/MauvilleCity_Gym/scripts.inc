@@ -136,11 +136,6 @@ MauvilleCity_Gym_EventScript_CompletedNewMauville::
 	release
 	end
 
-MauvilleCity_Gym_EventScript_WattsonRematch::
-	trainerbattle_rematch_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
-	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 MauvilleCity_Gym_EventScript_Switch1::
 	lockall
 	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
