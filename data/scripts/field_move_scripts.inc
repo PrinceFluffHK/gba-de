@@ -4,7 +4,7 @@
 
 @ Interact with cuttable tree
 EventScript_CutTree::
-	    lockall
+	lockall
     checkfieldmove FIELD_MOVE_CUT
     copyvar VAR_0x8004, VAR_RESULT
     goto_if_eq VAR_0x8004, PARTY_SIZE, EventScript_CheckTreeCantCut

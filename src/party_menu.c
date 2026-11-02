@@ -2949,22 +2949,34 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
+    enum Species species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG);
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
     // Add field moves to action list
-    for (i = 0; i < MAX_MON_MOVES; i++)
+    for (j = 0; j != FIELD_MOVES_COUNT; j++)
     {
-        for (j = 0; j != FIELD_MOVES_COUNT; j++)
-        {
-            if (!FieldMove_IsVisible(j))
-                continue;
+        enum Move move;
 
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
-            {
+        if (!FieldMove_IsVisible(j))
+            continue;
+
+        move = FieldMove_GetMoveId(j);
+        if (IsMoveHM(move))
+        {
+            if (IsFieldMoveUnlocked(j) && CanLearnTeachableMove(species, move))
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                break;
+        }
+        else
+        {
+            for (i = 0; i < MAX_MON_MOVES; i++)
+            {
+                if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == move)
+                {
+                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    break;
+                }
             }
         }
     }
