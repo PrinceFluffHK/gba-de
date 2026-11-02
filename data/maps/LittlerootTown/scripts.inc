@@ -913,9 +913,9 @@ LittlerootTown_EventScript_Shroomish::
 	msgbox LittlerootTown_Text_WantToSetStandardMode, MSGBOX_DEFAULT
 	yesnobox 20, 8
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_EventScript_ShroomishSetStandardMode
-	msgbox LittlerootTown_Text_WantToSetChampionMode, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_WantToSetMasterMode, MSGBOX_DEFAULT
 	yesnobox 20, 8
-	goto_if_eq VAR_RESULT, YES, LittlerootTown_EventScript_ShroomishSetChampionMode
+	goto_if_eq VAR_RESULT, YES, LittlerootTown_EventScript_ShroomishSetMasterMode
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ShroomishKeepMode
 	end
 
@@ -943,12 +943,12 @@ LittlerootTown_EventScript_ShroomishSetChallengeMode::
 	release
 	end
 
-LittlerootTown_EventScript_ShroomishSetChampionMode::
-	msgbox LittlerootTown_Text_WantToSetChampionMode, MSGBOX_DEFAULT
+LittlerootTown_EventScript_ShroomishSetMasterMode::
+	msgbox LittlerootTown_Text_WantToSetMasterMode, MSGBOX_DEFAULT
 	yesnobox 20, 8
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ShroomishKeepMode
 	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox LittlerootTown_Text_EnabledChampionMode, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_EnabledMasterMode, MSGBOX_DEFAULT
 	waitfanfare
 	msgbox LittlerootTown_Text_SwitchedDifficulty, MSGBOX_DEFAULT
 	setdifficulty DIFFICULTY_HARD
@@ -1081,27 +1081,27 @@ LittlerootTown_Text_WantToSetChallengeMode:
 	.string "NAPPY: Hey, {PLAYER}! It's me,\n"
 	.string "the SHROOMISH of CHALLENGE!\p"
 	.string "You looking to switch\n"
-	.string "to EXPERT MODE?$"
+	.string "to STANDARD MODE?$"
 
-LittlerootTown_Text_WantToSetChampionMode:
+LittlerootTown_Text_WantToSetMasterMode:
 	.string "NAPPY: I see…\p"
 	.string "Could that mean that you\n"
-	.string "want to try CHAMPION MODE?\p"
-	.string "In CHAMPION MODE, some regular\n"
+	.string "want to try MASTER MODE?\p"
+	.string "In MASTER MODE, some regular\n"
 	.string "trainers will have stronger teams,\l"
 	.string "and bosses feed their teams VITAMINS.\p"
 	.string "How about it, {PLAYER}?\p"
 	.string "Want to take on\n"
-	.string "CHAMPION MODE?$"
+	.string "MASTER MODE?$"
 
 LittlerootTown_Text_EnabledStandardMode:
 	.string "STANDARD MODE was enabled.$"
 
 LittlerootTown_Text_EnabledChallengeMode:
-	.string "EXPERT MODE was enabled.$"
+	.string "CHALLENGE MODE was enabled.$"
 
-LittlerootTown_Text_EnabledChampionMode:
-	.string "CHAMPION MODE was enabled.\n"
+LittlerootTown_Text_EnabledMasterMode:
+	.string "MASTER MODE was enabled.\n"
 	.string "Good luck!$"
 
 LittlerootTown_Text_SwitchedDifficulty:

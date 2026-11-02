@@ -1359,21 +1359,21 @@ RustboroCity_Text_WantToEnableChallengeMode:
 	.string "I'm NAPPY, the SHROOM OF CHALLENGE!\p"
 	.string "NAPPY: I see you've earned some\n"
 	.string "experience with Emerald: DE.\p"
-	.string "I'm here to ask if you\n"
-	.string "want to turn on EXPERT MODE?\p"
+	.string "I'm here to ask if you want to\n"
+	.string "enable CHALLENGE MODE?\p"
 	.string "STANDARD MODE can be pretty tough,\n"
 	.string "to be sure…\p"
-	.string "But EXPERT MODE was made for trainers\n"
+	.string "But CHALLENGE MODE is for trainers\n"
 	.string "who wish to truly push themselves.\p"
 	.string "Starting with dear Roxanne here,\n"
 	.string "Boss trainers will often bring extra\l"
 	.string "team members and new movesets.\p"
 	.string "So what do you think?\p"
-	.string "Does EXPERT MODE\n"
+	.string "Does CHALLENGE MODE\n"
 	.string "sound right for you?$"
 
 RustboroCity_Text_EnabledChallengeMode:
-	.string "EXPERT MODE was enabled.\n"
+	.string "CHALLENGE MODE was enabled.\n"
 	.string "Best of luck!$"
 
 RustboroCity_Text_ChallengeModeIsntForEveryone:
@@ -1381,8 +1381,8 @@ RustboroCity_Text_ChallengeModeIsntForEveryone:
 	.string "We'll stick with STANDARD MODE.$"
 
 RustboroCity_Text_KnowWhereToFindMe:
-	.string "NAPPY: If you change your mind\n"
-	.string "and want to swap MODE in the future,\p"
+	.string "NAPPY: If you want to talk about\n"
+	.string "increasing the CHALLENGE again,\p"
 	.string "I'll be hanging out back in\n"
 	.string "LITTLEROOT TOWN.\p"
 	.string "So long, {PLAYER}!\p"
