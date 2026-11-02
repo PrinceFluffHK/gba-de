@@ -23,10 +23,10 @@ BerryTree_EventScript_Sparkling::
 BerryTree_EventScript_CheckSoil::
 	lock
 	faceplayer
-	specialvar VAR_RESULT, PlayerHasBerries
-	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlant
-	specialvar VAR_RESULT, PlayerHasMulch
-	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToMulch
+@	specialvar VAR_RESULT, PlayerHasBerries
+@	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlant
+@	specialvar VAR_RESULT, PlayerHasMulch
+@	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToMulch
 	message BerryTree_Text_ItsSoftLoamySoil
 	waitmessage
 	waitbuttonpress
@@ -256,7 +256,9 @@ BerryTree_EventScript_PlantBerry::
 	return
 
 BerryTree_Text_ItsSoftLoamySoil:
-	.string "It's soft, loamy soil.$"
+	.string "It's soft, loamy soil.\p"
+	.string "But you're a POKéMON TRAINER,\n"
+	.string "not a BERRY FARMER.$"
 
 BerryTree_Text_WantToPlant:
 	.string "It's soft, loamy soil.\n"
