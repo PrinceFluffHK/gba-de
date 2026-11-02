@@ -442,7 +442,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_TM",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 43,
       "y": 15,
       "elevation": 3,
