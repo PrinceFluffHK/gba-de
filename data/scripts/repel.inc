@@ -130,7 +130,7 @@ EventScript_UseSpray::
 	playse SE_REPEL
 	waitse
 	callnative HandleSprayMenuChoice
-	removeitem LOCAL_VAR_SPRAY, 1
+@	removeitem LOCAL_VAR_SPRAY, 1
 	bufferitemname STR_VAR_2, LOCAL_VAR_SPRAY
 	msgbox Text_SprayWoreOffUseX, MSGBOX_SIGN
 	return

@@ -2205,10 +2205,11 @@ const struct ItemInfo gItemsInfo[] =
         .price = (I_PRICE >= GEN_7) ? 400 : 350,
         .holdEffectParam = 100,
         .description = COMPOUND_STRING(
-            "Repels weak wild\n"
-            "Pokémon for 100\n"
-            "steps."),
+            "Repels Pokémon\n"
+            "for 100 steps.\n"
+            "Infinite."),
         .pocket = POCKET_ITEMS,
+        .importance = 1,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
@@ -2228,6 +2229,7 @@ const struct ItemInfo gItemsInfo[] =
             "Pokémon for 200\n"
             "steps."),
         .pocket = POCKET_ITEMS,
+        .importance = 1,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
@@ -2247,6 +2249,7 @@ const struct ItemInfo gItemsInfo[] =
             "Pokémon for 250\n"
             "steps."),
         .pocket = POCKET_ITEMS,
+        .importance = 1,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
