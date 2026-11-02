@@ -83,6 +83,7 @@ SootopolisCity_Gym_1F_EventScript_Juan::
 	goto_if_set FLAG_IS_DOUBLE_CHAMPION, SootopolisCity_Gym_1F_EventScript_JuanRematch_Cap 
 	goto_if_set FLAG_IS_CHAMPION, SootopolisCity_Gym_1F_EventScript_JuanRematch 
 	trainerbattle_single TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
+	trainerbattle_two_trainers TRAINER_TATE_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, TRAINER_WALLACE_1, SootopolisCity_Gym_1F_Text_WallaceDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, FALSE
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanRematch
 	goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
@@ -244,6 +245,10 @@ SootopolisCity_Gym_1F_Text_JuanDefeat:
 	.string "Hahaha, I merely jest!\p"
 	.string "Rather than my clothes, I shall reward\n"
 	.string "you with this, the RAIN BADGE!$"
+
+@ thanks wallace
+SootopolisCity_Gym_1F_Text_WallaceDefeat:
+	.string "Huzzah indeed!$"
 
 SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
 	.string "{PLAYER} received the RAIN BADGE\n"

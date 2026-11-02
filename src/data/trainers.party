@@ -6082,50 +6082,399 @@ Level: 16
 - Solar Beam
 - Sunny Day
 
-=== TRAINER_JERRY_2 ===
-Name: JERRY
-Class: School Kid
-Pic: School Kid M
+=== TRAINER_WALLACE_1 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Easy
 
-Ralts
-Level: 26
+Wailord
+Ability: Pressure
+Level: 49  
+- Water Spout
+- Hydro Pump
+- Heavy Slam
 
-Meditite
-Level: 26
+Ludicolo
+Ability: Swift Swim
+Level: 48  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
 
-=== TRAINER_JERRY_3 ===
-Name: JERRY
-Class: School Kid
-Pic: School Kid M
+Milotic @ Leftovers
+Ability: Competitive
+Level: 50  
+- Scald
+- Alluring Voice
+- Recover
+
+=== TRAINER_WALLACE_1 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Normal
 
-Kirlia
-Level: 29
+Wailord @ Iapapa Berry
+Ability: Pressure
+Level: 50  
+- Water Spout
+- Hydro Pump
+- Heavy Slam
+- Rain Dance
 
-Meditite
-Level: 29
+Seaking @ Assault Vest
+Ability: Lightning Rod
+Level: 50  
+- Wave Crash
+- Drill Run
+- Megahorn
+- Scale Shot
 
-=== TRAINER_JERRY_4 ===
-Name: JERRY
-Class: School Kid
-Pic: School Kid M
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 50  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 50  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
+
+=== TRAINER_WALLACE_1 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Smart Trainer
+Difficulty: Hard
 
-Kirlia
-Level: 32
+Wailord @ Iapapa Berry
+Ability: Pressure
+Level: 50
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Water Spout
+- Hydro Pump
+- Heavy Slam
+- Rain Dance
 
-Medicham
-Level: 32
+Seaking @ Assault Vest
+Ability: Lightning Rod
+Level: 50
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Wave Crash
+- Drill Run
+- Megahorn
+- Scale Shot
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 50
+EVs: 192 HP / 0 Atk / 0 Def / 128 SpA / 0 SpD / 192 Spe  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 50
+EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
+
+=== TRAINER_WALLACE_2 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Easy
+
+Quaquaval
+Ability: Moxie
+Level: 72  
+- Aqua Step
+- Close Combat
+- Brave Bird
+
+Seaking
+Ability: Lightning Rod
+Level: 72  
+- Wave Crash
+- Drill Run
+- Megahorn
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 72  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 72  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
+
+=== TRAINER_WALLACE_2 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Quaquaval @ Life Orb
+Ability: Moxie
+Level: 72  
+- Aqua Step
+- Close Combat
+- Triple Axel
+- Brave Bird
+
+Seaking @ Assault Vest
+Ability: Lightning Rod
+Level: 72  
+- Wave Crash
+- Drill Run
+- Megahorn
+- Scale Shot
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 72  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 72  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
+
+=== TRAINER_WALLACE_2 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Quaquaval @ Life Orb
+Ability: Moxie
+Level: 72
+EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Aqua Step
+- Close Combat
+- Triple Axel
+- Brave Bird
+
+Seaking @ Assault Vest
+Ability: Lightning Rod
+Level: 72
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Wave Crash
+- Drill Run
+- Megahorn
+- Scale Shot
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 72
+EVs: 192 HP / 0 Atk / 0 Def / 128 SpA / 0 SpD / 192 Spe  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Blastoise @ Blastoisinite
+Ability: Rain Dish
+Level: 72
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Water Spout
+- Hydro Pump
+- Flash Cannon
+- Aura Sphere
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 72
+EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
+
+=== TRAINER_WALLACE_3 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Easy
+
+Quaquaval
+Ability: Moxie
+Level: 100  
+- Aqua Step
+- Close Combat
+- Brave Bird
+
+Seaking
+Ability: Lightning Rod
+Level: 100  
+- Wave Crash
+- Drill Run
+- Megahorn
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 100  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 100  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
+
+=== TRAINER_WALLACE_3 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Normal
+
+Quaquaval @ Life Orb
+Ability: Moxie
+Level: 100  
+- Aqua Step
+- Close Combat
+- Triple Axel
+- Brave Bird
+
+Seaking @ Assault Vest
+Ability: Lightning Rod
+Level: 100  
+- Wave Crash
+- Drill Run
+- Megahorn
+- Scale Shot
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 100  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 100  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
+
+=== TRAINER_WALLACE_3 ===
+Name: WALLACE
+Class: Beauty
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Hard
+
+Quaquaval @ Life Orb
+Ability: Moxie
+Level: 100
+EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Aqua Step
+- Close Combat
+- Triple Axel
+- Brave Bird
+
+Seaking @ Assault Vest
+Ability: Lightning Rod
+Level: 100
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Wave Crash
+- Drill Run
+- Megahorn
+- Scale Shot
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Level: 100
+EVs: 192 HP / 0 Atk / 0 Def / 128 SpA / 0 SpD / 192 Spe  
+- Fake Out
+- Energy Ball
+- Hydro Pump
+- Rain Dance
+
+Blastoise @ Blastoisinite
+Ability: Rain Dish
+Level: 100
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe  
+- Water Spout
+- Hydro Pump
+- Flash Cannon
+- Aura Sphere
+
+Milotic @ Leftovers
+Ability: Competitive
+Level: 100
+EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
+- Scald
+- Alluring Voice
+- Ice Beam
+- Recover
 
 === TRAINER_JERRY_5 ===
 Name: JERRY
@@ -19684,7 +20033,7 @@ Level: 70
 - Air Slash
 - Reflect
 
-Chimecho - Mega @ Chimechite
+Chimecho @ Chimechite
 Ability: Levitate
 Level: 70  
 - Flash Cannon
@@ -19768,7 +20117,7 @@ Level: 70
 - Thunder Wave
 - Protect
 
-Chimecho - Mega @ Chimechite
+Chimecho @ Chimechite
 Ability: Levitate
 Level: 70  
 - Flash Cannon
@@ -19786,7 +20135,7 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
 
-Medicham - Mega @ Medichamite
+Medicham @ Medichamite
 Ability: Pure Power
 Level: 70
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 128 SpD / 128 Spe  
@@ -19859,7 +20208,7 @@ EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe
 - Thunder Wave
 - Protect
 
-Chimecho - Mega @ Chimechite
+Chimecho @ Chimechite
 Ability: Levitate
 Level: 70
 EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
@@ -19923,7 +20272,7 @@ Level: 100
 - Air Slash
 - Reflect
 
-Chimecho - Mega @ Chimechite
+Chimecho @ Chimechite
 Ability: Levitate
 Level: 100
 - Flash Cannon
@@ -20007,7 +20356,7 @@ Level: 100
 - Thunder Wave
 - Protect
 
-Chimecho - Mega @ Chimechite
+Chimecho @ Chimechite
 Ability: Levitate
 Level: 100
 - Flash Cannon
@@ -20025,7 +20374,7 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
 
-Medicham - Mega @ Medichamite
+Medicham @ Medichamite
 Ability: Pure Power
 Level: 100
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 128 SpD / 128 Spe  
@@ -20098,7 +20447,7 @@ EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe
 - Thunder Wave
 - Protect
 
-Chimecho - Mega @ Chimechite
+Chimecho @ Chimechite
 Ability: Levitate
 Level: 100
 EVs: 252 HP / 0 Atk / 128 Def / 128 SpA / 0 SpD / 0 Spe  
@@ -28249,7 +28598,7 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
 
-Medicham - Mega @ Medichamite
+Medicham @ Medichamite
 Ability: Pure Power
 Level: 45
 EVs: 0 HP / 192 Atk / 0 Def / 0 SpA / 64 SpD / 192 Spe  
@@ -28322,7 +28671,7 @@ EVs: 252 HP / 0 Atk / 192 Def / 0 SpA / 0 SpD / 0 Spe
 - Counter
 - Amnesia
 
-Chimecho - Mega @ Chimechite
+Chimecho @ Chimechite
 Ability: Levitate
 Level: 45
 EVs: 252 HP / 0 Atk / 128 Def / 64 SpA / 0 SpD / 0 Spe  
