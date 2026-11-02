@@ -433,12 +433,8 @@ static void HandleInputChooseAction(enum BattlerId battler)
         switch(gBattleStruct->movePreviewDisplayed)
         {
             case 0:
-                // if(gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_LIMITED
-                //   || gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_FULL)
-                // {
                     CreateSpeedTiersWindow(battler);
                     gBattleStruct->movePreviewDisplayed=1;
-                // }
                 break;
             case 1:
                 if (gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_FULL)
@@ -2512,7 +2508,14 @@ static void PlayerHandleChooseAction(enum BattlerId battler)
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
 
     enum BattlerId partner = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
-    if (B_SHOW_PARTNER_TARGET && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && IsBattlerAlive(partner))
+    if (FlagGet(FLAG_IS_TURN_START) == TRUE)
+    {
+        HideAllTargets();
+        gBattleStruct->movePreviewDisplayed = 0;
+        CreateInfoWindow(battler);
+        FlagClear(FLAG_IS_TURN_START);
+    }
+    else if (B_SHOW_PARTNER_TARGET && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && IsBattlerAlive(partner))
     {
         StringCopy(gStringVar1, COMPOUND_STRING("Partner will use:\n"));
         enum Move move = GetBattlerChosenMove(partner);
@@ -2549,14 +2552,10 @@ static void PlayerHandleChooseAction(enum BattlerId battler)
     }
     else
     {
-        // BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
-
         HideAllTargets();
 
-        if (FlagGet(FLAG_IS_TURN_START) == TRUE 
-            || gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_NONE)
+        if (gSaveBlock2Ptr->optionsPreviewStyle == OPTIONS_PREVIEW_NONE)
         {
-            FlagClear(FLAG_IS_TURN_START);
             gBattleStruct->movePreviewDisplayed = 0;
             CreateInfoWindow(battler);
         }

@@ -69,6 +69,7 @@
 #include "constants/battle_move_effects.h"
 #include "constants/battle_string_ids.h"
 #include "constants/battle_partner.h"
+#include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
@@ -3545,6 +3546,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         AssignUsableGimmicks();
         SetShellSideArmCategory();
         SetAiLogicDataForTurn(gAiLogicData); // get assumed abilities, hold effects, etc of all battlers
+        FlagSet(FLAG_IS_TURN_START);
         gBattleMainFunc = HandleTurnActionSelectionState;
         ResetSentPokesToOpponentValue();
 
@@ -3608,6 +3610,8 @@ bool32 EndTurnEvents(void) // Called from Battle Script
 
     if (DoEndTurnEffects())
         return TRUE;
+
+    FlagSet(FLAG_IS_TURN_START);
 
     gBattleStruct->eventState.faintedAction = 0;
 
