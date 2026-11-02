@@ -5287,6 +5287,9 @@ static void HandleEndTurn_FinishBattle(void)
 
         for (u32 i = 0; i < PARTY_SIZE; i++)
         {
+            if (B_RESTORE_PP_AFTER_BATTLE == TRUE)
+                MonRestorePP(&gParties[B_TRAINER_PLAYER][i]);
+
             bool32 changedForm = TryRevertPartyMonFormChange(i);
 
             // Recalculate the stats of every party member before the end

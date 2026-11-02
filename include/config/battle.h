@@ -254,6 +254,7 @@
 #define B_RETURN_STOLEN_NPC_ITEMS   GEN_LATEST // In Gen5+, Thief and Covet no longer permanently steal items from NPCs.
 #define B_STEAL_WILD_ITEMS          GEN_LATEST // In Gen9+, Thief and Covet steal a wild Pokémon's item and send it to the Bag. In Gen8 and earlier, the stolen item would be held by the Thief/Covet user.
 #define B_RESTORE_HELD_BATTLE_ITEMS GEN_LATEST // In Gen9+, all held items are restored after battle.
+#define B_RESTORE_PP_AFTER_BATTLE   TRUE       // If TRUE, the player's party has all move PP restored after battle.
 #define B_SOUL_DEW_BOOST            GEN_LATEST // In Gen7+, Soul Dew increases the power of the Latis' Psychic- and Dragon-type moves by ~20%. In Gen6 and earlier, it increased their Sp. Atk and Sp. Def by 50% each.
 #define B_NET_BALL_MODIFIER         GEN_LATEST // In Gen7+, Net Ball's catch multiplier is 5x instead of 3x.
 #define B_DIVE_BALL_MODIFIER        GEN_LATEST // In Gen4+, Dive Ball's effectiveness increases when Surfing or Fishing in addition to Diving.
