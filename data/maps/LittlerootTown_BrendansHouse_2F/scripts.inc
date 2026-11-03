@@ -318,10 +318,10 @@ PlayersHouse_2F_Text_ItsAGameCube:
 PlayersHouse_2F_Text_EnableBossRush:
 	.string "Pressing the GameCube's POWER button\n"
 	.string "will enable Boss Rush Mode.\p"
-	.string "ALL filler trainers will disappear,\n"
-	.string "and Gym Leaders give extra prize money.\p"
-	.string "NOTE: THIS CANNOT BE UNDONE.\p"
-	.string "Press and enable Boss Rush Mode?$"
+	.string "Normal trainers not challenge you,\n"
+	.string "and must be spoken to to battle.\p"
+	.string "Press and enable Boss Rush Mode?\n"
+	.string "NOTE: THIS CANNOT BE UNDONE.$"
 	
 PlayersHouse_2F_Text_GoodLuckInBossRush:
 	.string "Boss Rush Mode has been enabled.\p"
