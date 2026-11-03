@@ -2938,10 +2938,26 @@ void CopyMon(void *dest, void *src, size_t size)
     memcpy(dest, src, size);
 }
 
+void SetMonPerfectIVsIfFlagged(struct Pokemon *mon)
+{
+    if (!FlagGet(FLAG_PERFECT_IVS))
+        return;
+
+    for (u32 i = 0; i < NUM_STATS; i++)
+    {
+        u8 iv = MAX_PER_STAT_IVS;
+        SetMonData(mon, MON_DATA_HP_IV + i, &iv);
+    }
+
+    if (!GetMonData(mon, MON_DATA_IS_EGG))
+        CalculateMonStats(mon);
+}
+
 u8 GiveCapturedMonToPlayer(struct Pokemon *mon)
 {
     s32 i;
 
+    SetMonPerfectIVsIfFlagged(mon);
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
     SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->playerTrainerId);
@@ -6675,6 +6691,9 @@ u32 GiveScriptedMonToPlayer(struct Pokemon *mon, u8 slot)
 {
     u32 sentToPc;
     u32 i = 0;
+
+    SetMonPerfectIVsIfFlagged(mon);
+
     if (slot < PARTY_SIZE)
     {
         CopyMon(&gParties[B_TRAINER_PLAYER][slot], mon, sizeof(struct Pokemon));

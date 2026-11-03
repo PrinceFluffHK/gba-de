@@ -275,6 +275,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_DOWSING_MCHN
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_HIDE_LITTLEROOT_SHROOMISH
+	setflag FLAG_PERFECT_IVS
 	call EventScript_ResetAllBerries
 	end
 

@@ -54,7 +54,7 @@
 #define FLAG_RELEARN_EGG_MOVES      0x20 // EmDE
 #define FLAG_RELEARN_TUTOR_MOVES    0x21 // EmDE
 #define FLAG_INSTANT_TEXT           0x22 // EmDE
-#define FLAG_UNUSED_0x023           0x23 // Unused Flag
+#define FLAG_PERFECT_IVS            0x23 // Sets all IVs of newly obtained Pokémon to max
 #define FLAG_UNUSED_0x024           0x24 // Unused Flag
 #define FLAG_UNUSED_0x025           0x25 // Unused Flag
 #define FLAG_UNUSED_0x026           0x26 // Unused Flag
