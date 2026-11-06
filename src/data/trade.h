@@ -968,59 +968,59 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
 
 static const struct InGameTrade sIngameTrades[] =
 {
-    [INGAME_TRADE_SEEDOT] =
+    [INGAME_TRADE_NACLI] =
     {
-        .nickname = _("DOTS"),
-        .species = SPECIES_SEEDOT,
-        .ivs = {5, 4, 5, 4, 4, 4},
-        .abilityNum = 1,
+        .nickname = _("SALTINE"),
+        .species = SPECIES_NACLI,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 0,
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
-        .heldItem = ITEM_CHESTO_BERRY,
+        .heldItem = ITEM_NONE,
         .mailNum = -1,
         .otName = _("KOBE"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_RALTS
+        .requestedSpecies = SPECIES_WHISMUR
     },
-    [INGAME_TRADE_PLUSLE] =
+    [INGAME_TRADE_SNOM] =
     {
         .nickname = _("PLUSES"),
-        .species = SPECIES_PLUSLE,
-        .ivs = {4, 4, 4, 5, 5, 4},
-        .abilityNum = 0,
+        .species = SPECIES_SNOM,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 2,
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL,
+        .heldItem = ITEM_NONE,
         .mailNum = 0,
         .otName = _("ROMAN"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_VOLBEAT
+        .requestedSpecies = SPECIES_WHISMUR
     },
-    [INGAME_TRADE_HORSEA] =
+    [INGAME_TRADE_PAWNIARD] =
     {
         .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
-        .ivs = {5, 4, 4, 4, 5, 4},
+        .species = SPECIES_PAWNIARD,
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL,
+        .heldItem = ITEM_NONE,
         .mailNum = 1,
         .otName = _("SKYLAR"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
+        .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_MEOWTH] =
     {
         .nickname = _("MEOWOW"),
         .species = SPECIES_MEOWTH,
-        .ivs = {4, 5, 4, 5, 4, 4},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 91481,
         .conditions = {5, 5, 5, 30, 5},
@@ -1030,13 +1030,13 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("ISIS"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SKITTY
+        .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_MR_MIME] = 
     {
         .nickname = _("MIMIEN"),
         .species = SPECIES_MR_MIME,
-        .ivs = {20, 15, 17, 24, 23, 22},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 1985,
         .conditions = {5, 5, 5, 30, 5},
@@ -1046,13 +1046,13 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("REYLEY"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_ABRA
+        .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_JYNX] = 
     {
         .nickname = _("ZYNX"),
         .species = SPECIES_JYNX,
-        .ivs = {18, 17, 18, 22, 25, 21},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 36728,
         .conditions = {5, 30, 5, 5, 5},
@@ -1062,14 +1062,14 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("DONTAE"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_POLIWHIRL
+        .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_NIDORAN] = 
     {
 #if defined(FIRERED)
         .nickname = _("MS. NIDO"),
         .species = SPECIES_NIDORAN_F,
-        .ivs = {22, 18, 25, 19, 15, 22},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 63184,
         .conditions = {5, 5, 5, 5, 30},
@@ -1079,11 +1079,11 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("SAIGE"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_NIDORAN_M
+        .requestedSpecies = SPECIES_WHISMUR
 #else
         .nickname = _("MR. NIDO"),
         .species = SPECIES_NIDORAN_M,
-        .ivs = {19, 25, 18, 22, 22, 15},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 63184,
         .conditions = {30, 5, 5, 5, 5},
@@ -1093,14 +1093,14 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("SAIGE"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_NIDORAN_F
+        .requestedSpecies = SPECIES_WHISMUR
 #endif
     },
     [INGAME_TRADE_FARFETCHD] = 
     {
         .nickname = _("CH'DING"),
         .species = SPECIES_FARFETCHD,
-        .ivs = {20, 25, 21, 24, 15, 20},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 8810,
         .conditions = {30, 5, 5, 5, 5},
@@ -1110,14 +1110,14 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("ELYSSA"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SPEAROW
+        .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_NIDORINOA] = 
     {
 #if defined(FIRERED)
         .nickname = _("NINA"),
         .species = SPECIES_NIDORINA,
-        .ivs = {22, 25, 18, 19, 22, 15},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 13637,
         .conditions = {5, 5, 30, 5, 5},
@@ -1127,11 +1127,11 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("TURNER"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_NIDORINO
+        .requestedSpecies = SPECIES_WHISMUR
 #else
         .nickname = _("NINO"),
         .species = SPECIES_NIDORINO,
-        .ivs = {19, 18, 25, 22, 15, 22},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 13637,
         .conditions = {5, 5, 5, 5, 30},
@@ -1141,14 +1141,14 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("TURNER"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_NIDORINA
+        .requestedSpecies = SPECIES_WHISMUR
 #endif
     },
     [INGAME_TRADE_LICKITUNG] = 
     {
         .nickname = _("MARC"),
         .species = SPECIES_LICKITUNG,
-        .ivs = {24, 19, 21, 15, 23, 21},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 1239,
         .conditions = {5, 5, 5, 5, 30},
@@ -1159,16 +1159,16 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
 #if defined(FIRERED)
-        .requestedSpecies = SPECIES_GOLDUCK
+        .requestedSpecies = SPECIES_WHISMUR
 #else
-        .requestedSpecies = SPECIES_SLOWBRO
+        .requestedSpecies = SPECIES_WHISMUR
 #endif
     },
     [INGAME_TRADE_ELECTRODE] = 
     {
         .nickname = _("ESPHERE"),
         .species = SPECIES_ELECTRODE,
-        .ivs = {19, 16, 18, 25, 25, 19},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 1,
         .otId = 50298,
         .conditions = {30, 5, 5, 5, 5},
@@ -1178,13 +1178,13 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("CLIFTON"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_RAICHU
+        .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_TANGELA] = 
     {
         .nickname = _("TANGENY"),
         .species = SPECIES_TANGELA,
-        .ivs = {22, 17, 25, 16, 23, 20},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 60042,
         .conditions = {5, 5, 30, 5, 5},
@@ -1194,13 +1194,13 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("NORMA"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_VENONAT
+        .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_SEEL] = 
     {
         .nickname = _("SEELOR"),
         .species = SPECIES_SEEL,
-        .ivs = {24, 15, 22, 16, 23, 22},
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 9853,
         .conditions = {5, 5, 5, 5, 30},
@@ -1210,7 +1210,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("GARETT"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_PONYTA
+        .requestedSpecies = SPECIES_WHISMUR
     }
 };
 
