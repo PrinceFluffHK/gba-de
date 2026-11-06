@@ -970,7 +970,7 @@ static const struct InGameTrade sIngameTrades[] =
 {
     [INGAME_TRADE_NACLI] =
     {
-        .nickname = _("SALTINE"),
+        .nickname = _("Saltine"),
         .species = SPECIES_NACLI,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
@@ -979,40 +979,40 @@ static const struct InGameTrade sIngameTrades[] =
         .personality = 0x84,
         .heldItem = ITEM_NONE,
         .mailNum = -1,
-        .otName = _("KOBE"),
-        .otGender = MALE,
-        .sheen = 10,
-        .requestedSpecies = SPECIES_WHISMUR
-    },
-    [INGAME_TRADE_SNOM] =
-    {
-        .nickname = _("PLUSES"),
-        .species = SPECIES_SNOM,
-        .ivs = {31, 31, 31, 31, 31, 31},
-        .abilityNum = 2,
-        .otId = 73996,
-        .conditions = {5, 5, 30, 5, 5},
-        .personality = 0x6F,
-        .heldItem = ITEM_NONE,
-        .mailNum = 0,
-        .otName = _("ROMAN"),
+        .otName = _("Mario"),
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_WHISMUR
     },
     [INGAME_TRADE_PAWNIARD] =
     {
-        .nickname = _("SEASOR"),
+        .nickname = _("Le Sabre"),
         .species = SPECIES_PAWNIARD,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
+        .otId = 73996,
+        .conditions = {5, 5, 30, 5, 5},
+        .personality = 0x6F,
+        .heldItem = ITEM_NONE,
+        .mailNum = 0,
+        .otName = _("Zoran"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_WHISMUR
+    },
+    [INGAME_TRADE_SKRELP] =
+    {
+        .nickname = _("Seabiscuit"),
+        .species = SPECIES_SKRELP,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 2,
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_NONE,
+        .heldItem = ITEM_DRAGALGITE,
         .mailNum = 1,
-        .otName = _("SKYLAR"),
-        .otGender = MALE,
+        .otName = _("Cale"),
+        .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_WHISMUR
     },
