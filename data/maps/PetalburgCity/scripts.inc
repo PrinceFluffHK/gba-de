@@ -729,6 +729,71 @@ PetalburgCity_EventScript_GymBoy::
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_Shroomish::
+	lock
+	faceplayer
+	playmoncry SPECIES_SHROOMISH, CRY_MODE_NORMAL
+	goto_if_unset FLAG_HIDE_RUSTBORO_CITY_SHROOMISH, RustboroCity_EventScript_Shroomish_Introduction
+	goto_if_ne B_VAR_DIFFICULTY, DIFFICULTY_NORMAL, PetalburgCity_EventScript_ShroomishWantToSetChallengeMode
+	msgbox PetalburgCity_Text_WantToSetStandardMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, PetalburgCity_EventScript_ShroomishSetStandardMode
+	msgbox PetalburgCity_Text_WantToSetMasterMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, PetalburgCity_EventScript_ShroomishSetMasterMode
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_ShroomishKeepMode
+	end
+
+RustboroCity_EventScript_Shroomish_Introduction::
+	msgbox RustboroCity_Text_WantToEnableChallengeMode, MSGBOX_DEFAULT
+	setflag FLAG_HIDE_RUSTBORO_CITY_SHROOMISH
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, PetalburgCity_EventScript_ShroomishSetChallengeMode
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_ShroomishKeepMode
+	end
+
+PetalburgCity_EventScript_ShroomishSetStandardMode::
+	msgbox PetalburgCity_Text_WantToSetStandardMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_ShroomishKeepMode
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PetalburgCity_Text_EnabledStandardMode, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox PetalburgCity_Text_SwitchedDifficulty, MSGBOX_DEFAULT
+	setdifficulty DIFFICULTY_EASY
+	release
+	end
+
+PetalburgCity_EventScript_ShroomishWantToSetChallengeMode::
+	msgbox PetalburgCity_Text_WantToSetChallengeMode, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_ShroomishKeepMode
+	goto PetalburgCity_EventScript_ShroomishSetChallengeMode
+	end
+
+PetalburgCity_EventScript_ShroomishSetChallengeMode::
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PetalburgCity_Text_EnabledChallengeMode, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox PetalburgCity_Text_SwitchedDifficulty, MSGBOX_DEFAULT
+	setdifficulty DIFFICULTY_NORMAL
+	release
+	end
+
+PetalburgCity_EventScript_ShroomishSetMasterMode::
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PetalburgCity_Text_EnabledMasterMode, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox PetalburgCity_Text_SwitchedDifficulty, MSGBOX_DEFAULT
+	setdifficulty DIFFICULTY_HARD
+	release
+	end
+
+PetalburgCity_EventScript_ShroomishKeepMode::
+	msgbox PetalburgCity_Text_KeptCurrentMode, MSGBOX_DEFAULT
+	release
+	end
+
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
 	.string "We have to leave for VERDANTURF TOWN\n"
@@ -785,8 +850,6 @@ PetalburgCity_Text_WellMaybeNot:
 	.string "You've got a pretty good intuition\n"
 	.string "for POKéMON battles.\p"
 	.string "Am I right?$"
-	// .string "You're still a rookie TRAINER,\n"
-	// .string "but you're just an ordinary kid.$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
@@ -795,8 +858,52 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "Here, take this Ability Capsule\n"
 	.string "humoring me.\p"
 	.string "You can buy these capsules at any\n"
-	.string "POKéMART, but you'll need 8 badges\l"
-	.string "to buy an Ability Patch.$"
+	.string "POKéMART, but you'll need a full set\l"
+	.string "of badges to buy an Ability Patch.$"
 
 PetalburgCity_Text_WantToSkipTutorial:
-	.string "Skip Wally's catching tutorial?$"
+	.string "Skip the catching tutorial?$"
+
+PetalburgCity_Text_WantToSetStandardMode:
+	.string "NAPPY: Hey, {PLAYER}! It's me,\n"
+	.string "the SHROOMISH of CHALLENGE!\p"
+	.string "You looking to switch\n"
+	.string "to STANDARD MODE?$"
+
+PetalburgCity_Text_EnabledStandardMode:
+	.string "STANDARD MODE was enabled.$"
+
+PetalburgCity_Text_WantToSetChallengeMode:
+	.string "NAPPY: Hey, {PLAYER}! It's me,\n"
+	.string "the SHROOMISH of CHALLENGE!\p"
+	.string "You looking to switch\n"
+	.string "to CHALLENGE MODE?$"
+
+PetalburgCity_Text_EnabledChallengeMode:
+	.string "CHALLENGE MODE was enabled.$"
+
+PetalburgCity_Text_WantToSetMasterMode:
+	.string "NAPPY: I see…\p"
+	.string "Could that mean that you\n"
+	.string "want to try MASTER MODE?\p"
+	.string "In MASTER MODE, Bosses bring even\n"
+	.string "more capable teams than before,\l"
+	.string "and feed their teams VITAMINS.\p"
+	.string "How about it, {PLAYER}?\p"
+	.string "Want to take on EmDE's ultimate\n"
+	.string "challenge: MASTER MODE?$"
+
+PetalburgCity_Text_EnabledMasterMode:
+	.string "MASTER MODE was enabled.$"
+	.string "Good luck! - Prince Fluff$"
+
+PetalburgCity_Text_SwitchedDifficulty:
+	.string "NAPPY: I hope you find the\n"
+	.string "CHALLENGE that you seek.\p"
+	.string "I'll be here if you ever\n"
+	.string "want to change it up!$"
+
+PetalburgCity_Text_KeptCurrentMode:
+	.string "NAPPY: Got it!\p"
+	.string "In that case, I hope you've\n"
+	.string "found the CHALLENGE that you seek.$"

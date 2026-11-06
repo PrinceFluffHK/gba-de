@@ -3,7 +3,6 @@
   "name": "LittlerootTown",
   "layout": "LAYOUT_LITTLEROOT_TOWN",
   "music": "MUS_LITTLEROOT",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -22,19 +21,6 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHROOMISH)",
-      "x": 13,
-      "y": 17,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_Shroomish",
-      "flag": "FLAG_HIDE_LITTLEROOT_SHROOMISH"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 12,
       "y": 13,
@@ -49,8 +35,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 18,
-      "y": 14,
+      "x": 14,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -201,7 +187,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger4"
+      "script": "LittlerootTown_EventScript_GiveExpShareTrigger4"
     },
     {
       "type": "trigger",
@@ -210,7 +196,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger5"
+      "script": "LittlerootTown_EventScript_GiveExpShareTrigger5"
     },
     {
       "type": "trigger",
@@ -219,7 +205,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger2"
+      "script": "LittlerootTown_EventScript_GiveExpShareTrigger2"
     },
     {
       "type": "trigger",
@@ -228,7 +214,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger3"
+      "script": "LittlerootTown_EventScript_GiveExpShareTrigger3"
     },
     {
       "type": "trigger",
@@ -237,7 +223,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger0"
+      "script": "LittlerootTown_EventScript_GiveExpShareTrigger0"
     },
     {
       "type": "trigger",
@@ -246,7 +232,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger1"
+      "script": "LittlerootTown_EventScript_GiveExpShareTrigger1"
     }
   ],
   "bg_events": [
@@ -282,5 +268,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_EventScript_MaysHouseSign"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }
