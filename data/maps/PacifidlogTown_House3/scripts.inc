@@ -5,7 +5,7 @@ PacifidlogTown_House3_EventScript_Trader::
 	lock
 	faceplayer
 	goto_if_set FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED, PacifidlogTown_House3_EventScript_TradeCompleted
-	ingame_trade INGAME_TRADE_HORSEA, PacifidlogTown_House3_Text_WillingToTradeIt, PacifidlogTown_House3_EventScript_DeclineTrade, PacifidlogTown_House3_EventScript_NotRequestedMon, PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou
+	ingame_trade INGAME_TRADE_SKRELP, PacifidlogTown_House3_Text_WillingToTradeIt, PacifidlogTown_House3_EventScript_DeclineTrade, PacifidlogTown_House3_EventScript_NotRequestedMon, PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou
 	setflag FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED
 	release
 	end
@@ -33,7 +33,7 @@ PacifidlogTown_House3_EventScript_Girl::
 PacifidlogTown_House3_Text_WillingToTradeIt:
 	.string "Check out this {STR_VAR_2}!\p"
 	.string "It's the {STR_VAR_2} that I caught\n"
-	.string "yesterday to celebrate my birthday!\p"
+	.string "last year to celebrate my birthday!\p"
 	.string "Oh, I can see that you want it!\n"
 	.string "After all, it's priceless!\p"
 	.string "I'll tell you what. I might be willing\n"

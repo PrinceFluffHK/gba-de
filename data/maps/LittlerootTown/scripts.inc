@@ -427,45 +427,45 @@ LittlerootTown_EventScript_PlayersHouseSignFemale::
 	msgbox LittlerootTown_Text_PlayersHouse, MSGBOX_DEFAULT
 	return
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger0::
+LittlerootTown_EventScript_GiveExpShareTrigger0::
 	lockall
 	setvar VAR_0x8008, 0
 	setobjectxy LOCALID_LITTLEROOT_MOM, 10, 9
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+	goto LittlerootTown_EventScript_GiveExpShareTrigger
 	end
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger1::
+LittlerootTown_EventScript_GiveExpShareTrigger1::
 	lockall
 	setvar VAR_0x8008, 1
 	setobjectxy LOCALID_LITTLEROOT_MOM, 11, 9
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+	goto LittlerootTown_EventScript_GiveExpShareTrigger
 	end
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger2::
+LittlerootTown_EventScript_GiveExpShareTrigger2::
 	lockall
 	setvar VAR_0x8008, 2
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+	goto LittlerootTown_EventScript_GiveExpShareTrigger
 	end
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger3::
+LittlerootTown_EventScript_GiveExpShareTrigger3::
 	lockall
 	setvar VAR_0x8008, 3
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+	goto LittlerootTown_EventScript_GiveExpShareTrigger
 	end
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger4::
+LittlerootTown_EventScript_GiveExpShareTrigger4::
 	lockall
 	setvar VAR_0x8008, 4
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+	goto LittlerootTown_EventScript_GiveExpShareTrigger
 	end
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger5::
+LittlerootTown_EventScript_GiveExpShareTrigger5::
 	lockall
 	setvar VAR_0x8008, 5
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+	goto LittlerootTown_EventScript_GiveExpShareTrigger
 	end
 
-LittlerootTown_EventScript_GiveRunningShoesTrigger::
+LittlerootTown_EventScript_GiveExpShareTrigger::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_MomNoticePlayerMale
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_MomNoticePlayerFemale
@@ -477,11 +477,11 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_MomApproachPlayerMale
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_MomApproachPlayerFemale
-	call LittlerootTown_EventScript_GiveRunningShoes
+	call LittlerootTown_EventScript_GiveExpShare
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_MomReturnHomeMale
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_MomReturnHomeFemale
-	goto LittlerootTown_EventScript_SetReceivedRunningShoes
+	goto LittlerootTown_EventScript_SetReceivedExpShare
 	end
 
 LittlerootTown_EventScript_SetHomeDoorCoordsMale::
@@ -872,7 +872,7 @@ LittlerootTown_EventScript_Mom::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetHomeDoorCoordsMale
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
-	call LittlerootTown_EventScript_GiveRunningShoes
+	call LittlerootTown_EventScript_GiveExpShare
 	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	opendoor VAR_0x8009, VAR_0x800A
@@ -882,83 +882,24 @@ LittlerootTown_EventScript_Mom::
 	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 	closedoor VAR_0x8009, VAR_0x800A
 	waitdooranim
-	goto LittlerootTown_EventScript_SetReceivedRunningShoes
+	goto LittlerootTown_EventScript_SetReceivedExpShare
 	end
 
-LittlerootTown_EventScript_SetReceivedRunningShoes::
+LittlerootTown_EventScript_SetReceivedExpShare::
 	removeobject LOCALID_LITTLEROOT_MOM
-@	setflag FLAG_SYS_B_DASH
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
 	end
 
-LittlerootTown_EventScript_GiveRunningShoes::
-	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
+LittlerootTown_EventScript_GiveExpShare::
+	msgbox LittlerootTown_Text_WearTheseExpShare, MSGBOX_DEFAULT
 	giveitem ITEM_EXP_SHARE
-@	playfanfare MUS_OBTAIN_ITEM
-@	message LittlerootTown_Text_SwitchShoesWithRunningShoes
-@	waitfanfare
 	setflag FLAG_RECEIVED_RUNNING_SHOES
-	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_ExplainExpShare, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
 	delay 30
 	return
-
-LittlerootTown_EventScript_Shroomish::
-	lock
-	faceplayer
-	playmoncry SPECIES_SHROOMISH, CRY_MODE_NORMAL
-	goto_if_ne B_VAR_DIFFICULTY, DIFFICULTY_NORMAL, LittlerootTown_EventScript_ShroomishSetChallengeMode
-	msgbox LittlerootTown_Text_WantToSetStandardMode, MSGBOX_DEFAULT
-	yesnobox 20, 8
-	goto_if_eq VAR_RESULT, YES, LittlerootTown_EventScript_ShroomishSetStandardMode
-	msgbox LittlerootTown_Text_WantToSetMasterMode, MSGBOX_DEFAULT
-	yesnobox 20, 8
-	goto_if_eq VAR_RESULT, YES, LittlerootTown_EventScript_ShroomishSetMasterMode
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ShroomishKeepMode
-	end
-
-LittlerootTown_EventScript_ShroomishSetStandardMode::
-	msgbox LittlerootTown_Text_WantToSetStandardMode, MSGBOX_DEFAULT
-	yesnobox 20, 8
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ShroomishKeepMode
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox LittlerootTown_Text_EnabledStandardMode, MSGBOX_DEFAULT
-	waitfanfare
-	msgbox LittlerootTown_Text_SwitchedDifficulty, MSGBOX_DEFAULT
-	setdifficulty DIFFICULTY_EASY
-	release
-	end
-
-LittlerootTown_EventScript_ShroomishSetChallengeMode::
-	msgbox LittlerootTown_Text_WantToSetChallengeMode, MSGBOX_DEFAULT
-	yesnobox 20, 8
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ShroomishKeepMode
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox LittlerootTown_Text_EnabledChallengeMode, MSGBOX_DEFAULT
-	waitfanfare
-	msgbox LittlerootTown_Text_SwitchedDifficulty, MSGBOX_DEFAULT
-	setdifficulty DIFFICULTY_NORMAL
-	release
-	end
-
-LittlerootTown_EventScript_ShroomishSetMasterMode::
-	msgbox LittlerootTown_Text_WantToSetMasterMode, MSGBOX_DEFAULT
-	yesnobox 20, 8
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ShroomishKeepMode
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox LittlerootTown_Text_EnabledMasterMode, MSGBOX_DEFAULT
-	waitfanfare
-	msgbox LittlerootTown_Text_SwitchedDifficulty, MSGBOX_DEFAULT
-	setdifficulty DIFFICULTY_HARD
-	release
-	end
-
-LittlerootTown_EventScript_ShroomishKeepMode::
-	msgbox LittlerootTown_Text_KeptCurrentMode, MSGBOX_DEFAULT
-	release
-	end
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
@@ -975,7 +916,7 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 LittlerootTown_Text_WaitPlayer:
 	.string "MOM: Wait, {PLAYER}!$"
 
-LittlerootTown_Text_WearTheseRunningShoes:
+LittlerootTown_Text_WearTheseExpShare:
 	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
 	.string "introduce yourself to PROF. BIRCH?\p"
 	.string "Oh! What an adorable POKéMON!\n"
@@ -987,17 +928,11 @@ LittlerootTown_Text_WearTheseRunningShoes:
 	.string "It'll help you build a strong\n"
 	.string "team of POKéMON!$"
 
-@LittlerootTown_Text_SwitchShoesWithRunningShoes:
-@	.string "{PLAYER} switched shoes with the\n"
-@	.string "RUNNING SHOES.$"
-
-LittlerootTown_Text_ExplainRunningShoes:
+LittlerootTown_Text_ExplainExpShare:
 	.string "MOM: {PLAYER}, that HELD ITEM came\n"
 	.string "with instructions.\p"
 	.string "“Activate this classic Exp. Share by\n"
 	.string "giving it to one of your POKéMON!”$"
-@	.string "“Slip on these RUNNING SHOES and race\n"
-@	.string "in the great outdoors!”$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
@@ -1070,47 +1005,3 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I gave you?\p"
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
-
-LittlerootTown_Text_WantToSetStandardMode:
-	.string "NAPPY: Hey, {PLAYER}! It's me,\n"
-	.string "the SHROOMISH of CHALLENGE!\p"
-	.string "You looking to switch\n"
-	.string "to STANDARD MODE?$"
-
-LittlerootTown_Text_WantToSetChallengeMode:
-	.string "NAPPY: Hey, {PLAYER}! It's me,\n"
-	.string "the SHROOMISH of CHALLENGE!\p"
-	.string "You looking to switch\n"
-	.string "to STANDARD MODE?$"
-
-LittlerootTown_Text_WantToSetMasterMode:
-	.string "NAPPY: I see…\p"
-	.string "Could that mean that you\n"
-	.string "want to try MASTER MODE?\p"
-	.string "In MASTER MODE, some regular\n"
-	.string "trainers will have stronger teams,\l"
-	.string "and bosses feed their teams VITAMINS.\p"
-	.string "How about it, {PLAYER}?\p"
-	.string "Want to take on\n"
-	.string "MASTER MODE?$"
-
-LittlerootTown_Text_EnabledStandardMode:
-	.string "STANDARD MODE was enabled.$"
-
-LittlerootTown_Text_EnabledChallengeMode:
-	.string "CHALLENGE MODE was enabled.$"
-
-LittlerootTown_Text_EnabledMasterMode:
-	.string "MASTER MODE was enabled.\n"
-	.string "Good luck!$"
-
-LittlerootTown_Text_SwitchedDifficulty:
-	.string "NAPPY: I hope you find the\n"
-	.string "CHALLENGE that you seek.\p"
-	.string "I'll be here if you ever\n"
-	.string "want to change it up!$"
-
-LittlerootTown_Text_KeptCurrentMode:
-	.string "NAPPY: Got it!\p"
-	.string "In that case, I hope you've\n"
-	.string "found the CHALLENGE that you seek.$"

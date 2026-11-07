@@ -1,5 +1,6 @@
 #include "global.h"
 #include "main.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "fieldmap.h"
 #include "field_effect_helpers.h"
@@ -266,13 +267,20 @@ static bool32 Fishing_CheckForBite(struct Task *task)
         return TRUE;
     }
 
-    firstMonHasSuctionOrSticky = Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold();
+    if (FlagGet(FLAG_BOSS_RUSH_MODE))
+    {
+        bite = TRUE;
+    }
+    else
+    {
+        firstMonHasSuctionOrSticky = Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold();
 
-    if (firstMonHasSuctionOrSticky && I_FISHING_STICKY_BOOST < GEN_4)
-        bite = RandomPercentage(RNG_FISHING_GEN3_STICKY, FISHING_GEN3_STICKY_CHANCE);
+        if (firstMonHasSuctionOrSticky && I_FISHING_STICKY_BOOST < GEN_4)
+            bite = RandomPercentage(RNG_FISHING_GEN3_STICKY, FISHING_GEN3_STICKY_CHANCE);
 
-    if (!bite)
-        bite = Fishing_RollForBite(task->tFishingRod, firstMonHasSuctionOrSticky);
+        if (!bite)
+            bite = Fishing_RollForBite(task->tFishingRod, firstMonHasSuctionOrSticky);
+    }
 
     if (!bite)
         task->tStep = FISHING_NOT_EVEN_NIBBLE;
