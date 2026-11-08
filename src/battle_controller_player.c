@@ -990,7 +990,7 @@ static const u8 *GetBattleWeatherName(void)
     case BATTLE_WEATHER_SUN_PRIMAL:
         return COMPOUND_STRING("Sun");
     case BATTLE_WEATHER_SANDSTORM:
-        return COMPOUND_STRING("Sandstorm");
+        return COMPOUND_STRING("Sand");
     case BATTLE_WEATHER_HAIL:
         return COMPOUND_STRING("Hail");
     case BATTLE_WEATHER_SNOW:
@@ -998,7 +998,7 @@ static const u8 *GetBattleWeatherName(void)
     case BATTLE_WEATHER_FOG:
         return COMPOUND_STRING("Fog");
     case BATTLE_WEATHER_STRONG_WINDS:
-        return COMPOUND_STRING("Strong Winds");
+        return COMPOUND_STRING("Wind");
     case BATTLE_WEATHER_NONE:
     case BATTLE_WEATHER_COUNT:
         return COMPOUND_STRING("None");
