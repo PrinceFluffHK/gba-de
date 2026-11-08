@@ -333,39 +333,47 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
     switch (rod)
     {
     case OLD_ROD:
-        wildMonIndex = 0;
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_0)
+            wildMonIndex = 0;
+        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_SLOT_1)
+            wildMonIndex = 1;
+        else
+            wildMonIndex = 2;
+
+        if (swap)
+            wildMonIndex = 2 - wildMonIndex;
         break;
 
     case GOOD_ROD:
-        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_1)
-            wildMonIndex = 1;
-        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_2)
-            wildMonIndex = 2;
-        else
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_3)
             wildMonIndex = 3;
+        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4)
+            wildMonIndex = 4;
+        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_5)
+            wildMonIndex = 5;
+        else
+            wildMonIndex = 6;
 
         if (swap)
-            wildMonIndex = 4 - wildMonIndex;
+            wildMonIndex = 9 - wildMonIndex;
         break;
 
     case SUPER_ROD:
-        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_4)
-            wildMonIndex = 4;
-        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_5)
-            wildMonIndex = 5;
-        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6)
-            wildMonIndex = 6;
-        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7)
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7)
             wildMonIndex = 7;
         else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8)
             wildMonIndex = 8;
         else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_9)
             wildMonIndex = 9;
-        else
+        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_10)
             wildMonIndex = 10;
+        else if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_11)
+            wildMonIndex = 11;
+        else
+            wildMonIndex = 12;
 
         if (swap)
-            wildMonIndex = 14 - wildMonIndex;
+            wildMonIndex = 19 - wildMonIndex;
         break;
     }
     return wildMonIndex;
