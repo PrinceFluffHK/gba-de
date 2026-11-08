@@ -69,7 +69,7 @@ static EWRAM_DATA struct
     u8 numToShowAtOnce;
     u8 moveListMenuTask;
     u8 moveListScrollArrowTask;
-    u8 moveDisplayArrowTask;
+    u8 moveCategoryArrowTask;
     u16 scrollOffset;
     u8 categoryIconSpriteId;
 } *sMoveRelearnerStruct = {0};
@@ -152,7 +152,7 @@ static const struct SpritePalette sMoveRelearnerPalette =
     .tag = PALTAG_UI
 };
 
-static const struct ScrollArrowsTemplate sDisplayModeArrowsTemplate =
+static const struct ScrollArrowsTemplate sMoveCategoryArrowsTemplate =
 {
     .firstArrowType = SCROLL_ARROW_LEFT,
     .firstX = 27,
@@ -618,13 +618,33 @@ static void Task_MoveRelearner_LearnMove(u8 taskId)
     gTasks[taskId].tState = LearnMove(&sMoveLearnUI, taskId);
 }
 
-static bool32 UpdateMoveRelearnerState(void)
+static bool32 UpdateMoveRelearnerState(s32 direction)
 {
-    u32 state;
-    struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
-    for (u32 i = 1; i < MOVE_RELEARNER_COUNT; i++)
+    static const enum MoveRelearnerStates stateOrder[] =
     {
-        state = (gMoveRelearnerState + i) % MOVE_RELEARNER_COUNT;
+        MOVE_RELEARNER_LEVEL_UP_MOVES,
+        MOVE_RELEARNER_TM_MOVES,
+        MOVE_RELEARNER_TUTOR_MOVES,
+        MOVE_RELEARNER_EGG_MOVES,
+    };
+    u32 currentIndex;
+    struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
+
+    for (currentIndex = 0; currentIndex < ARRAY_COUNT(stateOrder); currentIndex++)
+    {
+        if (stateOrder[currentIndex] == gMoveRelearnerState)
+            break;
+    }
+
+    for (u32 i = 1; i < ARRAY_COUNT(stateOrder); i++)
+    {
+        u32 stateIndex;
+        if (direction < 0)
+            stateIndex = (currentIndex + ARRAY_COUNT(stateOrder) - i) % ARRAY_COUNT(stateOrder);
+        else
+            stateIndex = (currentIndex + i) % ARRAY_COUNT(stateOrder);
+
+        enum MoveRelearnerStates state = stateOrder[stateIndex];
         if (CanBoxMonRelearnMoves(boxmon, state))
         {
             gMoveRelearnerState = state;
@@ -645,7 +665,7 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
     case LIST_NOTHING_CHOSEN:
         if (JOY_NEW(SELECT_BUTTON) && gRelearnMode != RELEARN_MODE_SCRIPT)
         {
-            if (UpdateMoveRelearnerState())
+            if (UpdateMoveRelearnerState(1))
             {
                 PlaySE(SE_SUCCESS);
                 sMoveRelearnerScrollState.listOffset = 0;
@@ -657,31 +677,24 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
                 PlaySE(SE_FAILURE);
             }
         }
-        else if (!C_HIDE_CONTEST_DATA)
+        else if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT) || GetLRKeysPressed())
         {
-            if (!(JOY_NEW(DPAD_LEFT | DPAD_RIGHT)) && !GetLRKeysPressed())
-                break;
-
-            PlaySE(SE_SELECT);
-
-            if (gTasks[taskId].tCategory == BATTLE_INFO)
+            if (UpdateMoveRelearnerState(JOY_NEW(DPAD_LEFT) ? -1 : 1))
             {
-                PutWindowTilemap(RELEARNERWIN_DESC_CONTEST);
-                gTasks[taskId].tCategory = CONTEST_INFO;
+                PlaySE(SE_SELECT);
+                RemoveScrollArrows();
+                sMoveRelearnerScrollState.listOffset = 0;
+                sMoveRelearnerScrollState.listRow = 0;
+                RedrawMoveList();
+                MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
+                if (B_SHOW_CATEGORY_ICON == TRUE)
+                    MoveRelearnerShowHideCategoryIcon(GetCurrentSelectedMove());
+                AddScrollArrows();
             }
-            else
+            else if (GameHasDifferentRelearners())
             {
-                PutWindowTilemap(RELEARNERWIN_DESC_BATTLE);
-                gTasks[taskId].tCategory = BATTLE_INFO;
+                PlaySE(SE_FAILURE);
             }
-
-            MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
-
-            ScheduleBgCopyTilemapToVram(1);
-
-            if (B_SHOW_CATEGORY_ICON == TRUE)
-                MoveRelearnerShowHideCategoryIcon(GetCurrentSelectedMove());
-            AddScrollArrows();
         }
         break;
     case LIST_CANCEL:
@@ -730,7 +743,7 @@ static void CreateUISprites(void)
 {
     int i;
 
-    sMoveRelearnerStruct->moveDisplayArrowTask = TASK_NONE;
+    sMoveRelearnerStruct->moveCategoryArrowTask = TASK_NONE;
     sMoveRelearnerStruct->moveListScrollArrowTask = TASK_NONE;
 
     sMoveRelearnerStruct->categoryIconSpriteId = 0xFF;
@@ -755,8 +768,8 @@ static void CreateUISprites(void)
 
 static void AddScrollArrows(void)
 {
-    if (!C_HIDE_CONTEST_DATA && sMoveRelearnerStruct->moveDisplayArrowTask == TASK_NONE)
-        sMoveRelearnerStruct->moveDisplayArrowTask = AddScrollIndicatorArrowPair(&sDisplayModeArrowsTemplate, &sMoveRelearnerStruct->scrollOffset);
+    if (sMoveRelearnerStruct->moveCategoryArrowTask == TASK_NONE)
+        sMoveRelearnerStruct->moveCategoryArrowTask = AddScrollIndicatorArrowPair(&sMoveCategoryArrowsTemplate, &sMoveRelearnerStruct->scrollOffset);
 
     if (sMoveRelearnerStruct->moveListScrollArrowTask == TASK_NONE)
     {
@@ -768,10 +781,10 @@ static void AddScrollArrows(void)
 
 static void RemoveScrollArrows(void)
 {
-    if (!C_HIDE_CONTEST_DATA && sMoveRelearnerStruct->moveDisplayArrowTask != TASK_NONE)
+    if (sMoveRelearnerStruct->moveCategoryArrowTask != TASK_NONE)
     {
-        RemoveScrollIndicatorArrowPair(sMoveRelearnerStruct->moveDisplayArrowTask);
-        sMoveRelearnerStruct->moveDisplayArrowTask = TASK_NONE;
+        RemoveScrollIndicatorArrowPair(sMoveRelearnerStruct->moveCategoryArrowTask);
+        sMoveRelearnerStruct->moveCategoryArrowTask = TASK_NONE;
     }
 
     if (sMoveRelearnerStruct->moveListScrollArrowTask != TASK_NONE)
