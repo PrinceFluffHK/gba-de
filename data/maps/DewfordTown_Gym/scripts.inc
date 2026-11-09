@@ -159,7 +159,6 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis, MSGBOX_DEFAULT
-	call_if_set FLAG_BOSS_RUSH_MODE, DewfordTown_Gym_EventScript_BrawlyGiveMoney
 	setflag FLAG_DEFEATED_DEWFORD_GYM
 	setflag FLAG_BADGE02_GET
 	addvar VAR_PETALBURG_GYM_STATE, 1
@@ -179,10 +178,6 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	setflag FLAG_ENABLE_ROXANNE_FIRST_CALL
 	release
 	end
-
-DewfordTown_Gym_EventScript_BrawlyGiveMoney::
-	addmoney 2000
-	return
 
 DewfordTown_Gym_EventScript_GiveBulkUp::
 	giveitem ITEM_TM_BULK_UP
