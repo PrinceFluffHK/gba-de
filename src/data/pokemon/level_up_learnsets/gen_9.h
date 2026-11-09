@@ -9745,7 +9745,7 @@ static const struct LevelUpMove sTreeckoLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 9, MOVE_DETECT),
     LEVEL_UP_MOVE(12, MOVE_MEGA_DRAIN),
     //Roxanne Lv14
-    LEVEL_UP_MOVE(15, MOVE_QUICK_GUARD),
+    LEVEL_UP_MOVE(15, MOVE_SUBSTITUTE),
     //Brawly Lv16
     // >>> Evo Lv 16
     LEVEL_UP_MOVE(18, MOVE_ASSURANCE),
@@ -9776,8 +9776,7 @@ static const struct LevelUpMove sGrovyleLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 9, MOVE_DETECT),
     LEVEL_UP_MOVE(12, MOVE_MEGA_DRAIN),
     //Roxanne Lv14
-    LEVEL_UP_MOVE(15, MOVE_QUICK_GUARD),
-    //Evo
+    LEVEL_UP_MOVE(15, MOVE_SUBSTITUTE),
     //Brawly Lv16
     // >>> Evo Lv 16
     LEVEL_UP_MOVE(20, MOVE_ASSURANCE),
@@ -9813,7 +9812,7 @@ static const struct LevelUpMove sSceptileLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 9, MOVE_DETECT),
     LEVEL_UP_MOVE(12, MOVE_MEGA_DRAIN),
     //Roxanne Lv14
-    LEVEL_UP_MOVE(15, MOVE_QUICK_GUARD),
+    LEVEL_UP_MOVE(15, MOVE_SUBSTITUTE),
     //Brawly Lv16
     LEVEL_UP_MOVE(20, MOVE_ASSURANCE),
     //Wattson Lv24
