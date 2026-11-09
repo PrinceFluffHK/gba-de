@@ -11,14 +11,6 @@ RustboroCity_Mart_EventScript_Clerk::
 	release
 	end
 
-	.align 2
-RustboroCity_Mart_Pokemart_Secondary:
-	.2byte ITEM_MUSCLE_BAND
-	.2byte ITEM_WISE_GLASSES
-	.2byte ITEM_SCOPE_LENS
-	.2byte ITEM_WIDE_LENS
-	pokemartlistend
-
 RustboroCity_Mart_EventScript_Clerk_2::
 	lock
 	faceplayer
@@ -28,6 +20,14 @@ RustboroCity_Mart_EventScript_Clerk_2::
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+
+	.align 2
+RustboroCity_Mart_Pokemart_Secondary:
+	.2byte ITEM_MUSCLE_BAND
+	.2byte ITEM_WISE_GLASSES
+	.2byte ITEM_SCOPE_LENS
+	.2byte ITEM_WIDE_LENS
+	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokefanF::
 	msgbox RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish, MSGBOX_NPC
