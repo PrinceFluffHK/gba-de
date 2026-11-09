@@ -15,7 +15,7 @@
 #define B_EXP_CATCH                 GEN_LATEST // In Gen6+, the party gains experience when the player catches another Pokémon.
 #define B_TRAINER_EXP_MULTIPLIER    GEN_LATEST // In Gen7+, Trainer battles no longer increase total experience by 1.5x.
 #define B_SPLIT_EXP                 GEN_3 // In Gen6+, all Pokémon that participate in a battle gain full experience. In Gen5 and earlier, the total experience would be evenly split across them.
-#define B_SCALED_EXP                GEN_LATEST // In Gen5 and Gen7+, experience gain is weighted by the difference between the levels of the player's Pokémon and the target.
+#define B_SCALED_EXP                GEN_3 // In Gen5 and Gen7+, experience gain is weighted by the difference between the levels of the player's Pokémon and the target.
 #define B_UNEVOLVED_EXP_MULTIPLIER  GEN_LATEST // In Gen6+, if a Pokémon is at or past the level where it would be able to evolve, but it has not, it gains ~1.2x experience. This only applies to species with the EVO_LEVEL method.
 #define B_LEVEL_UP_NOTIFICATION     GEN_LATEST // In Gen9+, if a Pokémon gains enough experience to level up multiple times, a message is only displayed once.
 
@@ -388,7 +388,7 @@
 #define B_MULTI_BATTLE_WHITEOUT         GEN_LATEST // In Gen4+, Multi Battles end when the player as well as their partner don't have any Pokémon left.
 #define B_EVOLUTION_AFTER_WHITEOUT      GEN_LATEST // In Gen6+, Pokémon that qualify for evolution after battle will evolve even if the player loses.
 #define B_AFFECTION_MECHANICS           FALSE       // In Gen6+, there's a stat called affection that can trigger different effects in battle. From LGPE onwards, these effects use friendship instead.
-#define B_TRAINER_CLASS_POKE_BALLS      GEN_LATEST // In Gen7+, Trainers will use certain kinds of Poké Balls depending on their Trainer class.
+#define B_TRAINER_CLASS_POKE_BALLS      GEN_3 // In Gen7+, Trainers will use certain kinds of Poké Balls depending on their Trainer class.
 #define B_TRAINER_MON_RANDOM_ABILITY    0          // If this is set to 0, trainers mons with no set ability only use the first ability of a mon. If set to 1 it will roll a random non-hidden ability. If set to 2, it will roll any ability (including hidden ability) with equal chance
 #define B_OBEDIENCE_MECHANICS           GEN_LATEST // In PLA onwards (GEN_8 here), obedience restrictions also apply to non-outsider Pokémon, albeit based on their met level rather than their current level.
 #define B_USE_FROSTBITE                 TRUE      // In PLA, Frostbite replaces Freeze. Enabling this flag does the same here. Moves can still be cherry-picked to either Freeze or Frostbite. Freeze-Dry, Secret Power & Tri Attack depend on this config.
