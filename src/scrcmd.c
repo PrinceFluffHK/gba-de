@@ -2543,6 +2543,7 @@ void NativeFunc_PokemartStandard(struct ScriptContext *ctx)
 
     CreatePokemartMenu(itemLists[badgeCount]);
     ScriptContext_Stop();
+    ctx->waitAfterCallNative = TRUE;
 }
 
 bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
