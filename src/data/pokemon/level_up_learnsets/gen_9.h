@@ -29156,15 +29156,11 @@ static const struct LevelUpMove sNacliLevelUpLearnset[] = {
     //Wattson Lv24
     // >>> Evo Lv 24
     LEVEL_UP_MOVE(25, MOVE_RECOVER),
-    //Flannery Lv29
     LEVEL_UP_MOVE(30, MOVE_ROCK_SLIDE),
-    //Norman Lv31
     LEVEL_UP_MOVE(33, MOVE_STEALTH_ROCK),
     LEVEL_UP_MOVE(35, MOVE_HEAVY_SLAM),
-    //Winona Lv35
     LEVEL_UP_MOVE(40, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(45, MOVE_STONE_EDGE),
-    //Tate&Liza Lv45, Juan Lv50, Sidney Lv54, Drake Lv60, Steven Lv63
     LEVEL_UP_END
 };
 
@@ -29176,13 +29172,10 @@ static const struct LevelUpMove sNaclstackLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 7, MOVE_MUD_SHOT),
     LEVEL_UP_MOVE(10, MOVE_SMACK_DOWN),
     LEVEL_UP_MOVE(13, MOVE_ROCK_POLISH),
-    //Roxanne Lv14
     LEVEL_UP_MOVE(16, MOVE_HEADBUTT),
-    //Brawly Lv16
     LEVEL_UP_MOVE(20, MOVE_IRON_DEFENSE),
-    //Wattson Lv24
-    //Flannery Lv29
     // >>> Evo Lv 24
+    //Flannery Lv29
     LEVEL_UP_MOVE(30, MOVE_RECOVER),
     //Norman Lv31
     LEVEL_UP_MOVE(34, MOVE_ROCK_SLIDE),
@@ -29208,16 +29201,10 @@ static const struct LevelUpMove sGarganaclLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 7, MOVE_MUD_SHOT),
     LEVEL_UP_MOVE(10, MOVE_ROCK_TOMB),
     LEVEL_UP_MOVE(13, MOVE_ROCK_POLISH),
-    //Roxanne Lv14
     LEVEL_UP_MOVE(16, MOVE_HEADBUTT),
-    //Brawly Lv16
     LEVEL_UP_MOVE(24, MOVE_SALT_CURE),
-    //Wattson Lv24
-    //Flannery Lv29
     LEVEL_UP_MOVE(30, MOVE_RECOVER),
-    //Norman Lv31
     LEVEL_UP_MOVE(34, MOVE_ROCK_SLIDE),
-    //Winona Lv35
     // >>> Evo Lv 38
     LEVEL_UP_MOVE(40, MOVE_STEALTH_ROCK),
     LEVEL_UP_MOVE(44, MOVE_HEAVY_SLAM),
