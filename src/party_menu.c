@@ -1,6 +1,7 @@
 #include "global.h"
 #include "malloc.h"
 #include "battle.h"
+#include "battle_setup.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_gfx_sfx_util.h"
@@ -131,6 +132,7 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_TRAINER_PARTY,
 };
 
 enum {
@@ -212,6 +214,8 @@ EWRAM_DATA struct PartyMenu gPartyMenu = {0};
 static EWRAM_DATA struct PartyMenuBox *sPartyMenuBoxes = NULL;
 static EWRAM_DATA u8 *sPartyBgGfxTilemap = NULL;
 static EWRAM_DATA u8 *sPartyBgTilemapBuffer = NULL;
+static EWRAM_DATA struct Pokemon sTrainerPartyPreviewPlayerParty[PARTY_SIZE];
+static EWRAM_DATA u8 sTrainerPartyPreviewPlayerPartyCount;
 EWRAM_DATA bool8 gPartyMenuUseExitCallback = 0;
 EWRAM_DATA u8 gSelectedMonPartyId = 0;
 EWRAM_DATA MainCallback gPostMenuFieldCallback = NULL;
@@ -245,6 +249,7 @@ static bool8 RenderPartyMenuBoxes(void);
 static void CreateCancelConfirmPokeballSprites(void);
 static void CreateCancelConfirmWindows(u8);
 static void Task_ExitPartyMenu(u8);
+static void CB2_ReturnFromTrainerPartyPreview(void);
 static void FreePartyPointers(void);
 static void PartyPaletteBufferCopy(u8);
 static void DisplayPartyPokemonDataForMultiBattle(u8);
@@ -510,6 +515,8 @@ static const u8 sText_doneText[] = _("{STR_VAR_1}'s ability became\n{STR_VAR_2}!
 static const u8 sText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_TrainerMonHoldingItem[] = _("{STR_VAR_1} is holding\n{STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Nothing[] = _("nothing");
 
 // static const data
 #include "data/party_menu.h"
@@ -1667,6 +1674,13 @@ static bool8 DoesSelectedMonKnowHM(u8 *slotPtr)
 
 static void HandleChooseMonCancel(u8 taskId, s8 *slotPtr)
 {
+    if (gPartyMenu.menuType == PARTY_MENU_TYPE_TRAINER_PREVIEW)
+    {
+        PlaySE(SE_SELECT);
+        Task_ClosePartyMenu(taskId);
+        return;
+    }
+
     switch (gPartyMenu.action)
     {
     case PARTY_ACTION_SEND_OUT:
@@ -3037,6 +3051,9 @@ static u8 GetPartyMenuActionsType(struct Pokemon *mon)
     case PARTY_MENU_TYPE_STORE_PYRAMID_HELD_ITEMS:
         actionType = ACTIONS_TAKEITEM_TOSS;
         break;
+    case PARTY_MENU_TYPE_TRAINER_PREVIEW:
+        actionType = ACTIONS_TRAINER_PARTY;
+        break;
     // The following have no selection actions (i.e. they exit immediately upon selection)
     // PARTY_MENU_TYPE_CONTEST
     // PARTY_MENU_TYPE_CHOOSE_MON
@@ -3118,6 +3135,13 @@ static void Task_HandleSelectionMenuInput(u8 taskId)
         case MENU_B_PRESSED:
             PlaySE(SE_SELECT);
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
+            if (gPartyMenu.menuType == PARTY_MENU_TYPE_TRAINER_PREVIEW)
+            {
+                PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+                PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+                Task_ClosePartyMenu(taskId);
+                break;
+            }
             if (sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1] >= MENU_FIELD_MOVES)
                 CursorCb_FieldMove(taskId);
             else
@@ -3164,6 +3188,10 @@ static void CB2_ShowPokemonSummaryScreen(void)
             ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, CalculatePartyCountOfSide(B_BATTLER_0) - 1, CB2_ReturnToPartyMenuFromSummaryScreen);
     }
     else if (gPartyMenu.menuType == PARTY_MENU_TYPE_CHOOSE_HALF)
+    {
+        ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, gPartiesCount[B_TRAINER_PLAYER] - 1, CB2_ReturnToPartyMenuFromSummaryScreen);
+    }
+    else if (gPartyMenu.menuType == PARTY_MENU_TYPE_TRAINER_PREVIEW)
     {
         ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, gPartiesCount[B_TRAINER_PLAYER] - 1, CB2_ReturnToPartyMenuFromSummaryScreen);
     }
@@ -3467,6 +3495,22 @@ static void CursorCb_Item(u8 taskId)
     PlaySE(SE_SELECT);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    if (gPartyMenu.menuType == PARTY_MENU_TYPE_TRAINER_PREVIEW)
+    {
+        struct Pokemon *mon = GetPartyMonFromPartyMenuId(gPartyMenu.slotId);
+        enum Item heldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
+
+        GetMonNickname(mon, gStringVar1);
+        if (heldItem == ITEM_NONE)
+            StringCopy(gStringVar2, sText_Nothing);
+        else
+            CopyItemName(heldItem, gStringVar2);
+        StringExpandPlaceholders(gStringVar4, sText_TrainerMonHoldingItem);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        return;
+    }
     SetPartyMonSelectionActions(gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, ACTIONS_ITEM);
     DisplaySelectionWindow(SELECTWINDOW_ITEM);
     DisplayPartyMenuStdMessage(PARTY_MSG_DO_WHAT_WITH_ITEM);
@@ -7481,6 +7525,54 @@ static const u8 *GetFacilityCancelString(void)
 void ChooseMonForTradingBoard(enum PartyMenuType menuType, MainCallback callback)
 {
     InitPartyMenu(menuType, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, callback);
+}
+
+void ShowTrainerParty(u16 trainerId)
+{
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerId);
+    struct Trainer partyTrainer;
+    u32 count = CalculatePlayerPartyCount();
+    u8 metLocation = METLOC_FATEFUL_ENCOUNTER;
+    u8 metLevel = 1;
+    u8 trainerGender = trainer->gender;
+
+    memcpy(sTrainerPartyPreviewPlayerParty, gParties[B_TRAINER_PLAYER], sizeof(sTrainerPartyPreviewPlayerParty));
+    sTrainerPartyPreviewPlayerPartyCount = count;
+
+    partyTrainer = *trainer;
+    if (trainer->overrideTrainer)
+    {
+        const struct Trainer *overrideTrainer = GetTrainerStructFromId(trainer->overrideTrainer);
+
+        partyTrainer.party = overrideTrainer->party;
+        partyTrainer.poolSize = overrideTrainer->poolSize;
+        if (partyTrainer.partySize == 0)
+            partyTrainer.partySize = overrideTrainer->partySize;
+    }
+
+    CreateNPCTrainerPartyFromTrainerWithOTID(gParties[B_TRAINER_PLAYER], &partyTrainer, 0);
+    CalculatePlayerPartyCount();
+    for (u32 i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+        u8 level = GetMonData(mon, MON_DATA_LEVEL);
+        u32 experience = gExperienceTables[gSpeciesInfo[species].growthRate][level];
+
+        SetMonData(mon, MON_DATA_OT_GENDER, &trainerGender);
+        SetMonData(mon, MON_DATA_MET_LOCATION, &metLocation);
+        SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
+        SetMonData(mon, MON_DATA_EXP, &experience);
+    }
+
+    InitPartyMenu(PARTY_MENU_TYPE_TRAINER_PREVIEW, PARTY_LAYOUT_DOUBLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnFromTrainerPartyPreview);
+}
+
+static void CB2_ReturnFromTrainerPartyPreview(void)
+{
+    memcpy(gParties[B_TRAINER_PLAYER], sTrainerPartyPreviewPlayerParty, sizeof(sTrainerPartyPreviewPlayerParty));
+    gPartiesCount[B_TRAINER_PLAYER] = sTrainerPartyPreviewPlayerPartyCount;
+    CB2_ReturnToFieldContinueScriptPlayMapMusic();
 }
 
 void ChooseMonForMoveTutor(void)

@@ -1315,6 +1315,12 @@
 	.4byte Pokemart_DefaultItemListsByBadgeCount
 	.endm
 
+	@ Opens the party menu for the specified trainer.
+	.macro showtrainerparty trainer:req
+	callnative NativeFunc_ShowTrainerParty, requests_effects=1
+	.2byte \trainer
+	.endm
+
 	@ Used as the endpoint for a Pokemart item list
 	.macro pokemartlistend
 	.2byte ITEM_NONE

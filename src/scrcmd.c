@@ -2546,6 +2546,17 @@ void NativeFunc_PokemartStandard(struct ScriptContext *ctx)
     ctx->waitAfterCallNative = TRUE;
 }
 
+void NativeFunc_ShowTrainerParty(struct ScriptContext *ctx)
+{
+    u16 trainerId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    ShowTrainerParty(trainerId);
+    ScriptContext_Stop();
+    ctx->waitAfterCallNative = TRUE;
+}
+
 bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);

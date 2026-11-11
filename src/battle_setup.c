@@ -2230,7 +2230,7 @@ void SetMultiTrainerBattle(struct ScriptContext *ctx)
     gPartnerTrainerId = TRAINER_PARTNER(ScriptReadHalfword(ctx));
 };
 
-void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer)
+static void CreateNPCTrainerPartyFromTrainerInternal(struct Pokemon *party, const struct Trainer *trainer, bool32 setOtId, u32 otId)
 {
     s32 i;
     u8 monsCount;
@@ -2247,6 +2247,8 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
     u32 monIndices[monsCount];
     struct TrainerGenerator *trainerGen = AllocZeroed(sizeof(struct TrainerGenerator));
     MakeTrainerGenerator(trainerGen, trainer);
+    if (setOtId)
+        trainerGen->otID = OTID_STRUCT_PRESET(otId);
     DoTrainerPartyPool(trainer, monIndices, monsCount, gBattleTypeFlags);
 
     for (i = 0; i < monsCount; i++)
@@ -2255,6 +2257,16 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
         GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndex], trainerGen);
     }
     Free(trainerGen);
+}
+
+void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer)
+{
+    CreateNPCTrainerPartyFromTrainerInternal(party, trainer, FALSE, 0);
+}
+
+void CreateNPCTrainerPartyFromTrainerWithOTID(struct Pokemon *party, const struct Trainer *trainer, u32 otId)
+{
+    CreateNPCTrainerPartyFromTrainerInternal(party, trainer, TRUE, otId);
 }
 
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)

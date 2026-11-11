@@ -33,7 +33,8 @@ enum PartyMenuType
     PARTY_MENU_TYPE_SPIN_TRADE,                 // Unused beta for Gen IV's Spin Trade
     PARTY_MENU_TYPE_MINIGAME,
     PARTY_MENU_TYPE_STORE_PYRAMID_HELD_ITEMS,
-    PARTY_MENU_TYPE_MULTI_FULL_SHOWCASE
+    PARTY_MENU_TYPE_MULTI_FULL_SHOWCASE,
+    PARTY_MENU_TYPE_TRAINER_PREVIEW
 };
 
 // seems like the last two fields may have been left as all-purpose vars
@@ -116,6 +117,7 @@ void ChooseMonToGiveMailFromMailbox(void);
 void InitChooseHalfPartyForBattle(u8 unused);
 void ClearSelectedPartyOrder(void);
 void ChooseMonForTradingBoard(enum PartyMenuType menuType, MainCallback callback);
+void ShowTrainerParty(u16 trainerId);
 void ChooseMonForMoveTutor(void);
 void ChooseMonForWirelessMinigame(void);
 void OpenPartyMenuInBattle(u8 partyAction);
