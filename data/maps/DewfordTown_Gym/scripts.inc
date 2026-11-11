@@ -259,8 +259,14 @@ DewfordTown_Gym_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
 	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, YES, DewfordTown_Gym_EventScript_ShowLeaderTeam
+	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end
+
+DewfordTown_Gym_EventScript_ShowLeaderTeam::
+	showtrainerparty TRAINER_BRAWLY_1
 
 DewfordTown_Gym_EventScript_GymGuidePostVictory::
 	msgbox DewfordTown_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
@@ -292,18 +298,21 @@ DewfordTown_Gym_EventScript_GymStatue::
 DewfordTown_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "DEWFORD's GYM LEADER BRAWLY commands\n"
-	.string "FIGHTING-type POKéMON.\p"
-	.string "Going against him with NORMAL-type\n"
-	.string "POKéMON is asking for trouble.\p"
-	.string "FIGHTING POKéMON will lay a serious\n"
-	.string "smack down on NORMAL POKéMON,\l"
-	.string "so be careful!\p"
-	.string "What's worse, the GYM is as dark as\n"
-	.string "the ocean floor.\p"
-	.string "But it will get brighter after defeating\n"
-	.string "the TRAINERS in your way.\p"
-	.string "Hey, okay, go for it!$"
+	.string "Here, take a look at BRAWLY's team!$"
+	// .string "Hey, how's it going, CHAMPION-\n"
+	// .string "bound {PLAYER}?\p"
+	// .string "DEWFORD's GYM LEADER BRAWLY commands\n"
+	// .string "FIGHTING-type POKéMON.\p"
+	// .string "Going against him with NORMAL-type\n"
+	// .string "POKéMON is asking for trouble.\p"
+	// .string "FIGHTING POKéMON will lay a serious\n"
+	// .string "smack down on NORMAL POKéMON,\l"
+	// .string "so be careful!\p"
+	// .string "What's worse, the GYM is as dark as\n"
+	// .string "the ocean floor.\p"
+	// .string "But it will get brighter after defeating\n"
+	// .string "the TRAINERS in your way.\p"
+	// .string "Hey, okay, go for it!$"
 
 DewfordTown_Gym_Text_GymGuidePostVictory:
 	.string "Whoah! It's turned too bright in here!\p"
