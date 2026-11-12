@@ -13382,7 +13382,7 @@ const struct ItemInfo gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Covers the ground\n"
             "with mist for 5\n"
-            "turns. Blocks status."),
+            "turns. No status."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
