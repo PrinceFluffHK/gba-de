@@ -18195,6 +18195,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Easy
 
@@ -18247,6 +18248,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Normal
 
@@ -18305,6 +18307,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Hard
 
@@ -18369,6 +18372,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Easy
 
@@ -18421,6 +18425,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Normal
 
@@ -18479,6 +18484,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Hard
 
@@ -22333,7 +22339,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
-Mugshot: Blue
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Easy
 
@@ -24566,7 +24572,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
-Mugshot: Blue
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Normal
 
@@ -27171,7 +27177,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
-Mugshot: Blue
+Mugshot: Yellow
 AI: Smart Trainer
 Difficulty: Hard
 
