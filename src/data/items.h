@@ -9463,7 +9463,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Damp Rock"),
     #if I_PRICE >= GEN_9
-        .price = 8000,
+        .price = 4000, //8000,
     #elif I_PRICE >= GEN_7
         .price = 4000,
     #else
@@ -9487,7 +9487,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Heat Rock"),
     #if I_PRICE >= GEN_9
-        .price = 8000,
+        .price = 4000, //8000,
     #elif I_PRICE >= GEN_7
         .price = 4000,
     #else
@@ -9511,7 +9511,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Smooth Rock"),
     #if I_PRICE >= GEN_9
-        .price = 8000,
+        .price = 4000, //8000,
     #elif I_PRICE >= GEN_7
         .price = 4000,
     #else
@@ -9535,7 +9535,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Icy Rock"),
     #if I_PRICE >= GEN_9
-        .price = 8000,
+        .price = 4000, //8000,
     #elif I_PRICE >= GEN_7
         .price = 4000,
     #else
