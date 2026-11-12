@@ -1235,6 +1235,12 @@ void HandleInputChooseMove(enum BattlerId battler)
     }
     else if ((JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)  && !gBattleStruct->descriptionSubmenu)
     {
+        if (gBattleStruct->viewingOpponentMoves)
+        {
+            HandleViewOpposingMoves(battler, gBattleStruct->viewingRightOpponent, moveInfo);
+            return;
+        }
+
         PlaySE(SE_SELECT);
         gBattleStruct->gimmick.playerSelect = FALSE;
         if (gBattleStruct->zmove.viewing)
