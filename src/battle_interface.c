@@ -2459,7 +2459,7 @@ static void FillHealthboxObject(void *dest, u32 valMult, u32 numTiles)
 #define ABILITY_POP_UP_OPPONENT_LEFT_WIN_W  7
 #define ABILITY_POP_UP_OPPONENT_RIGHT_WIN_W 3
 
-#define ABILITY_POP_UP_WAIT_FRAMES 48
+#define ABILITY_POP_UP_WAIT_FRAMES 32 //48
 
 #define sState          data[0]
 #define sAutoDestroy    data[1]
@@ -3139,7 +3139,7 @@ static void SpriteCB_MoveInfoWin(struct Sprite *sprite)
     if (sprite->sHide)
     {
         if (sprite->x != LAST_BALL_WIN_X_0)
-            sprite->x--;
+            sprite->x -= 2;
 
         if (sprite->x == LAST_BALL_WIN_X_0)
             DestroyMoveInfoWinGfx(sprite);
@@ -3147,7 +3147,7 @@ static void SpriteCB_MoveInfoWin(struct Sprite *sprite)
     else
     {
         if (sprite->x != LAST_BALL_WIN_X_F)
-            sprite->x++;
+            sprite->x += 2;
     }
 }
 
