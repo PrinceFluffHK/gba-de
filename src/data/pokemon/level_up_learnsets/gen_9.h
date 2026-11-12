@@ -11028,8 +11028,8 @@ static const struct LevelUpMove sNincadaLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sNinjaskLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_U_TURN),
     LEVEL_UP_MOVE( 1, MOVE_SCREECH),
+    LEVEL_UP_MOVE( 1, MOVE_BATON_PASS),
     LEVEL_UP_MOVE( 1, MOVE_DOUBLE_TEAM),
     LEVEL_UP_MOVE( 1, MOVE_FURY_SWIPES),
     LEVEL_UP_MOVE( 1, MOVE_FALSE_SWIPE),
@@ -11039,13 +11039,13 @@ static const struct LevelUpMove sNinjaskLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_HARDEN),
     LEVEL_UP_MOVE(15, MOVE_FURY_CUTTER),
     // >>> Evo Lv 20
-    LEVEL_UP_MOVE(23, MOVE_AERIAL_ACE),
+    LEVEL_UP_MOVE(23, MOVE_U_TURN),
     //Wattson Lv24
-    LEVEL_UP_MOVE(29, MOVE_BUG_BITE),
+    LEVEL_UP_MOVE(29, MOVE_AERIAL_ACE),
     //Flannery Lv29
     //Norman Lv31
     //Winona Lv35
-    LEVEL_UP_MOVE(36, MOVE_BATON_PASS),
+    LEVEL_UP_MOVE(36, MOVE_BUG_BITE),
     LEVEL_UP_MOVE(43, MOVE_LEECH_LIFE),
     //Tate&Liza Lv45
     LEVEL_UP_MOVE(50, MOVE_SLASH),
