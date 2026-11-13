@@ -5354,7 +5354,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = 140,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_UNAWARE },
+        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Clefable"),
     #if P_MODIFIED_MEGA_CRIES
@@ -9591,8 +9591,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_GLUTTONY },
-        .bodyColor = BODY_COLOR_GREEN,
+        .abilities = { ABILITY_INNARDS_OUT, ABILITY_INNARDS_OUT, ABILITY_INNARDS_OUT },
+        .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = TRUE,
         .speciesName = _("Victreebel"),
     #if P_MODIFIED_MEGA_CRIES

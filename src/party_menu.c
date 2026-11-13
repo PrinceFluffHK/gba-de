@@ -996,6 +996,7 @@ static void LoadPartyMenuBoxes(enum PartyMenuLayout layout)
         sPartyMenuBoxes[i].pokeballSpriteId = SPRITE_NONE;
         sPartyMenuBoxes[i].statusSpriteId = SPRITE_NONE;
     }
+
     // The first party mon goes in the left column
     sPartyMenuBoxes[0].infoRects = &sPartyBoxInfoRects[PARTY_BOX_LEFT_COLUMN];
 
@@ -6254,8 +6255,7 @@ void Task_DynamaxCandy(u8 taskId)
     case 3:
         tDynamaxLevel++;
         SetMonData(&gParties[B_TRAINER_PLAYER][tMonId], MON_DATA_DYNAMAX_LEVEL, &tDynamaxLevel);
-        if (GetItemConsumability(gSpecialVar_ItemId))
-            RemoveBagItem(gSpecialVar_ItemId, 1);
+        RemoveBagItem(gSpecialVar_ItemId, 1);
         gTasks[taskId].func = Task_ClosePartyMenu;
         break;
     }

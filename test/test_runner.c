@@ -256,6 +256,7 @@ top:
 
             if (gPersistentTestRunnerState.expectCrash)
                 gTestRunnerState.expectedResult = TEST_RESULT_CRASH;
+
             gTestRunnerState.expectedFailLine = 0;
             gTestRunnerState.expectedFailState = NO_EXPECT_FAIL;
         }

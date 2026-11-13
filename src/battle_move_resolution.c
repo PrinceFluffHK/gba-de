@@ -815,6 +815,7 @@ bool32 IsAffectedByFollowMe(enum BattlerId battlerAtk, enum BattleSide defSide, 
     enum Ability ability = GetBattlerAbility(battlerAtk);
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
+
     if (gSideTimers[defSide].followmeTimer == 0
         || (!IsBattlerAlive(gSideTimers[defSide].followmeTarget) && !IsSmartTargetMoveConsecutiveHit(battlerAtk, move))
         || effect == EFFECT_SNIPE_SHOT
@@ -1638,8 +1639,12 @@ static bool32 CanPledgeComboAttackHappen(struct BattleCalcValues *cv)
 
         gBattlerByTurnOrder[currPledgeUser++] = partner;
 
-        for (u32 i = 0; newTurnOrder[i] != 0xFF && i < 2; i++)
+        for (u32 i = 0; i < ARRAY_COUNT(newTurnOrder); i++)
+        {
+            if (newTurnOrder[i] == 0xFF)
+                continue;
             gBattlerByTurnOrder[currPledgeUser++] = newTurnOrder[i];
+        }
 
         gBattleStruct->pledgeState = PLEDGE_COMBO_WAITING;
         return TRUE;
@@ -2695,8 +2700,13 @@ static enum CancelerResult CancelerPreAnimActivations(struct BattleCalcValues *c
                 if (ShouldSkipBattlerForDamage(cv->battlerAtk, battlerDef))
                     continue;
 
-                if (gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_HIGH_EFFECTIVENESS
-                 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_FLYING))
+                enum Type types[3];
+                GetBattlerTypes(battlerDef, FALSE, types);
+
+                if (types[0] != TYPE_FLYING && types[1] != TYPE_FLYING && types[2] != TYPE_FLYING)
+                    continue;
+
+                if (GetTypeModifier(GetBattleMoveType(cv->move), TYPE_FLYING) > UQ_4_12(1.0))
                 {
                     BattleScriptCall(BattleScript_AttackWeakenedByStrongWinds);
                     gBattleStruct->eventState.moveEndBlock++;
@@ -4320,7 +4330,9 @@ static enum MoveEndResult MoveEndMoveBlock(struct BattleCalcValues *cv)
             }
             else
             {
-                bool32 addStolenWildItemToBag = GetConfig(B_STEAL_WILD_ITEMS) >= GEN_9 && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_PALACE));
+                bool32 addStolenWildItemToBag = GetConfig(B_STEAL_WILD_ITEMS) >= GEN_9
+                                             && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_PALACE));
+
                 StealTargetItem(cv->battlerAtk, battlerDef, ITEM_NONE, addStolenWildItemToBag);  // Attacker steals target item
 
                 struct LostItem *lostItem = GetLostItemState(GetBattlerTrainer(battlerDef), gBattlerPartyIndexes[battlerDef]);

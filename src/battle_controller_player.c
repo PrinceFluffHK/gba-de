@@ -868,7 +868,7 @@ static void HideAllTargets(void)
     {
         if (ShouldHideBattler(i))
         {
-            SpriteCB_HideAsMoveTarget(&gSprites[gBattlerSpriteIds[i]]);
+            gSprites[gBattlerSpriteIds[i]].callback = SpriteCB_HideAsMoveTarget;
             EndBounceEffect(i, BOUNCE_HEALTHBOX);
         }
     }

@@ -174,6 +174,7 @@ bool32 IsGimmickTriggerSpriteMatchingBattler(enum BattlerId battler)
 {
     if (battler == gSprites[gBattleStruct->gimmick.triggerSpriteId].tBattler)
         return TRUE;
+
     return FALSE;
 }
 

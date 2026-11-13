@@ -472,7 +472,7 @@ const u8 *const gStatusConditionStringsTable[][2] =
 
 void CB2_InitBattle(void)
 {
-    if (!gTestRunnerEnabled)
+    if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
         MoveSaveBlocks_ResetHeap();
     AllocateBattleResources();
     AllocateBattleSpritesData();
@@ -2505,7 +2505,8 @@ void SpriteCB_HideAsMoveTarget(struct Sprite *sprite)
 
 bool32 ShouldHideBattler(enum BattlerId battler)
 {
-    if (!IsBattlerAlive(battler))
+    if (!IsBattlerAlive(battler)
+     || !gBattleSpritesDataPtr->healthBoxesData[battler].healthboxIsBouncing)
         return FALSE;
 
     SpriteCallback callback = gSprites[gBattlerSpriteIds[battler]].callback;
