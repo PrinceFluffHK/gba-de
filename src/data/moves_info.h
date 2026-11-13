@@ -772,11 +772,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
-            .accuracy = 1,
-            .chance = 20,
-        }),
         .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
         .magicCoatAffected = TRUE,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
@@ -785,8 +780,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_MUD_SLAP, COMBO_STARTER_SANDSTORM},
         .battleAnimScript = gBattleAnimMove_SandAttack,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = STAT_CHANGE_EFFECT_MINUS,
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
             .accuracy = 1,
+            .chance = 20,
         }),
         .validApprenticeMove = TRUE,
     },
