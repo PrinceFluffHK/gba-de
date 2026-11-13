@@ -90,13 +90,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_DOUBLE_SLAP] =
     {
-        .name = COMPOUND_STRING("Silly Slap"),
+        .name = COMPOUND_STRING("Double-Slap"),
         .description = COMPOUND_STRING(
             "Repeatedly slaps the foe\n"
             "2 to 5 times."),
         .effect = EFFECT_HIT,
-        .power = 20, //15,
-        .type = TYPE_FAIRY, //TYPE_NORMAL,
+        .power = 15,
+        .type = TYPE_NORMAL,
         .accuracy = 100, //85,
         .pp = 12,
         .target = TARGET_SELECTED,
@@ -2222,22 +2222,20 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_DRAGON_RAGE] =
     {
-        .name = COMPOUND_STRING("Spitfire"),
+        .name = COMPOUND_STRING("Dragon Rage"),
         .description = COMPOUND_STRING(
             "Launches shock waves that\n"
-            "might burn the target."),
-        .effect = EFFECT_HIT,
-        .power = 40, //1,
+            "always inflict 40 HP damage."),
+        .effect = EFFECT_FIXED_HP_DAMAGE,
+        .power = 1,
         .type = TYPE_DRAGON,
         .accuracy = 100,
-        .pp = 12,
+        .pp = 10,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_BURN,
-            .chance = 20,
-        }),
+        .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_4) || (B_UPDATED_MOVE_FLAGS < GEN_3),
+        .argument = { .fixedDamage = 40 },
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_BETTER_WHEN_LATER,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = COMBO_STARTER_DRAGON_RAGE,
@@ -11054,24 +11052,23 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_DRAGON_RUSH] =
     {
-        .name = COMPOUND_STRING("Dragon Edge"),
+        .name = COMPOUND_STRING("Dragon Rush"),
         .description = COMPOUND_STRING(
             "Tackles the foe with menace.\n"
-            "Can flinch. Hurts the user."),
-        .effect = EFFECT_RECOIL, //EFFECT_HIT,
-        .power = 120, //100,
+            "May cause flinching."),
+        .effect = EFFECT_HIT,
+        .power = 100,
         .type = TYPE_DRAGON,
-        .accuracy = 90, //75,
-        .pp = 12,
+        .accuracy = 75,
+        .pp = 10,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .recoilPercentage = 33 },
         .makesContact = TRUE,
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS >= GEN_6,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 10, //20,
+            .chance = 20,
         }),
         .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_TOUGH : CONTEST_CATEGORY_COOL,
@@ -22124,6 +22121,84 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .chance = 50,
         }),
         .battleAnimScript = gBattleAnimMove_MalignantChain,
+    },
+
+    [MOVE_SPITFIRE] =
+    {
+        .name = COMPOUND_STRING("Spitfire"),
+        .description = COMPOUND_STRING(
+            "Launches shock waves that\n"
+            "might burn the target."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_DRAGON,
+        .accuracy = 100,
+        .pp = 12,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 20,
+        }),
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_BETTER_WHEN_LATER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = COMBO_STARTER_DRAGON_RAGE,
+        .contestComboMoves = {COMBO_STARTER_DRAGON_BREATH, COMBO_STARTER_DRAGON_DANCE, COMBO_STARTER_DRAGON_RUSH, COMBO_STARTER_DRAGON_TAIL},
+        .battleAnimScript = gBattleAnimMove_DragonRage,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_SILLY_SLAP] =
+    {
+        .name = COMPOUND_STRING("Silly Slap"),
+        .description = COMPOUND_STRING(
+            "Repeatedly slaps the foe\n"
+            "2 to 5 times."),
+        .effect = EFFECT_HIT,
+        .power = 20, 
+        .type = TYPE_FAIRY, 
+        .accuracy = 100, 
+        .pp = 12,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .multiHit = TRUE,
+        .makesContact = TRUE,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
+        .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_CUTE : CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_POUND},
+        .battleAnimScript = gBattleAnimMove_DoubleSlap,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_DRAGON_EDGE] =
+    {
+        .name = COMPOUND_STRING("Dragon Edge"),
+        .description = COMPOUND_STRING(
+            "Tackles the foe with menace.\n"
+            "Can flinch. Hurts the user."),
+        .effect = EFFECT_RECOIL, 
+        .power = 120, 
+        .type = TYPE_DRAGON,
+        .accuracy = 90, 
+        .pp = 12,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .recoilPercentage = 33 },
+        .makesContact = TRUE,
+        .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 10, 
+        }),
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_TOUGH : CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = COMBO_STARTER_DRAGON_RUSH,
+        .contestComboMoves = {COMBO_STARTER_DRAGON_BREATH, COMBO_STARTER_DRAGON_DANCE, COMBO_STARTER_DRAGON_RAGE, COMBO_STARTER_DRAGON_TAIL},
+        .battleAnimScript = gBattleAnimMove_DragonRush,
     },
 
     // Z-Moves

@@ -13429,7 +13429,7 @@ static const struct LevelUpMove sBagonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_EMBER),
     LEVEL_UP_MOVE( 5, MOVE_BITE),
-    LEVEL_UP_MOVE(10, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE(10, MOVE_SPITFIRE),
     LEVEL_UP_MOVE(15, MOVE_HEADBUTT),
     LEVEL_UP_MOVE(20, MOVE_SCARY_FACE),
     // >>> Catch
@@ -13451,7 +13451,7 @@ static const struct LevelUpMove sShelgonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_BITE),
     LEVEL_UP_MOVE( 1, MOVE_EMBER),
-    LEVEL_UP_MOVE( 1, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 1, MOVE_SPITFIRE),
     LEVEL_UP_MOVE(15, MOVE_HEADBUTT),
     LEVEL_UP_MOVE(20, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE(25, MOVE_CRUNCH),
@@ -13472,7 +13472,7 @@ static const struct LevelUpMove sShelgonLevelUpLearnset[] = {
 static const struct LevelUpMove sSalamenceLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_FLY),
     LEVEL_UP_MOVE( 1, MOVE_ROOST),
-    LEVEL_UP_MOVE( 1, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 1, MOVE_SPITFIRE),
     LEVEL_UP_MOVE( 1, MOVE_DRAGON_TAIL),
     LEVEL_UP_MOVE( 1, MOVE_EMBER),
     LEVEL_UP_MOVE( 1, MOVE_DUAL_WINGBEAT),
@@ -20527,7 +20527,7 @@ static const struct LevelUpMove sDurantLevelUpLearnset[] = {
 #if P_FAMILY_DEINO
 static const struct LevelUpMove sDeinoLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
-    LEVEL_UP_MOVE( 1, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 1, MOVE_SPITFIRE),
     //Received at level 2
     LEVEL_UP_MOVE( 4, MOVE_FOCUS_ENERGY),
     LEVEL_UP_MOVE( 8, MOVE_BITE),
@@ -20561,7 +20561,7 @@ static const struct LevelUpMove sZweilousLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_DOUBLE_HIT),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_FOCUS_ENERGY),
-    LEVEL_UP_MOVE( 1, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 1, MOVE_SPITFIRE),
     LEVEL_UP_MOVE( 1, MOVE_BITE),
     LEVEL_UP_MOVE(12, MOVE_WORK_UP),
     //Roxanne Lv14
@@ -20595,7 +20595,7 @@ static const struct LevelUpMove sHydreigonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_TRI_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_FOCUS_ENERGY),
-    LEVEL_UP_MOVE( 1, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 1, MOVE_SPITFIRE),
     LEVEL_UP_MOVE( 1, MOVE_BITE),
     LEVEL_UP_MOVE(12, MOVE_WORK_UP),
     //Roxanne Lv14
@@ -25073,7 +25073,7 @@ static const struct LevelUpMove sJangmoOLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 4, MOVE_PROTECT),
-    LEVEL_UP_MOVE( 8, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 8, MOVE_SPITFIRE),
     LEVEL_UP_MOVE(12, MOVE_NOBLE_ROAR),
     //Roxanne Lv14
     LEVEL_UP_MOVE(16, MOVE_DRAGON_TAIL),
@@ -25100,7 +25100,7 @@ static const struct LevelUpMove sHakamoOLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_PROTECT),
-    LEVEL_UP_MOVE( 1, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 1, MOVE_SPITFIRE),
     LEVEL_UP_MOVE(12, MOVE_NOBLE_ROAR),
     //Roxanne Lv14
     LEVEL_UP_MOVE(16, MOVE_DRAGON_TAIL),
@@ -25133,7 +25133,7 @@ static const struct LevelUpMove sKommoOLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_PROTECT),
-    LEVEL_UP_MOVE( 1, MOVE_DRAGON_RAGE),
+    LEVEL_UP_MOVE( 1, MOVE_SPITFIRE),
     LEVEL_UP_MOVE(12, MOVE_NOBLE_ROAR),
     //Roxanne Lv14
     LEVEL_UP_MOVE(16, MOVE_DRAGON_TAIL),

@@ -7078,7 +7078,7 @@ Shelgon
 Ability: Rock Head
 Level: 30
 - Headbutt
-- Dragon Rage
+- Spitfire
 - Protect
 
 Gyarados
@@ -9528,7 +9528,7 @@ Level: 49
 Flygon
 Ability: Levitate
 Level: 49
-- Dragon Rush
+- Dragon Edge
 
 === TRAINER_JANI ===
 Name: JANI
@@ -10344,7 +10344,7 @@ Azumarill
 Ability: Huge Power
 Level: 40
 - Hydro Pump
-- Double-Slap
+- Silly Slap
 - Bounce
 
 === TRAINER_TANYA ===
@@ -10406,7 +10406,7 @@ Azumarill
 Ability: Huge Power
 Level: 40
 - Hydro Pump
-- Double-Slap
+- Silly Slap
 - Bounce
 
 Sealeo
@@ -10484,7 +10484,7 @@ Azumarill
 Ability: Huge Power
 Level: 40
 - Hydro Pump
-- Double-Slap
+- Silly Slap
 - Bounce
 
 === TRAINER_KARA ===
@@ -10523,7 +10523,7 @@ Azumarill
 Ability: Huge Power
 Level: 40
 - Hydro Pump
-- Double-Slap
+- Silly Slap
 - Bounce
 
 Sealeo
@@ -13676,7 +13676,7 @@ Charmander
 Ability: Blaze
 Level: 15
 - Fire Spin
-- Dragon Rage
+- Spitfire
 
 Squirtle
 Ability: Torrent
@@ -14644,7 +14644,7 @@ Shelgon
 Ability: Rock Head
 Level: 33
 - Headbutt
-- Dragon Rage
+- Spitfire
 - Wish
 - Protect
 
@@ -14978,7 +14978,7 @@ Azumarill
 Ability: Huge Power
 Level: 40
 - Hydro Pump
-- Double-Slap
+- Silly Slap
 - Bounce
 
 Wigglytuff
@@ -17260,7 +17260,7 @@ Marill
 Ability: Huge Power
 Level: 27
 - Aqua Tail
-- Double-Slap
+- Silly Slap
 
 Sandshrew
 Ability: Sand Rush
@@ -23686,7 +23686,7 @@ Altaria
 Ability: Cloud Nine
 Level: 49
 - Acrobatics
-- Dragon Rush
+- Dragon Edge
 - Dazzling Gleam
 - Dragon Dance
 
@@ -26124,7 +26124,7 @@ Altaria
 Ability: Cloud Nine
 Level: 49
 - Acrobatics
-- Dragon Rush
+- Dragon Edge
 - Dazzling Gleam
 - Dragon Dance
 
@@ -26332,7 +26332,7 @@ Flygon @ Choice Scarf
 Ability: Levitate
 Level: 59
 - Earthquake
-- Dragon Rush
+- Dragon Edge
 - U-Turn
 
 Gyarados
@@ -28468,7 +28468,7 @@ EVs: 64 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Solar Blade
 - Dual Wingbeat
 - Razor Leaf
-- Dragon Rush
+- Dragon Edge
 
 === TRAINER_MAXIE_MAGMA_HIDEOUT ===
 Name: MAXIE
@@ -28993,7 +28993,7 @@ Ability: Cloud Nine
 Level: 49
 EVs: 128 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
 - Acrobatics
-- Dragon Rush
+- Dragon Edge
 - Dazzling Gleam
 - Dragon Dance
 
@@ -29412,7 +29412,7 @@ Ability: Levitate
 Level: 60
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
 - Earthquake
-- Dragon Rush
+- Dragon Edge
 - U-Turn
 
 Gyarados
