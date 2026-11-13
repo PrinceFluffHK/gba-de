@@ -1062,6 +1062,9 @@ enum __attribute__((packed)) Item
     ITEM_WATERFALL_TOOL = 880,
     ITEM_DIVE_TOOL = 881,
 
+    // Custom Items
+    ITEM_LEVEL_MACHINE = 882,
+
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };

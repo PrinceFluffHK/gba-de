@@ -1947,13 +1947,13 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_RARE_CANDY] =
     {
-        .name = ITEM_NAME("Infinite Candy"),
-        .pluralName = ITEM_PLURAL_NAME("Infinite Candies"),
+        .name = ITEM_NAME("Rare Candy"),
+        .pluralName = ITEM_PLURAL_NAME("Rare Candies"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
         .description = COMPOUND_STRING(
-            "Raises the level of\n"
-            "a Pokémon by one.\n"
-            "Never consumed."),
+            "Raises a Pokémon's\n"
+            "Level. Somehow\n"
+            "never empty."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
@@ -1962,6 +1962,26 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_RareCandy,
         .iconPalette = gItemIconPalette_RareCandy,
+        .notConsumed = TRUE,
+    },
+
+    [ITEM_LEVEL_MACHINE] =
+    {
+        .name = ITEM_NAME("Level Machine"),
+        .pluralName = ITEM_PLURAL_NAME("Level Machines"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Raises a Pokémon's\n"
+            "level by a chosen\n"
+            "amount."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
+        .flingPower = 30,
+        .iconPic = gItemIcon_TeachyTV,
+        .iconPalette = gItemIconPalette_TeachyTV,
         .notConsumed = TRUE,
         .importance = 1,
     },
@@ -2195,15 +2215,15 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_REPEL] =
     {
-        .name = ITEM_NAME("Infinite Repel"),
+        .name = ITEM_NAME("Repel"),
         .price = (I_PRICE >= GEN_7) ? 400 : 350,
         .holdEffectParam = 100,
         .description = COMPOUND_STRING(
             "Repels Pokémon\n"
             "for 100 steps.\n"
-            "Infinite uses."),
+            "Never runs out."),
         .pocket = POCKET_ITEMS,
-        .importance = 1,
+        // .importance = 1,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
@@ -2215,15 +2235,15 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_SUPER_REPEL] =
     {
-        .name = ITEM_NAME("Super Inf. Repel"),
+        .name = ITEM_NAME("Super Repel"),
         .price = (I_PRICE >= GEN_7) ? 700 : 500,
         .holdEffectParam = 200,
         .description = COMPOUND_STRING(
-            "Repels weak wild\n"
-            "Pokémon for 200\n"
-            "steps."),
+            "Repels Pokémon\n"
+            "for 200 steps.\n"
+            "Never runs out."),
         .pocket = POCKET_ITEMS,
-        .importance = 1,
+        // .importance = 1,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
@@ -2235,15 +2255,15 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_MAX_REPEL] =
     {
-        .name = ITEM_NAME("Max Inf. Repel"),
+        .name = ITEM_NAME("Max Repel"),
         .price = (I_PRICE >= GEN_7) ? 900 : 700,
         .holdEffectParam = 250,
         .description = COMPOUND_STRING(
-            "Repels weak wild\n"
-            "Pokémon for 250\n"
-            "steps."),
+            "Repels Pokémon\n"
+            "for 250 steps.\n"
+            "Never runs out."),
         .pocket = POCKET_ITEMS,
-        .importance = 1,
+        // .importance = 1,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,

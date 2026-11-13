@@ -58,6 +58,7 @@
 #include "reshow_battle_screen.h"
 #include "scanline_effect.h"
 #include "script.h"
+#include "script_menu.h"
 #include "sound.h"
 #include "sprite.h"
 #include "start_menu.h"
@@ -222,6 +223,11 @@ static EWRAM_DATA enum Item sPartyMenuItemId = 0;
 EWRAM_DATA u8 gBattlePartyCurrentOrder[PARTY_SIZE / 2] = {0}; // bits 0-3 are the current pos of Slot 1, 4-7 are Slot 2, and so on
 static EWRAM_DATA u8 sInitialLevel = 0;
 static EWRAM_DATA u8 sFinalLevel = 0;
+static s16 sInfiniteCandyLevelCount;
+static u16 sInfiniteCandyMaxLevelCount;
+static bool8 sInfiniteCandyLevelSelected;
+static TaskFunc sInfiniteCandyReturnTask;
+static u8 sInfiniteCandyLevelWindowId;
 
 // IWRAM common
 COMMON_DATA void (*gItemUseCB)(u8, TaskFunc) = NULL;
@@ -411,6 +417,8 @@ static void Task_DisplayLevelUpStatsPg1(u8);
 static void DisplayLevelUpStatsPg1(u8);
 static void Task_DisplayLevelUpStatsPg2(u8);
 static void DisplayLevelUpStatsPg2(u8);
+static void Task_HandleInfiniteCandyLevelInput(u8 taskId);
+static void DrawInfiniteCandyLevelInput(void);
 static void Task_TryLearnNewMoves(u8);
 static void PartyMenuTryEvolution(u8);
 static void DisplayMonNeedsToReplaceMove(u8);
@@ -510,6 +518,7 @@ static const u8 sText_doneText[] = _("{STR_VAR_1}'s ability became\n{STR_VAR_2}!
 static const u8 sText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_InfiniteCandyLevelPrompt[] = _("Levels: {STR_VAR_1}");
 
 // static const data
 #include "data/party_menu.h"
@@ -5827,20 +5836,113 @@ static void UNUSED DisplayExpPoints(u8 taskId, TaskFunc task, u8 holdEffectParam
     gTasks[taskId].func = task;
 }
 
+static void DrawInfiniteCandyLevelInput(void)
+{
+    struct WindowTemplate window =
+    {
+        .bg = 2,
+        .tilemapLeft = 1,
+        .tilemapTop = 17,
+        .width = 1,
+        .height = 2,
+        .paletteNum = 15,
+        .baseBlock = 0x2E9,
+    };
+
+    ConvertIntToDecimalStringN(gStringVar1, sInfiniteCandyLevelCount, STR_CONV_MODE_LEFT_ALIGN, 3);
+    StringExpandPlaceholders(gStringVar4, sText_InfiniteCandyLevelPrompt);
+    PartyMenuRemoveWindow(&sInfiniteCandyLevelWindowId);
+    window.width = ConvertPixelWidthToTileWidth(GetStringWidth(FONT_NORMAL, gStringVar4, 0) + 16);
+    sInfiniteCandyLevelWindowId = AddWindow(&window);
+    DrawStdFrameWithCustomTileAndPalette(sInfiniteCandyLevelWindowId, FALSE, 0x4F, 13);
+    AddTextPrinterParameterized(sInfiniteCandyLevelWindowId, FONT_NORMAL, gStringVar4, 8, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sInfiniteCandyLevelWindowId, COPYWIN_GFX);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+static void Task_HandleInfiniteCandyLevelInput(u8 taskId)
+{
+    if (AdjustQuantityAccordingToDPadInput(&sInfiniteCandyLevelCount, sInfiniteCandyMaxLevelCount))
+    {
+        DrawInfiniteCandyLevelInput();
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        sInfiniteCandyLevelSelected = TRUE;
+        PartyMenuRemoveWindow(&sInfiniteCandyLevelWindowId);
+        ItemUseCB_RareCandy(taskId, sInfiniteCandyReturnTask);
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        sInfiniteCandyLevelCount = 0;
+        sInfiniteCandyMaxLevelCount = 0;
+        sInfiniteCandyLevelSelected = FALSE;
+        PartyMenuRemoveWindow(&sInfiniteCandyLevelWindowId);
+        Task_ReturnToChooseMonAfterText(taskId);
+    }
+}
+
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
 {
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
     struct PartyMenuInternal *ptr = sPartyMenuInternal;
     s16 *arrayPtr = ptr->data;
     u16 *itemPtr = &gSpecialVar_ItemId;
+    u16 levelsToApply = 1;
+    u16 i;
+    bool8 applySelectedLevels = FALSE;
     bool8 cannotUseEffect;
     u8 holdEffectParam = GetItemHoldEffectParam(*itemPtr);
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
+    if (*itemPtr == ITEM_RARE_CANDY || *itemPtr == ITEM_LEVEL_MACHINE)
+    {
+        if (sInfiniteCandyLevelSelected)
+        {
+            levelsToApply = sInfiniteCandyLevelCount;
+            sInfiniteCandyLevelCount = 0;
+            sInfiniteCandyMaxLevelCount = 0;
+            sInfiniteCandyLevelSelected = FALSE;
+            applySelectedLevels = TRUE;
+        }
+        else
+        {
+            u8 maxLevel = MAX_LEVEL;
+
+            if (B_RARE_CANDY_CAP && GetCurrentLevelCap() < maxLevel)
+                maxLevel = GetCurrentLevelCap();
+
+            if (sInitialLevel < maxLevel)
+            {
+                sInfiniteCandyLevelCount = 1;
+                sInfiniteCandyMaxLevelCount = maxLevel - sInitialLevel;
+                sInfiniteCandyReturnTask = task;
+                sInfiniteCandyLevelWindowId = WINDOW_NONE;
+                DrawInfiniteCandyLevelInput();
+                gTasks[taskId].func = Task_HandleInfiniteCandyLevelInput;
+                return;
+            }
+        }
+    }
+
     if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
-        cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
+        if (applySelectedLevels)
+        {
+            cannotUseEffect = TRUE;
+            for (i = 0; i < levelsToApply; i++)
+            {
+                if (ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0))
+                    break;
+                cannotUseEffect = FALSE;
+            }
+        }
+        else
+        {
+            cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
+        }
         BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
     }
     else
