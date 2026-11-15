@@ -389,6 +389,7 @@ static u8 GetPartyLayoutFromBattleType(void);
 static void Task_SetSacredAshCB(u8);
 static void CB2_ReturnToBagMenu(void);
 static void Task_DisplayHPRestoredMessage(u8);
+static void Task_ToxicOrbUse(u8);
 static u16 ItemEffectToMonEv(struct Pokemon *, enum ItemEffectType);
 static void ItemEffectToStatString(enum ItemEffectType, u8 *);
 static void ReturnToUseOnWhichMon(u8);
@@ -4717,7 +4718,7 @@ void CB2_ShowPartyMenuForItemUse(void)
     else
     {
         menuType = PARTY_MENU_TYPE_FIELD;
-        partyLayout = PARTY_LAYOUT_SINGLE;
+        partyLayout = gSpecialVar_ItemId == ITEM_TOXIC_ORB ? PARTY_LAYOUT_DOUBLE : PARTY_LAYOUT_SINGLE;
     }
 
     if (GetItemEffectType(gSpecialVar_ItemId) == ITEM_EFFECT_SACRED_ASH)
@@ -5277,6 +5278,72 @@ static void Task_ClosePartyMenuAfterText(u8 taskId)
             sPartyMenuInternal->exitCallback = NULL;
         Task_ClosePartyMenu(taskId);
     }
+}
+
+static void Task_ToxicOrbUse(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    switch (data[0])
+    {
+    case 0:
+        if (!IsPartyMenuTextPrinterActive())
+        {
+            PartyMenuDisplayYesNoMenu();
+            data[0]++;
+        }
+        break;
+    case 1:
+        switch (Menu_ProcessInputNoWrapClearOnChoose())
+        {
+        case 0:
+        {
+            struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][data[1]];
+            u32 status = STATUS1_TOXIC_POISON;
+
+            PlayFanfareByFanfareNum(FANFARE_TOO_BAD);
+            SetMonData(mon, MON_DATA_STATUS, &status);
+            SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[data[1]]);
+            data[0]++;
+            break;
+        }
+        case 1:
+        case MENU_B_PRESSED:
+            Task_ClosePartyMenu(taskId);
+            break;
+        }
+        break;
+    case 2:
+        if (IsFanfareTaskInactive())
+            Task_ClosePartyMenu(taskId);
+        break;
+    }
+}
+
+void ItemUseCB_ToxicOrb(u8 taskId, TaskFunc task)
+{
+    static const u8 sText_BadlyPoisonMon[] = _("Badly poison {STR_VAR_1}?");
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+    s16 *data = gTasks[taskId].data;
+
+    (void)task;
+    if (GetAilmentFromStatus(GetMonData(mon, MON_DATA_STATUS)) != AILMENT_NONE)
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_FAILURE);
+        gTasks[taskId].func = Task_HandleChooseMonInput;
+        return;
+    }
+
+    gPartyMenuUseExitCallback = TRUE;
+    GetMonNickname(mon, gStringVar1);
+    StringExpandPlaceholders(gStringVar4, sText_BadlyPoisonMon);
+    PlaySE(SE_SELECT);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    data[0] = 0;
+    data[1] = gPartyMenu.slotId;
+    gTasks[taskId].func = Task_ToxicOrbUse;
 }
 
 void ItemUseCB_ResetEVs(u8 taskId, TaskFunc task)
