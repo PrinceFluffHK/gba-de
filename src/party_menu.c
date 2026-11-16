@@ -519,7 +519,7 @@ static const u8 sText_doneText[] = _("{STR_VAR_1}'s ability became\n{STR_VAR_2}!
 static const u8 sText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
-static const u8 sText_InfiniteCandyLevelPrompt[] = _("Levels: {STR_VAR_1}");
+static const u8 sText_InfiniteCandyLevelPrompt[] = _("Level {STR_VAR_1} (+{STR_VAR_2})");
 
 // static const data
 #include "data/party_menu.h"
@@ -4718,7 +4718,7 @@ void CB2_ShowPartyMenuForItemUse(void)
     else
     {
         menuType = PARTY_MENU_TYPE_FIELD;
-        partyLayout = gSpecialVar_ItemId == ITEM_TOXIC_ORB ? PARTY_LAYOUT_DOUBLE : PARTY_LAYOUT_SINGLE;
+        partyLayout = PARTY_LAYOUT_DOUBLE;
     }
 
     if (GetItemEffectType(gSpecialVar_ItemId) == ITEM_EFFECT_SACRED_ASH)
@@ -5916,7 +5916,8 @@ static void DrawInfiniteCandyLevelInput(void)
         .baseBlock = 0x2E9,
     };
 
-    ConvertIntToDecimalStringN(gStringVar1, sInfiniteCandyLevelCount, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar1, sInitialLevel + sInfiniteCandyLevelCount, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, sInfiniteCandyLevelCount, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringExpandPlaceholders(gStringVar4, sText_InfiniteCandyLevelPrompt);
     PartyMenuRemoveWindow(&sInfiniteCandyLevelWindowId);
     window.width = ConvertPixelWidthToTileWidth(GetStringWidth(FONT_NORMAL, gStringVar4, 0) + 16);
