@@ -904,6 +904,5 @@ PetalburgCity_Text_SwitchedDifficulty:
 	.string "want to change it up!$"
 
 PetalburgCity_Text_KeptCurrentMode:
-	.string "NAPPY: Got it!\p"
-	.string "In that case, I hope you've\n"
+	.string "NAPPY: Understood! I hope that you\n"
 	.string "found the CHALLENGE that you seek.$"
