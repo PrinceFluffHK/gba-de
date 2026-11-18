@@ -537,7 +537,8 @@ static bool32 HandleEndTurnPoison(enum BattlerId battler)
 
     if (IsBattlerPresent(battler) && (gBattleMons[battler].status1 & STATUS1_POISON || isToxicPoison))
     {
-        if (IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+        if (IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD)
+         || IsAbilityAndRecord(battler, ability, ABILITY_TOXIC_BOOST))
         {
             if (isToxicPoison && (gBattleMons[battler].status1 & STATUS1_TOXIC_COUNTER) != STATUS1_TOXIC_TURN(15)) // not 16 turns
                 gBattleMons[battler].status1 += STATUS1_TOXIC_TURN(1);
