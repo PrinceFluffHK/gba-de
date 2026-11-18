@@ -182,13 +182,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
-    [ABILITY_PSYCH_OUT] =
-    {
-        .name = _("Psych Out"),
-        .description = COMPOUND_STRING("Lowers foes' SpA on entry."),
-        .aiRating = 7,
-    },
-
     [ABILITY_SHADOW_TAG] =
     {
         .name = _("Shadow Tag"),
@@ -2570,10 +2563,18 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Aura Guard"),
         .description = COMPOUND_STRING("Unimplemented."),
     },
+
+    [ABILITY_PSYCH_OUT] =
+    {
+        .name = _("Psych Out"),
+        .description = COMPOUND_STRING("Lowers foes' SpA on entry."),
+        .aiRating = 7,
+    },
+
     [ABILITY_HARDY_THORNS] =
     {
         .name = _("Hardy Thorns"),
-        .description = COMPOUND_STRING("Sand immune with barbs."),
+        .description = COMPOUND_STRING("Sand immune with rough skin."),
         .aiRating = 6,
     },
 

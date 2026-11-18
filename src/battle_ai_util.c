@@ -1167,7 +1167,9 @@ static bool32 AI_IsMoveEffectInMinus(enum BattlerId battlerAtk, enum BattlerId b
     {
         if (AI_MoveMakesContact(battlerAtk, battlerDef, abilityAtk, gAiLogicData->holdEffects[battlerAtk], move)
          && abilityAtk != ABILITY_MAGIC_GUARD
-         && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET || abilityDef == ABILITY_IRON_BARBS))
+         && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET
+          || abilityDef == ABILITY_IRON_BARBS
+          || abilityDef == ABILITY_HARDY_THORNS))
         {
             return TRUE;
         }
@@ -1265,7 +1267,9 @@ enum MoveComparisonResult CompareMoveEffects(enum Move move1, enum Move move2, e
     // Check if physical moves hurt.
     if (gAiLogicData->holdEffects[battlerAtk] != HOLD_EFFECT_PROTECTIVE_PADS && atkAbility != ABILITY_LONG_REACH
         && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET
-        || defAbility == ABILITY_IRON_BARBS || defAbility == ABILITY_ROUGH_SKIN))
+        || defAbility == ABILITY_IRON_BARBS
+        || defAbility == ABILITY_ROUGH_SKIN
+        || defAbility == ABILITY_HARDY_THORNS))
     {
         bool32 moveContact1 = MoveMakesContact(move1);
         bool32 moveContact2 = MoveMakesContact(move2);
@@ -2655,7 +2659,8 @@ bool32 ShouldTriggerSpicySprayForBurn(enum BattlerId battlerAtk, enum Move move,
 
     if (!HasPartner(battlerAtk)
      || gBattleStruct->monToSwitchIntoId[partner] != PARTY_SIZE
-     || aiData->abilities[partner] != ABILITY_SPICY_SPRAY)
+     || (aiData->abilities[partner] != ABILITY_SPICY_SPRAY
+      && aiData->abilities[partner] != ABILITY_PYROCLASTIC_FLOW))
         return FALSE;
 
     if (noOfHitsToKOPartner == 0
@@ -3843,7 +3848,7 @@ bool32 IsFlinchGuaranteed(enum BattlerId battlerAtk, enum BattlerId battlerDef, 
 bool32 HasChoiceEffect(enum BattlerId battler)
 {
     enum Ability ability = gAiLogicData->abilities[battler];
-    if (ability == ABILITY_GORILLA_TACTICS)
+    if (ability == ABILITY_GORILLA_TACTICS || ability == ABILITY_JUGGERNAUT)
         return TRUE;
 
     if (ability == ABILITY_KLUTZ)
