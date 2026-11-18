@@ -22566,37 +22566,34 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
 
-Clamperl @ Deep-Sea Scale
+Clamperl
 Ability: Dazzling
-Level: 33
+Level: 33  
 - Clamp
 - Iron Defense
 
 Pelipper
 Ability: Drizzle
-Level: 31
+Level: 31  
 - Air Slash
 - Water Pulse
-- U-Turn
 
-Skarmory @ Focus Sash
+Skarmory
 Ability: Weak Armor
-Level: 31
+Level: 31  
 - Steel Wing
-- Aerial Ace
 - Slash
-- Swords Dance
 
-Armaldo
+Anorith
 Ability: Swift Swim
-Level: 31
+Level: 31  
 - X-Scissor
 - Rock Slide
 - Liquidation
 
 Seaking
 Ability: Swift Swim
-Level: 33
+Level: 33  
 - Waterfall
 - Smart Strike
 
@@ -24842,51 +24839,38 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
 
-Clamperl @ Eviolite
+Clamperl @ Deep-Sea Scale
 Ability: Dazzling
-Level: 33
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 128 SpD / 0 Spe  
+Level: 33  
 - Clamp
-- Substitute
 - Iron Defense
 
 Pelipper
 Ability: Drizzle
-Level: 33
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 128 Spe  
+Level: 31  
 - Air Slash
-- Scald
+- Water Pulse
 - U-Turn
 
 Skarmory @ Focus Sash
 Ability: Weak Armor
-Level: 33
-EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Iron Head
+Level: 31  
+- Steel Wing
 - Aerial Ace
 - Slash
 - Swords Dance
 
 Armaldo
 Ability: Swift Swim
-Level: 33
-EVs: 0 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+Level: 31  
 - X-Scissor
 - Rock Slide
 - Liquidation
 
-Lanturn @ Choice Scarf
-Ability: Dazzling
-Level: 33
-EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Scald
-- Volt Switch
-
 Seaking
 Ability: Swift Swim
-Level: 33
-EVs: 0 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Waterfall
+Level: 33  
+- Wave Crash
 - Smart Strike
 - Megahorn
 
@@ -27486,43 +27470,54 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
 
-Clamperl @ Deep-Sea Scale
+Clamperl @ Eviolite
 Ability: Dazzling
 Level: 33
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 128 SpD / 0 Spe  
 - Clamp
+- Substitute
 - Iron Defense
 
 Pelipper
 Ability: Drizzle
-Level: 31
+Level: 33
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 128 Spe  
 - Air Slash
-- Water Pulse
+- Scald
 - U-Turn
 
 Skarmory @ Focus Sash
 Ability: Weak Armor
-Level: 31
+Level: 33
 EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Steel Wing
+- Iron Head
 - Aerial Ace
+- Slash
+- Swords Dance
 
 Armaldo
 Ability: Swift Swim
-Level: 31
+Level: 33
 EVs: 0 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
 - X-Scissor
 - Rock Slide
 - Liquidation
 
-Seaking
+Lanturn @ Choice Scarf
+Ability: Dazzling
+Level: 33
+EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Scald
+- Volt Switch
+
+Seaking @ Metal Coat
 Ability: Swift Swim
 Level: 33
-EVs: 0 HP / 64 Atk / 0 Def / 0 SpA / 0 SpD / 64 Spe  
+EVs: 0 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Wave Crash
 - Waterfall
-- Aqua Tail
 - Smart Strike
+- Megahorn
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
 Name: BRENDAN
