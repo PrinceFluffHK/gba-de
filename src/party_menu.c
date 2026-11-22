@@ -2016,6 +2016,7 @@ u8 *GetMonNickname(struct Pokemon *mon, u8 *dest)
 }
 
 #define tKeepOpen  data[0]
+#define tWindowId  data[1]
 
 u8 DisplayPartyMenuMessage(const u8 *str, bool8 keepOpen)
 {
@@ -2024,23 +2025,48 @@ u8 DisplayPartyMenuMessage(const u8 *str, bool8 keepOpen)
     PrintMessage(str);
     taskId = CreateTask(Task_PrintAndWaitForText, 1);
     gTasks[taskId].tKeepOpen = keepOpen;
+    gTasks[taskId].tWindowId = WIN_MSG;
     return taskId;
+}
+
+static void DisplayPartyMenuPromptMessage(const u8 *str)
+{
+    u8 *windowPtr = &sPartyMenuInternal->windowId[1];
+    u8 taskId;
+
+    if (*windowPtr != WINDOW_NONE)
+        PartyMenuRemoveWindow(windowPtr);
+
+    *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
+    DrawStdFrameWithCustomTileAndPalette(*windowPtr, FALSE, 0x4F, 13);
+    AddTextPrinterParameterized(*windowPtr, FONT_NORMAL, str, 0, 1, 0, 0);
+    taskId = CreateTask(Task_PrintAndWaitForText, 1);
+    gTasks[taskId].tKeepOpen = TRUE;
+    gTasks[taskId].tWindowId = *windowPtr;
 }
 
 static void Task_PrintAndWaitForText(u8 taskId)
 {
-    if (RunTextPrintersRetIsActive(WIN_MSG) != TRUE)
+    if (RunTextPrintersRetIsActive(gTasks[taskId].tWindowId) != TRUE)
     {
         if (gTasks[taskId].tKeepOpen == FALSE)
         {
-            ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
-            ClearWindowTilemap(WIN_MSG);
+            if (gTasks[taskId].tWindowId == WIN_MSG)
+            {
+                ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
+                ClearWindowTilemap(WIN_MSG);
+            }
+            else
+            {
+                PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+            }
         }
         DestroyTask(taskId);
     }
 }
 
 #undef tKeepOpen
+#undef tWindowId
 
 bool8 IsPartyMenuTextPrinterActive(void)
 {
@@ -5339,7 +5365,7 @@ void ItemUseCB_ToxicOrb(u8 taskId, TaskFunc task)
     GetMonNickname(mon, gStringVar1);
     StringExpandPlaceholders(gStringVar4, sText_BadlyPoisonMon);
     PlaySE(SE_SELECT);
-    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    DisplayPartyMenuPromptMessage(gStringVar4);
     ScheduleBgCopyTilemapToVram(2);
     data[0] = 0;
     data[1] = gPartyMenu.slotId;
@@ -7261,7 +7287,7 @@ static void TryTutorSelectedMon(u8 taskId)
 
 void CB2_PartyMenuFromStartMenu(void)
 {
-    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldWithOpenMenu);
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_DOUBLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldWithOpenMenu);
 }
 
 // Giving an item by selecting Give from the bag menu
@@ -7650,17 +7676,17 @@ static const u8 *GetFacilityCancelString(void)
 
 void ChooseMonForTradingBoard(enum PartyMenuType menuType, MainCallback callback)
 {
-    InitPartyMenu(menuType, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, callback);
+    InitPartyMenu(menuType, PARTY_LAYOUT_DOUBLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, callback);
 }
 
 void ChooseMonForMoveTutor(void)
 {
-    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_MOVE_TUTOR, FALSE, PARTY_MSG_TEACH_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_DOUBLE, PARTY_ACTION_MOVE_TUTOR, FALSE, PARTY_MSG_TEACH_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 void ChooseMonForWirelessMinigame(void)
 {
-    InitPartyMenu(PARTY_MENU_TYPE_MINIGAME, PARTY_LAYOUT_SINGLE, PARTY_ACTION_MINIGAME, FALSE, PARTY_MSG_CHOOSE_MON_OR_CANCEL, Task_HandleChooseMonInput, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    InitPartyMenu(PARTY_MENU_TYPE_MINIGAME, PARTY_LAYOUT_DOUBLE, PARTY_ACTION_MINIGAME, FALSE, PARTY_MSG_CHOOSE_MON_OR_CANCEL, Task_HandleChooseMonInput, CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 static u8 GetPartyLayoutFromBattleType(void)
@@ -8224,13 +8250,13 @@ static void SlideMultiPartyMenuBoxSpritesOneStep(u8 taskId)
 
 void ChooseMonForDaycare(void)
 {
-    InitPartyMenu(PARTY_MENU_TYPE_DAYCARE, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON_2, Task_HandleChooseMonInput, BufferMonSelection);
+    InitPartyMenu(PARTY_MENU_TYPE_DAYCARE, PARTY_LAYOUT_DOUBLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON_2, Task_HandleChooseMonInput, BufferMonSelection);
 }
 
 static void UNUSED ChoosePartyMonByMenuType(enum PartyMenuType menuType)
 {
     gFieldCallback2 = CB2_FadeFromPartyMenu;
-    InitPartyMenu(menuType, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToField);
+    InitPartyMenu(menuType, PARTY_LAYOUT_DOUBLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToField);
 }
 
 static void BufferMonSelection(void)
