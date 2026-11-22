@@ -46,7 +46,7 @@ u16 GetPlayerAvatarGraphicsIdByCurrentState(void);
 void SetPlayerAvatarStateMask(u8 flags);
 u16 GetPlayerAvatarGraphicsIdByStateId(u8 state);
 u8 GetJumpSpecialMovementAction(u32);
-bool8 PartyHasMonWithSurf(void);
+u8 GetPartyMonThatCanLearnHM(enum Move move);
 bool8 IsPlayerFacingSurfableFishableWater(void);
 bool8 IsPlayerSurfingNorth(void);
 void SetPlayerAvatarWatering(enum Direction direction);

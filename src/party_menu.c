@@ -4334,7 +4334,8 @@ bool32 SetUpFieldMove_Surf(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF))
         return FALSE;
 
-    if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
+     && GetPartyMonThatCanLearnHM(MOVE_SURF) != PARTY_SIZE && IsPlayerFacingSurfableFishableWater() == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Surf;

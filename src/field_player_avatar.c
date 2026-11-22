@@ -1613,21 +1613,20 @@ enum Gender GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
     }
 }
 
-bool8 PartyHasMonWithSurf(void)
+u8 GetPartyMonThatCanLearnHM(enum Move move)
 {
-    u8 i;
-
-    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+    for (u8 i = 0; i < PARTY_SIZE; i++)
     {
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_NONE)
-                break;
-            if (MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], MOVE_SURF))
-                return TRUE;
-        }
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+
+        if (species == SPECIES_NONE)
+            break;
+        if (!GetMonData(mon, MON_DATA_IS_EGG) && CanLearnTeachableMove(species, move))
+            return i;
     }
-    return FALSE;
+
+    return PARTY_SIZE;
 }
 
 bool8 IsPlayerSurfingNorth(void)

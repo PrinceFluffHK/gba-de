@@ -2304,10 +2304,21 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
         return FALSE;
 
     move = FieldMove_GetMoveId(fieldMove);
+    if (IsMoveHM(move))
+    {
+        u8 partyMon = GetPartyMonThatCanLearnHM(move);
+
+        if (partyMon != PARTY_SIZE)
+        {
+            gSpecialVar_Result = partyMon;
+            gSpecialVar_0x8004 = GetMonData(&gParties[B_TRAINER_PLAYER][partyMon], MON_DATA_SPECIES);
+        }
+        return FALSE;
+    }
+
     for (u32 i = 0; i < PARTY_SIZE; i++)
     {
         enum Species species = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES);
-        bool32 canUseMove;
 
         if (!species)
             break;
@@ -2315,12 +2326,7 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
         if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG))
             continue;
 
-        if (IsMoveHM(move))
-            canUseMove = CanLearnTeachableMove(species, move);
-        else
-            canUseMove = MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], move);
-
-        if (canUseMove)
+        if (MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], move))
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
