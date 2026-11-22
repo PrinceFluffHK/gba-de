@@ -9443,11 +9443,11 @@ const struct ItemInfo gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A bizarre orb that\n"
             "burns the\n"
-            "holder in battle."),
+            "recipient. Usable."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FlameOrb,
         .flingPower = 30,
         .iconPic = gItemIcon_FlameOrb,
         .iconPalette = gItemIconPalette_FlameOrb,
@@ -9467,7 +9467,7 @@ const struct ItemInfo gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A bizarre orb that\n"
             "badly poisons the\n"
-            "holder in battle."),
+            "recipient. Usable."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_PARTY_MENU,

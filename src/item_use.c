@@ -862,6 +862,12 @@ void ItemUseOutOfBattle_Medicine(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_FlameOrb(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_FlameOrb;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_ToxicOrb(u8 taskId)
 {
     gItemUseCB = ItemUseCB_ToxicOrb;

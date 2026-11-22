@@ -389,7 +389,7 @@ static u8 GetPartyLayoutFromBattleType(void);
 static void Task_SetSacredAshCB(u8);
 static void CB2_ReturnToBagMenu(void);
 static void Task_DisplayHPRestoredMessage(u8);
-static void Task_ToxicOrbUse(u8);
+static void Task_StatusOrbUse(u8);
 static u16 ItemEffectToMonEv(struct Pokemon *, enum ItemEffectType);
 static void ItemEffectToStatString(enum ItemEffectType, u8 *);
 static void ReturnToUseOnWhichMon(u8);
@@ -5307,7 +5307,7 @@ static void Task_ClosePartyMenuAfterText(u8 taskId)
     }
 }
 
-static void Task_ToxicOrbUse(u8 taskId)
+static void Task_StatusOrbUse(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
@@ -5326,7 +5326,7 @@ static void Task_ToxicOrbUse(u8 taskId)
         case 0:
         {
             struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][data[1]];
-            u32 status = STATUS1_TOXIC_POISON;
+            u32 status = data[2];
 
             PlayFanfareByFanfareNum(FANFARE_TOO_BAD);
             SetMonData(mon, MON_DATA_STATUS, &status);
@@ -5347,9 +5347,8 @@ static void Task_ToxicOrbUse(u8 taskId)
     }
 }
 
-void ItemUseCB_ToxicOrb(u8 taskId, TaskFunc task)
+static void ItemUseCB_StatusOrb(u8 taskId, TaskFunc task, u32 status, const u8 *prompt)
 {
-    static const u8 sText_BadlyPoisonMon[] = _("Badly poison {STR_VAR_1}?");
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
     s16 *data = gTasks[taskId].data;
 
@@ -5364,13 +5363,28 @@ void ItemUseCB_ToxicOrb(u8 taskId, TaskFunc task)
 
     gPartyMenuUseExitCallback = TRUE;
     GetMonNickname(mon, gStringVar1);
-    StringExpandPlaceholders(gStringVar4, sText_BadlyPoisonMon);
+    StringExpandPlaceholders(gStringVar4, prompt);
     PlaySE(SE_SELECT);
     DisplayPartyMenuPromptMessage(gStringVar4);
     ScheduleBgCopyTilemapToVram(2);
     data[0] = 0;
     data[1] = gPartyMenu.slotId;
-    gTasks[taskId].func = Task_ToxicOrbUse;
+    data[2] = status;
+    gTasks[taskId].func = Task_StatusOrbUse;
+}
+
+void ItemUseCB_FlameOrb(u8 taskId, TaskFunc task)
+{
+    static const u8 sText_BurnMon[] = _("Burn {STR_VAR_1}?");
+
+    ItemUseCB_StatusOrb(taskId, task, STATUS1_BURN, sText_BurnMon);
+}
+
+void ItemUseCB_ToxicOrb(u8 taskId, TaskFunc task)
+{
+    static const u8 sText_BadlyPoisonMon[] = _("Badly poison {STR_VAR_1}?");
+
+    ItemUseCB_StatusOrb(taskId, task, STATUS1_TOXIC_POISON, sText_BadlyPoisonMon);
 }
 
 void ItemUseCB_ResetEVs(u8 taskId, TaskFunc task)
