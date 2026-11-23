@@ -792,9 +792,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_A]                 = &gObjectEventGraphicsInfo_DeoxysA,
     [OBJ_EVENT_GFX_DEOXYS_N]                 = &gObjectEventGraphicsInfo_DeoxysN,
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
+#endif // IS_FRLG
     [OBJ_EVENT_GFX_AQUA_ADMIN_M]             = &gObjectEventGraphicsInfo_AquaAdminM,
     [OBJ_EVENT_GFX_AQUA_ADMIN_F]             = &gObjectEventGraphicsInfo_AquaAdminF,
-#endif // IS_FRLG
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
