@@ -9592,7 +9592,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_ELECTRIC_SEED] =
     {
         .name = ITEM_NAME("Electric Seed"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 4000,
+        .price = (I_PRICE >= GEN_9) ? 5000 : 4000,
         .holdEffect = HOLD_EFFECT_TERRAIN_SEED,
         .holdEffectParam = HOLD_EFFECT_PARAM_ELECTRIC_TERRAIN,
         .description = COMPOUND_STRING(
@@ -9611,7 +9611,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_PSYCHIC_SEED] =
     {
         .name = ITEM_NAME("Psychic Seed"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 4000,
+        .price = (I_PRICE >= GEN_9) ? 5000 : 4000,
         .holdEffect = HOLD_EFFECT_TERRAIN_SEED,
         .holdEffectParam = HOLD_EFFECT_PARAM_PSYCHIC_TERRAIN,
         .description = COMPOUND_STRING(
@@ -9630,7 +9630,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_MISTY_SEED] =
     {
         .name = ITEM_NAME("Misty Seed"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 4000,
+        .price = (I_PRICE >= GEN_9) ? 5000 : 4000,
         .holdEffect = HOLD_EFFECT_TERRAIN_SEED,
         .holdEffectParam = HOLD_EFFECT_PARAM_MISTY_TERRAIN,
         .description = COMPOUND_STRING(
@@ -9649,7 +9649,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_GRASSY_SEED] =
     {
         .name = ITEM_NAME("Grassy Seed"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 4000,
+        .price = (I_PRICE >= GEN_9) ? 5000 : 4000,
         .holdEffect = HOLD_EFFECT_TERRAIN_SEED,
         .holdEffectParam = HOLD_EFFECT_PARAM_GRASSY_TERRAIN,
         .description = COMPOUND_STRING(
