@@ -5213,9 +5213,47 @@ void ItemUseCB_AbilityPatch(u8 taskId, TaskFunc task)
 #define tNewNature  data[3]
 #define tOldFunc    4
 
+static const u8 *GetNatureStatAbbreviation(enum Stat stat)
+{
+    switch (stat)
+    {
+    case STAT_ATK:
+        return COMPOUND_STRING("Atk");
+    case STAT_DEF:
+        return COMPOUND_STRING("Def");
+    case STAT_SPEED:
+        return COMPOUND_STRING("Spe");
+    case STAT_SPATK:
+        return COMPOUND_STRING("SpA");
+    case STAT_SPDEF:
+        return COMPOUND_STRING("SpD");
+    default:
+        return COMPOUND_STRING("");
+    }
+}
+
+static void CopyNatureWithStatChanges(u8 *dest, u8 nature)
+{
+    const struct NatureInfo *natureInfo = &gNaturesInfo[nature];
+
+    StringCopy(dest, natureInfo->name);
+    if (natureInfo->statUp == natureInfo->statDown)
+    {
+        StringAppend(dest, COMPOUND_STRING(" (=All)"));
+    }
+    else
+    {
+        StringAppend(dest, COMPOUND_STRING(" (+"));
+        StringAppend(dest, GetNatureStatAbbreviation(natureInfo->statUp));
+        StringAppend(dest, COMPOUND_STRING(" -"));
+        StringAppend(dest, GetNatureStatAbbreviation(natureInfo->statDown));
+        StringAppend(dest, COMPOUND_STRING(")"));
+    }
+}
+
 void Task_Mint(u8 taskId)
 {
-    static const u8 sText_askText[] = _("It might affect {STR_VAR_1}'s stats.\nAre you sure you want to use it?");
+    static const u8 sText_askText[] = _("{STR_VAR_1}'s stats are {STR_VAR_2}\nMake them {STR_VAR_3}?");
     static const u8 sText_doneText[] = _("{STR_VAR_1}'s stats may have changed due\nto the effects of the {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
     s16 *data = gTasks[taskId].data;
 
@@ -5234,7 +5272,8 @@ void Task_Mint(u8 taskId)
         }
         gPartyMenuUseExitCallback = TRUE;
         GetMonNickname(&gParties[B_TRAINER_PLAYER][tMonId], gStringVar1);
-        CopyItemName(gSpecialVar_ItemId, gStringVar2);
+        CopyNatureWithStatChanges(gStringVar2, tOldNature);
+        CopyNatureWithStatChanges(gStringVar3, tNewNature);
         StringExpandPlaceholders(gStringVar4, sText_askText);
         PlaySE(SE_SELECT);
         DisplayPartyMenuMessage(gStringVar4, 1);
@@ -5269,6 +5308,7 @@ void Task_Mint(u8 taskId)
         break;
     case 3:
         PlaySE(SE_USE_ITEM);
+        CopyItemName(gSpecialVar_ItemId, gStringVar2);
         StringExpandPlaceholders(gStringVar4, sText_doneText);
         DisplayPartyMenuMessage(gStringVar4, 1);
         ScheduleBgCopyTilemapToVram(2);
