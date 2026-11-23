@@ -202,6 +202,7 @@ enum {
     INPUT_MULTIMOVE_MOVE_MONS,
     INPUT_MULTIMOVE_PLACE_MONS,
     INPUT_SELECT_MON,
+    INPUT_SWITCH_MODE,
 };
 
 enum {
@@ -209,6 +210,7 @@ enum {
     SCREEN_CHANGE_SUMMARY_SCREEN,
     SCREEN_CHANGE_NAME_BOX,
     SCREEN_CHANGE_ITEM_FROM_BAG,
+    SCREEN_CHANGE_SWITCH_MODE,
 };
 
 enum {
@@ -586,6 +588,7 @@ static void Task_ShowMarkMenu(u8);
 static void Task_ShowMonSummary(u8);
 static void Task_ReleaseMon(u8);
 static void Task_ReshowPokeStorage(u8);
+static void Task_SwitchStorageMode(u8);
 static void Task_PokeStorageMain(u8);
 static void Task_JumpBox(u8);
 static void Task_HandleWallpapers(u8);
@@ -2256,6 +2259,10 @@ static void Task_PokeStorageMain(u8 taskId)
             PlaySE(SE_SELECT);
             sStorage->state = MSTATE_MOVE_CURSOR;
             break;
+        case INPUT_SWITCH_MODE:
+            PlaySE(SE_SELECT);
+            SetPokeStorageTask(Task_SwitchStorageMode);
+            break;
         case INPUT_SHOW_PARTY:
             if (sStorage->boxOption != OPTION_MOVE_MONS && sStorage->boxOption != OPTION_MOVE_ITEMS && sStorage->boxOption != OPTION_SELECT_MON)
             {
@@ -3787,9 +3794,33 @@ static void Task_ChangeScreen(u8 taskId)
         FreePokeStorageData();
         GoToBagMenu(ITEMMENULOCATION_PCBOX, 0, CB2_ReturnToPokeStorage);
         break;
+    case SCREEN_CHANGE_SWITCH_MODE:
+        sCurrentBoxOption = sStorage->boxOption == OPTION_MOVE_MONS ? OPTION_MOVE_ITEMS : OPTION_MOVE_MONS;
+        sWhichToReshow = SCREEN_CHANGE_SWITCH_MODE - 1;
+        FreePokeStorageData();
+        SetMainCallback2(CB2_ReturnToPokeStorage);
+        break;
     }
 
     DestroyTask(taskId);
+}
+
+static void Task_SwitchStorageMode(u8 taskId)
+{
+    switch (sStorage->state)
+    {
+    case 0:
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        sStorage->state++;
+        break;
+    case 1:
+        if (!UpdatePaletteFade())
+        {
+            sStorage->screenChangeType = SCREEN_CHANGE_SWITCH_MODE;
+            SetPokeStorageTask(Task_ChangeScreen);
+        }
+        break;
+    }
 }
 
 static void GiveChosenBagItem(void)
@@ -7218,6 +7249,10 @@ static u8 InBoxInput_Normal(void)
         }
         else if (JOY_NEW(START_BUTTON))
         {
+            if ((sStorage->boxOption == OPTION_MOVE_MONS && !IsMonBeingMoved())
+             || (sStorage->boxOption == OPTION_MOVE_ITEMS && !IsMovingItem()))
+                return INPUT_SWITCH_MODE;
+
             retVal = INPUT_MOVE_CURSOR;
             cursorArea = CURSOR_AREA_BOX_TITLE;
             cursorPosition = 0;
