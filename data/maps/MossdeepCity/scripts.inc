@@ -253,7 +253,7 @@ MossdeepCity_EventScript_Scott::
 	faceplayer
 	msgbox MossdeepCity_Text_ScottSomethingWrongWithTown, MSGBOX_DEFAULT
 	giveitem ITEM_ABILITY_PATCH
-	waitbuttonpress
+	waitfanfare
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_EventScript_ScottExitNorth
 	call_if_eq VAR_FACING, DIR_EAST, MossdeepCity_EventScript_ScottExitEast
