@@ -2684,8 +2684,8 @@ static enum OverworldWeather TranslateWeatherNum(enum OverworldWeather weather)
     case WEATHER_DOWNPOUR:           return WEATHER_DOWNPOUR;
     case WEATHER_UNDERWATER_BUBBLES: return WEATHER_UNDERWATER_BUBBLES;
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
-    case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
-    case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_ROUTE119_CYCLE:     return WEATHER_RAIN; //sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_ROUTE123_CYCLE:     return WEATHER_NONE; //sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_DYNAMIC:            return GetDynamicWeather();
     }
 
