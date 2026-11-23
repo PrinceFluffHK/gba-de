@@ -2784,7 +2784,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_STAT_CHANGE,
         .power = 0,
         .type = TYPE_NORMAL,
-        .accuracy = 100, //85,
+        .accuracy = 100,
         .pp = 20,
         .target = TARGET_SELECTED,
         .priority = 0,
@@ -4294,7 +4294,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "May cause flinching."),
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 30,
+            .chance = 20,
         }),
     #else
         .description = COMPOUND_STRING(
@@ -4304,7 +4304,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_ROCK,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 12,
         .target = TARGET_BOTH,
         .priority = 0,
@@ -8784,7 +8784,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_STAT_CHANGE,
         .power = 0,
         .type = TYPE_STEEL,
-        .accuracy = 100, //85,
+        .accuracy = 100,
         .pp = 20,
         .target = TARGET_SELECTED,
         .priority = 0,
@@ -11910,7 +11910,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Cross Poison"),
         .description = COMPOUND_STRING(
             "A slash that coin-flips\n"
-            "for both PSN & crits."),
+            "for both poison & crits."),
         .effect = EFFECT_HIT,
         .power = 70,
         .type = TYPE_POISON,
@@ -14056,7 +14056,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 40,
         .type = TYPE_ICE,
-        .accuracy = 100, //90,
+        .accuracy = 100, 
         .pp = 12,
         .target = TARGET_SELECTED,
         .priority = 0,
