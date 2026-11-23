@@ -1943,7 +1943,7 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_YellowMint,
     },
 
-// Candy
+// Candies
 
     [ITEM_RARE_CANDY] =
     {
@@ -2726,7 +2726,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_BIG_MUSHROOM] =
     {
         .name = ITEM_NAME("Big Mushroom"),
-        .price = 5000,
+        .price = 5000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A rare mushroom\n"
             "that would sell at a\n"
@@ -10050,8 +10050,8 @@ const struct ItemInfo gItemsInfo[] =
         .price = 5000, //(I_PRICE >= GEN_7) ? 10000 : 200,
         .holdEffect = HOLD_EFFECT_LUCKY_EGG,
         .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "boosts Exp. points\n"
+            "A held item that\n"
+            "boosts Exp. Points\n"
             "earned in battle."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
@@ -12461,7 +12461,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = 5000,
         .description = COMPOUND_STRING(
             "Bulks up the body\n"
-            "to boost both\n"
+            "to raise both\n"
             "Attack & Defense."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -12502,8 +12502,8 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM11"),
         .price = 5000,
         .description = COMPOUND_STRING(
-            "Raises the power of\n"
-            "Fire-type moves\n"
+            "Boosts the power\n"
+            "of Fire-type moves\n"
             "for 5 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -12516,9 +12516,15 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM12"),
         .price = 5000,
         .description = COMPOUND_STRING(
-            "Enrages the foe so\n"
-            "it can only use\n"
-            "attack moves."),
+            "The foe can only\n"
+            "use attack moves\n"
+        #if B_TAUNT_TURNS >= GEN_5
+            "for 3 turns."),
+        #elif B_TAUNT_TURNS == GEN_4
+            "for 2 to 4 turns."),
+        #else
+            "for 2 turns."),
+        #endif
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12532,8 +12538,8 @@ const struct ItemInfo gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Fires an icy cold\n"
             "beam that may\n"
-        #if B_USE_FROSTBITE == TRUE
-            "inflict frostbite."),
+        #if B_USE_FROSTBITE
+            "cause frostbite."),
         #else
             "freeze the foe."),
         #endif
@@ -12548,7 +12554,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM14"),
         .price = 10000,
         .description = COMPOUND_STRING(
-        #if B_USE_FROSTBITE == TRUE
+        #if B_USE_FROSTBITE
             "A snow-and-wind\n"
             "attack that may\n"
             "cause frostbite."),
@@ -12883,8 +12889,8 @@ const struct ItemInfo gItemsInfo[] =
         .price = 5000,
         .description = COMPOUND_STRING(
             "Causes a sandstorm\n"
-            "that hits the foe\n"
-            "over several turns."),
+            "that hits\n"
+            "over 5 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

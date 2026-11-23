@@ -78,13 +78,13 @@ SECTIONS {
     ALIGN(4)
     {
         data/*.o(script_data);
-    } > ROM :rom =0
+    } > ROM =0
 
     .rodata.compound_string :
     SUBALIGN(0)
     {
         *.o(.rodata.compound_string.*);
-    } > ROM :rom =0
+    } > ROM =0
 
     .rodata :
     ALIGN(4)

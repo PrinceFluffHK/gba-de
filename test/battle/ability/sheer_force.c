@@ -223,6 +223,7 @@ SINGLE_BATTLE_TEST("Sheer Force doesn't boost Burn Up", s16 damage)
         EXPECT_NE(results[0].damage, 0);
     }
 }
+
 SINGLE_BATTLE_TEST("Sheer Force doesn't boost Double Shock", s16 damage)
 {
     enum Move move = MOVE_NONE;
@@ -276,6 +277,7 @@ SINGLE_BATTLE_TEST("Sheer Force doesn't boost Synchronoise", s16 damage)
         EXPECT_NE(results[0].damage, 0);
     }
 }
+
 SINGLE_BATTLE_TEST("Sheer Force doesn't boost Aura Wheel", s16 damage)
 {
     enum Move move = MOVE_NONE;
@@ -293,6 +295,7 @@ SINGLE_BATTLE_TEST("Sheer Force doesn't boost Aura Wheel", s16 damage)
         EXPECT_NE(results[0].damage, 0);
     }
 }
+
 SINGLE_BATTLE_TEST("Sheer Force doesn't boost Hyperspace Fury", s16 damage)
 {
     enum Move move = MOVE_NONE;
