@@ -12054,6 +12054,7 @@ static const struct LevelUpMove sCameruptLevelUpLearnset[] = {
 
 #if P_FAMILY_TORKOAL
 static const struct LevelUpMove sTorkoalLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_SUNNY_DAY),
     LEVEL_UP_MOVE( 1, MOVE_EMBER),
     LEVEL_UP_MOVE( 1, MOVE_SMOG),
     LEVEL_UP_MOVE( 4, MOVE_WITHDRAW),
@@ -12289,11 +12290,12 @@ static const struct LevelUpMove sCacneaLevelUpLearnset[] = {
 static const struct LevelUpMove sCacturneLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_SPIKY_SHIELD),
     LEVEL_UP_MOVE( 1, MOVE_SPIKES),
+    LEVEL_UP_MOVE( 1, MOVE_SPIKES),
     LEVEL_UP_MOVE( 1, MOVE_POISON_STING),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_ABSORB),
     LEVEL_UP_MOVE( 1, MOVE_GROWTH),
-    LEVEL_UP_MOVE( 1, MOVE_DESTINY_BOND),
+    LEVEL_UP_MOVE( 1, MOVE_SANDSTORM),
     LEVEL_UP_MOVE(10, MOVE_LEECH_SEED),
     LEVEL_UP_MOVE(13, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE(16, MOVE_NEEDLE_ARM),
@@ -12308,7 +12310,7 @@ static const struct LevelUpMove sCacturneLevelUpLearnset[] = {
     LEVEL_UP_MOVE(44, MOVE_ENERGY_BALL),
     //Tate&Liza Lv45
     LEVEL_UP_MOVE(49, MOVE_COTTON_SPORE),
-    LEVEL_UP_MOVE(50, MOVE_SANDSTORM),
+    LEVEL_UP_MOVE(50, MOVE_DESTINY_BOND),
     //Juan Lv50, Sidney Lv54, Drake Lv60, Steven Lv63
     LEVEL_UP_END
 };
