@@ -842,6 +842,21 @@ const struct MapConnection *GetMapConnection(u8 dir)
     return NULL;
 }
 
+bool8 CanSetDiveWarp(enum Connection dir)
+{
+    struct WarpData fixedDiveWarp;
+    bool8 canSet;
+
+    if (GetMapConnection(dir) != NULL)
+        return TRUE;
+
+    fixedDiveWarp = sFixedDiveWarp;
+    RunOnDiveWarpMapScript();
+    canSet = !IsDummyWarp(&sFixedDiveWarp);
+    sFixedDiveWarp = fixedDiveWarp;
+    return canSet;
+}
+
 static bool8 SetDiveWarp(enum Connection dir, u16 x, u16 y)
 {
     const struct MapConnection *connection = GetMapConnection(dir);
@@ -857,6 +872,7 @@ static bool8 SetDiveWarp(enum Connection dir, u16 x, u16 y)
             return FALSE;
         SetWarpDestinationToDiveWarp();
     }
+
     return TRUE;
 }
 

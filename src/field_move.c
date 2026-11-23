@@ -34,6 +34,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Cut,
         .isUnlockedFunc = CanUseCut,
+        .canUseFunc = CanUseFieldMove_Cut,
         .moveID = MOVE_CUT,
         .partyMsgID = PARTY_MSG_NOTHING_TO_CUT,
     },
@@ -42,6 +43,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Flash,
         .isUnlockedFunc = CanUseFieldFlash,
+        .canUseFunc = CanUseFieldMove_Flash,
         .moveID = MOVE_FLASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
@@ -50,6 +52,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_RockSmash,
         .isUnlockedFunc = CanUseRockSmash,
+        .canUseFunc = CanUseFieldMove_RockSmash,
         .moveID = MOVE_ROCK_SMASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
@@ -58,6 +61,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Strength,
         .isUnlockedFunc = CanUseStrength,
+        .canUseFunc = CanUseFieldMove_Strength,
         .moveID = MOVE_STRENGTH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
@@ -66,6 +70,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Surf,
         .isUnlockedFunc = CanUseSurf,
+        .canUseFunc = CanUseFieldMove_Surf,
         .moveID = MOVE_SURF,
         .partyMsgID = PARTY_MSG_CANT_SURF_HERE,
     },
@@ -74,6 +79,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Fly,
         .isUnlockedFunc = CanUseFieldFly,
+        .canUseFunc = CanUseFieldMove_Fly,
         .moveID = MOVE_FLY,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
@@ -82,6 +88,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Dive,
         .isUnlockedFunc = CanUseDive,
+        .canUseFunc = CanUseFieldMove_Dive,
         .moveID = MOVE_DIVE,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
@@ -90,6 +97,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Waterfall,
         .isUnlockedFunc = CanUseWaterfall,
+        .canUseFunc = CanUseFieldMove_Waterfall,
         .moveID = MOVE_WATERFALL,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },

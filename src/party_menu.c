@@ -3001,7 +3001,8 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         move = FieldMove_GetMoveId(j);
         if (IsMoveHM(move))
         {
-            if (IsFieldMoveUnlocked(j) && CanLearnTeachableMove(species, move))
+            if (IsFieldMoveUnlocked(j) && CanLearnTeachableMove(species, move)
+             && FieldMove_CanUseInCurrentContext(j))
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
         }
         else
@@ -4329,19 +4330,22 @@ static void FieldCallback_Surf(void)
     FieldEffectStart(FLDEFF_USE_SURF);
 }
 
+bool32 CanUseFieldMove_Surf(void)
+{
+    return CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF)
+        && !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
+        && GetPartyMonThatCanLearnHM(MOVE_SURF) != PARTY_SIZE
+        && IsPlayerFacingSurfableFishableWater() == TRUE;
+}
+
 bool32 SetUpFieldMove_Surf(void)
 {
-    if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF))
+    if (!CanUseFieldMove_Surf())
         return FALSE;
 
-    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
-     && GetPartyMonThatCanLearnHM(MOVE_SURF) != PARTY_SIZE && IsPlayerFacingSurfableFishableWater() == TRUE)
-    {
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_Surf;
-        return TRUE;
-    }
-    return FALSE;
+    gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+    gPostMenuFieldCallback = FieldCallback_Surf;
+    return TRUE;
 }
 
 static void DisplayCantUseSurfMessage(void)
@@ -4352,15 +4356,15 @@ static void DisplayCantUseSurfMessage(void)
         DisplayPartyMenuStdMessage(PARTY_MSG_CANT_SURF_HERE);
 }
 
+bool32 CanUseFieldMove_Fly(void)
+{
+    return CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE)
+        && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE;
+}
+
 bool32 SetUpFieldMove_Fly(void)
 {
-    if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE))
-        return FALSE;
-
-    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
-        return TRUE;
-    else
-        return FALSE;
+    return CanUseFieldMove_Fly();
 }
 
 void CB2_ReturnToPartyMenuFromFlyMap(void)
@@ -4374,7 +4378,7 @@ static void FieldCallback_Waterfall(void)
     FieldEffectStart(FLDEFF_USE_WATERFALL);
 }
 
-bool32 SetUpFieldMove_Waterfall(void)
+bool32 CanUseFieldMove_Waterfall(void)
 {
     s16 x, y;
 
@@ -4382,13 +4386,18 @@ bool32 SetUpFieldMove_Waterfall(void)
         return FALSE;
 
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-    if (MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y)) == TRUE && IsPlayerSurfingNorth() == TRUE)
-    {
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_Waterfall;
-        return TRUE;
-    }
-    return FALSE;
+    return MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y)) == TRUE
+        && IsPlayerSurfingNorth() == TRUE;
+}
+
+bool32 SetUpFieldMove_Waterfall(void)
+{
+    if (!CanUseFieldMove_Waterfall())
+        return FALSE;
+
+    gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+    gPostMenuFieldCallback = FieldCallback_Waterfall;
+    return TRUE;
 }
 
 bool32 SetUpFieldMove_RockClimb(void)
@@ -4412,19 +4421,35 @@ static void FieldCallback_Dive(void)
     FieldEffectStart(FLDEFF_USE_DIVE);
 }
 
+bool32 CanUseFieldMove_Dive(void)
+{
+    s16 x, y;
+    u8 metatileBehavior;
+
+    if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_DIVE))
+        return FALSE;
+
+    PlayerGetDestCoords(&x, &y);
+    metatileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER && !MetatileBehavior_IsUnableToEmerge(metatileBehavior))
+        return CanSetDiveWarp(CONNECTION_EMERGE);
+    else if (MetatileBehavior_IsDiveable(metatileBehavior))
+        return CanSetDiveWarp(CONNECTION_DIVE);
+    return FALSE;
+}
+
 bool32 SetUpFieldMove_Dive(void)
 {
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_DIVE))
         return FALSE;
 
     gFieldEffectArguments[1] = TrySetDiveWarp();
-    if (gFieldEffectArguments[1] != 0)
-    {
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_Dive;
-        return TRUE;
-    }
-    return FALSE;
+    if (gFieldEffectArguments[1] == 0)
+        return FALSE;
+
+    gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+    gPostMenuFieldCallback = FieldCallback_Dive;
+    return TRUE;
 }
 
 static void CreatePartyMonIconSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)

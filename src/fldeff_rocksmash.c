@@ -44,6 +44,16 @@ bool8 CheckObjectGraphicsInFrontOfPlayer(u16 graphicsId)
     }
 }
 
+bool8 IsObjectGraphicsInFrontOfPlayer(u16 graphicsId)
+{
+    s16 x, y;
+    u8 objEventId;
+
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    objEventId = GetObjectEventIdByPosition(x, y, PlayerGetElevation());
+    return objEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objEventId].graphicsId == graphicsId;
+}
+
 u8 CreateFieldMoveTask(void)
 {
     GetXYCoordsOneStepInFrontOfPlayer(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
@@ -119,8 +129,17 @@ static void Task_DoFieldMove_RunFunc(u8 taskId)
 
 // Called when Rock Smash is used from the party menu
 // For interacting with a smashable rock in the field, see EventScript_RockSmash
+bool32 CanUseFieldMove_RockSmash(void)
+{
+    return CanDoBrailleRegirockEffect()
+        || IsObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK);
+}
+
 bool32 SetUpFieldMove_RockSmash(void)
 {
+    if (!CanUseFieldMove_RockSmash())
+        return FALSE;
+
     // In Ruby and Sapphire, Regirock's tomb is opened by using Strength. In Emerald,
     // it is opened by using Rock Smash.
     if (ShouldDoBrailleRegirockEffect())
@@ -130,15 +149,12 @@ bool32 SetUpFieldMove_RockSmash(void)
         gPostMenuFieldCallback = SetUpPuzzleEffectRegirock;
         return TRUE;
     }
-    else if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK) == TRUE)
+    else
     {
+        CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK);
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_RockSmash;
         return TRUE;
-    }
-    else
-    {
-        return FALSE;
     }
 }
 

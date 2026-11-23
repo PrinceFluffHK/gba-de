@@ -143,6 +143,10 @@ void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 
+bool32 CanUseFieldMove_Surf(void);
+bool32 CanUseFieldMove_Fly(void);
+bool32 CanUseFieldMove_Waterfall(void);
+bool32 CanUseFieldMove_Dive(void);
 bool32 SetUpFieldMove_Surf(void);
 bool32 SetUpFieldMove_Fly(void);
 bool32 SetUpFieldMove_Waterfall(void);

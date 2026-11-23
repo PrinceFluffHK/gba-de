@@ -69,8 +69,17 @@ static const u16 sCaveTransitionPalette_Enter[] = INCGFX_U16("graphics/cave_tran
 static const u32 sCaveTransitionTilemap[] = INCGFX_U32("graphics/cave_transition/tilemap.bin", ".smolTM");
 static const u32 sCaveTransitionTiles[] = INCGFX_U32("graphics/cave_transition/tiles.png", ".4bpp.smol");
 
+bool32 CanUseFieldMove_Flash(void)
+{
+    return CanDoBrailleRegisteelEffect()
+        || (gMapHeader.cave == TRUE && !FlagGet(FLAG_SYS_USE_FLASH));
+}
+
 bool32 SetUpFieldMove_Flash(void)
 {
+    if (!CanUseFieldMove_Flash())
+        return FALSE;
+
     // In Ruby and Sapphire, Registeel's tomb is opened by using Fly. In Emerald,
     // Flash is used instead.
     if (ShouldDoBrailleRegisteelEffect())
@@ -80,14 +89,12 @@ bool32 SetUpFieldMove_Flash(void)
         gPostMenuFieldCallback = SetUpPuzzleEffectRegisteel;
         return TRUE;
     }
-    else if (gMapHeader.cave == TRUE && !FlagGet(FLAG_SYS_USE_FLASH))
+    else
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Flash;
         return TRUE;
     }
-
-    return FALSE;
 }
 
 static void FieldCallback_Flash(void)

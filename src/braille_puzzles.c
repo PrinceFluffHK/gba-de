@@ -164,30 +164,24 @@ static void Task_SealedChamberShakingEffect(u8 taskId)
 #undef tDelay
 #undef tNumShakes
 
+bool8 CanDoBrailleRegirockEffect(void)
+{
+    return !FlagGet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED)
+        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_DESERT_RUINS)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_DESERT_RUINS)
+        && gSaveBlock1Ptr->pos.y == 23
+        && (gSaveBlock1Ptr->pos.x == 5
+         || gSaveBlock1Ptr->pos.x == 6
+         || gSaveBlock1Ptr->pos.x == 7);
+}
+
 bool8 ShouldDoBrailleRegirockEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED)
-        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_DESERT_RUINS)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_DESERT_RUINS))
-    {
-        if (gSaveBlock1Ptr->pos.x == 6 && gSaveBlock1Ptr->pos.y == 23)
-        {
-            sIsRegisteelPuzzle = FALSE;
-            return TRUE;
-        }
-        else if (gSaveBlock1Ptr->pos.x == 5 && gSaveBlock1Ptr->pos.y == 23)
-        {
-            sIsRegisteelPuzzle = FALSE;
-            return TRUE;
-        }
-        else if (gSaveBlock1Ptr->pos.x == 7 && gSaveBlock1Ptr->pos.y == 23)
-        {
-            sIsRegisteelPuzzle = FALSE;
-            return TRUE;
-        }
-    }
+    if (!CanDoBrailleRegirockEffect())
+        return FALSE;
 
-    return FALSE;
+    sIsRegisteelPuzzle = FALSE;
+    return TRUE;
 }
 
 void SetUpPuzzleEffectRegirock(void)
@@ -217,17 +211,22 @@ static void DoBrailleRegirockEffect(void)
     UnfreezeObjectEvents();
 }
 
+bool8 CanDoBrailleRegisteelEffect(void)
+{
+    return !FlagGet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED)
+        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ANCIENT_TOMB)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ANCIENT_TOMB)
+        && gSaveBlock1Ptr->pos.x == 8
+        && gSaveBlock1Ptr->pos.y == 25;
+}
+
 bool8 ShouldDoBrailleRegisteelEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ANCIENT_TOMB) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ANCIENT_TOMB)))
-    {
-        if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 25)
-        {
-            sIsRegisteelPuzzle = TRUE;
-            return TRUE;
-        }
-    }
-    return FALSE;
+    if (!CanDoBrailleRegisteelEffect())
+        return FALSE;
+
+    sIsRegisteelPuzzle = TRUE;
+    return TRUE;
 }
 
 void SetUpPuzzleEffectRegisteel(void)

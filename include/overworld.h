@@ -118,6 +118,7 @@ void SetWarpDestinationToFixedHoleWarp(s16 x, s16 y);
 void SetContinueGameWarpToHealLocation(u8 healLocationId);
 void SetContinueGameWarpToDynamicWarp(int unused);
 const struct MapConnection *GetMapConnection(u8 dir);
+bool8 CanSetDiveWarp(enum Connection dir);
 bool8 SetDiveWarpEmerge(u16 x, u16 y);
 bool8 SetDiveWarpDive(u16 x, u16 y);
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum);

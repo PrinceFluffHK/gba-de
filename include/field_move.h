@@ -26,6 +26,7 @@ struct FieldMoveInfo
 {
     bool32 (*fieldMoveFunc)(void);
     bool32 (*isUnlockedFunc)(void);
+    bool32 (*canUseFunc)(void);
     u16 moveID;
     u8 partyMsgID;
     bool8 hideIfLocked;
@@ -43,6 +44,12 @@ static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)
 static inline bool32 IsFieldMoveUnlocked(enum FieldMove fieldMove)
 {
     return gFieldMoveInfo[fieldMove].isUnlockedFunc();
+}
+
+static inline bool32 FieldMove_CanUseInCurrentContext(enum FieldMove fieldMove)
+{
+    return gFieldMoveInfo[fieldMove].canUseFunc != NULL
+        && gFieldMoveInfo[fieldMove].canUseFunc();
 }
 
 static inline u32 FieldMove_GetMoveId(enum FieldMove fieldMove)

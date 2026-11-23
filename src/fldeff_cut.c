@@ -136,6 +136,81 @@ static const struct SpriteTemplate sSpriteTemplate_CutGrass =
 };
 
 // code
+bool32 CanUseFieldMove_Cut(void)
+{
+    s16 playerX, playerY;
+    u8 i, j;
+    u8 tileBehavior;
+    enum Ability userAbility;
+    bool8 cutTiles[CUT_NORMAL_AREA];
+
+    if (CutMoveRuinValleyCheck() == TRUE
+     || IsObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE) == TRUE
+     || IsObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG) == TRUE)
+        return TRUE;
+
+    PlayerGetDestCoords(&playerX, &playerY);
+    userAbility = GetMonAbility(&gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()]);
+
+    for (i = 0; i < CUT_NORMAL_SIDE; i++)
+    {
+        s16 y = i - 1 + playerY;
+
+        for (j = 0; j < CUT_NORMAL_SIDE; j++)
+        {
+            s16 x = j - 1 + playerX;
+
+            if (MapGridGetElevationAt(x, y) != gPlayerFacingPosition.elevation)
+            {
+                cutTiles[i * 3 + j] = FALSE;
+                continue;
+            }
+
+            tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+            if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
+             || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE)
+                return TRUE;
+
+        #ifdef BUGFIX
+            cutTiles[i * 3 + j] = !MapGridGetCollisionAt(x, y);
+        #else
+            cutTiles[i * 3 + j] = MapGridGetCollisionAt(x, y) != 1;
+        #endif
+        }
+    }
+
+    if (userAbility != ABILITY_HYPER_CUTTER)
+        return FALSE;
+
+    for (i = 0; i < ARRAY_COUNT(sHyperCutStruct); i++)
+    {
+        bool8 tileCuttable = TRUE;
+        s16 x = playerX + sHyperCutStruct[i].x;
+        s16 y = playerY + sHyperCutStruct[i].y;
+
+        for (j = 0; j < 2; j++)
+        {
+            if (sHyperCutStruct[i].unk2[j] == 0)
+                break;
+            if (!cutTiles[sHyperCutStruct[i].unk2[j] - 1])
+            {
+                tileCuttable = FALSE;
+                break;
+            }
+        }
+
+        if (tileCuttable && MapGridGetElevationAt(x, y) == gPlayerFacingPosition.elevation)
+        {
+            tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+            if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
+             || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE)
+                return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
 bool32 SetUpFieldMove_Cut(void)
 {
     s16 x, y;
@@ -145,6 +220,9 @@ bool32 SetUpFieldMove_Cut(void)
     bool8 cutTiles[CUT_NORMAL_AREA];
     bool8 ret;
     sScheduleOpenDottedHole = FALSE;
+    if (!CanUseFieldMove_Cut())
+        return FALSE;
+
     if (CutMoveRuinValleyCheck() == TRUE)
     {
         sScheduleOpenDottedHole = TRUE;
