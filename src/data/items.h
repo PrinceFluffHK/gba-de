@@ -13670,7 +13670,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_TM_WEATHER_BALL] =
     {
         .name = ITEM_NAME("TM93"),
-        .price = 3000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "The move's type\n"
             "and power change\n"

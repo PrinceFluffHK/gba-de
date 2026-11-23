@@ -784,11 +784,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = COMBO_STARTER_SAND_ATTACK,
         .contestComboMoves = {COMBO_STARTER_MUD_SLAP, COMBO_STARTER_SANDSTORM},
         .battleAnimScript = gBattleAnimMove_SandAttack,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
-            .accuracy = 1,
-            .chance = 20,
-        }),
         .validApprenticeMove = TRUE,
     },
 
