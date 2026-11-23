@@ -27916,24 +27916,25 @@ Difficulty: Hard
 
 Swellow @ Flame Orb
 Ability: Guts
-Level: 32
+Level: 34
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 192 Spe  
 - Facade
 - Aerial Ace
 - U-Turn
 - Protect
 
-Pelipper @ Wacan Berry
+Pelipper @ Focus Sash
 Ability: Rain Dish
-Level: 32
+Level: 34
 EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe  
 - Air Slash
 - Hydro Pump
+- Icy Wind
 - Tailwind
 
 Flygon @ Sharp Beak
 Ability: Levitate
-Level: 33
+Level: 34
 EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
 - Earthquake
 - Dragon Pulse
@@ -27942,7 +27943,7 @@ EVs: 128 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Skarmory
 Ability: Sturdy
-Level: 33
+Level: 34
 EVs: 192 HP / 192 Atk / 0 Def / 0 SpA / 64 SpD / 0 Spe  
 - Steel Wing
 - Brave Bird
@@ -27951,7 +27952,7 @@ EVs: 192 HP / 192 Atk / 0 Def / 0 SpA / 64 SpD / 0 Spe
 
 Tropius @ Sitrus Berry
 Ability: Protosynthesis
-Level: 33
+Level: 34
 EVs: 0 HP / 64 Atk / 192 Def / 128 SpA / 0 SpD / 64 Spe  
 - Aerial Ace
 - Leaf Storm
