@@ -45,3 +45,20 @@ TEST("Full multi partner party menu wraps cancel up to partner party count")
 
     EXPECT_EQ(Test_UpdatePartySelectionSingleLayout(PARTY_SIZE + 1, TEST_MENU_DIR_UP, FALSE, 0), 1);
 }
+
+TEST("2 vs 2 in-game partner battle uses the multi party layout")
+{
+    SetTestPartySize(B_TRAINER_PLAYER, MULTI_PARTY_SIZE);
+    SetTestPartySize(B_TRAINER_PARTNER, MULTI_PARTY_SIZE);
+    SetTestPartySize(B_TRAINER_OPPONENT_A, MULTI_PARTY_SIZE);
+    SetTestPartySize(B_TRAINER_OPPONENT_B, MULTI_PARTY_SIZE);
+
+    gMain.inBattle = TRUE;
+    gBattleTypeFlags = BATTLE_TYPE_TRAINER
+                     | BATTLE_TYPE_DOUBLE
+                     | BATTLE_TYPE_MULTI
+                     | BATTLE_TYPE_INGAME_PARTNER
+                     | BATTLE_TYPE_TWO_OPPONENTS;
+
+    EXPECT_EQ(Test_GetPartyLayoutFromBattleType(), PARTY_LAYOUT_MULTI);
+}

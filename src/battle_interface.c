@@ -2951,7 +2951,7 @@ static const struct SpriteSheet sSpriteSheet_LastUsedBallWindow =
     sLastUsedBallWindowGfx, sizeof(sLastUsedBallWindowGfx), TAG_LAST_BALL_WINDOW
 };
 
-#if B_MOVE_DESCRIPTION_BUTTON == R_BUTTON
+#if B_MOVE_DESCRIPTION_BUTTON == SELECT_BUTTON
 static const u8 sMoveInfoWindowGfx[] = INCGFX_U8("graphics/battle_interface/move_info_window_r.png", ".4bpp");
 #else
 static const u8 sMoveInfoWindowGfx[] = INCGFX_U8("graphics/battle_interface/move_info_window_l.png", ".4bpp");

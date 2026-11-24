@@ -7771,6 +7771,10 @@ void ChooseMonForWirelessMinigame(void)
 
 static u8 GetPartyLayoutFromBattleType(void)
 {
+    if (IsMultiBattle() == TRUE
+     && (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
+     && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
+        return PARTY_LAYOUT_MULTI;
     if (IsMultiBattle() == TRUE && !AreMultiPartiesFullTeams())
         return PARTY_LAYOUT_MULTI;
     if (IsMultiBattle() == TRUE && AreMultiPartiesFullTeams())
@@ -8912,5 +8916,10 @@ s8 Test_UpdatePartySelectionSingleLayout(s8 slotId, s8 movementDir, bool8 choose
 
     sPartyMenuInternal = savedInternal;
     return slotId;
+}
+
+u8 Test_GetPartyLayoutFromBattleType(void)
+{
+    return GetPartyLayoutFromBattleType();
 }
 #endif
