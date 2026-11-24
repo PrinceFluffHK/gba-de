@@ -28,7 +28,6 @@ MossdeepCity_Mart_Pokemart_Secondary:
 	.2byte ITEM_TM_SUPERCELL_SLAM
 	.2byte ITEM_TM_SCALE_SHOT
 	.2byte ITEM_TM_DRAIN_PUNCH
-	.2byte ITEM_TM_WEATHER_BALL
 	pokemartlistend
 
 MossdeepCity_Mart_EventScript_Woman::
