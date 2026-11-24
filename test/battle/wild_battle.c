@@ -19,3 +19,17 @@ WILD_BATTLE_TEST("An item given by the player to the wild mon is not duplicated 
         EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_HELD_ITEM), ITEM_HYPER_POTION);
     }
 }
+
+WILD_BATTLE_TEST("A player's consumed berry is restored after battle")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(40); Item(ITEM_ORAN_BERRY); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { USE_ITEM(player, ITEM_MASTER_BALL); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
+    } THEN {
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_HELD_ITEM), ITEM_ORAN_BERRY);
+    }
+}
