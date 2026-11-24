@@ -5221,7 +5221,7 @@ static const struct LevelUpMove sKleavorLevelUpLearnset[] = {
 static const struct LevelUpMove sSmoochumLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LICK),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
-    LEVEL_UP_MOVE( 4, MOVE_HEART_STAMP),
+    LEVEL_UP_MOVE( 4, MOVE_ARRHYTHMIA),
     LEVEL_UP_MOVE( 8, MOVE_POWDER_SNOW),
     LEVEL_UP_MOVE(12, MOVE_CONFUSION),
     //Roxanne Lv14
@@ -5252,7 +5252,7 @@ static const struct LevelUpMove sJynxLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LICK),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_POWDER_SNOW),
-    LEVEL_UP_MOVE( 1, MOVE_HEART_STAMP),
+    LEVEL_UP_MOVE( 1, MOVE_ARRHYTHMIA),
     LEVEL_UP_MOVE(12, MOVE_CONFUSION),
     //Roxanne Lv14
     LEVEL_UP_MOVE(16, MOVE_COVET),
@@ -12105,7 +12105,7 @@ static const struct LevelUpMove sSpoinkLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGrumpigLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_HEART_STAMP),
+    LEVEL_UP_MOVE( 0, MOVE_ARRHYTHMIA),
     LEVEL_UP_MOVE( 1, MOVE_TEETER_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_BELCH),
     LEVEL_UP_MOVE( 1, MOVE_PSYCH_UP),

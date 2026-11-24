@@ -22201,6 +22201,33 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_DragonRush,
     },
 
+    [MOVE_ARRHYTHMIA] =
+    {
+        .name = COMPOUND_STRING("Arrhythmia"),
+        .description = COMPOUND_STRING(
+            "A 1st-turn only, 1st-strike\n"
+            "move that causes flinching."),
+        .priority = 3,
+        .makesContact = B_UPDATED_MOVE_DATA >= GEN_4,
+        .effect = EFFECT_FIRST_TURN_ONLY,
+        .power = 40,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 12,
+        .target = TARGET_SELECTED,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 100,
+        }),
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = COMBO_STARTER_FAKE_OUT,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FakeOut,
+        .validApprenticeMove = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
