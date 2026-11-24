@@ -23596,50 +23596,27 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
 
-Crawdaunt
-Ability: Adaptability
-Level: 49
-- Aqua Jet
-- Razor Shell
-- Swords Dance
+"Kingdra @ Lum Berry
+Ability: Swift Swim
+Level: 50  
+- Snipe Shot
+- Dragon Pulse
+- Rest
 
 Whiscash
 Ability: Oblivious
-Level: 48
+Level: 48  
 - Muddy Water
 - Earth Power
 - Zen Headbutt
 - Dragon Dance
 
-Walrein
-Ability: Thick Fat
-Level: 48
-- Brine
-- Icy Wind
-- Body Slam
-
-Ludicolo
-Ability: Rain Dish
-Level: 48
-- Fake Out
-- Energy Ball
-- Hydro Pump
-- Rain Dance
-
-Milotic
-Ability: Competitive
-Level: 50
-- Scald
-- Alluring Voice
-- Recover
-
-Kingdra @ Chesto Berry
-Ability: Swift Swim
-Level: 50
-- Snipe Shot
-- Dragon Pulse
-- Rest
-- Rain Dance
+Crawdaunt
+Ability: Adaptability
+Level: 49  
+- Crabhammer
+- Knock Off
+- Swords Dance"
 
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
@@ -26014,51 +25991,37 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
 
-Crawdaunt
-Ability: Adaptability
-Level: 49
-- Aqua Jet
-- Crabhammer
-- Swords Dance
+"Kingdra @ Lum Berry
+Ability: Swift Swim
+Level: 50  
+- Snipe Shot
+- Dragon Pulse
+- Ice Beam
+- Rest
 
 Whiscash @ Rindo Berry
 Ability: Oblivious
-Level: 48
+Level: 50  
 - Muddy Water
 - Earth Power
 - Zen Headbutt
 - Dragon Dance
 
-Walrein
+Walrein @ Sitrus Berry
 Ability: Thick Fat
-Level: 48
-- Brine
+Level: 50  
+- Surf
 - Glaciate
-- Body Slam
-
-Ludicolo
-Ability: Rain Dish
-Level: 48
-- Fake Out
-- Energy Ball
-- Hydro Pump
+- Brine
 - Rain Dance
 
-Milotic @ Leftovers
-Ability: Competitive
-Level: 50
-- Scald
-- Alluring Voice
-- Coil
-- Recover
-
-Kingdra @ Chesto Berry
-Ability: Swift Swim
-Level: 50
-- Snipe Shot
-- Dragon Pulse
-- Ice Beam
-- Rest
+Crawdaunt @ Focus Sash
+Ability: Adaptability
+Level: 50  
+- Aqua Jet
+- Crabhammer
+- Knock Off
+- Swords Dance"
 
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
@@ -28879,18 +28842,18 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
 
-Crawdaunt @ Focus Sash
-Ability: Adaptability
-Level: 49
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
-- Aqua Jet
-- Crabhammer
-- Knock Off
-- Swords Dance
+"Kingdra @ Lum Berry
+Ability: Swift Swim
+Level: 50
+EVs: 0 HP / 0 Atk / 128 Def / 252 SpA / 0 SpD / 128 Spe  
+- Snipe Shot
+- Dragon Pulse
+- Ice Beam
+- Rest
 
 Whiscash @ Rindo Berry
 Ability: Oblivious
-Level: 48
+Level: 50
 EVs: 128 HP / 128 Atk / 0 Def / 128 SpA / 0 SpD / 128 Spe  
 - Muddy Water
 - Earth Power
@@ -28899,39 +28862,21 @@ EVs: 128 HP / 128 Atk / 0 Def / 128 SpA / 0 SpD / 128 Spe
 
 Walrein @ Sitrus Berry
 Ability: Thick Fat
-Level: 48
+Level: 50
 EVs: 0 HP / 0 Atk / 252 Def / 252 SpA / 0 SpD / 0 Spe  
-- Brine
+- Surf
 - Glaciate
-- Body Slam
+- Brine
 - Rain Dance
 
-Ludicolo @ Damp Rock
-Ability: Rain Dish
-Level: 48
-EVs: 192 HP / 0 Atk / 0 Def / 128 SpA / 0 SpD / 192 Spe  
-- Fake Out
-- Energy Ball
-- Hydro Pump
-- Rain Dance
-
-Milotic @ Leftovers
-Ability: Competitive
+Crawdaunt @ Focus Sash
+Ability: Adaptability
 Level: 50
-EVs: 252 HP / 0 Atk / 0 Def / 128 SpA / 128 SpD / 0 Spe  
-- Scald
-- Alluring Voice
-- Rain Dance
-- Recover
-
-Kingdra @ Chesto Berry
-Ability: Swift Swim
-Level: 50
-EVs: 0 HP / 0 Atk / 128 Def / 252 SpA / 0 SpD / 128 Spe  
-- Snipe Shot
-- Dragon Pulse
-- Ice Beam
-- Rest
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe  
+- Aqua Jet
+- Crabhammer
+- Knock Off
+- Swords Dance"
 
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
