@@ -23596,7 +23596,7 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Easy
 
-"Kingdra @ Lum Berry
+Kingdra @ Lum Berry
 Ability: Swift Swim
 Level: 50  
 - Snipe Shot
@@ -23616,7 +23616,7 @@ Ability: Adaptability
 Level: 49  
 - Crabhammer
 - Knock Off
-- Swords Dance"
+- Swords Dance
 
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
@@ -25991,7 +25991,7 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Normal
 
-"Kingdra @ Lum Berry
+Kingdra @ Lum Berry
 Ability: Swift Swim
 Level: 50  
 - Snipe Shot
@@ -26021,7 +26021,7 @@ Level: 50
 - Aqua Jet
 - Crabhammer
 - Knock Off
-- Swords Dance"
+- Swords Dance
 
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
@@ -28842,7 +28842,7 @@ Double Battle: Yes
 AI: Smart Trainer
 Difficulty: Hard
 
-"Kingdra @ Lum Berry
+Kingdra @ Lum Berry
 Ability: Swift Swim
 Level: 50
 EVs: 0 HP / 0 Atk / 128 Def / 252 SpA / 0 SpD / 128 Spe  
@@ -28876,7 +28876,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - Aqua Jet
 - Crabhammer
 - Knock Off
-- Swords Dance"
+- Swords Dance
 
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
