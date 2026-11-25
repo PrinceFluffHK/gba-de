@@ -35,7 +35,7 @@ EverGrandeCity_PokemonLeague_1F_EventScript_Clerk::
 EverGrandeCity_PokemonLeague_1F_EventScript_Clerk_2::
 	lock
 	faceplayer
-	message gText_HowMayIServeYou
+	message EverGrandeCity_PokemonLeague_1F_Text_WantSomeVitamins
 	waitmessage
 	pokemart EverGrandeCity_PokemonLeague_1F_Pokemart_Secondary
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
@@ -51,6 +51,16 @@ EverGrandeCity_PokemonLeague_1F_Pokemart_Secondary:
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
 	pokemartlistend
+
+EverGrandeCity_PokemonLeague_1F_EventScript_Clerk_3::
+	lock
+	faceplayer
+	message EverGrandeCity_PokemonLeague_1F_Text_Welcome
+	waitmessage
+	pokemart SootopolisCity_Mart_Pokemart_Secondary
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
 
 @ The door guards only check for FLAG_BADGE06_GET because Winonas badge is the only one that can be skipped
 @ Its assumed the player has the remaining badges
@@ -173,4 +183,10 @@ EverGrandeCity_PokemonLeague_1F_Text_HaventObtainedAllBadges:
 EverGrandeCity_PokemonLeague_1F_Text_GoForth:
 	.string "TRAINER! Believe in yourself and your\n"
 	.string "POKéMON, and go forth!$"
+
+EverGrandeCity_PokemonLeague_1F_Text_WantSomeVitamins:
+	.string "Hey there! Want some vitamins?$"
+
+EverGrandeCity_PokemonLeague_1F_Text_Welcome:
+	.string "Welcome to the POKéMON LEAGUE!$"
 
