@@ -25547,7 +25547,7 @@ Difficulty: Normal
 
 Mightyena @ Magnet
 Ability: Intimidate
-Level: 35
+Level: 35  
 - Snarl
 - Crunch
 - Play Rough
@@ -25555,15 +25555,23 @@ Level: 35
 
 Machoke @ Toxic Orb
 Ability: Guts
-Level: 35
+Level: 35  
 - Brick Break
 - Dual Chop
 - Knock Off
 - Bulk Up
 
+Golbat
+Ability: Inner Focus
+Level: 36  
+- Poison Fang
+- Dual Wingbeat
+- Crunch
+- Leech Life
+
 Huntail
 Ability: Defiant
-Level: 37
+Level: 37  
 - Aqua Tail
 - Reversal
 - Ice Fang
@@ -28327,7 +28335,7 @@ Difficulty: Hard
 
 Mightyena @ Magnet
 Ability: Intimidate
-Level: 35
+Level: 37
 EVs: 0 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 64 Spe  
 - Snarl
 - Crunch
@@ -28336,12 +28344,25 @@ EVs: 0 HP / 128 Atk / 0 Def / 0 SpA / 0 SpD / 64 Spe
 
 Machamp @ Toxic Orb
 Ability: Guts
-Level: 35
+Level: 37
 EVs: 64 HP / 64 Atk / 0 Def / 0 SpA / 64 SpD / 0 Spe  
 - Brick Break
 - Dual Chop
 - Knock Off
 - Bulk Up
+
+Crobat @ Sitrus Berry
+Ability: Inner Focus
+Level: 37  
+- Poison Fang
+- Dual Wingbeat
+- Crunch
+- Leech Life
+
+Crawdaunt @ Choice Band
+Ability: Adaptability
+Level: 37  
+- Aqua Jet
 
 Huntail @ White Herb
 Ability: Defiant
