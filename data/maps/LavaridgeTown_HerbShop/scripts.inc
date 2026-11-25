@@ -13,10 +13,23 @@ LavaridgeTown_HerbShop_EventScript_Clerk::
 
 	.align 2
 LavaridgeTown_HerbShop_Pokemart:
+	.2byte ITEM_HEAL_POWDER
 	.2byte ITEM_ENERGY_POWDER
 	.2byte ITEM_ENERGY_ROOT
-	.2byte ITEM_HEAL_POWDER
-	.2byte ITEM_REVIVAL_HERB
+	pokemartlistend
+
+LavaridgeTown_HerbShop_EventScript_Clerk_2::
+	lock
+	faceplayer
+	message LavaridgeTown_HerbShop_Text_WelcomeToHerbShop
+	waitmessage
+	pokemart LavaridgeTown_HerbShop_Pokemart_2
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LavaridgeTown_HerbShop_Pokemart_2:
 	.2byte ITEM_WHITE_HERB
 	.2byte ITEM_MENTAL_HERB
 	.2byte ITEM_MIRROR_HERB
