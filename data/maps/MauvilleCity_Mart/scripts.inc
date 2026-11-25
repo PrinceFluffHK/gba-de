@@ -23,10 +23,10 @@ MauvilleCity_Mart_EventScript_Clerk_2::
 
 	.align 2
 MauvilleCity_Mart_Pokemart_Secondary:
-	.2byte ITEM_TM_ELECTRIC_TERRAIN
-	.2byte ITEM_TM_GRASSY_TERRAIN
-	.2byte ITEM_TM_MISTY_TERRAIN
-	.2byte ITEM_TM_PSYCHIC_TERRAIN
+	.2byte ITEM_LOADED_DICE
+	.2byte ITEM_ABILITY_SHIELD
+	.2byte ITEM_BOOSTER_ENERGY
+	.2byte ITEM_THROAT_SPRAY
 	pokemartlistend
 
 MauvilleCity_Mart_EventScript_ExpertM::
