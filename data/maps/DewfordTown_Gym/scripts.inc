@@ -254,24 +254,36 @@ DewfordTown_Gym_EventScript_LilithBrightenRoom::
 	release
 	end
 
-DewfordTown_Gym_EventScript_GymGuide::
+DewfordTown_Gym_EventScript_GymGuide1::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
-	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
-	yesnobox 20, 8
-	goto_if_eq VAR_RESULT, YES, DewfordTown_Gym_EventScript_ShowLeaderTeam
-	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
-	release
-	end
-
-DewfordTown_Gym_EventScript_ShowLeaderTeam::
-	showtrainerparty TRAINER_BRAWLY_1
-
-DewfordTown_Gym_EventScript_GymGuidePostVictory::
+	goto_if_unset FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
+	goto_if_set FLAG_IS_DOUBLE_CHAMPION, DewfordTown_Gym_EventScript_GymGuidePostVictory
+	goto_if_set FLAG_IS_CHAMPION, DewfordTown_Gym_EventScript_GymGuidePostVictory
 	msgbox DewfordTown_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
 	release
 	end
+
+DewfordTown_Gym_EventScript_GymGuideHandleTeam::
+	msgbox DewfordTown_Gym_Text_GymGuideWantToSeeTeam, MSGBOX_DEFAULT
+	yesnobox 20, 8
+	call_if_eq VAR_RESULT, YES, DewfordTown_Gym_EventScript_ShowLeaderTeam1
+	msgbox DewfordTown_Gym_Text_GymGuideGoodLuck, MSGBOX_DEFAULT
+	release
+	end
+
+
+DewfordTown_Gym_EventScript_ShowLeaderTeam1::
+	showtrainerparty TRAINER_BRAWLY_1
+	return
+
+DewfordTown_Gym_EventScript_ShowLeaderTeam2::
+	showtrainerparty TRAINER_BRAWLY_2
+	return
+
+DewfordTown_Gym_EventScript_ShowLeaderTeam3::
+	showtrainerparty TRAINER_BRAWLY_3
+	return
 
 DewfordTown_Gym_EventScript_LeftGymStatue::
 	lockall
