@@ -147,3 +147,31 @@ SINGLE_BATTLE_TEST("Weakness berries do not activate if Disguise blocks the dama
         ANIMATION(ANIM_TYPE_MOVE, MOVE_METAL_CLAW, player);
     }
 }
+
+DOUBLE_BATTLE_TEST("Resist berry popup displays its own item after an ally loses theirs")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
+        ASSUME(GetItemHoldEffect(ITEM_PASSHO_BERRY) == HOLD_EFFECT_RESIST_BERRY);
+        ASSUME(GetItemHoldEffectParam(ITEM_PASSHO_BERRY) == TYPE_WATER);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_KNOCK_OFF); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_WATER_GUN); }
+        OPPONENT(SPECIES_PROBOPASS) { Item(ITEM_HARD_STONE); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_MAGCARGO) { Item(ITEM_PASSHO_BERRY); Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_KNOCK_OFF, target: opponentLeft);
+            SKIP_TURN(playerRight);
+            SKIP_TURN(opponentLeft);
+            SKIP_TURN(opponentRight);
+        }
+        TURN {
+            SKIP_TURN(playerLeft);
+            MOVE(playerRight, MOVE_WATER_GUN, target: opponentRight);
+            SKIP_TURN(opponentLeft);
+            SKIP_TURN(opponentRight);
+        }
+    } SCENE {
+        ITEM_POPUP(opponentRight, ITEM_PASSHO_BERRY);
+    }
+}

@@ -92,3 +92,32 @@ SINGLE_BATTLE_TEST("Baton Pass passes Substitutes")
         EXPECT_EQ((u32)player->volatiles.substituteHP, 99);
     }
 }
+
+DOUBLE_BATTLE_TEST("A single-target move doesn't show another battler's Substitute message")
+{
+    GIVEN {
+        PLAYER(SPECIES_CRAWDAUNT) { Moves(MOVE_KNOCK_OFF); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WEEZING) { Moves(MOVE_SUBSTITUTE); }
+        OPPONENT(SPECIES_PROBOPASS);
+    } WHEN {
+        TURN {
+            MOVE(opponentLeft, MOVE_SUBSTITUTE);
+            SKIP_TURN(playerLeft);
+            SKIP_TURN(playerRight);
+            SKIP_TURN(opponentRight);
+        }
+        TURN {
+            MOVE(playerLeft, MOVE_KNOCK_OFF, target: opponentRight);
+            SKIP_TURN(playerRight);
+            SKIP_TURN(opponentLeft);
+            SKIP_TURN(opponentRight);
+        }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUBSTITUTE, opponentLeft);
+        MESSAGE("The opposing Weezing put in a substitute!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_KNOCK_OFF, playerLeft);
+        NOT MESSAGE("The substitute took damage for the opposing Weezing!");
+        HP_BAR(opponentRight);
+    }
+}

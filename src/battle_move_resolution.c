@@ -2755,6 +2755,7 @@ static enum CancelerResult CancelerPreAnimActivations(struct BattleCalcValues *c
             }
 
             gBattleScripting.battler = battlerDef;
+            gLastUsedItem = gBattleMons[battlerDef].item;
             BattleScriptCall(BattleScript_BerryReduceAnimation);
             return CANCELER_RESULT_RUN_SCRIPT;
         }
@@ -2948,14 +2949,16 @@ static enum CancelerResult CancelerHealthBarUpdate(struct BattleCalcValues *cv)
 {
     for (enum BattlerId battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
     {
+        if (ShouldSkipBattlerForDamage(cv->battlerAtk, battlerDef))
+            continue;
+
         if (DoesSubstituteBlockMove(cv->battlerAtk, battlerDef, cv->move))
         {
             PrepareStringBattle(STRINGID_SUBSTITUTEDAMAGED, battlerDef);
             continue;
         }
 
-        if (ShouldSkipBattlerForDamage(cv->battlerAtk, battlerDef)
-         || DoesDisguiseBlockMove(battlerDef, cv->move)
+        if (DoesDisguiseBlockMove(battlerDef, cv->move)
          || DoesIceFaceBlockMove(battlerDef, cv->move))
             continue;
 
