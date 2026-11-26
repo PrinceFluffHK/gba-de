@@ -26,6 +26,7 @@ LilycoveCity_DepartmentStore_4F_EventScript_ClerkLeft::
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_TMs:
 	.2byte ITEM_TM_REFLECT
+	.2byte ITEM_TM_LIGHT_SCREEN
 	.2byte ITEM_TM_FIRE_BLAST
 	.2byte ITEM_TM_BLIZZARD
 	.2byte ITEM_TM_THUNDER

@@ -22224,7 +22224,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = COMBO_STARTER_FAKE_OUT,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_FakeOut,
+        .battleAnimScript = gBattleAnimMove_HeartStamp,
         .validApprenticeMove = TRUE,
     },
 
